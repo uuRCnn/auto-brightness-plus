@@ -1,0 +1,16 @@
+{
+  "name": "brightness-plus",
+  "private": true,
+  "description": "Brightness+ GNOME Shell extension — development tooling",
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src tools/*.js",
+    "test": "tools/run-test.sh",
+    "build": "tools/build.sh"
+  },
+  "devDependencies": {
+    "eslint": "9.36.0",
+    "globals": "16.4.0"
+  }
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="brightness-plus">
+  <schema id="org.gnome.shell.extensions.brightness-plus" path="/org/gnome/shell/extensions/brightness-plus/">
+
+    <!-- appearance -->
+    <key name="slider-label" type="s">
+      <choices>
+        <choice value="icon"/>
+        <choice value="number"/>
+        <choice value="short-name"/>
+      </choices>
+      <default>'icon'</default>
+      <summary>What is shown left of each slider</summary>
+    </key>
+    <key name="show-tooltip" type="b">
+      <default>true</default>
+      <summary>Show the monitor name when hovering a slider</summary>
+    </key>
+    <key name="hide-builtin-slider" type="b">
+      <default>true</default>
+      <summary>Hide GNOME's own brightness slider (the laptop screen gets its own row)</summary>
+    </key>
+
+    <!-- per monitor state, JSON: {id: {day, schedule, offset, start, night, extra}} -->
+    <key name="monitor-config" type="s">
+      <default>'{}'</default>
+      <summary>Per-monitor settings (JSON)</summary>
+    </key>
+
+    <!-- evening dimming -->
+    <key name="schedule-mode" type="s">
+      <choices>
+        <choice value="sun"/>
+        <choice value="fixed"/>
+      </choices>
+      <default>'sun'</default>
+      <summary>Start dimming at sunset or at a fixed time</summary>
+    </key>
+    <key name="default-offset" type="i">
+      <range min="-240" max="240"/>
+      <default>0</default>
+      <summary>Minutes after sunset for new monitors</summary>
+    </key>
+    <key name="default-start" type="i">
+      <range min="0" max="1439"/>
+      <default>1200</default>
+      <summary>Fixed start time for new monitors (minutes after midnight)</summary>
+    </key>
+    <key name="default-night" type="d">
+      <range min="0" max="1"/>
+      <default>0.35</default>
+      <summary>Night brightness for new monitors</summary>
+    </key>
+    <key name="transition-minutes" type="i">
+      <range min="1" max="240"/>
+      <default>60</default>
+      <summary>How long the evening and morning transitions take</summary>
+    </key>
+    <key name="morning-offset" type="i">
+      <range min="-240" max="240"/>
+      <default>0</default>
+      <summary>Minutes after sunrise when brightness starts to come back</summary>
+    </key>
+    <key name="morning-time" type="i">
+      <range min="0" max="1439"/>
+      <default>420</default>
+      <summary>Fixed morning time (minutes after midnight)</summary>
+    </key>
+    <key name="location-mode" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="manual"/>
+      </choices>
+      <default>'auto'</default>
+      <summary>Where the location for sunset comes from</summary>
+    </key>
+    <key name="latitude" type="d">
+      <range min="-90" max="90"/>
+      <default>41.0</default>
+      <summary>Manual latitude</summary>
+    </key>
+    <key name="longitude" type="d">
+      <range min="-180" max="180"/>
+      <default>29.0</default>
+      <summary>Manual longitude</summary>
+    </key>
+
+    <!-- screen off -->
+    <key name="screen-off-mode" type="s">
+      <choices>
+        <choice value="black"/>
+        <choice value="minimum"/>
+      </choices>
+      <default>'black'</default>
+      <summary>Turn the screen fully black or keep a little light</summary>
+    </key>
+    <key name="screen-off-level" type="i">
+      <range min="1" max="40"/>
+      <default>5</default>
+      <summary>Light left on a turned off screen in minimum mode (percent)</summary>
+    </key>
+    <key name="wake-on-hover" type="b">
+      <default>true</default>
+      <summary>Turn a screen back on when the mouse moves onto it</summary>
+    </key>
+
+    <!-- night light -->
+    <key name="night-light-menu" type="b">
+      <default>true</default>
+      <summary>Add a menu to the Night Light button</summary>
+    </key>
+    <key name="red-enabled" type="b">
+      <default>false</default>
+      <summary>Red screen</summary>
+    </key>
+    <key name="red-strength" type="d">
+      <range min="0.05" max="1"/>
+      <default>0.8</default>
+      <summary>Red screen strength</summary>
+    </key>
+    <key name="red-follows-night-light" type="b">
+      <default>true</default>
+      <summary>Red screen only while Night Light is active</summary>
+    </key>
+
+    <!-- ddcutil -->
+    <key name="ddcutil-path" type="s">
+      <default>'ddcutil'</default>
+      <summary>ddcutil binary</summary>
+    </key>
+    <key name="ddcutil-extra-args" type="s">
+      <default>''</default>
+      <summary>Extra ddcutil arguments</summary>
+    </key>
+    <key name="ddc-write-interval" type="i">
+      <range min="0" max="2000"/>
+      <default>120</default>
+      <summary>Minimum time between two writes to the same monitor (ms)</summary>
+    </key>
+    <key name="rescan" type="i">
+      <default>0</default>
+      <summary>Changing this value scans the monitors again</summary>
+    </key>
+    <key name="debug" type="b">
+      <default>false</default>
+      <summary>Write debug messages to the journal</summary>
+    </key>
+  </schema>
+</schemalist>

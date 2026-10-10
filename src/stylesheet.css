@@ -1,0 +1,97 @@
+/* Brightness+ — native Quick Settings look, only small additions. */
+
+/* ---------- slider rows ---------- */
+.bp-moon StIcon { color: inherit; }
+.bp-moon.bp-active { color: #ffb340; background-color: rgba(255, 179, 64, 0.14); }
+.bp-moon.bp-active:hover { background-color: rgba(255, 179, 64, 0.24); }
+.bp-moon.bp-active:active { background-color: rgba(255, 179, 64, 0.32); }
+
+.bp-badge {
+  font-weight: bold;
+  font-size: 0.82em;
+  text-align: center;
+}
+.bp-badge-number {
+  width: 1.45em;
+  height: 1.45em;
+  border: 1.5px solid rgba(140, 140, 150, 0.75);
+  border-radius: 999px;
+}
+.bp-badge-text { min-width: 1.45em; }
+
+.bp-item.bp-off .slider { -barlevel-active-background-color: rgba(140, 140, 150, 0.6); }
+
+/* ---------- tooltip ---------- */
+.bp-tooltip {
+  background-color: rgba(0, 0, 0, 0.86);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+  padding: 5px 10px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+/* ---------- monitor menu ---------- */
+.bp-row { padding: 6px 12px 2px 12px; spacing: 6px; }
+.bp-row .bp-value { font-weight: bold; color: rgba(140, 140, 150, 1); }
+.bp-row .bp-night-value { color: #ffb340; }
+.bp-row .bp-red-value { color: #ff5c50; }
+.bp-sub { font-size: 0.82em; color: rgba(140, 140, 150, 1); }
+.bp-dim, .bp-dim .bp-sub, .bp-dim .bp-value { color: rgba(140, 140, 150, 0.8); }
+
+.bp-stepper { spacing: 6px; }
+.bp-step {
+  border-radius: 999px;
+  padding: 7px;
+  background-color: rgba(140, 140, 150, 0.18);
+}
+.bp-step:hover { background-color: rgba(140, 140, 150, 0.3); }
+.bp-step StIcon { icon-size: 12px; }
+.bp-step-value {
+  min-width: 3.4em;
+  text-align: center;
+  font-weight: bold;
+  color: #ffb340;
+}
+
+.bp-slider-row { padding-top: 2px; padding-bottom: 8px; }
+.bp-night .slider { -barlevel-active-background-color: #ffb340; }
+.bp-temp .slider { -barlevel-active-background-color: #ff9a3d; }
+.bp-red .slider { -barlevel-active-background-color: #ff453a; }
+
+.bp-moon-icon { color: #ffb340; }
+.bp-red-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  border-radius: 5px;
+  background-color: #ff453a;
+}
+.bp-hint { padding-top: 0; }
+.bp-hint StLabel { font-size: 0.82em; color: rgba(140, 140, 150, 1); }
+
+.bp-row.bp-buttons { spacing: 8px; padding-top: 10px; padding-bottom: 4px; }
+.bp-pill {
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-weight: bold;
+  background-color: rgba(140, 140, 150, 0.18);
+}
+.bp-pill:hover { background-color: rgba(140, 140, 150, 0.3); }
+.bp-pill:active { background-color: rgba(140, 140, 150, 0.4); }
+.bp-pill-icon { icon-size: 16px; margin-right: 8px; }
+
+/* ---------- night light toggle: red screen ---------- */
+.bp-night-light.bp-red-on:checked .quick-toggle,
+.bp-night-light.bp-red-on .quick-toggle:checked {
+  background-color: #e5372c;
+  color: #ffffff;
+}
+.bp-night-light.bp-red-on .quick-toggle-menu-button:checked {
+  background-color: #ee5a50;
+  color: #ffffff;
+}
+.bp-night-light.bp-red-on:checked .quick-toggle-separator {
+  background-color: rgba(255, 255, 255, 0.35);
+}

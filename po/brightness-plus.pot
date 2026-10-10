@@ -1,0 +1,381 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Brightness+ package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/prefs.js:75
+msgid "General"
+msgstr ""
+
+#: src/prefs.js:78
+msgid "Sliders"
+msgstr ""
+
+#: src/prefs.js:79
+msgid ""
+"Every monitor gets its own slider in Quick Settings, next to the volume "
+"slider."
+msgstr ""
+
+#: src/prefs.js:81
+msgid "Left of the slider"
+msgstr ""
+
+#: src/prefs.js:82
+msgid "Brightness icon"
+msgstr ""
+
+#: src/prefs.js:83
+msgid "Monitor number (1, 2, 3…)"
+msgstr ""
+
+#: src/prefs.js:84
+msgid "Short name (LG, VS…)"
+msgstr ""
+
+#: src/prefs.js:86
+msgid "Show the monitor name on hover"
+msgstr ""
+
+#: src/prefs.js:87
+msgid "Replace GNOME’s own brightness slider"
+msgstr ""
+
+#: src/prefs.js:88
+msgid "The laptop screen then gets a row like the other monitors"
+msgstr ""
+
+#: src/prefs.js:91
+msgid "Night Light"
+msgstr ""
+
+#: src/prefs.js:92
+msgid "Add a menu to the Night Light button"
+msgstr ""
+
+#: src/prefs.js:93
+msgid "Temperature, red screen and its strength"
+msgstr ""
+
+#: src/prefs.js:99
+msgid "Evening"
+msgstr ""
+
+#: src/prefs.js:102 src/lib/ui.js:257
+msgid "Evening dimming"
+msgstr ""
+
+#: src/prefs.js:103
+msgid ""
+"Turn it on per monitor with the moon button next to its slider. Brightness "
+"goes down slowly in the evening and comes back in the morning."
+msgstr ""
+
+#: src/prefs.js:105 src/lib/ui.js:264
+msgid "Start"
+msgstr ""
+
+#: src/prefs.js:106
+msgid "At sunset"
+msgstr ""
+
+#: src/prefs.js:107
+msgid "At a fixed time"
+msgstr ""
+
+#: src/prefs.js:109
+msgid "Transition"
+msgstr ""
+
+#: src/prefs.js:109
+msgid "Minutes, for both evening and morning"
+msgstr ""
+
+#: src/prefs.js:110 src/prefs.js:111
+msgid "Morning"
+msgstr ""
+
+#: src/prefs.js:110
+msgid "Minutes after sunrise"
+msgstr ""
+
+#: src/prefs.js:111
+msgid "Brightness comes back at"
+msgstr ""
+
+#: src/prefs.js:117
+msgid "For new monitors"
+msgstr ""
+
+#: src/prefs.js:118
+msgid "Each monitor can change these in its own menu."
+msgstr ""
+
+#: src/prefs.js:120
+msgid "Minutes after sunset"
+msgstr ""
+
+#: src/prefs.js:121
+msgid "Start time"
+msgstr ""
+
+#: src/prefs.js:125 src/lib/ui.js:269
+msgid "Night brightness"
+msgstr ""
+
+#: src/prefs.js:125
+msgid "Percent"
+msgstr ""
+
+#: src/prefs.js:134 src/prefs.js:137
+msgid "Location"
+msgstr ""
+
+#: src/prefs.js:135
+msgid ""
+"Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
+"keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
+msgstr ""
+
+#: src/prefs.js:138
+msgid "Automatic"
+msgstr ""
+
+#: src/prefs.js:139
+msgid "Manual"
+msgstr ""
+
+#: src/prefs.js:141
+msgid "Latitude"
+msgstr ""
+
+#: src/prefs.js:142
+msgid "Longitude"
+msgstr ""
+
+#: src/prefs.js:145
+msgid "Today"
+msgstr ""
+
+#: src/prefs.js:162
+msgid "manual"
+msgstr ""
+
+#: src/prefs.js:163
+msgid "GNOME location"
+msgstr ""
+
+#: src/prefs.js:164
+#, javascript-format
+msgid "time zone %s"
+msgstr ""
+
+#: src/prefs.js:165
+msgid "UTC offset"
+msgstr ""
+
+#: src/prefs.js:168
+#, javascript-format
+msgid "Sunset %s · sunrise %s · from %s"
+msgstr ""
+
+#: src/prefs.js:176
+msgid "Screen off"
+msgstr ""
+
+#: src/prefs.js:179 src/lib/ui.js:293
+msgid "Turn off screen"
+msgstr ""
+
+#: src/prefs.js:180
+msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
+msgstr ""
+
+#: src/prefs.js:182
+msgid "Turned off screen"
+msgstr ""
+
+#: src/prefs.js:183
+msgid "Fully black"
+msgstr ""
+
+#: src/prefs.js:184
+msgid "Lowest light"
+msgstr ""
+
+#: src/prefs.js:186
+msgid "Light left"
+msgstr ""
+
+#: src/prefs.js:186
+msgid "Percent, for “Lowest light”"
+msgstr ""
+
+#: src/prefs.js:188
+msgid "Turn back on when the mouse comes"
+msgstr ""
+
+#: src/prefs.js:189
+msgid "Moving the mouse onto a turned off screen brings its light back"
+msgstr ""
+
+#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+msgid "Red screen"
+msgstr ""
+
+#: src/prefs.js:197
+msgid ""
+"Switch it on in the Night Light menu. It removes all blue and green light, "
+"which helps you fall asleep."
+msgstr ""
+
+#: src/prefs.js:199
+msgid "Only while Night Light is active"
+msgstr ""
+
+#: src/prefs.js:200
+msgid "Starts and stops together with Night Light"
+msgstr ""
+
+#: src/prefs.js:201 src/lib/ui.js:439
+msgid "Strength"
+msgstr ""
+
+#: src/prefs.js:215
+msgid "Advanced"
+msgstr ""
+
+#: src/prefs.js:219
+msgid ""
+"External monitors are controlled over DDC/CI. Your user needs access to /dev/"
+"i2c-* (usually the “i2c” group)."
+msgstr ""
+
+#: src/prefs.js:223
+msgid "ddcutil found"
+msgstr ""
+
+#: src/prefs.js:223
+msgid "ddcutil not found"
+msgstr ""
+
+#: src/prefs.js:224
+msgid "Install ddcutil from your distribution, then press Scan again"
+msgstr ""
+
+#: src/prefs.js:226
+msgid "Scan again"
+msgstr ""
+
+#: src/prefs.js:231
+msgid "ddcutil program"
+msgstr ""
+
+#: src/prefs.js:234
+msgid "Extra arguments"
+msgstr ""
+
+#: src/prefs.js:237
+msgid "Pause between writes"
+msgstr ""
+
+#: src/prefs.js:238
+msgid "Milliseconds. Raise it if a monitor misses changes"
+msgstr ""
+
+#: src/prefs.js:242
+msgid "Debug messages"
+msgstr ""
+
+#: src/prefs.js:242
+msgid "Written to the system journal"
+msgstr ""
+
+#: src/lib/displays.js:37
+msgid "Monitor"
+msgstr ""
+
+#: src/lib/displays.js:287
+msgid "Built-in Display"
+msgstr ""
+
+#: src/lib/displays.js:288
+msgid "Built-in"
+msgstr ""
+
+#: src/lib/displays.js:290
+#, javascript-format
+msgid "Monitor %d"
+msgstr ""
+
+#: src/lib/ui.js:119
+msgid "Earlier"
+msgstr ""
+
+#: src/lib/ui.js:122
+msgid "Later"
+msgstr ""
+
+#: src/lib/ui.js:165
+msgid "Evening dimming and more"
+msgstr ""
+
+#: src/lib/ui.js:282
+msgid "Extra dimming"
+msgstr ""
+
+#: src/lib/ui.js:294
+msgid "Turn off others"
+msgstr ""
+
+#: src/lib/ui.js:318
+msgid "Off"
+msgstr ""
+
+#: src/lib/ui.js:335
+msgid "Turned off"
+msgstr ""
+
+#: src/lib/ui.js:335
+#, javascript-format
+msgid "Brightness %s"
+msgstr ""
+
+#: src/lib/ui.js:344
+#, javascript-format
+msgid "Sunset %s %s %d min"
+msgstr ""
+
+#: src/lib/ui.js:347
+msgid "Fixed time"
+msgstr ""
+
+#: src/lib/ui.js:421
+msgid "Temperature"
+msgstr ""
+
+#: src/lib/ui.js:498
+msgid "Sunset to sunrise"
+msgstr ""
+
+#: src/lib/ui.js:514
+msgid "Turns on together with Night Light"
+msgstr ""
+
+#: src/lib/ui.js:516
+msgid "Starts when Night Light starts"
+msgstr ""

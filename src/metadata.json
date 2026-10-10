@@ -1,0 +1,17 @@
+{
+  "uuid": "brightness-plus@dukha",
+  "name": "Brightness+",
+  "description": "Brightness+ puts a brightness slider for every monitor into Quick Settings, right next to the volume slider. External monitors are controlled over DDC/CI (ddcutil), laptop screens through the backlight.\n\n* One thin slider per monitor; hover to see its name\n* Evening dimming: brightness slowly goes down after sunset (or at a set time) and comes back in the morning\n* Sunset is calculated from your location, the same way Night Light does it, without extra permissions\n* Extra (software) dimming when the monitor is already at its lowest\n* Turn a screen off, or all the others; it wakes up when the mouse comes back\n* Red screen in the Night Light menu: removes all blue and green light at night\n* Fast: monitor writes are merged and never block the desktop\n* Available in 18 languages\n\nExternal monitors need ddcutil and access to /dev/i2c-* (i2c group). Without it, sliders fall back to software dimming.\n\nMade by Dukha.",
+  "shell-version": [
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51"
+  ],
+  "url": "https://github.com/uuRCnn/brightness-plus",
+  "settings-schema": "org.gnome.shell.extensions.brightness-plus",
+  "gettext-domain": "brightness-plus",
+  "version-name": "1.0"
+}

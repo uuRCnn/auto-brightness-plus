@@ -1,0 +1,389 @@
+# Russian translation for Brightness+.
+# This file is distributed under the same license as the Brightness+ package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"PO-Revision-Date: 2026-10-10 21:00+0300\n"
+"Last-Translator: Dukha\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/prefs.js:75
+msgid "General"
+msgstr "Общие"
+
+#: src/prefs.js:78
+msgid "Sliders"
+msgstr "Ползунки"
+
+#: src/prefs.js:79
+msgid ""
+"Every monitor gets its own slider in Quick Settings, next to the volume "
+"slider."
+msgstr ""
+"У каждого монитора свой ползунок в быстрых настройках, рядом с громкостью."
+
+#: src/prefs.js:81
+msgid "Left of the slider"
+msgstr "Слева от ползунка"
+
+#: src/prefs.js:82
+msgid "Brightness icon"
+msgstr "Значок яркости"
+
+#: src/prefs.js:83
+msgid "Monitor number (1, 2, 3…)"
+msgstr "Номер монитора (1, 2, 3…)"
+
+#: src/prefs.js:84
+msgid "Short name (LG, VS…)"
+msgstr "Короткое имя (LG, VS…)"
+
+#: src/prefs.js:86
+msgid "Show the monitor name on hover"
+msgstr "Показывать имя монитора при наведении"
+
+#: src/prefs.js:87
+msgid "Replace GNOME’s own brightness slider"
+msgstr "Заменить ползунок яркости GNOME"
+
+#: src/prefs.js:88
+msgid "The laptop screen then gets a row like the other monitors"
+msgstr "Экран ноутбука получит свою строку, как и другие мониторы"
+
+#: src/prefs.js:91
+msgid "Night Light"
+msgstr "Ночной свет"
+
+#: src/prefs.js:92
+msgid "Add a menu to the Night Light button"
+msgstr "Добавить меню к кнопке «Ночной свет»"
+
+#: src/prefs.js:93
+msgid "Temperature, red screen and its strength"
+msgstr "Температура, красный экран и его сила"
+
+#: src/prefs.js:99
+msgid "Evening"
+msgstr "Вечер"
+
+#: src/prefs.js:102 src/lib/ui.js:257
+msgid "Evening dimming"
+msgstr "Вечернее затемнение"
+
+#: src/prefs.js:103
+msgid ""
+"Turn it on per monitor with the moon button next to its slider. Brightness "
+"goes down slowly in the evening and comes back in the morning."
+msgstr ""
+"Включается для каждого монитора кнопкой-луной рядом с ползунком. Вечером "
+"яркость плавно снижается, утром возвращается."
+
+#: src/prefs.js:105 src/lib/ui.js:264
+msgid "Start"
+msgstr "Начало"
+
+#: src/prefs.js:106
+msgid "At sunset"
+msgstr "На закате"
+
+#: src/prefs.js:107
+msgid "At a fixed time"
+msgstr "В заданное время"
+
+#: src/prefs.js:109
+msgid "Transition"
+msgstr "Переход"
+
+#: src/prefs.js:109
+msgid "Minutes, for both evening and morning"
+msgstr "Минуты, для вечера и утра"
+
+#: src/prefs.js:110 src/prefs.js:111
+msgid "Morning"
+msgstr "Утро"
+
+#: src/prefs.js:110
+msgid "Minutes after sunrise"
+msgstr "Минут после восхода"
+
+#: src/prefs.js:111
+msgid "Brightness comes back at"
+msgstr "Яркость возвращается в"
+
+#: src/prefs.js:117
+msgid "For new monitors"
+msgstr "Для новых мониторов"
+
+#: src/prefs.js:118
+msgid "Each monitor can change these in its own menu."
+msgstr "Каждый монитор может изменить это в своём меню."
+
+#: src/prefs.js:120
+msgid "Minutes after sunset"
+msgstr "Минут после заката"
+
+#: src/prefs.js:121
+msgid "Start time"
+msgstr "Время начала"
+
+#: src/prefs.js:125 src/lib/ui.js:269
+msgid "Night brightness"
+msgstr "Ночная яркость"
+
+#: src/prefs.js:125
+msgid "Percent"
+msgstr "Проценты"
+
+#: src/prefs.js:134 src/prefs.js:137
+msgid "Location"
+msgstr "Местоположение"
+
+#: src/prefs.js:135
+msgid ""
+"Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
+"keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
+msgstr ""
+"Используется только для расчёта заката и восхода. «Автоматически» берёт "
+"местоположение, которое GNOME хранит для ночного света, иначе часовой пояс. "
+"Ничего никуда не отправляется."
+
+#: src/prefs.js:138
+msgid "Automatic"
+msgstr "Автоматически"
+
+#: src/prefs.js:139
+msgid "Manual"
+msgstr "Вручную"
+
+#: src/prefs.js:141
+msgid "Latitude"
+msgstr "Широта"
+
+#: src/prefs.js:142
+msgid "Longitude"
+msgstr "Долгота"
+
+#: src/prefs.js:145
+msgid "Today"
+msgstr "Сегодня"
+
+#: src/prefs.js:162
+msgid "manual"
+msgstr "вручную"
+
+#: src/prefs.js:163
+msgid "GNOME location"
+msgstr "местоположение GNOME"
+
+#: src/prefs.js:164
+#, javascript-format
+msgid "time zone %s"
+msgstr "часовой пояс %s"
+
+#: src/prefs.js:165
+msgid "UTC offset"
+msgstr "смещение UTC"
+
+#: src/prefs.js:168
+#, javascript-format
+msgid "Sunset %s · sunrise %s · from %s"
+msgstr "Закат %s · восход %s · источник: %s"
+
+#: src/prefs.js:176
+msgid "Screen off"
+msgstr "Выключение"
+
+#: src/prefs.js:179 src/lib/ui.js:293
+msgid "Turn off screen"
+msgstr "Выключить экран"
+
+#: src/prefs.js:180
+msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
+msgstr "«Выключить экран» и «Выключить остальные» в меню каждого монитора."
+
+#: src/prefs.js:182
+msgid "Turned off screen"
+msgstr "Выключенный экран"
+
+#: src/prefs.js:183
+msgid "Fully black"
+msgstr "Полностью чёрный"
+
+#: src/prefs.js:184
+msgid "Lowest light"
+msgstr "Минимальный свет"
+
+#: src/prefs.js:186
+msgid "Light left"
+msgstr "Остаток света"
+
+#: src/prefs.js:186
+msgid "Percent, for “Lowest light”"
+msgstr "Проценты, для «Минимального света»"
+
+#: src/prefs.js:188
+msgid "Turn back on when the mouse comes"
+msgstr "Включать, когда приходит мышь"
+
+#: src/prefs.js:189
+msgid "Moving the mouse onto a turned off screen brings its light back"
+msgstr "Если навести мышь на выключенный экран, его свет вернётся"
+
+#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+msgid "Red screen"
+msgstr "Красный экран"
+
+#: src/prefs.js:197
+msgid ""
+"Switch it on in the Night Light menu. It removes all blue and green light, "
+"which helps you fall asleep."
+msgstr ""
+"Включается в меню «Ночной свет». Убирает весь синий и зелёный свет и "
+"помогает уснуть."
+
+#: src/prefs.js:199
+msgid "Only while Night Light is active"
+msgstr "Только когда ночной свет активен"
+
+#: src/prefs.js:200
+msgid "Starts and stops together with Night Light"
+msgstr "Начинается и заканчивается вместе с ночным светом"
+
+#: src/prefs.js:201 src/lib/ui.js:439
+msgid "Strength"
+msgstr "Сила"
+
+#: src/prefs.js:215
+msgid "Advanced"
+msgstr "Дополнительно"
+
+#: src/prefs.js:219
+msgid ""
+"External monitors are controlled over DDC/CI. Your user needs access to /dev/"
+"i2c-* (usually the “i2c” group)."
+msgstr ""
+"Внешние мониторы управляются через DDC/CI. Пользователю нужен доступ к /dev/"
+"i2c-* (обычно группа «i2c»)."
+
+#: src/prefs.js:223
+msgid "ddcutil found"
+msgstr "ddcutil найден"
+
+#: src/prefs.js:223
+msgid "ddcutil not found"
+msgstr "ddcutil не найден"
+
+#: src/prefs.js:224
+msgid "Install ddcutil from your distribution, then press Scan again"
+msgstr "Установите ddcutil из своего дистрибутива и нажмите «Искать снова»"
+
+#: src/prefs.js:226
+msgid "Scan again"
+msgstr "Искать снова"
+
+#: src/prefs.js:231
+msgid "ddcutil program"
+msgstr "Программа ddcutil"
+
+#: src/prefs.js:234
+msgid "Extra arguments"
+msgstr "Дополнительные аргументы"
+
+#: src/prefs.js:237
+msgid "Pause between writes"
+msgstr "Пауза между записями"
+
+#: src/prefs.js:238
+msgid "Milliseconds. Raise it if a monitor misses changes"
+msgstr "Миллисекунды. Увеличьте, если монитор пропускает изменения"
+
+#: src/prefs.js:242
+msgid "Debug messages"
+msgstr "Отладочные сообщения"
+
+#: src/prefs.js:242
+msgid "Written to the system journal"
+msgstr "Пишутся в системный журнал"
+
+#: src/lib/displays.js:37
+msgid "Monitor"
+msgstr "Монитор"
+
+#: src/lib/displays.js:287
+msgid "Built-in Display"
+msgstr "Встроенный экран"
+
+#: src/lib/displays.js:288
+msgid "Built-in"
+msgstr "Встр"
+
+#: src/lib/displays.js:290
+#, javascript-format
+msgid "Monitor %d"
+msgstr "Монитор %d"
+
+#: src/lib/ui.js:119
+msgid "Earlier"
+msgstr "Раньше"
+
+#: src/lib/ui.js:122
+msgid "Later"
+msgstr "Позже"
+
+#: src/lib/ui.js:165
+msgid "Evening dimming and more"
+msgstr "Вечернее затемнение и другое"
+
+#: src/lib/ui.js:282
+msgid "Extra dimming"
+msgstr "Дополнительное затемнение"
+
+#: src/lib/ui.js:294
+msgid "Turn off others"
+msgstr "Выключить остальные"
+
+#: src/lib/ui.js:318
+msgid "Off"
+msgstr "Выкл."
+
+#: src/lib/ui.js:335
+msgid "Turned off"
+msgstr "Выключен"
+
+#: src/lib/ui.js:335
+#, javascript-format
+msgid "Brightness %s"
+msgstr "Яркость %s"
+
+#: src/lib/ui.js:344
+#, javascript-format
+msgid "Sunset %s %s %d min"
+msgstr "Закат %s %s %d мин"
+
+#: src/lib/ui.js:347
+msgid "Fixed time"
+msgstr "Заданное время"
+
+#: src/lib/ui.js:421
+msgid "Temperature"
+msgstr "Температура"
+
+#: src/lib/ui.js:498
+msgid "Sunset to sunrise"
+msgstr "От заката до восхода"
+
+#: src/lib/ui.js:514
+msgid "Turns on together with Night Light"
+msgstr "Включается вместе с ночным светом"
+
+#: src/lib/ui.js:516
+msgid "Starts when Night Light starts"
+msgstr "Начнётся вместе с ночным светом"
