@@ -331,7 +331,7 @@ function bindSlider(slider, onChange) {
  * down; drag the main point sideways to change the duration; double-click a
  * small point to let it follow the main point again.
  *
- * Under it, a lane for the buttons that run by themselves: "+" adds one,
+ * Under it (simple menu: along its top), the buttons that run by themselves: "+" adds one,
  * drag a button to move its time, click it once and then its × to remove it.
  * Repaints only when something changes.
  */
@@ -386,7 +386,7 @@ class EveningGraph extends St.DrawingArea {
     }
 
     // in repaint the surface size, otherwise the allocation (same thing)
-    // the simple menu: the buttons sit on the graph's bottom line, + in its corner
+    // the simple menu: the buttons sit in a row along the graph's top, + in its corner
     get _inline() {
         return this._settings.get_string('menu-style') !== 'detailed';
     }
@@ -775,7 +775,7 @@ class EveningGraph extends St.DrawingArea {
             }
         }
 
-        // the lane (inline: no strip, the buttons sit on the bottom line)
+        // the lane (inline: no strip, the buttons sit along the top of the graph)
         if (!lane.inline) {
             this._roundRect(cr, g.left, g.laneTop, g.pw, LANE_H, LANE_H / 2);
             ink(0.06);

@@ -24,9 +24,10 @@ Works on GNOME Shell 46, 47, 48, 49, 50 and 51.
   - Drag the points to shape the evening. The big point also sets how long it takes.
 - **A simple menu**: one pill per value (Day, Night, Extra, Warmth, Red) and one slider for the pill you pick.
   Prefer a slider for everything? Switch to the *Detailed* menu in the preferences.
-- **Buttons that run by themselves**: press + on the graph to put *Lowest light*, *Turn off screen* or
-  *Turn off other screens* at a time of the evening. Out of the box the main monitor turns the others off three hours
-  after sunset. *Back to normal in the morning* undoes them.
+- **Buttons that run by themselves**: press + in the graph's corner to put *Lowest light*, *Turn off screen* or
+  *Turn off other screens* at a time of the evening. They show along the top of the graph; drag one to change its time.
+  Out of the box the main monitor turns the others off three hours after sunset. *Back to normal in the morning*
+  undoes them.
 - **Reset arrows** next to every slider bring back the default, and only show up when something was changed.
 - **Sunset from your location, without permissions**: the location GNOME already keeps for Night Light,
   otherwise your time zone. A manual location can be set. Nothing is sent anywhere.
