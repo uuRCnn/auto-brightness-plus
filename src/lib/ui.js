@@ -336,9 +336,10 @@ function bindSlider(slider, onChange) {
  * Repaints only when something changes.
  */
 const ACTION_STYLE = {
-    lowest: {rgb: [1.0, 0.70, 0.25], title: () => _('Lowest light')},
+    // the same colours as the buttons under the graph
+    lowest: {rgb: [0.75, 0.61, 1.0], title: () => _('Lowest light')},
     off: {rgb: [1.0, 0.42, 0.37], title: () => _('Turn off screen')},
-    others: {rgb: [0.39, 0.82, 1.0], title: () => _('Turn off other screens')},
+    others: {rgb: [1.0, 0.42, 0.37], title: () => _('Turn off other screens')},
 };
 const NIGHT_LIGHT_RGB = [1.0, 0.58, 0.16];
 const GRAPH_LAYERS = {night: {rgb: YELLOW}, extra: {rgb: [0.39, 0.82, 1.0]}};
@@ -584,7 +585,8 @@ class EveningGraph extends St.DrawingArea {
     _lane(g) {
         const cfg = this._display.cfg;
         const inline = this._inline;
-        const cy = inline ? this._Y(g, 0) - 1 : g.laneTop + LANE_H / 2;
+        // inline: the buttons in a row along the top of the graph, next to the +
+        const cy = inline ? g.top + 13 : g.laneTop + LANE_H / 2;
         const items = ACTIONS.filter(a => cfg.events[a] !== null)
             .map(a => ({action: a, x: this._X(g, cfg.events[a]), y: cy}));
         // inline: + in the graph's top right corner, the choices to its left
@@ -624,8 +626,8 @@ class EveningGraph extends St.DrawingArea {
         const lane = this._lane(g);
         for (const it of lane.items) {
             ink(0.5, ACTION_STYLE[it.action].rgb);
-            cr.moveTo(Math.round(it.x) + 0.5, g.top - 6);
-            cr.lineTo(Math.round(it.x) + 0.5, lane.inline ? it.y - 11 : g.laneTop);
+            cr.moveTo(Math.round(it.x) + 0.5, lane.inline ? it.y + 22 : g.top - 6);
+            cr.lineTo(Math.round(it.x) + 0.5, lane.inline ? Y(0) : g.laneTop);
             cr.stroke();
         }
         cr.setDash([], 0);
@@ -807,10 +809,10 @@ class EveningGraph extends St.DrawingArea {
                 layout.set_text(text, -1);
                 const [, log] = layout.get_pixel_extents();
                 const lx = Math.max(0, Math.min(g.w - log.width, it.x - log.width / 2));
-                this._roundRect(cr, lx - 4, it.y - 29, log.width + 8, log.height + 4, (log.height + 4) / 2);
+                this._roundRect(cr, lx - 4, it.y + 12, log.width + 8, log.height + 4, (log.height + 4) / 2);
                 ink(0.85, [0.13, 0.13, 0.15]);
                 cr.fill();
-                label(text, it.x, it.y - 27, 'center', 1, rgb);
+                label(text, it.x, it.y + 14, 'center', 1, rgb);
             } else {
                 label(clock(cfg.events[it.action]), it.x, g.laneTop + LANE_H + 1, 'center', 0.9, rgb);
             }
@@ -849,13 +851,17 @@ class EveningGraph extends St.DrawingArea {
         cr.setSourceRGBA(...ACTION_STYLE[action].rgb, 1);
         cr.setLineWidth(1.4);
         if (action === 'lowest') {
-            cr.arc(x, y, 2.6, 0, 2 * Math.PI);
+            // a monitor with a dim picture, like its button
+            cr.setLineWidth(1.2);
+            this._roundRect(cr, x - 6, y - 4.5, 12, 8, 1.4);
             cr.stroke();
-            for (let k = 0; k < 8; k++) {
-                const a = k * Math.PI / 4;
-                cr.arc(x + Math.cos(a) * 5.6, y + Math.sin(a) * 5.6, 0.85, 0, 2 * Math.PI);
-                cr.fill();
-            }
+            cr.setSourceRGBA(...ACTION_STYLE[action].rgb, 0.35);
+            cr.rectangle(x - 4, y - 2.5, 8, 4);
+            cr.fill();
+            cr.setSourceRGBA(...ACTION_STYLE[action].rgb, 1);
+            cr.moveTo(x - 2.5, y + 5.5);
+            cr.lineTo(x + 2.5, y + 5.5);
+            cr.stroke();
         } else if (action === 'off') {
             cr.arc(x, y + 0.6, 4.6, -Math.PI / 2 + 0.7, 1.5 * Math.PI - 0.7);
             cr.stroke();

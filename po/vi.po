@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Brightness+\n"
 "Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-11 21:12+0300\n"
+"POT-Creation-Date: 2026-10-11 21:22+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Vietnamese\n"
@@ -167,7 +167,7 @@ msgstr "Nhiệt độ màu, màn hình đỏ và cường độ"
 msgid "Evening"
 msgstr "Buổi tối"
 
-#: src/prefs.js:191 src/lib/ui.js:1287
+#: src/prefs.js:191 src/lib/ui.js:1293
 msgid "Automatic dimming"
 msgstr "Tự động làm tối"
 
@@ -179,7 +179,7 @@ msgstr ""
 "Bật cho từng màn hình bằng nút mặt trăng cạnh thanh trượt. Màn hình tối dần "
 "và ấm dần vào buổi tối, rồi trở lại vào buổi sáng."
 
-#: src/prefs.js:194 src/lib/ui.js:1305
+#: src/prefs.js:194 src/lib/ui.js:1311
 msgid "Start"
 msgstr "Bắt đầu"
 
@@ -232,7 +232,7 @@ msgstr "Phút sau khi mặt trời lặn"
 msgid "Start time"
 msgstr "Giờ bắt đầu"
 
-#: src/prefs.js:213 src/lib/ui.js:1310
+#: src/prefs.js:213 src/lib/ui.js:1316
 msgid "Duration"
 msgstr "Thời lượng"
 
@@ -330,7 +330,7 @@ msgstr "Ở trên, lớn"
 msgid "Next to the monitor name, small"
 msgstr "Cạnh tên màn hình, nhỏ"
 
-#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
+#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1626 src/lib/ui.js:1697
 msgid "Lowest light"
 msgstr "Sáng thấp nhất"
 
@@ -338,12 +338,12 @@ msgstr "Sáng thấp nhất"
 msgid "Brightness 0 and full extra dimming; press again to go back"
 msgstr "Độ sáng 0 và làm tối thêm tối đa; nhấn lần nữa để trở lại"
 
-#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
-#: src/lib/ui.js:1623
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:341
+#: src/lib/ui.js:1629
 msgid "Turn off screen"
 msgstr "Tắt màn hình"
 
-#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1640
 msgid "Turn off other screens"
 msgstr "Tắt các màn hình khác"
 
@@ -404,7 +404,7 @@ msgstr "Thời gian “Giữ sáng”"
 msgid "Seconds"
 msgstr "Giây"
 
-#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
+#: src/prefs.js:305 src/lib/ui.js:1842 src/lib/ui.js:1917
 msgid "Red screen"
 msgstr "Màn hình đỏ"
 
@@ -424,7 +424,7 @@ msgstr "Chỉ khi Ánh sáng đêm đang hoạt động"
 msgid "Starts and stops together with Night Light"
 msgstr "Bắt đầu và kết thúc cùng Ánh sáng đêm"
 
-#: src/prefs.js:310 src/lib/ui.js:1852
+#: src/prefs.js:310 src/lib/ui.js:1858
 msgid "Strength"
 msgstr "Cường độ"
 
@@ -563,7 +563,7 @@ msgstr "Làm tối hình ảnh thêm khi màn hình đã ở độ sáng thấp 
 msgid "Night light"
 msgstr "Ánh sáng đêm"
 
-#: src/lib/ui.js:46 src/lib/ui.js:1824
+#: src/lib/ui.js:46 src/lib/ui.js:1830
 msgid ""
 "Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
 "screen helps you fall asleep more easily."
@@ -583,7 +583,7 @@ msgstr ""
 msgid "Red light"
 msgstr "Ánh sáng đỏ"
 
-#: src/lib/ui.js:49 src/lib/ui.js:1841
+#: src/lib/ui.js:49 src/lib/ui.js:1847
 msgid ""
 "Red light disturbs melatonin and your body clock the least of all colours. "
 "Ideal for the last hours before bed."
@@ -618,20 +618,20 @@ msgstr "Sớm hơn"
 msgid "Later"
 msgstr "Muộn hơn"
 
-#: src/lib/ui.js:1080
+#: src/lib/ui.js:1086
 msgid "Automatic dimming and more"
 msgstr "Tự động làm tối và hơn nữa"
 
-#: src/lib/ui.js:1249
+#: src/lib/ui.js:1255
 msgid "Settings"
 msgstr "Cài đặt"
 
-#: src/lib/ui.js:1293
+#: src/lib/ui.js:1299
 msgid ""
 "Slowly dims this monitor in the evening, and brings it back in the morning."
 msgstr "Từ từ làm tối màn hình này vào buổi tối, rồi trả lại vào buổi sáng."
 
-#: src/lib/ui.js:1294
+#: src/lib/ui.js:1300
 msgid ""
 "Drag the points to shape the evening; the big point also sets how long it "
 "takes. + adds a button that runs by itself."
@@ -639,19 +639,19 @@ msgstr ""
 "Kéo các điểm để tạo hình buổi tối; điểm lớn cũng quyết định kéo dài bao lâu. "
 "+ thêm nút tự chạy."
 
-#: src/lib/ui.js:1311
+#: src/lib/ui.js:1317
 msgid "Shorter"
 msgstr "Ngắn hơn"
 
-#: src/lib/ui.js:1312
+#: src/lib/ui.js:1318
 msgid "Longer"
 msgstr "Dài hơn"
 
-#: src/lib/ui.js:1322
+#: src/lib/ui.js:1328
 msgid "Back to normal in the morning"
 msgstr "Trở lại bình thường vào buổi sáng"
 
-#: src/lib/ui.js:1326
+#: src/lib/ui.js:1332
 msgid ""
 "When the morning comes, lowest light and turned off screens go back to "
 "normal, whether they were switched on by hand or by the graph."
@@ -659,55 +659,55 @@ msgstr ""
 "Khi trời sáng, ánh sáng thấp nhất và các màn hình đã tắt trở lại bình "
 "thường, dù được bật bằng tay hay từ biểu đồ."
 
-#: src/lib/ui.js:1359
+#: src/lib/ui.js:1365
 msgid "Back to 100 %"
 msgstr "Về 100 %"
 
-#: src/lib/ui.js:1362 src/lib/ui.js:1364
+#: src/lib/ui.js:1368 src/lib/ui.js:1370
 msgid "Back to the default evening curve"
 msgstr "Về đường cong buổi tối mặc định"
 
-#: src/lib/ui.js:1380
+#: src/lib/ui.js:1386
 msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
 msgstr "Về mặc định: ×1 và giờ tự động của GNOME (hoàng hôn)"
 
-#: src/lib/ui.js:1385
+#: src/lib/ui.js:1391
 msgid "Back to ×1"
 msgstr "Về ×1"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Day"
 msgstr "Ngày"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Night"
 msgstr "Đêm"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Extra"
 msgstr "Thêm"
 
-#: src/lib/ui.js:1404
+#: src/lib/ui.js:1410
 msgid "Warmth"
 msgstr "Độ ấm"
 
-#: src/lib/ui.js:1404
+#: src/lib/ui.js:1410
 msgid "Red"
 msgstr "Đỏ"
 
-#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+#: src/lib/ui.js:1442 src/lib/ui.js:1591 src/lib/ui.js:1860
 msgid "Back to the default"
 msgstr "Về mặc định"
 
-#: src/lib/ui.js:1541
+#: src/lib/ui.js:1547
 msgid "While the screen is off"
 msgstr "Khi màn hình tắt"
 
-#: src/lib/ui.js:1581
+#: src/lib/ui.js:1587
 msgid "Dark while off"
 msgstr "Độ tối khi tắt"
 
-#: src/lib/ui.js:1582
+#: src/lib/ui.js:1588
 msgid ""
 "While the screen is off, the monitor stays at its lowest light and this much "
 "black is added on top. 25 % = a little darker, 100 % = fully black."
@@ -715,12 +715,12 @@ msgstr ""
 "Khi màn hình tắt, màn hình giữ ở mức sáng thấp nhất và phủ thêm chừng này "
 "màu đen. 25 % = tối hơn một chút, 100 % = đen hoàn toàn."
 
-#: src/lib/ui.js:1602
+#: src/lib/ui.js:1608
 #, javascript-format
 msgid "Keep lit for %s"
 msgstr "Giữ sáng %s"
 
-#: src/lib/ui.js:1603
+#: src/lib/ui.js:1609
 #, javascript-format
 msgid ""
 "On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
@@ -729,49 +729,49 @@ msgstr ""
 "Bật: khi chuột rời đi, màn hình còn sáng thêm %s rồi tối. Tắt: tối ngay khi "
 "chuột rời đi."
 
-#: src/lib/ui.js:1687
+#: src/lib/ui.js:1693
 #, javascript-format
 msgid "Brightness %s"
 msgstr "Độ sáng %s"
 
-#: src/lib/ui.js:1689
+#: src/lib/ui.js:1695
 msgid "Turned off"
 msgstr "Đã tắt"
 
-#: src/lib/ui.js:1709
+#: src/lib/ui.js:1715
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "Lặn %s %s %d phút"
 
-#: src/lib/ui.js:1712
+#: src/lib/ui.js:1718
 msgid "Fixed time"
 msgstr "Giờ cố định"
 
-#: src/lib/ui.js:1715
+#: src/lib/ui.js:1721
 #, javascript-format
 msgid "Until %s"
 msgstr "Đến %s"
 
-#: src/lib/ui.js:1724
+#: src/lib/ui.js:1730
 msgid "Off"
 msgstr "Tắt"
 
-#: src/lib/ui.js:1822
+#: src/lib/ui.js:1828
 msgid "Temperature"
 msgstr "Nhiệt độ màu"
 
-#: src/lib/ui.js:1825
+#: src/lib/ui.js:1831
 msgid "Back to GNOME’s default"
 msgstr "Về mặc định của GNOME"
 
-#: src/lib/ui.js:1919
+#: src/lib/ui.js:1925
 msgid "Sunset to sunrise"
 msgstr "Từ lúc lặn đến lúc mọc"
 
-#: src/lib/ui.js:1941
+#: src/lib/ui.js:1947
 msgid "Turns on together with Night Light"
 msgstr "Bật cùng Ánh sáng đêm"
 
-#: src/lib/ui.js:1943
+#: src/lib/ui.js:1949
 msgid "Starts when Night Light starts"
 msgstr "Bắt đầu khi Ánh sáng đêm bắt đầu"

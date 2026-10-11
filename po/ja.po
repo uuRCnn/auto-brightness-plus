@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Brightness+\n"
 "Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-11 21:12+0300\n"
+"POT-Creation-Date: 2026-10-11 21:22+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Japanese\n"
@@ -165,7 +165,7 @@ msgstr "色温度、赤い画面とその強さ"
 msgid "Evening"
 msgstr "夕方"
 
-#: src/prefs.js:191 src/lib/ui.js:1287
+#: src/prefs.js:191 src/lib/ui.js:1293
 msgid "Automatic dimming"
 msgstr "自動減光"
 
@@ -177,7 +177,7 @@ msgstr ""
 "各モニターのスライダー横の月ボタンでオンにします。夕方にモニターがゆっくり暗"
 "く暖かくなり、朝に元に戻ります。"
 
-#: src/prefs.js:194 src/lib/ui.js:1305
+#: src/prefs.js:194 src/lib/ui.js:1311
 msgid "Start"
 msgstr "開始"
 
@@ -230,7 +230,7 @@ msgstr "日没後の分数"
 msgid "Start time"
 msgstr "開始時刻"
 
-#: src/prefs.js:213 src/lib/ui.js:1310
+#: src/prefs.js:213 src/lib/ui.js:1316
 msgid "Duration"
 msgstr "時間"
 
@@ -328,7 +328,7 @@ msgstr "上に大きく"
 msgid "Next to the monitor name, small"
 msgstr "モニター名の横に小さく"
 
-#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
+#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1626 src/lib/ui.js:1697
 msgid "Lowest light"
 msgstr "最小の明るさ"
 
@@ -336,12 +336,12 @@ msgstr "最小の明るさ"
 msgid "Brightness 0 and full extra dimming; press again to go back"
 msgstr "明るさ 0 と最大の追加減光。もう一度押すと元に戻ります"
 
-#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
-#: src/lib/ui.js:1623
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:341
+#: src/lib/ui.js:1629
 msgid "Turn off screen"
 msgstr "画面をオフ"
 
-#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1640
 msgid "Turn off other screens"
 msgstr "ほかの画面をオフ"
 
@@ -401,7 +401,7 @@ msgstr "「点灯したまま」の時間"
 msgid "Seconds"
 msgstr "秒"
 
-#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
+#: src/prefs.js:305 src/lib/ui.js:1842 src/lib/ui.js:1917
 msgid "Red screen"
 msgstr "赤い画面"
 
@@ -419,7 +419,7 @@ msgstr "夜間モード有効時のみ"
 msgid "Starts and stops together with Night Light"
 msgstr "夜間モードと一緒に開始・終了"
 
-#: src/prefs.js:310 src/lib/ui.js:1852
+#: src/prefs.js:310 src/lib/ui.js:1858
 msgid "Strength"
 msgstr "強さ"
 
@@ -560,7 +560,7 @@ msgstr "モニターがすでに最低の明るさのとき、画面をさらに
 msgid "Night light"
 msgstr "夜間モード"
 
-#: src/lib/ui.js:46 src/lib/ui.js:1824
+#: src/lib/ui.js:46 src/lib/ui.js:1830
 msgid ""
 "Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
 "screen helps you fall asleep more easily."
@@ -580,7 +580,7 @@ msgstr ""
 msgid "Red light"
 msgstr "赤い光"
 
-#: src/lib/ui.js:49 src/lib/ui.js:1841
+#: src/lib/ui.js:49 src/lib/ui.js:1847
 msgid ""
 "Red light disturbs melatonin and your body clock the least of all colours. "
 "Ideal for the last hours before bed."
@@ -615,20 +615,20 @@ msgstr "早く"
 msgid "Later"
 msgstr "遅く"
 
-#: src/lib/ui.js:1080
+#: src/lib/ui.js:1086
 msgid "Automatic dimming and more"
 msgstr "自動減光など"
 
-#: src/lib/ui.js:1249
+#: src/lib/ui.js:1255
 msgid "Settings"
 msgstr "設定"
 
-#: src/lib/ui.js:1293
+#: src/lib/ui.js:1299
 msgid ""
 "Slowly dims this monitor in the evening, and brings it back in the morning."
 msgstr "夕方にこのモニターをゆっくり暗くし、朝に元に戻します。"
 
-#: src/lib/ui.js:1294
+#: src/lib/ui.js:1300
 msgid ""
 "Drag the points to shape the evening; the big point also sets how long it "
 "takes. + adds a button that runs by itself."
@@ -636,19 +636,19 @@ msgstr ""
 "点をドラッグして夕方の形を決めます。大きな点で長さも決まります。+ で自動で動"
 "くボタンを追加。"
 
-#: src/lib/ui.js:1311
+#: src/lib/ui.js:1317
 msgid "Shorter"
 msgstr "短く"
 
-#: src/lib/ui.js:1312
+#: src/lib/ui.js:1318
 msgid "Longer"
 msgstr "長く"
 
-#: src/lib/ui.js:1322
+#: src/lib/ui.js:1328
 msgid "Back to normal in the morning"
 msgstr "朝に元に戻す"
 
-#: src/lib/ui.js:1326
+#: src/lib/ui.js:1332
 msgid ""
 "When the morning comes, lowest light and turned off screens go back to "
 "normal, whether they were switched on by hand or by the graph."
@@ -656,55 +656,55 @@ msgstr ""
 "朝になると、最小の明るさとオフにした画面が元に戻ります。手動でも、グラフから"
 "入れたものでも同じです。"
 
-#: src/lib/ui.js:1359
+#: src/lib/ui.js:1365
 msgid "Back to 100 %"
 msgstr "100 % に戻す"
 
-#: src/lib/ui.js:1362 src/lib/ui.js:1364
+#: src/lib/ui.js:1368 src/lib/ui.js:1370
 msgid "Back to the default evening curve"
 msgstr "既定の夕方カーブに戻す"
 
-#: src/lib/ui.js:1380
+#: src/lib/ui.js:1386
 msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
 msgstr "既定に戻す：×1 と GNOME の自動時刻（日没）"
 
-#: src/lib/ui.js:1385
+#: src/lib/ui.js:1391
 msgid "Back to ×1"
 msgstr "×1 に戻す"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Day"
 msgstr "昼"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Night"
 msgstr "夜"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Extra"
 msgstr "追加"
 
-#: src/lib/ui.js:1404
+#: src/lib/ui.js:1410
 msgid "Warmth"
 msgstr "暖かさ"
 
-#: src/lib/ui.js:1404
+#: src/lib/ui.js:1410
 msgid "Red"
 msgstr "赤"
 
-#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+#: src/lib/ui.js:1442 src/lib/ui.js:1591 src/lib/ui.js:1860
 msgid "Back to the default"
 msgstr "既定に戻す"
 
-#: src/lib/ui.js:1541
+#: src/lib/ui.js:1547
 msgid "While the screen is off"
 msgstr "画面がオフの間"
 
-#: src/lib/ui.js:1581
+#: src/lib/ui.js:1587
 msgid "Dark while off"
 msgstr "オフのときの暗さ"
 
-#: src/lib/ui.js:1582
+#: src/lib/ui.js:1588
 msgid ""
 "While the screen is off, the monitor stays at its lowest light and this much "
 "black is added on top. 25 % = a little darker, 100 % = fully black."
@@ -712,12 +712,12 @@ msgstr ""
 "画面がオフの間、モニターは最低の明るさのままで、その上にこの量の黒を重ねま"
 "す。25 % = 少し暗く、100 % = 真っ黒。"
 
-#: src/lib/ui.js:1602
+#: src/lib/ui.js:1608
 #, javascript-format
 msgid "Keep lit for %s"
 msgstr "%s 点灯したまま"
 
-#: src/lib/ui.js:1603
+#: src/lib/ui.js:1609
 #, javascript-format
 msgid ""
 "On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
@@ -726,49 +726,49 @@ msgstr ""
 "オン：マウスが離れた後も %s 点灯し、その後暗くなります。オフ：マウスが離れる"
 "とすぐ暗くなります。"
 
-#: src/lib/ui.js:1687
+#: src/lib/ui.js:1693
 #, javascript-format
 msgid "Brightness %s"
 msgstr "明るさ %s"
 
-#: src/lib/ui.js:1689
+#: src/lib/ui.js:1695
 msgid "Turned off"
 msgstr "オフ"
 
-#: src/lib/ui.js:1709
+#: src/lib/ui.js:1715
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "日没 %s %s %d 分"
 
-#: src/lib/ui.js:1712
+#: src/lib/ui.js:1718
 msgid "Fixed time"
 msgstr "固定時刻"
 
-#: src/lib/ui.js:1715
+#: src/lib/ui.js:1721
 #, javascript-format
 msgid "Until %s"
 msgstr "%s まで"
 
-#: src/lib/ui.js:1724
+#: src/lib/ui.js:1730
 msgid "Off"
 msgstr "オフ"
 
-#: src/lib/ui.js:1822
+#: src/lib/ui.js:1828
 msgid "Temperature"
 msgstr "色温度"
 
-#: src/lib/ui.js:1825
+#: src/lib/ui.js:1831
 msgid "Back to GNOME’s default"
 msgstr "GNOME の既定に戻す"
 
-#: src/lib/ui.js:1919
+#: src/lib/ui.js:1925
 msgid "Sunset to sunrise"
 msgstr "日没から日の出まで"
 
-#: src/lib/ui.js:1941
+#: src/lib/ui.js:1947
 msgid "Turns on together with Night Light"
 msgstr "夜間モードと一緒にオン"
 
-#: src/lib/ui.js:1943
+#: src/lib/ui.js:1949
 msgid "Starts when Night Light starts"
 msgstr "夜間モード開始時に開始"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Brightness+\n"
 "Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-11 21:12+0300\n"
+"POT-Creation-Date: 2026-10-11 21:22+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: German\n"
@@ -170,7 +170,7 @@ msgstr "Farbtemperatur, roter Bildschirm und seine Stärke"
 msgid "Evening"
 msgstr "Abend"
 
-#: src/prefs.js:191 src/lib/ui.js:1287
+#: src/prefs.js:191 src/lib/ui.js:1293
 msgid "Automatic dimming"
 msgstr "Automatisches Dimmen"
 
@@ -182,7 +182,7 @@ msgstr ""
 "Für jeden Monitor mit dem Mond-Knopf neben seinem Regler einschalten. Der "
 "Monitor wird abends langsam dunkler und wärmer und kehrt morgens zurück."
 
-#: src/prefs.js:194 src/lib/ui.js:1305
+#: src/prefs.js:194 src/lib/ui.js:1311
 msgid "Start"
 msgstr "Beginn"
 
@@ -236,7 +236,7 @@ msgstr "Minuten nach Sonnenuntergang"
 msgid "Start time"
 msgstr "Startzeit"
 
-#: src/prefs.js:213 src/lib/ui.js:1310
+#: src/prefs.js:213 src/lib/ui.js:1316
 msgid "Duration"
 msgstr "Dauer"
 
@@ -335,7 +335,7 @@ msgstr "Oben, groß"
 msgid "Next to the monitor name, small"
 msgstr "Neben dem Monitornamen, klein"
 
-#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
+#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1626 src/lib/ui.js:1697
 msgid "Lowest light"
 msgstr "Geringstes Licht"
 
@@ -343,12 +343,12 @@ msgstr "Geringstes Licht"
 msgid "Brightness 0 and full extra dimming; press again to go back"
 msgstr "Helligkeit 0 und volle Zusatzdimmung; nochmal drücken = zurück"
 
-#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
-#: src/lib/ui.js:1623
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:341
+#: src/lib/ui.js:1629
 msgid "Turn off screen"
 msgstr "Bildschirm ausschalten"
 
-#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1640
 msgid "Turn off other screens"
 msgstr "Andere Bildschirme ausschalten"
 
@@ -411,7 +411,7 @@ msgstr "„Hell lassen“ dauert"
 msgid "Seconds"
 msgstr "Sekunden"
 
-#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
+#: src/prefs.js:305 src/lib/ui.js:1842 src/lib/ui.js:1917
 msgid "Red screen"
 msgstr "Roter Bildschirm"
 
@@ -431,7 +431,7 @@ msgstr "Nur solange das Nachtlicht aktiv ist"
 msgid "Starts and stops together with Night Light"
 msgstr "Startet und endet zusammen mit dem Nachtlicht"
 
-#: src/prefs.js:310 src/lib/ui.js:1852
+#: src/prefs.js:310 src/lib/ui.js:1858
 msgid "Strength"
 msgstr "Stärke"
 
@@ -573,7 +573,7 @@ msgstr ""
 msgid "Night light"
 msgstr "Nachtlicht"
 
-#: src/lib/ui.js:46 src/lib/ui.js:1824
+#: src/lib/ui.js:46 src/lib/ui.js:1830
 msgid ""
 "Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
 "screen helps you fall asleep more easily."
@@ -594,7 +594,7 @@ msgstr ""
 msgid "Red light"
 msgstr "Rotlicht"
 
-#: src/lib/ui.js:49 src/lib/ui.js:1841
+#: src/lib/ui.js:49 src/lib/ui.js:1847
 msgid ""
 "Red light disturbs melatonin and your body clock the least of all colours. "
 "Ideal for the last hours before bed."
@@ -630,20 +630,20 @@ msgstr "Früher"
 msgid "Later"
 msgstr "Später"
 
-#: src/lib/ui.js:1080
+#: src/lib/ui.js:1086
 msgid "Automatic dimming and more"
 msgstr "Automatisches Dimmen und mehr"
 
-#: src/lib/ui.js:1249
+#: src/lib/ui.js:1255
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/lib/ui.js:1293
+#: src/lib/ui.js:1299
 msgid ""
 "Slowly dims this monitor in the evening, and brings it back in the morning."
 msgstr "Dimmt diesen Monitor abends langsam und stellt ihn morgens wieder her."
 
-#: src/lib/ui.js:1294
+#: src/lib/ui.js:1300
 msgid ""
 "Drag the points to shape the evening; the big point also sets how long it "
 "takes. + adds a button that runs by itself."
@@ -651,19 +651,19 @@ msgstr ""
 "Ziehe die Punkte, um den Abend zu formen; der große Punkt legt auch fest, "
 "wie lange es dauert. + fügt einen Knopf hinzu, der von selbst läuft."
 
-#: src/lib/ui.js:1311
+#: src/lib/ui.js:1317
 msgid "Shorter"
 msgstr "Kürzer"
 
-#: src/lib/ui.js:1312
+#: src/lib/ui.js:1318
 msgid "Longer"
 msgstr "Länger"
 
-#: src/lib/ui.js:1322
+#: src/lib/ui.js:1328
 msgid "Back to normal in the morning"
 msgstr "Morgens zurück zu normal"
 
-#: src/lib/ui.js:1326
+#: src/lib/ui.js:1332
 msgid ""
 "When the morning comes, lowest light and turned off screens go back to "
 "normal, whether they were switched on by hand or by the graph."
@@ -671,55 +671,55 @@ msgstr ""
 "Am Morgen werden geringstes Licht und ausgeschaltete Bildschirme wieder "
 "normal – ob von Hand oder vom Diagramm eingeschaltet."
 
-#: src/lib/ui.js:1359
+#: src/lib/ui.js:1365
 msgid "Back to 100 %"
 msgstr "Zurück auf 100 %"
 
-#: src/lib/ui.js:1362 src/lib/ui.js:1364
+#: src/lib/ui.js:1368 src/lib/ui.js:1370
 msgid "Back to the default evening curve"
 msgstr "Zurück zur Standard-Abendkurve"
 
-#: src/lib/ui.js:1380
+#: src/lib/ui.js:1386
 msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
 msgstr "Zurück zum Standard: ×1 und GNOMEs automatische Zeit (Sonnenuntergang)"
 
-#: src/lib/ui.js:1385
+#: src/lib/ui.js:1391
 msgid "Back to ×1"
 msgstr "Zurück auf ×1"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Day"
 msgstr "Tag"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Night"
 msgstr "Nacht"
 
-#: src/lib/ui.js:1403
+#: src/lib/ui.js:1409
 msgid "Extra"
 msgstr "Extra"
 
-#: src/lib/ui.js:1404
+#: src/lib/ui.js:1410
 msgid "Warmth"
 msgstr "Wärme"
 
-#: src/lib/ui.js:1404
+#: src/lib/ui.js:1410
 msgid "Red"
 msgstr "Rot"
 
-#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+#: src/lib/ui.js:1442 src/lib/ui.js:1591 src/lib/ui.js:1860
 msgid "Back to the default"
 msgstr "Zurück zum Standard"
 
-#: src/lib/ui.js:1541
+#: src/lib/ui.js:1547
 msgid "While the screen is off"
 msgstr "Solange der Bildschirm aus ist"
 
-#: src/lib/ui.js:1581
+#: src/lib/ui.js:1587
 msgid "Dark while off"
 msgstr "Dunkel, solange aus"
 
-#: src/lib/ui.js:1582
+#: src/lib/ui.js:1588
 msgid ""
 "While the screen is off, the monitor stays at its lowest light and this much "
 "black is added on top. 25 % = a little darker, 100 % = fully black."
@@ -728,12 +728,12 @@ msgstr ""
 "Licht und so viel Schwarz kommt darüber. 25 % = etwas dunkler, 100 % = ganz "
 "schwarz."
 
-#: src/lib/ui.js:1602
+#: src/lib/ui.js:1608
 #, javascript-format
 msgid "Keep lit for %s"
 msgstr "%s hell lassen"
 
-#: src/lib/ui.js:1603
+#: src/lib/ui.js:1609
 #, javascript-format
 msgid ""
 "On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
@@ -742,49 +742,49 @@ msgstr ""
 "An: Nachdem die Maus weg ist, bleibt der Bildschirm noch %s hell und wird "
 "dann dunkel. Aus: Er wird dunkel, sobald die Maus weg ist."
 
-#: src/lib/ui.js:1687
+#: src/lib/ui.js:1693
 #, javascript-format
 msgid "Brightness %s"
 msgstr "Helligkeit %s"
 
-#: src/lib/ui.js:1689
+#: src/lib/ui.js:1695
 msgid "Turned off"
 msgstr "Ausgeschaltet"
 
-#: src/lib/ui.js:1709
+#: src/lib/ui.js:1715
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "Sonnenuntergang %s %s %d Min."
 
-#: src/lib/ui.js:1712
+#: src/lib/ui.js:1718
 msgid "Fixed time"
 msgstr "Feste Uhrzeit"
 
-#: src/lib/ui.js:1715
+#: src/lib/ui.js:1721
 #, javascript-format
 msgid "Until %s"
 msgstr "Bis %s"
 
-#: src/lib/ui.js:1724
+#: src/lib/ui.js:1730
 msgid "Off"
 msgstr "Aus"
 
-#: src/lib/ui.js:1822
+#: src/lib/ui.js:1828
 msgid "Temperature"
 msgstr "Farbtemperatur"
 
-#: src/lib/ui.js:1825
+#: src/lib/ui.js:1831
 msgid "Back to GNOME’s default"
 msgstr "Zurück zu GNOMEs Standard"
 
-#: src/lib/ui.js:1919
+#: src/lib/ui.js:1925
 msgid "Sunset to sunrise"
 msgstr "Von Sonnenuntergang bis -aufgang"
 
-#: src/lib/ui.js:1941
+#: src/lib/ui.js:1947
 msgid "Turns on together with Night Light"
 msgstr "Schaltet sich mit dem Nachtlicht ein"
 
-#: src/lib/ui.js:1943
+#: src/lib/ui.js:1949
 msgid "Starts when Night Light starts"
 msgstr "Startet, wenn das Nachtlicht startet"
