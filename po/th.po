@@ -1,10 +1,10 @@
-# Thai translation for Brightness+.
-# This file is distributed under the same license as the Brightness+ package.
+# Thai translation for Auto Brightness+.
+# This file is distributed under the same license as the Auto Brightness+ package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Brightness+\n"
-"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"Project-Id-Version: Auto Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-11 21:12+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Thai\n"
@@ -14,136 +14,241 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/prefs.js:75
+#: src/prefs.js:62 src/prefs.js:94
+msgid "None"
+msgstr "ไม่มี"
+
+#: src/prefs.js:91
+msgid "Press the keys…"
+msgstr "กดแป้น…"
+
+#: src/prefs.js:127
 msgid "General"
 msgstr "ทั่วไป"
 
-#: src/prefs.js:78
+#: src/prefs.js:130
+msgid "Claude Code"
+msgstr "Claude Code"
+
+#: src/prefs.js:131
+msgid "Connect to Claude Code"
+msgstr "เชื่อมต่อกับ Claude Code"
+
+#: src/prefs.js:132
+msgid ""
+"When Claude is done or asks you something, you get a notification and its "
+"turned off screen lights up. No account needed."
+msgstr ""
+"เมื่อ Claude ทำเสร็จหรือถามอะไรคุณ จะมีการแจ้งเตือนและจอที่ปิดอยู่ของมันจะสว่างขึ้น ไม่ต้องใช้บัญชี"
+
+#: src/prefs.js:137
+msgid "Connected"
+msgstr "เชื่อมต่อแล้ว"
+
+#: src/prefs.js:137
+msgid "Not connected"
+msgstr "ยังไม่เชื่อมต่อ"
+
+#: src/prefs.js:138
+msgid "Disconnect"
+msgstr "ยกเลิกการเชื่อมต่อ"
+
+#: src/prefs.js:138
+msgid "Connect"
+msgstr "เชื่อมต่อ"
+
+#: src/prefs.js:149
+#, javascript-format
+msgid "Could not change %s: %s"
+msgstr "เปลี่ยน %s ไม่ได้: %s"
+
+#: src/prefs.js:154
+msgid "When Claude is done"
+msgstr "เมื่อ Claude เสร็จ"
+
+#: src/prefs.js:155
+msgid "When Claude waits for you"
+msgstr "เมื่อ Claude รอคุณ"
+
+#: src/prefs.js:155
+msgid "A permission or a question"
+msgstr "การขออนุญาตหรือคำถาม"
+
+#: src/prefs.js:156
+msgid "Also a notification"
+msgstr "แจ้งเตือนด้วย"
+
+#: src/prefs.js:156
+msgid "Click it to go to the terminal"
+msgstr "คลิกเพื่อไปที่เทอร์มินัล"
+
+#: src/prefs.js:157
+msgid "Other programs too"
+msgstr "โปรแกรมอื่นด้วย"
+
+#: src/prefs.js:158
+msgid ""
+"Terminal bell or an app asking for attention, e.g. make ; printf \"\\a\""
+msgstr "เสียงกริ่งเทอร์มินัลหรือแอปที่ขอความสนใจ เช่น make ; printf \"\\a\""
+
+#: src/prefs.js:163
 msgid "Sliders"
 msgstr "แถบเลื่อน"
 
-#: src/prefs.js:79
+#: src/prefs.js:164
 msgid ""
 "Every monitor gets its own slider in Quick Settings, next to the volume "
 "slider."
 msgstr "ทุกจอมีแถบเลื่อนของตัวเองในการตั้งค่าด่วน ข้างแถบเสียง"
 
-#: src/prefs.js:81
+#: src/prefs.js:166
+msgid "Monitor menu"
+msgstr "เมนูจอ"
+
+#: src/prefs.js:167
+msgid "Simple (recommended)"
+msgstr "แบบง่าย (แนะนำ)"
+
+#: src/prefs.js:168
+msgid "Detailed"
+msgstr "แบบละเอียด"
+
+#: src/prefs.js:169
+msgid ""
+"Simple: one slider for the value you pick. Detailed: a slider for every "
+"value."
+msgstr "แบบง่าย: แถบเลื่อนเดียวสำหรับค่าที่เลือก แบบละเอียด: แถบเลื่อนสำหรับทุกค่า"
+
+#: src/prefs.js:170
 msgid "Left of the slider"
 msgstr "ด้านซ้ายของแถบเลื่อน"
 
-#: src/prefs.js:82
+#: src/prefs.js:171
 msgid "Brightness icon"
 msgstr "ไอคอนความสว่าง"
 
-#: src/prefs.js:83
+#: src/prefs.js:172
 msgid "Monitor number (1, 2, 3…)"
 msgstr "หมายเลขจอ (1, 2, 3…)"
 
-#: src/prefs.js:84
+#: src/prefs.js:173
 msgid "Short name (LG, VS…)"
 msgstr "ชื่อย่อ (LG, VS…)"
 
-#: src/prefs.js:86
+#: src/prefs.js:175
 msgid "Show the monitor name on hover"
 msgstr "แสดงชื่อจอเมื่อชี้เมาส์"
 
-#: src/prefs.js:87
+#: src/prefs.js:176
 msgid "Replace GNOME’s own brightness slider"
 msgstr "แทนที่แถบความสว่างของ GNOME"
 
-#: src/prefs.js:88
+#: src/prefs.js:177
 msgid "The laptop screen then gets a row like the other monitors"
 msgstr "จอโน้ตบุ๊กจะมีแถวของตัวเองเหมือนจออื่น"
 
-#: src/prefs.js:91
+#: src/prefs.js:180
 msgid "Night Light"
 msgstr "แสงกลางคืน"
 
-#: src/prefs.js:92
+#: src/prefs.js:181
 msgid "Add a menu to the Night Light button"
 msgstr "เพิ่มเมนูให้ปุ่มแสงกลางคืน"
 
-#: src/prefs.js:93
+#: src/prefs.js:182
 msgid "Temperature, red screen and its strength"
 msgstr "อุณหภูมิสี จอแดง และความแรง"
 
-#: src/prefs.js:99
+#: src/prefs.js:188
 msgid "Evening"
 msgstr "ตอนเย็น"
 
-#: src/prefs.js:102 src/lib/ui.js:257
-msgid "Evening dimming"
-msgstr "หรี่แสงตอนเย็น"
+#: src/prefs.js:191 src/lib/ui.js:1287
+msgid "Automatic dimming"
+msgstr "หรี่อัตโนมัติ"
 
-#: src/prefs.js:103
+#: src/prefs.js:192
 msgid ""
-"Turn it on per monitor with the moon button next to its slider. Brightness "
-"goes down slowly in the evening and comes back in the morning."
+"Turn it on per monitor with the moon button next to its slider. The monitor "
+"slowly gets darker and warmer in the evening and comes back in the morning."
 msgstr ""
-"เปิดแยกแต่ละจอด้วยปุ่มพระจันทร์ข้างแถบเลื่อน ความสว่างจะค่อย ๆ ลดลงตอนเย็นและกลับมาตอนเช้า"
+"เปิดใช้ทีละจอด้วยปุ่มพระจันทร์ข้างแถบเลื่อน จอจะค่อย ๆ มืดลงและอุ่นขึ้นในตอนเย็น "
+"แล้วกลับมาในตอนเช้า"
 
-#: src/prefs.js:105 src/lib/ui.js:264
+#: src/prefs.js:194 src/lib/ui.js:1305
 msgid "Start"
 msgstr "เริ่ม"
 
-#: src/prefs.js:106
+#: src/prefs.js:195
 msgid "At sunset"
 msgstr "ตอนพระอาทิตย์ตก"
 
-#: src/prefs.js:107
+#: src/prefs.js:196
 msgid "At a fixed time"
 msgstr "ตามเวลาที่กำหนด"
 
-#: src/prefs.js:109
-msgid "Transition"
-msgstr "ช่วงเปลี่ยน"
+#: src/prefs.js:198
+msgid "Morning transition"
+msgstr "การเปลี่ยนตอนเช้า"
 
-#: src/prefs.js:109
-msgid "Minutes, for both evening and morning"
-msgstr "นาที ทั้งตอนเย็นและตอนเช้า"
+#: src/prefs.js:198
+msgid "Minutes"
+msgstr "นาที"
 
-#: src/prefs.js:110 src/prefs.js:111
+#: src/prefs.js:199 src/prefs.js:200
 msgid "Morning"
 msgstr "ตอนเช้า"
 
-#: src/prefs.js:110
+#: src/prefs.js:199
 msgid "Minutes after sunrise"
 msgstr "นาทีหลังพระอาทิตย์ขึ้น"
 
-#: src/prefs.js:111
+#: src/prefs.js:200
 msgid "Brightness comes back at"
 msgstr "ความสว่างกลับมาเวลา"
 
-#: src/prefs.js:117
+#: src/prefs.js:206
 msgid "For new monitors"
 msgstr "สำหรับจอใหม่"
 
-#: src/prefs.js:118
-msgid "Each monitor can change these in its own menu."
-msgstr "แต่ละจอเปลี่ยนค่าเหล่านี้ได้ในเมนูของตัวเอง"
+#: src/prefs.js:207
+msgid ""
+"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
+"with a little extra dimming late at night. Each monitor can change these in "
+"its own menu."
+msgstr ""
+"สำหรับจอหลัก จออื่นจะใช้เวลานานขึ้น 30 นาทีและลดลงถึง 0 % พร้อมหรี่เพิ่มเล็กน้อยตอนดึก "
+"แต่ละจอเปลี่ยนได้ในเมนูของตัวเอง"
 
-#: src/prefs.js:120
+#: src/prefs.js:209
 msgid "Minutes after sunset"
 msgstr "นาทีหลังพระอาทิตย์ตก"
 
-#: src/prefs.js:121
+#: src/prefs.js:210
 msgid "Start time"
 msgstr "เวลาเริ่ม"
 
-#: src/prefs.js:125 src/lib/ui.js:269
+#: src/prefs.js:213 src/lib/ui.js:1310
+msgid "Duration"
+msgstr "ระยะเวลา"
+
+#: src/prefs.js:213
+msgid "Minutes the evening dimming takes"
+msgstr "จำนวนนาทีที่การหรี่ตอนเย็นใช้"
+
+#: src/prefs.js:215 src/lib/ui.js:37
 msgid "Night brightness"
 msgstr "ความสว่างกลางคืน"
 
-#: src/prefs.js:125
+#: src/prefs.js:215
 msgid "Percent"
 msgstr "เปอร์เซ็นต์"
 
-#: src/prefs.js:134 src/prefs.js:137
+#: src/prefs.js:224 src/prefs.js:227
 msgid "Location"
 msgstr "ตำแหน่ง"
 
-#: src/prefs.js:135
+#: src/prefs.js:225
 msgid ""
 "Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
 "keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
@@ -151,231 +256,501 @@ msgstr ""
 "ใช้เพื่อคำนวณเวลาพระอาทิตย์ตกและขึ้นเท่านั้น อัตโนมัติใช้ตำแหน่งที่ GNOME เก็บไว้สำหรับแสงกลางคืน "
 "หรือเขตเวลา ไม่มีการส่งข้อมูลใด ๆ"
 
-#: src/prefs.js:138
+#: src/prefs.js:228
 msgid "Automatic"
 msgstr "อัตโนมัติ"
 
-#: src/prefs.js:139
+#: src/prefs.js:229
 msgid "Manual"
 msgstr "กำหนดเอง"
 
-#: src/prefs.js:141
+#: src/prefs.js:231
 msgid "Latitude"
 msgstr "ละติจูด"
 
-#: src/prefs.js:142
+#: src/prefs.js:232
 msgid "Longitude"
 msgstr "ลองจิจูด"
 
-#: src/prefs.js:145
+#: src/prefs.js:235
 msgid "Today"
 msgstr "วันนี้"
 
-#: src/prefs.js:162
+#: src/prefs.js:252
 msgid "manual"
 msgstr "กำหนดเอง"
 
-#: src/prefs.js:163
+#: src/prefs.js:253
 msgid "GNOME location"
 msgstr "ตำแหน่ง GNOME"
 
-#: src/prefs.js:164
+#: src/prefs.js:254
 #, javascript-format
 msgid "time zone %s"
 msgstr "เขตเวลา %s"
 
-#: src/prefs.js:165
+#: src/prefs.js:255
 msgid "UTC offset"
 msgstr "ส่วนต่าง UTC"
 
-#: src/prefs.js:168
+#: src/prefs.js:258
 #, javascript-format
 msgid "Sunset %s · sunrise %s · from %s"
 msgstr "ตก %s · ขึ้น %s · จาก %s"
 
-#: src/prefs.js:176
+#: src/prefs.js:266
 msgid "Screen off"
 msgstr "ปิดจอ"
 
-#: src/prefs.js:179 src/lib/ui.js:293
-msgid "Turn off screen"
-msgstr "ปิดจอ"
+#: src/prefs.js:269
+msgid "Buttons"
+msgstr "ปุ่ม"
 
-#: src/prefs.js:180
-msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
-msgstr "“ปิดจอ” และ “ปิดจออื่น” ในเมนูของแต่ละจอ"
+#: src/prefs.js:270
+msgid "In each monitor’s menu (the moon button)."
+msgstr "ในเมนูของแต่ละจอ (ปุ่มพระจันทร์)"
 
-#: src/prefs.js:182
-msgid "Turned off screen"
-msgstr "จอที่ปิด"
+#: src/prefs.js:272
+msgid "Place"
+msgstr "ตำแหน่ง"
 
-#: src/prefs.js:183
-msgid "Fully black"
-msgstr "ดำสนิท"
+#: src/prefs.js:273
+msgid "At the bottom, large"
+msgstr "ด้านล่าง ขนาดใหญ่"
 
-#: src/prefs.js:184
+#: src/prefs.js:274
+msgid "At the top, large"
+msgstr "ด้านบน ขนาดใหญ่"
+
+#: src/prefs.js:275
+msgid "Next to the monitor name, small"
+msgstr "ข้างชื่อจอ ขนาดเล็ก"
+
+#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
 msgid "Lowest light"
 msgstr "แสงต่ำสุด"
 
-#: src/prefs.js:186
-msgid "Light left"
-msgstr "แสงที่เหลือ"
+#: src/prefs.js:278
+msgid "Brightness 0 and full extra dimming; press again to go back"
+msgstr "ความสว่าง 0 และหรี่เพิ่มเต็มที่ กดอีกครั้งเพื่อกลับ"
 
-#: src/prefs.js:186
-msgid "Percent, for “Lowest light”"
-msgstr "เปอร์เซ็นต์ สำหรับ “แสงต่ำสุด”"
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
+#: src/lib/ui.js:1623
+msgid "Turn off screen"
+msgstr "ปิดจอ"
 
-#: src/prefs.js:188
-msgid "Turn back on when the mouse comes"
-msgstr "เปิดอีกครั้งเมื่อเมาส์มา"
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+msgid "Turn off other screens"
+msgstr "ปิดหน้าจออื่น"
 
-#: src/prefs.js:189
-msgid "Moving the mouse onto a turned off screen brings its light back"
-msgstr "เลื่อนเมาส์ไปยังจอที่ปิดจะทำให้แสงกลับมา"
+#: src/prefs.js:281
+msgid "Press again to turn them back on"
+msgstr "กดอีกครั้งเพื่อเปิดกลับ"
 
-#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+#: src/prefs.js:286
+msgid "“Turn off screen” and “Turn off other screens” in each monitor’s menu."
+msgstr "“ปิดหน้าจอ” และ “ปิดหน้าจออื่น” ในเมนูของแต่ละจอ"
+
+#: src/prefs.js:288
+msgid "Light up while the mouse is on it"
+msgstr "สว่างขณะเมาส์อยู่บนจอ"
+
+#: src/prefs.js:289
+msgid ""
+"A turned off screen lights up while the mouse is on it and goes dark again "
+"when the mouse leaves. The same button turns it back on."
+msgstr "จอที่ปิดอยู่จะสว่างขณะเมาส์อยู่บนจอ และมืดลงอีกครั้งเมื่อเมาส์ออกไป ปุ่มเดิมจะเปิดกลับ"
+
+#: src/prefs.js:294
+msgid "A turned off screen"
+msgstr "จอที่ปิดอยู่"
+
+#: src/prefs.js:295
+msgid ""
+"Clicks and typing always reach the apps on it. Its options are in the "
+"monitor’s menu (the moon button) and behind the small dot."
+msgstr ""
+"การคลิกและพิมพ์จะไปถึงแอปบนจอนั้นเสมอ ตัวเลือกอยู่ในเมนูจอ (ปุ่มพระจันทร์) และที่จุดเล็ก ๆ"
+
+#: src/prefs.js:297
+msgid "Small dot in a corner"
+msgstr "จุดเล็กที่มุม"
+
+#: src/prefs.js:298
+msgid "Click it for the screen’s menu; drag it to another corner"
+msgstr "คลิก: เมนูจอ ลาก: ไปมุมอื่น"
+
+#: src/prefs.js:299
+msgid "Keyboard shortcut"
+msgstr "ปุ่มลัด"
+
+#: src/prefs.js:300
+msgid "The menu of the screen under the mouse"
+msgstr "เมนูของจอที่เมาส์อยู่"
+
+#: src/prefs.js:301
+msgid "“Keep lit” lasts"
+msgstr "ระยะ “เปิดค้างไว้”"
+
+#: src/prefs.js:301
+msgid "Seconds"
+msgstr "วินาที"
+
+#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
 msgid "Red screen"
 msgstr "จอแดง"
 
-#: src/prefs.js:197
+#: src/prefs.js:306
 msgid ""
 "Switch it on in the Night Light menu. It removes all blue and green light, "
 "which helps you fall asleep."
 msgstr "เปิดได้ในเมนูแสงกลางคืน ตัดแสงสีน้ำเงินและสีเขียวทั้งหมด ช่วยให้นอนหลับ"
 
-#: src/prefs.js:199
+#: src/prefs.js:308
 msgid "Only while Night Light is active"
 msgstr "เฉพาะเมื่อแสงกลางคืนทำงาน"
 
-#: src/prefs.js:200
+#: src/prefs.js:309
 msgid "Starts and stops together with Night Light"
 msgstr "เริ่มและหยุดพร้อมแสงกลางคืน"
 
-#: src/prefs.js:201 src/lib/ui.js:439
+#: src/prefs.js:310 src/lib/ui.js:1852
 msgid "Strength"
 msgstr "ความแรง"
 
-#: src/prefs.js:215
+#: src/prefs.js:324
 msgid "Advanced"
 msgstr "ขั้นสูง"
 
-#: src/prefs.js:219
+#: src/prefs.js:328
 msgid ""
 "External monitors are controlled over DDC/CI. Your user needs access to /dev/"
 "i2c-* (usually the “i2c” group)."
 msgstr "จอภายนอกควบคุมผ่าน DDC/CI ผู้ใช้ต้องเข้าถึง /dev/i2c-* ได้ (ปกติคือกลุ่ม “i2c”)"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil found"
 msgstr "พบ ddcutil"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil not found"
 msgstr "ไม่พบ ddcutil"
 
-#: src/prefs.js:224
+#: src/prefs.js:333
 msgid "Install ddcutil from your distribution, then press Scan again"
 msgstr "ติดตั้ง ddcutil จากดิสโทรของคุณ แล้วกดสแกนอีกครั้ง"
 
-#: src/prefs.js:226
+#: src/prefs.js:335
 msgid "Scan again"
 msgstr "สแกนอีกครั้ง"
 
-#: src/prefs.js:231
+#: src/prefs.js:340
 msgid "ddcutil program"
 msgstr "โปรแกรม ddcutil"
 
-#: src/prefs.js:234
+#: src/prefs.js:343
 msgid "Extra arguments"
 msgstr "อาร์กิวเมนต์เพิ่มเติม"
 
-#: src/prefs.js:237
+#: src/prefs.js:346
 msgid "Pause between writes"
 msgstr "พักระหว่างการเขียน"
 
-#: src/prefs.js:238
+#: src/prefs.js:347
 msgid "Milliseconds. Raise it if a monitor misses changes"
 msgstr "มิลลิวินาที เพิ่มขึ้นหากจอพลาดการเปลี่ยนแปลง"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Debug messages"
 msgstr "ข้อความดีบัก"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Written to the system journal"
 msgstr "เขียนลงบันทึกระบบ"
 
-#: src/lib/displays.js:37
+#: src/lib/cornerdot.js:61
+msgid "Screen menu"
+msgstr "เมนูจอ"
+
+#: src/lib/displays.js:59
 msgid "Monitor"
 msgstr "จอ"
 
-#: src/lib/displays.js:287
+#: src/lib/displays.js:415
 msgid "Built-in Display"
 msgstr "จอในตัว"
 
-#: src/lib/displays.js:288
+#: src/lib/displays.js:416
 msgid "Built-in"
 msgstr "ในตัว"
 
-#: src/lib/displays.js:290
+#: src/lib/displays.js:418
 #, javascript-format
 msgid "Monitor %d"
 msgstr "จอ %d"
 
-#: src/lib/ui.js:119
-msgid "Earlier"
-msgstr "เร็วขึ้น"
+#: src/lib/notify.js:115
+msgid "Claude is waiting for you"
+msgstr "Claude กำลังรอคุณ"
 
-#: src/lib/ui.js:122
-msgid "Later"
-msgstr "ช้าลง"
+#: src/lib/notify.js:115
+msgid "Claude is done"
+msgstr "Claude เสร็จแล้ว"
 
-#: src/lib/ui.js:165
-msgid "Evening dimming and more"
-msgstr "หรี่แสงตอนเย็นและอื่น ๆ"
+#: src/lib/notify.js:129
+msgid "Go to the terminal"
+msgstr "ไปที่เทอร์มินัล"
 
-#: src/lib/ui.js:282
+#: src/lib/offmenu.js:15
+#, javascript-format
+msgid "%d s"
+msgstr "%d วิ"
+
+#: src/lib/offmenu.js:17
+#, javascript-format
+msgid "%d min %d s"
+msgstr "%d นาที %d วิ"
+
+#: src/lib/offmenu.js:17 src/lib/ui.js:62
+#, javascript-format
+msgid "%d min"
+msgstr "%d นาที"
+
+#: src/lib/offmenu.js:43
+#, javascript-format
+msgid "Keep lit · %s"
+msgstr "เปิดค้างไว้ · %s"
+
+#: src/lib/offmenu.js:44
+msgid "Keep lit until I darken it"
+msgstr "เปิดค้างไว้จนกว่าฉันจะทำให้มืด"
+
+#: src/lib/offmenu.js:45
+msgid "Darken now"
+msgstr "มืดตอนนี้"
+
+#: src/lib/offmenu.js:46
+msgid "Turn the screen back on"
+msgstr "เปิดหน้าจอกลับ"
+
+#: src/lib/ui.js:36
+msgid "Day brightness"
+msgstr "ความสว่างกลางวัน"
+
+#: src/lib/ui.js:38
 msgid "Extra dimming"
 msgstr "หรี่แสงเพิ่ม"
 
-#: src/lib/ui.js:294
-msgid "Turn off others"
-msgstr "ปิดจออื่น"
+#: src/lib/ui.js:39
+msgid ""
+"Darkens the picture further when the monitor is already at its lowest "
+"brightness."
+msgstr "หรี่ภาพลงอีกเมื่อจออยู่ที่ความสว่างต่ำสุดแล้ว"
 
-#: src/lib/ui.js:318
-msgid "Off"
-msgstr "ปิด"
+#: src/lib/ui.js:45
+msgid "Night light"
+msgstr "แสงกลางคืน"
 
-#: src/lib/ui.js:335
-msgid "Turned off"
-msgstr "ปิดแล้ว"
+#: src/lib/ui.js:46 src/lib/ui.js:1824
+msgid ""
+"Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
+"screen helps you fall asleep more easily."
+msgstr "แสงสีฟ้าในตอนเย็นยับยั้งเมลาโทนิน ฮอร์โมนการนอน จอที่อุ่นขึ้นช่วยให้คุณหลับง่ายขึ้น"
 
-#: src/lib/ui.js:335
+#: src/lib/ui.js:47
+msgid ""
+"How strong Night Light is on this monitor. ×1 = exactly GNOME’s Night Light, "
+"nothing added. ×0 turns it off here, ×2 makes it twice as warm."
+msgstr ""
+"ความแรงของแสงกลางคืนบนจอนี้ ×1 = แสงกลางคืนของ GNOME พอดี ไม่เพิ่มอะไร ×0 ปิดที่นี่ ×2 "
+"อุ่นขึ้นสองเท่า"
+
+#: src/lib/ui.js:48
+msgid "Red light"
+msgstr "แสงสีแดง"
+
+#: src/lib/ui.js:49 src/lib/ui.js:1841
+msgid ""
+"Red light disturbs melatonin and your body clock the least of all colours. "
+"Ideal for the last hours before bed."
+msgstr ""
+"แสงสีแดงรบกวนเมลาโทนินและนาฬิกาชีวภาพน้อยที่สุดในบรรดาสีทั้งหมด "
+"เหมาะสำหรับช่วงชั่วโมงสุดท้ายก่อนนอน"
+
+#: src/lib/ui.js:50
+msgid ""
+"How strong the red screen is on this monitor. ×1 = the red screen as set in "
+"the Night Light menu, nothing added. ×0 keeps this monitor normal, ×2 makes "
+"it twice as red."
+msgstr ""
+"ความแรงของจอสีแดงบนจอนี้ ×1 = จอสีแดงตามที่ตั้งในเมนูแสงกลางคืน ไม่เพิ่มอะไร ×0 ปล่อยปกติ "
+"×2 แดงขึ้นสองเท่า"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h %d min"
+msgstr "%d ชม. %d นาที"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h"
+msgstr "%d ชม."
+
+#: src/lib/ui.js:284
+msgid "Earlier"
+msgstr "เร็วขึ้น"
+
+#: src/lib/ui.js:287
+msgid "Later"
+msgstr "ช้าลง"
+
+#: src/lib/ui.js:1080
+msgid "Automatic dimming and more"
+msgstr "หรี่อัตโนมัติและอื่น ๆ"
+
+#: src/lib/ui.js:1249
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+#: src/lib/ui.js:1293
+msgid ""
+"Slowly dims this monitor in the evening, and brings it back in the morning."
+msgstr "ค่อย ๆ หรี่จอนี้ในตอนเย็น แล้วคืนค่าเดิมในตอนเช้า"
+
+#: src/lib/ui.js:1294
+msgid ""
+"Drag the points to shape the evening; the big point also sets how long it "
+"takes. + adds a button that runs by itself."
+msgstr "ลากจุดเพื่อกำหนดรูปร่างของช่วงเย็น จุดใหญ่กำหนดระยะเวลาด้วย + เพิ่มปุ่มที่ทำงานเอง"
+
+#: src/lib/ui.js:1311
+msgid "Shorter"
+msgstr "สั้นลง"
+
+#: src/lib/ui.js:1312
+msgid "Longer"
+msgstr "นานขึ้น"
+
+#: src/lib/ui.js:1322
+msgid "Back to normal in the morning"
+msgstr "กลับเป็นปกติตอนเช้า"
+
+#: src/lib/ui.js:1326
+msgid ""
+"When the morning comes, lowest light and turned off screens go back to "
+"normal, whether they were switched on by hand or by the graph."
+msgstr "เมื่อถึงตอนเช้า แสงต่ำสุดและจอที่ปิดไว้จะกลับเป็นปกติ ไม่ว่าจะเปิดเองหรือจากกราฟ"
+
+#: src/lib/ui.js:1359
+msgid "Back to 100 %"
+msgstr "กลับเป็น 100 %"
+
+#: src/lib/ui.js:1362 src/lib/ui.js:1364
+msgid "Back to the default evening curve"
+msgstr "กลับเป็นเส้นโค้งช่วงเย็นเริ่มต้น"
+
+#: src/lib/ui.js:1380
+msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
+msgstr "ค่าเริ่มต้น: ×1 และเวลาอัตโนมัติของ GNOME (พระอาทิตย์ตก)"
+
+#: src/lib/ui.js:1385
+msgid "Back to ×1"
+msgstr "กลับเป็น ×1"
+
+#: src/lib/ui.js:1403
+msgid "Day"
+msgstr "กลางวัน"
+
+#: src/lib/ui.js:1403
+msgid "Night"
+msgstr "กลางคืน"
+
+#: src/lib/ui.js:1403
+msgid "Extra"
+msgstr "เพิ่ม"
+
+#: src/lib/ui.js:1404
+msgid "Warmth"
+msgstr "ความอุ่น"
+
+#: src/lib/ui.js:1404
+msgid "Red"
+msgstr "แดง"
+
+#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+msgid "Back to the default"
+msgstr "กลับเป็นค่าเริ่มต้น"
+
+#: src/lib/ui.js:1541
+msgid "While the screen is off"
+msgstr "ขณะที่จอปิดอยู่"
+
+#: src/lib/ui.js:1581
+msgid "Dark while off"
+msgstr "ความมืดขณะปิด"
+
+#: src/lib/ui.js:1582
+msgid ""
+"While the screen is off, the monitor stays at its lowest light and this much "
+"black is added on top. 25 % = a little darker, 100 % = fully black."
+msgstr ""
+"ขณะปิดหน้าจอ จอจะอยู่ที่แสงต่ำสุดและเพิ่มสีดำทับเท่านี้ 25 % = มืดลงเล็กน้อย, 100 % = ดำสนิท"
+
+#: src/lib/ui.js:1602
+#, javascript-format
+msgid "Keep lit for %s"
+msgstr "เปิดค้างไว้ %s"
+
+#: src/lib/ui.js:1603
+#, javascript-format
+msgid ""
+"On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
+"Off: it goes dark as soon as the mouse leaves."
+msgstr "เปิด: หลังเมาส์ออกไป หน้าจอจะสว่างต่ออีก %s แล้วจึงมืด ปิด: มืดทันทีที่เมาส์ออกไป"
+
+#: src/lib/ui.js:1687
 #, javascript-format
 msgid "Brightness %s"
 msgstr "ความสว่าง %s"
 
-#: src/lib/ui.js:344
+#: src/lib/ui.js:1689
+msgid "Turned off"
+msgstr "ปิดแล้ว"
+
+#: src/lib/ui.js:1709
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "ตก %s %s %d นาที"
 
-#: src/lib/ui.js:347
+#: src/lib/ui.js:1712
 msgid "Fixed time"
 msgstr "เวลาที่กำหนด"
 
-#: src/lib/ui.js:421
+#: src/lib/ui.js:1715
+#, javascript-format
+msgid "Until %s"
+msgstr "ถึง %s"
+
+#: src/lib/ui.js:1724
+msgid "Off"
+msgstr "ปิด"
+
+#: src/lib/ui.js:1822
 msgid "Temperature"
 msgstr "อุณหภูมิสี"
 
-#: src/lib/ui.js:498
+#: src/lib/ui.js:1825
+msgid "Back to GNOME’s default"
+msgstr "กลับเป็นค่าเริ่มต้นของ GNOME"
+
+#: src/lib/ui.js:1919
 msgid "Sunset to sunrise"
 msgstr "ตั้งแต่ตกถึงขึ้น"
 
-#: src/lib/ui.js:514
+#: src/lib/ui.js:1941
 msgid "Turns on together with Night Light"
 msgstr "เปิดพร้อมแสงกลางคืน"
 
-#: src/lib/ui.js:516
+#: src/lib/ui.js:1943
 msgid "Starts when Night Light starts"
 msgstr "เริ่มเมื่อแสงกลางคืนเริ่ม"

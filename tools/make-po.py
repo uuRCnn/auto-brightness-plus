@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write po/<lang>.po from po/brightness-plus.pot and tools/translations/<lang>.json.
+"""Write po/<lang>.po from po/auto-brightness-plus.pot and tools/translations/<lang>.json.
    tools/make-po.py            all languages
    tools/make-po.py --missing  list untranslated strings per language"""
 import json
@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
-POT = os.path.join(ROOT, 'po', 'brightness-plus.pot')
+POT = os.path.join(ROOT, 'po', 'auto-brightness-plus.pot')
 SRC = os.path.join(os.path.dirname(__file__), 'translations')
 
 NAMES = {
@@ -85,11 +85,11 @@ def main():
             continue
         name, plural = NAMES.get(lang, (lang, 'nplurals=2; plural=(n != 1);'))
         out = [
-            f'# {name} translation for Brightness+.\n',
-            '# This file is distributed under the same license as the Brightness+ package.\n',
+            f'# {name} translation for Auto Brightness+.\n',
+            '# This file is distributed under the same license as the Auto Brightness+ package.\n',
             'msgid ""\n', 'msgstr ""\n',
-            '"Project-Id-Version: Brightness+\\n"\n',
-            '"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\\n"\n',
+            '"Project-Id-Version: Auto Brightness+\\n"\n',
+            '"Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\\n"\n',
             '"PO-Revision-Date: 2026-10-10 21:00+0300\\n"\n',
             '"Last-Translator: Dukha\\n"\n',
             f'"Language-Team: {name}\\n"\n',

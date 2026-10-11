@@ -1,24 +1,28 @@
-/* Brightness+ — monitor brightness for GNOME Shell
+/* Auto Brightness+ — monitor brightness for GNOME Shell
  * Copyright (C) 2026 Dukha
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
 import GLib from 'gi://GLib';
+import Meta from 'gi://Meta';
+import Shell from 'gi://Shell';
 
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 
 import {DisplayManager} from './lib/displays.js';
-import {RedFilter} from './lib/redfilter.js';
-import {BrightnessItem, NightLightItem, NightLightState, Tooltip} from './lib/ui.js';
+import {NotifyService} from './lib/notify.js';
+import {BrightnessItem, NightLightItem, NightLightState, Tooltip, setIconDir, setPrefsOpener} from './lib/ui.js';
 
 const COLS = 2;
 
-export default class BrightnessPlusExtension extends Extension {
+export default class AutoBrightnessPlusExtension extends Extension {
     enable() {
         this._settings = this.getSettings();
+        setIconDir(`${this.path}/icons`);
+        setPrefsOpener(() => this.openPreferences());
         this._manager = new DisplayManager(this._settings);
-        this._red = new RedFilter();
+        this._notify = new NotifyService(this._manager, this._settings);
         this._tooltip = new Tooltip();
         this._items = [];
         this._hidden = [];
@@ -34,7 +38,14 @@ export default class BrightnessPlusExtension extends Extension {
             'changed::red-strength', () => this._syncRed(false),
             'changed::red-follows-night-light', () => this._syncRed(),
             'changed::night-light-menu', () => this._rebuildNightLight(),
-            'changed::hide-builtin-slider', () => this._syncBuiltinSlider(), this);
+            'changed::hide-builtin-slider', () => this._syncBuiltinSlider(),
+            'changed::buttons-position', () => this._rebuildSliders(),
+            'changed::show-lowest-button', () => this._rebuildSliders(),
+            'changed::show-off-button', () => this._rebuildSliders(),
+            'changed::show-others-button', () => this._rebuildSliders(), this);
+
+        Main.wm.addKeybinding('menu-shortcut', this._settings, Meta.KeyBindingFlags.NONE,
+            Shell.ActionMode.NORMAL | Shell.ActionMode.OVERVIEW, () => this._shortcut());
 
         this._whenQuickSettingsReady(() => {
             this._manager.connectObject('displays-changed', () => this._rebuildSliders(), this);
@@ -48,17 +59,18 @@ export default class BrightnessPlusExtension extends Extension {
         if (this._readyTimer)
             GLib.source_remove(this._readyTimer);
         this._readyTimer = 0;
+        Main.wm.removeKeybinding('menu-shortcut');
         this._settings.disconnectObject(this);
         this._manager.disconnectObject(this);
         this._destroySliders();
         this._destroyNightLight();
         this._restoreHidden();
         this._nightState.destroy();
-        this._red.destroy();
         this._tooltip.destroy();
+        this._notify.destroy();
+        this._notify = null;
         this._manager.destroy();
         this._nightState = null;
-        this._red = null;
         this._tooltip = null;
         this._manager = null;
         this._settings = null;
@@ -126,7 +138,7 @@ export default class BrightnessPlusExtension extends Extension {
         if (!native?.get_parent() || !this._settings.get_boolean('night-light-menu'))
             return;
         const shellGettext = s => GLib.dgettext('gnome-shell', s);
-        this._nightItem = new NightLightItem(this._settings, this._nightState, shellGettext);
+        this._nightItem = new NightLightItem(this._settings, this._nightState, shellGettext, this._tooltip);
         qs.menu.insertItemBefore(this._nightItem, native, 1);
         this._hide(native);
     }
@@ -141,15 +153,24 @@ export default class BrightnessPlusExtension extends Extension {
             this._unhide(native);
     }
 
+    // ------------------------------------------------------------ turned off screens
+    // the keyboard shortcut: the small menu of the screen under the mouse
+    _shortcut() {
+        const [x, y] = global.get_pointer();
+        const d = this._manager?.displayAt(x, y);
+        if (d)
+            this._manager.openMenu(d, x, y);
+    }
+
     // ------------------------------------------------------------ red screen
     _syncRed(animate = true) {
-        if (!this._red)
+        if (!this._manager)
             return;
         const s = this._settings;
         let on = s.get_boolean('red-enabled');
         if (on && s.get_boolean('red-follows-night-light'))
             on = this._nightState.active;
-        this._red.set(on ? s.get_double('red-strength') : 0, animate);
+        this._manager.gamma.setRed(on ? s.get_double('red-strength') : 0, animate);
     }
 
     // ------------------------------------------------------------ hiding native items

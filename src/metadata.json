@@ -1,7 +1,7 @@
 {
-  "uuid": "brightness-plus@dukha",
-  "name": "Brightness+",
-  "description": "Brightness+ puts a brightness slider for every monitor into Quick Settings, right next to the volume slider. External monitors are controlled over DDC/CI (ddcutil), laptop screens through the backlight.\n\n* One thin slider per monitor; hover to see its name\n* Evening dimming: brightness slowly goes down after sunset (or at a set time) and comes back in the morning\n* Sunset is calculated from your location, the same way Night Light does it, without extra permissions\n* Extra (software) dimming when the monitor is already at its lowest\n* Turn a screen off, or all the others; it wakes up when the mouse comes back\n* Red screen in the Night Light menu: removes all blue and green light at night\n* Fast: monitor writes are merged and never block the desktop\n* Available in 18 languages\n\nExternal monitors need ddcutil and access to /dev/i2c-* (i2c group). Without it, sliders fall back to software dimming.\n\nMade by Dukha.",
+  "uuid": "auto-brightness-plus@dukha",
+  "name": "Auto Brightness+",
+  "description": "Auto Brightness+ puts a brightness slider for every monitor into Quick Settings, right next to the volume slider. External monitors are controlled over DDC/CI (ddcutil), laptop screens through the backlight.\n\n* One thin slider per monitor; hover to see its name\n* Automatic dimming per monitor: from sunset (or a set time) brightness goes down like the light outside and comes back in the morning; shape the evening on a small graph with the real sky behind it\n* A simple menu: pick a value, one slider sets it (or a detailed menu with a slider for everything)\n* Buttons that run by themselves at a time of the evening (e.g. turn the other screens off), undone in the morning\n* Per monitor Night Light and red screen strength (×0–×2), extra dimming\n* Lowest light with one click; turn a screen off, or all the other screens: clicks still reach the apps, the screen lights up smoothly while the mouse is on it\n* Claude Code is done (optional): a notification, and the turned off screen with its terminal lights up\n* Sunset from your location, the same way Night Light does it, without extra permissions\n* Fast: monitor writes are merged and never block the desktop\n* Available in 18 languages\n\nExternal monitors need ddcutil and access to /dev/i2c-* (i2c group). Without it, sliders fall back to software dimming.\n\nMade by Dukha.",
   "shell-version": [
     "46",
     "47",
@@ -10,8 +10,8 @@
     "50",
     "51"
   ],
-  "url": "https://github.com/uuRCnn/brightness-plus",
-  "settings-schema": "org.gnome.shell.extensions.brightness-plus",
-  "gettext-domain": "brightness-plus",
-  "version-name": "1.0"
+  "url": "https://github.com/uuRCnn/auto-brightness-plus",
+  "settings-schema": "org.gnome.shell.extensions.auto-brightness-plus",
+  "gettext-domain": "auto-brightness-plus",
+  "version-name": "2.0"
 }

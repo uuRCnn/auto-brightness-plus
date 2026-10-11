@@ -1,7 +1,7 @@
 {
-  "name": "brightness-plus",
+  "name": "auto-brightness-plus",
   "private": true,
-  "description": "Brightness+ GNOME Shell extension — development tooling",
+  "description": "Auto Brightness+ GNOME Shell extension — development tooling",
   "license": "GPL-2.0-or-later",
   "type": "module",
   "scripts": {

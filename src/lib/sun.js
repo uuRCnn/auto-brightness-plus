@@ -65,6 +65,27 @@ export function sunTimes(date, lat, lon) {
     };
 }
 
+/**
+ * The sun's height above the horizon in degrees (negative = below it), a
+ * simple approximation that is good to well under a degree.
+ * @param {Date} date
+ * @param {number} lat latitude in degrees
+ * @param {number} lon longitude in degrees
+ */
+export function sunElevation(date, lat, lon) {
+    const rad = Math.PI / 180;
+    const n = date.getTime() / 86400000 - 10957.5;          // days since J2000.0
+    const g = (357.529 + 0.98560028 * n) * rad;
+    const q = 280.459 + 0.98564736 * n;
+    const L = (q + 1.915 * Math.sin(g) + 0.020 * Math.sin(2 * g)) * rad;
+    const e = (23.439 - 0.00000036 * n) * rad;
+    const ra = Math.atan2(Math.cos(e) * Math.sin(L), Math.cos(L));
+    const dec = Math.asin(Math.sin(e) * Math.sin(L));
+    const gmst = 18.697374558 + 24.06570982441908 * n;      // hours
+    const ha = (gmst * 15 + lon) * rad - ra;
+    return Math.asin(Math.sin(lat * rad) * Math.sin(dec) + Math.cos(lat * rad) * Math.cos(dec) * Math.cos(ha)) / rad;
+}
+
 /** Minutes after local midnight, e.g. for showing "18:52". */
 export function minutesOfDay(date) {
     return date.getHours() * 60 + date.getMinutes();

@@ -1,10 +1,10 @@
-# Indonesian translation for Brightness+.
-# This file is distributed under the same license as the Brightness+ package.
+# Indonesian translation for Auto Brightness+.
+# This file is distributed under the same license as the Auto Brightness+ package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Brightness+\n"
-"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"Project-Id-Version: Auto Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-11 21:12+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Indonesian\n"
@@ -14,15 +14,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/prefs.js:75
+#: src/prefs.js:62 src/prefs.js:94
+msgid "None"
+msgstr "Tidak ada"
+
+#: src/prefs.js:91
+msgid "Press the keys…"
+msgstr "Tekan tombolnya…"
+
+#: src/prefs.js:127
 msgid "General"
 msgstr "Umum"
 
-#: src/prefs.js:78
+#: src/prefs.js:130
+msgid "Claude Code"
+msgstr "Claude Code"
+
+#: src/prefs.js:131
+msgid "Connect to Claude Code"
+msgstr "Hubungkan ke Claude Code"
+
+#: src/prefs.js:132
+msgid ""
+"When Claude is done or asks you something, you get a notification and its "
+"turned off screen lights up. No account needed."
+msgstr ""
+"Saat Claude selesai atau menanyakan sesuatu, notifikasi muncul dan layarnya "
+"yang dimatikan menyala. Tidak perlu akun."
+
+#: src/prefs.js:137
+msgid "Connected"
+msgstr "Terhubung"
+
+#: src/prefs.js:137
+msgid "Not connected"
+msgstr "Tidak terhubung"
+
+#: src/prefs.js:138
+msgid "Disconnect"
+msgstr "Putuskan"
+
+#: src/prefs.js:138
+msgid "Connect"
+msgstr "Hubungkan"
+
+#: src/prefs.js:149
+#, javascript-format
+msgid "Could not change %s: %s"
+msgstr "Tidak bisa mengubah %s: %s"
+
+#: src/prefs.js:154
+msgid "When Claude is done"
+msgstr "Saat Claude selesai"
+
+#: src/prefs.js:155
+msgid "When Claude waits for you"
+msgstr "Saat Claude menunggumu"
+
+#: src/prefs.js:155
+msgid "A permission or a question"
+msgstr "Izin atau pertanyaan"
+
+#: src/prefs.js:156
+msgid "Also a notification"
+msgstr "Juga notifikasi"
+
+#: src/prefs.js:156
+msgid "Click it to go to the terminal"
+msgstr "Klik untuk ke terminal"
+
+#: src/prefs.js:157
+msgid "Other programs too"
+msgstr "Program lain juga"
+
+#: src/prefs.js:158
+msgid ""
+"Terminal bell or an app asking for attention, e.g. make ; printf \"\\a\""
+msgstr ""
+"Bel terminal atau aplikasi yang meminta perhatian, mis. make ; printf \"\\a\""
+
+#: src/prefs.js:163
 msgid "Sliders"
 msgstr "Penggeser"
 
-#: src/prefs.js:79
+#: src/prefs.js:164
 msgid ""
 "Every monitor gets its own slider in Quick Settings, next to the volume "
 "slider."
@@ -30,123 +105,158 @@ msgstr ""
 "Setiap monitor mendapat penggeser sendiri di Pengaturan Cepat, di samping "
 "penggeser volume."
 
-#: src/prefs.js:81
+#: src/prefs.js:166
+msgid "Monitor menu"
+msgstr "Menu monitor"
+
+#: src/prefs.js:167
+msgid "Simple (recommended)"
+msgstr "Sederhana (disarankan)"
+
+#: src/prefs.js:168
+msgid "Detailed"
+msgstr "Rinci"
+
+#: src/prefs.js:169
+msgid ""
+"Simple: one slider for the value you pick. Detailed: a slider for every "
+"value."
+msgstr ""
+"Sederhana: satu penggeser untuk nilai yang kamu pilih. Rinci: penggeser "
+"untuk tiap nilai."
+
+#: src/prefs.js:170
 msgid "Left of the slider"
 msgstr "Di kiri penggeser"
 
-#: src/prefs.js:82
+#: src/prefs.js:171
 msgid "Brightness icon"
 msgstr "Ikon kecerahan"
 
-#: src/prefs.js:83
+#: src/prefs.js:172
 msgid "Monitor number (1, 2, 3…)"
 msgstr "Nomor monitor (1, 2, 3…)"
 
-#: src/prefs.js:84
+#: src/prefs.js:173
 msgid "Short name (LG, VS…)"
 msgstr "Nama pendek (LG, VS…)"
 
-#: src/prefs.js:86
+#: src/prefs.js:175
 msgid "Show the monitor name on hover"
 msgstr "Tampilkan nama monitor saat disorot"
 
-#: src/prefs.js:87
+#: src/prefs.js:176
 msgid "Replace GNOME’s own brightness slider"
 msgstr "Ganti penggeser kecerahan bawaan GNOME"
 
-#: src/prefs.js:88
+#: src/prefs.js:177
 msgid "The laptop screen then gets a row like the other monitors"
 msgstr "Layar laptop lalu mendapat baris seperti monitor lain"
 
-#: src/prefs.js:91
+#: src/prefs.js:180
 msgid "Night Light"
 msgstr "Cahaya Malam"
 
-#: src/prefs.js:92
+#: src/prefs.js:181
 msgid "Add a menu to the Night Light button"
 msgstr "Tambahkan menu ke tombol Cahaya Malam"
 
-#: src/prefs.js:93
+#: src/prefs.js:182
 msgid "Temperature, red screen and its strength"
 msgstr "Suhu warna, layar merah dan kekuatannya"
 
-#: src/prefs.js:99
+#: src/prefs.js:188
 msgid "Evening"
 msgstr "Petang"
 
-#: src/prefs.js:102 src/lib/ui.js:257
-msgid "Evening dimming"
-msgstr "Peredupan petang"
+#: src/prefs.js:191 src/lib/ui.js:1287
+msgid "Automatic dimming"
+msgstr "Peredupan otomatis"
 
-#: src/prefs.js:103
+#: src/prefs.js:192
 msgid ""
-"Turn it on per monitor with the moon button next to its slider. Brightness "
-"goes down slowly in the evening and comes back in the morning."
+"Turn it on per monitor with the moon button next to its slider. The monitor "
+"slowly gets darker and warmer in the evening and comes back in the morning."
 msgstr ""
-"Nyalakan per monitor dengan tombol bulan di samping penggesernya. Kecerahan "
-"turun perlahan di petang hari dan kembali di pagi hari."
+"Nyalakan per monitor dengan tombol bulan di samping penggesernya. Monitor "
+"perlahan menjadi lebih gelap dan hangat di malam hari dan kembali di pagi "
+"hari."
 
-#: src/prefs.js:105 src/lib/ui.js:264
+#: src/prefs.js:194 src/lib/ui.js:1305
 msgid "Start"
 msgstr "Mulai"
 
-#: src/prefs.js:106
+#: src/prefs.js:195
 msgid "At sunset"
 msgstr "Saat matahari terbenam"
 
-#: src/prefs.js:107
+#: src/prefs.js:196
 msgid "At a fixed time"
 msgstr "Pada waktu tetap"
 
-#: src/prefs.js:109
-msgid "Transition"
-msgstr "Transisi"
+#: src/prefs.js:198
+msgid "Morning transition"
+msgstr "Transisi pagi"
 
-#: src/prefs.js:109
-msgid "Minutes, for both evening and morning"
-msgstr "Menit, untuk petang dan pagi"
+#: src/prefs.js:198
+msgid "Minutes"
+msgstr "Menit"
 
-#: src/prefs.js:110 src/prefs.js:111
+#: src/prefs.js:199 src/prefs.js:200
 msgid "Morning"
 msgstr "Pagi"
 
-#: src/prefs.js:110
+#: src/prefs.js:199
 msgid "Minutes after sunrise"
 msgstr "Menit setelah matahari terbit"
 
-#: src/prefs.js:111
+#: src/prefs.js:200
 msgid "Brightness comes back at"
 msgstr "Kecerahan kembali pada"
 
-#: src/prefs.js:117
+#: src/prefs.js:206
 msgid "For new monitors"
 msgstr "Untuk monitor baru"
 
-#: src/prefs.js:118
-msgid "Each monitor can change these in its own menu."
-msgstr "Setiap monitor bisa mengubahnya di menunya sendiri."
+#: src/prefs.js:207
+msgid ""
+"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
+"with a little extra dimming late at night. Each monitor can change these in "
+"its own menu."
+msgstr ""
+"Untuk monitor utama. Yang lain 30 menit lebih lama dan turun ke 0 %, dengan "
+"sedikit peredupan tambahan larut malam. Tiap monitor bisa mengubahnya di "
+"menunya sendiri."
 
-#: src/prefs.js:120
+#: src/prefs.js:209
 msgid "Minutes after sunset"
 msgstr "Menit setelah matahari terbenam"
 
-#: src/prefs.js:121
+#: src/prefs.js:210
 msgid "Start time"
 msgstr "Waktu mulai"
 
-#: src/prefs.js:125 src/lib/ui.js:269
+#: src/prefs.js:213 src/lib/ui.js:1310
+msgid "Duration"
+msgstr "Durasi"
+
+#: src/prefs.js:213
+msgid "Minutes the evening dimming takes"
+msgstr "Berapa menit peredupan malam berlangsung"
+
+#: src/prefs.js:215 src/lib/ui.js:37
 msgid "Night brightness"
 msgstr "Kecerahan malam"
 
-#: src/prefs.js:125
+#: src/prefs.js:215
 msgid "Percent"
 msgstr "Persen"
 
-#: src/prefs.js:134 src/prefs.js:137
+#: src/prefs.js:224 src/prefs.js:227
 msgid "Location"
 msgstr "Lokasi"
 
-#: src/prefs.js:135
+#: src/prefs.js:225
 msgid ""
 "Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
 "keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
@@ -155,93 +265,154 @@ msgstr ""
 "memakai lokasi yang disimpan GNOME untuk Cahaya Malam, atau zona waktu Anda. "
 "Tidak ada yang dikirim."
 
-#: src/prefs.js:138
+#: src/prefs.js:228
 msgid "Automatic"
 msgstr "Otomatis"
 
-#: src/prefs.js:139
+#: src/prefs.js:229
 msgid "Manual"
 msgstr "Manual"
 
-#: src/prefs.js:141
+#: src/prefs.js:231
 msgid "Latitude"
 msgstr "Lintang"
 
-#: src/prefs.js:142
+#: src/prefs.js:232
 msgid "Longitude"
 msgstr "Bujur"
 
-#: src/prefs.js:145
+#: src/prefs.js:235
 msgid "Today"
 msgstr "Hari ini"
 
-#: src/prefs.js:162
+#: src/prefs.js:252
 msgid "manual"
 msgstr "manual"
 
-#: src/prefs.js:163
+#: src/prefs.js:253
 msgid "GNOME location"
 msgstr "lokasi GNOME"
 
-#: src/prefs.js:164
+#: src/prefs.js:254
 #, javascript-format
 msgid "time zone %s"
 msgstr "zona waktu %s"
 
-#: src/prefs.js:165
+#: src/prefs.js:255
 msgid "UTC offset"
 msgstr "selisih UTC"
 
-#: src/prefs.js:168
+#: src/prefs.js:258
 #, javascript-format
 msgid "Sunset %s · sunrise %s · from %s"
 msgstr "Terbenam %s · terbit %s · dari %s"
 
-#: src/prefs.js:176
+#: src/prefs.js:266
 msgid "Screen off"
 msgstr "Matikan layar"
 
-#: src/prefs.js:179 src/lib/ui.js:293
-msgid "Turn off screen"
-msgstr "Matikan layar"
+#: src/prefs.js:269
+msgid "Buttons"
+msgstr "Tombol"
 
-#: src/prefs.js:180
-msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
-msgstr "“Matikan layar” dan “Matikan yang lain” di menu tiap monitor."
+#: src/prefs.js:270
+msgid "In each monitor’s menu (the moon button)."
+msgstr "Di menu setiap monitor (tombol bulan)."
 
-#: src/prefs.js:182
-msgid "Turned off screen"
-msgstr "Layar yang dimatikan"
+#: src/prefs.js:272
+msgid "Place"
+msgstr "Letak"
 
-#: src/prefs.js:183
-msgid "Fully black"
-msgstr "Hitam sepenuhnya"
+#: src/prefs.js:273
+msgid "At the bottom, large"
+msgstr "Di bawah, besar"
 
-#: src/prefs.js:184
+#: src/prefs.js:274
+msgid "At the top, large"
+msgstr "Di atas, besar"
+
+#: src/prefs.js:275
+msgid "Next to the monitor name, small"
+msgstr "Di samping nama monitor, kecil"
+
+#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
 msgid "Lowest light"
 msgstr "Cahaya terendah"
 
-#: src/prefs.js:186
-msgid "Light left"
-msgstr "Sisa cahaya"
+#: src/prefs.js:278
+msgid "Brightness 0 and full extra dimming; press again to go back"
+msgstr "Kecerahan 0 dan peredupan ekstra penuh; tekan lagi untuk kembali"
 
-#: src/prefs.js:186
-msgid "Percent, for “Lowest light”"
-msgstr "Persen, untuk “Cahaya terendah”"
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
+#: src/lib/ui.js:1623
+msgid "Turn off screen"
+msgstr "Matikan layar"
 
-#: src/prefs.js:188
-msgid "Turn back on when the mouse comes"
-msgstr "Nyalakan lagi saat tetikus datang"
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+msgid "Turn off other screens"
+msgstr "Matikan layar lain"
 
-#: src/prefs.js:189
-msgid "Moving the mouse onto a turned off screen brings its light back"
-msgstr "Menggerakkan tetikus ke layar yang mati mengembalikan cahayanya"
+#: src/prefs.js:281
+msgid "Press again to turn them back on"
+msgstr "Tekan lagi untuk menyalakannya kembali"
 
-#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+#: src/prefs.js:286
+msgid "“Turn off screen” and “Turn off other screens” in each monitor’s menu."
+msgstr "“Matikan layar” dan “Matikan layar lain” di menu setiap monitor."
+
+#: src/prefs.js:288
+msgid "Light up while the mouse is on it"
+msgstr "Menyala selama mouse di atasnya"
+
+#: src/prefs.js:289
+msgid ""
+"A turned off screen lights up while the mouse is on it and goes dark again "
+"when the mouse leaves. The same button turns it back on."
+msgstr ""
+"Layar yang dimatikan menyala selama mouse di atasnya dan gelap lagi saat "
+"mouse pergi. Tombol yang sama menyalakannya kembali."
+
+#: src/prefs.js:294
+msgid "A turned off screen"
+msgstr "Layar yang dimatikan"
+
+#: src/prefs.js:295
+msgid ""
+"Clicks and typing always reach the apps on it. Its options are in the "
+"monitor’s menu (the moon button) and behind the small dot."
+msgstr ""
+"Klik dan ketikan selalu sampai ke aplikasi di layar itu. Opsinya ada di menu "
+"monitor (tombol bulan) dan di balik titik kecil."
+
+#: src/prefs.js:297
+msgid "Small dot in a corner"
+msgstr "Titik kecil di sudut"
+
+#: src/prefs.js:298
+msgid "Click it for the screen’s menu; drag it to another corner"
+msgstr "Klik: menu layar; seret: ke sudut lain"
+
+#: src/prefs.js:299
+msgid "Keyboard shortcut"
+msgstr "Pintasan keyboard"
+
+#: src/prefs.js:300
+msgid "The menu of the screen under the mouse"
+msgstr "Menu layar di bawah mouse"
+
+#: src/prefs.js:301
+msgid "“Keep lit” lasts"
+msgstr "Lama “Biarkan menyala”"
+
+#: src/prefs.js:301
+msgid "Seconds"
+msgstr "Detik"
+
+#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
 msgid "Red screen"
 msgstr "Layar merah"
 
-#: src/prefs.js:197
+#: src/prefs.js:306
 msgid ""
 "Switch it on in the Night Light menu. It removes all blue and green light, "
 "which helps you fall asleep."
@@ -249,23 +420,23 @@ msgstr ""
 "Nyalakan di menu Cahaya Malam. Menghilangkan semua cahaya biru dan hijau, "
 "membantu Anda tidur."
 
-#: src/prefs.js:199
+#: src/prefs.js:308
 msgid "Only while Night Light is active"
 msgstr "Hanya saat Cahaya Malam aktif"
 
-#: src/prefs.js:200
+#: src/prefs.js:309
 msgid "Starts and stops together with Night Light"
 msgstr "Mulai dan berhenti bersama Cahaya Malam"
 
-#: src/prefs.js:201 src/lib/ui.js:439
+#: src/prefs.js:310 src/lib/ui.js:1852
 msgid "Strength"
 msgstr "Kekuatan"
 
-#: src/prefs.js:215
+#: src/prefs.js:324
 msgid "Advanced"
 msgstr "Lanjutan"
 
-#: src/prefs.js:219
+#: src/prefs.js:328
 msgid ""
 "External monitors are controlled over DDC/CI. Your user needs access to /dev/"
 "i2c-* (usually the “i2c” group)."
@@ -273,117 +444,343 @@ msgstr ""
 "Monitor eksternal dikendalikan lewat DDC/CI. Pengguna perlu akses ke /dev/"
 "i2c-* (biasanya grup “i2c”)."
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil found"
 msgstr "ddcutil ditemukan"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil not found"
 msgstr "ddcutil tidak ditemukan"
 
-#: src/prefs.js:224
+#: src/prefs.js:333
 msgid "Install ddcutil from your distribution, then press Scan again"
 msgstr "Pasang ddcutil dari distribusi Anda, lalu tekan Pindai lagi"
 
-#: src/prefs.js:226
+#: src/prefs.js:335
 msgid "Scan again"
 msgstr "Pindai lagi"
 
-#: src/prefs.js:231
+#: src/prefs.js:340
 msgid "ddcutil program"
 msgstr "Program ddcutil"
 
-#: src/prefs.js:234
+#: src/prefs.js:343
 msgid "Extra arguments"
 msgstr "Argumen tambahan"
 
-#: src/prefs.js:237
+#: src/prefs.js:346
 msgid "Pause between writes"
 msgstr "Jeda antar penulisan"
 
-#: src/prefs.js:238
+#: src/prefs.js:347
 msgid "Milliseconds. Raise it if a monitor misses changes"
 msgstr "Milidetik. Naikkan jika monitor melewatkan perubahan"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Debug messages"
 msgstr "Pesan debug"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Written to the system journal"
 msgstr "Ditulis ke jurnal sistem"
 
-#: src/lib/displays.js:37
+#: src/lib/cornerdot.js:61
+msgid "Screen menu"
+msgstr "Menu layar"
+
+#: src/lib/displays.js:59
 msgid "Monitor"
 msgstr "Monitor"
 
-#: src/lib/displays.js:287
+#: src/lib/displays.js:415
 msgid "Built-in Display"
 msgstr "Layar Bawaan"
 
-#: src/lib/displays.js:288
+#: src/lib/displays.js:416
 msgid "Built-in"
 msgstr "Bawaan"
 
-#: src/lib/displays.js:290
+#: src/lib/displays.js:418
 #, javascript-format
 msgid "Monitor %d"
 msgstr "Monitor %d"
 
-#: src/lib/ui.js:119
-msgid "Earlier"
-msgstr "Lebih awal"
+#: src/lib/notify.js:115
+msgid "Claude is waiting for you"
+msgstr "Claude menunggumu"
 
-#: src/lib/ui.js:122
-msgid "Later"
-msgstr "Lebih lambat"
+#: src/lib/notify.js:115
+msgid "Claude is done"
+msgstr "Claude selesai"
 
-#: src/lib/ui.js:165
-msgid "Evening dimming and more"
-msgstr "Peredupan petang dan lainnya"
+#: src/lib/notify.js:129
+msgid "Go to the terminal"
+msgstr "Ke terminal"
 
-#: src/lib/ui.js:282
+#: src/lib/offmenu.js:15
+#, javascript-format
+msgid "%d s"
+msgstr "%d dtk"
+
+#: src/lib/offmenu.js:17
+#, javascript-format
+msgid "%d min %d s"
+msgstr "%d mnt %d dtk"
+
+#: src/lib/offmenu.js:17 src/lib/ui.js:62
+#, javascript-format
+msgid "%d min"
+msgstr "%d mnt"
+
+#: src/lib/offmenu.js:43
+#, javascript-format
+msgid "Keep lit · %s"
+msgstr "Biarkan menyala · %s"
+
+#: src/lib/offmenu.js:44
+msgid "Keep lit until I darken it"
+msgstr "Biarkan menyala sampai saya gelapkan"
+
+#: src/lib/offmenu.js:45
+msgid "Darken now"
+msgstr "Gelapkan sekarang"
+
+#: src/lib/offmenu.js:46
+msgid "Turn the screen back on"
+msgstr "Nyalakan layar kembali"
+
+#: src/lib/ui.js:36
+msgid "Day brightness"
+msgstr "Kecerahan siang"
+
+#: src/lib/ui.js:38
 msgid "Extra dimming"
 msgstr "Peredupan ekstra"
 
-#: src/lib/ui.js:294
-msgid "Turn off others"
-msgstr "Matikan yang lain"
+#: src/lib/ui.js:39
+msgid ""
+"Darkens the picture further when the monitor is already at its lowest "
+"brightness."
+msgstr ""
+"Menggelapkan gambar lebih jauh saat monitor sudah di kecerahan terendah."
 
-#: src/lib/ui.js:318
-msgid "Off"
-msgstr "Mati"
+#: src/lib/ui.js:45
+msgid "Night light"
+msgstr "Lampu malam"
 
-#: src/lib/ui.js:335
-msgid "Turned off"
-msgstr "Dimatikan"
+#: src/lib/ui.js:46 src/lib/ui.js:1824
+msgid ""
+"Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
+"screen helps you fall asleep more easily."
+msgstr ""
+"Cahaya biru di malam hari menekan melatonin, hormon tidur. Layar yang lebih "
+"hangat membantu Anda lebih mudah tertidur."
 
-#: src/lib/ui.js:335
+#: src/lib/ui.js:47
+msgid ""
+"How strong Night Light is on this monitor. ×1 = exactly GNOME’s Night Light, "
+"nothing added. ×0 turns it off here, ×2 makes it twice as warm."
+msgstr ""
+"Seberapa kuat lampu malam di monitor ini. ×1 = persis lampu malam GNOME, "
+"tanpa tambahan. ×0 mematikannya di sini, ×2 dua kali lebih hangat."
+
+#: src/lib/ui.js:48
+msgid "Red light"
+msgstr "Cahaya merah"
+
+#: src/lib/ui.js:49 src/lib/ui.js:1841
+msgid ""
+"Red light disturbs melatonin and your body clock the least of all colours. "
+"Ideal for the last hours before bed."
+msgstr ""
+"Cahaya merah paling sedikit mengganggu melatonin dan jam biologis dibanding "
+"warna lain. Ideal untuk jam-jam terakhir sebelum tidur."
+
+#: src/lib/ui.js:50
+msgid ""
+"How strong the red screen is on this monitor. ×1 = the red screen as set in "
+"the Night Light menu, nothing added. ×0 keeps this monitor normal, ×2 makes "
+"it twice as red."
+msgstr ""
+"Seberapa kuat layar merah di monitor ini. ×1 = layar merah seperti di menu "
+"lampu malam, tanpa tambahan. ×0 membiarkannya normal, ×2 dua kali lebih "
+"merah."
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h %d min"
+msgstr "%d j %d mnt"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h"
+msgstr "%d j"
+
+#: src/lib/ui.js:284
+msgid "Earlier"
+msgstr "Lebih awal"
+
+#: src/lib/ui.js:287
+msgid "Later"
+msgstr "Lebih lambat"
+
+#: src/lib/ui.js:1080
+msgid "Automatic dimming and more"
+msgstr "Peredupan otomatis dan lainnya"
+
+#: src/lib/ui.js:1249
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: src/lib/ui.js:1293
+msgid ""
+"Slowly dims this monitor in the evening, and brings it back in the morning."
+msgstr ""
+"Perlahan meredupkan monitor ini di malam hari, lalu mengembalikannya di pagi "
+"hari."
+
+#: src/lib/ui.js:1294
+msgid ""
+"Drag the points to shape the evening; the big point also sets how long it "
+"takes. + adds a button that runs by itself."
+msgstr ""
+"Seret titik-titiknya untuk membentuk malam; titik besar juga menentukan "
+"lamanya. + menambah tombol yang berjalan sendiri."
+
+#: src/lib/ui.js:1311
+msgid "Shorter"
+msgstr "Lebih singkat"
+
+#: src/lib/ui.js:1312
+msgid "Longer"
+msgstr "Lebih lama"
+
+#: src/lib/ui.js:1322
+msgid "Back to normal in the morning"
+msgstr "Kembali normal di pagi hari"
+
+#: src/lib/ui.js:1326
+msgid ""
+"When the morning comes, lowest light and turned off screens go back to "
+"normal, whether they were switched on by hand or by the graph."
+msgstr ""
+"Saat pagi tiba, cahaya terendah dan layar yang dimatikan kembali normal, "
+"baik dinyalakan manual maupun dari grafik."
+
+#: src/lib/ui.js:1359
+msgid "Back to 100 %"
+msgstr "Kembali ke 100 %"
+
+#: src/lib/ui.js:1362 src/lib/ui.js:1364
+msgid "Back to the default evening curve"
+msgstr "Kembali ke kurva malam bawaan"
+
+#: src/lib/ui.js:1380
+msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
+msgstr "Kembali ke bawaan: ×1 dan waktu otomatis GNOME (matahari terbenam)"
+
+#: src/lib/ui.js:1385
+msgid "Back to ×1"
+msgstr "Kembali ke ×1"
+
+#: src/lib/ui.js:1403
+msgid "Day"
+msgstr "Siang"
+
+#: src/lib/ui.js:1403
+msgid "Night"
+msgstr "Malam"
+
+#: src/lib/ui.js:1403
+msgid "Extra"
+msgstr "Ekstra"
+
+#: src/lib/ui.js:1404
+msgid "Warmth"
+msgstr "Hangat"
+
+#: src/lib/ui.js:1404
+msgid "Red"
+msgstr "Merah"
+
+#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+msgid "Back to the default"
+msgstr "Kembali ke bawaan"
+
+#: src/lib/ui.js:1541
+msgid "While the screen is off"
+msgstr "Selama layar dimatikan"
+
+#: src/lib/ui.js:1581
+msgid "Dark while off"
+msgstr "Gelap saat dimatikan"
+
+#: src/lib/ui.js:1582
+msgid ""
+"While the screen is off, the monitor stays at its lowest light and this much "
+"black is added on top. 25 % = a little darker, 100 % = fully black."
+msgstr ""
+"Selama layar mati, monitor tetap di cahaya terendahnya dan sebanyak ini "
+"hitam ditambahkan di atasnya. 25 % = sedikit lebih gelap, 100 % = hitam "
+"penuh."
+
+#: src/lib/ui.js:1602
+#, javascript-format
+msgid "Keep lit for %s"
+msgstr "Biarkan menyala %s"
+
+#: src/lib/ui.js:1603
+#, javascript-format
+msgid ""
+"On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
+"Off: it goes dark as soon as the mouse leaves."
+msgstr ""
+"Nyala: setelah mouse pergi, layar tetap menyala %s lagi, lalu gelap. Mati: "
+"langsung gelap begitu mouse pergi."
+
+#: src/lib/ui.js:1687
 #, javascript-format
 msgid "Brightness %s"
 msgstr "Kecerahan %s"
 
-#: src/lib/ui.js:344
+#: src/lib/ui.js:1689
+msgid "Turned off"
+msgstr "Dimatikan"
+
+#: src/lib/ui.js:1709
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "Terbenam %s %s %d mnt"
 
-#: src/lib/ui.js:347
+#: src/lib/ui.js:1712
 msgid "Fixed time"
 msgstr "Waktu tetap"
 
-#: src/lib/ui.js:421
+#: src/lib/ui.js:1715
+#, javascript-format
+msgid "Until %s"
+msgstr "Sampai %s"
+
+#: src/lib/ui.js:1724
+msgid "Off"
+msgstr "Mati"
+
+#: src/lib/ui.js:1822
 msgid "Temperature"
 msgstr "Suhu warna"
 
-#: src/lib/ui.js:498
+#: src/lib/ui.js:1825
+msgid "Back to GNOME’s default"
+msgstr "Kembali ke bawaan GNOME"
+
+#: src/lib/ui.js:1919
 msgid "Sunset to sunrise"
 msgstr "Terbenam hingga terbit"
 
-#: src/lib/ui.js:514
+#: src/lib/ui.js:1941
 msgid "Turns on together with Night Light"
 msgstr "Menyala bersama Cahaya Malam"
 
-#: src/lib/ui.js:516
+#: src/lib/ui.js:1943
 msgid "Starts when Night Light starts"
 msgstr "Mulai saat Cahaya Malam mulai"

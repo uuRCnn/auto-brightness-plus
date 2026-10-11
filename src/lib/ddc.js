@@ -15,7 +15,7 @@ import GLib from 'gi://GLib';
 
 Gio._promisify(Gio.Subprocess.prototype, 'communicate_utf8_async');
 
-const CACHE_DIR = GLib.build_filenamev([GLib.get_user_cache_dir(), 'brightness-plus']);
+const CACHE_DIR = GLib.build_filenamev([GLib.get_user_cache_dir(), 'auto-brightness-plus']);
 const CACHE_FILE = GLib.build_filenamev([CACHE_DIR, 'ddcutil-detect.txt']);
 
 export function parseDetect(text) {
@@ -104,12 +104,40 @@ export class DdcBackend {
     setBrightness(bus, raw) {
         let q = this._queues.get(bus);
         if (!q) {
-            q = {pending: null, busy: false, last: null, lastTime: 0, timer: 0};
+            q = {pending: null, busy: false, last: null, lastTime: 0, timer: 0, waiters: []};
             this._queues.set(bus, q);
         }
         q.pending = raw;
+        // an older value that will never be written now
+        this._settle(q, w => w.raw !== raw, false);
         if (!q.busy)
             this._pump(bus, q);
+        return q;
+    }
+
+    /**
+     * Like setBrightness, resolving once the monitor has taken that value
+     * (true), or when a newer value replaced it first (false).
+     */
+    setBrightnessAndWait(bus, raw) {
+        const q = this._queues.get(bus);
+        if (q && q.last === raw && q.pending === null && !q.busy)
+            return Promise.resolve(true);
+        return new Promise(resolve => {
+            const queue = this.setBrightness(bus, raw);
+            queue.waiters.push({raw, resolve});
+        });
+    }
+
+    _settle(q, which, result) {
+        const keep = [];
+        for (const w of q.waiters ?? []) {
+            if (which(w))
+                w.resolve(result);
+            else
+                keep.push(w);
+        }
+        q.waiters = keep;
     }
 
     _pump(bus, q) {
@@ -118,6 +146,8 @@ export class DdcBackend {
         if (q.pending === null || q.pending === q.last) {
             q.pending = null;
             q.busy = false;
+            // nothing (more) to write: whoever waits for the value it has, has it
+            this._settle(q, w => w.raw === q.last, true);
             return;
         }
         q.busy = true;
@@ -151,6 +181,7 @@ export class DdcBackend {
                 this._log(`setvcp error on bus ${bus}: ${e.message}`);
         }
         q.lastTime = GLib.get_monotonic_time() / 1000;
+        this._settle(q, w => w.raw === value && q.pending === null, q.last === value);
         this._pump(bus, q);
     }
 
@@ -176,6 +207,7 @@ export class DdcBackend {
         for (const q of this._queues.values()) {
             if (q.timer)
                 GLib.source_remove(q.timer);
+            this._settle(q, () => true, false);
         }
         this._queues.clear();
     }

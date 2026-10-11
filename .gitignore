@@ -3,3 +3,6 @@ build/
 src/schemas/gschemas.compiled
 *.zip
 __pycache__/
+# design mockups (local only)
+tasarim/
+tools/mockups*.py

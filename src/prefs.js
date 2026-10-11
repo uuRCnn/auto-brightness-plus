@@ -1,4 +1,4 @@
-/* Brightness+ preferences
+/* Auto Brightness+ preferences
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
@@ -9,6 +9,7 @@ import Gtk from 'gi://Gtk';
 
 import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
+import * as claude from './lib/claudehooks.js';
 import {getLocation} from './lib/location.js';
 import {fmt as format, formatMinutes, minutesOfDay, sunTimes} from './lib/sun.js';
 
@@ -45,6 +46,57 @@ function spinRow(settings, key, title, lower, upper, step, subtitle = '', digits
     return row;
 }
 
+// (i): a small round button that shows a short text
+// (i): the classic round "i"; click (or hover) for a short text
+function infoButton(text, extensionPath) {
+    const label = new Gtk.Label({label: text, wrap: true, max_width_chars: 36, margin_top: 8, margin_bottom: 8,
+        margin_start: 10, margin_end: 10, xalign: 0});
+    const icon = Gtk.Image.new_from_gicon(Gio.FileIcon.new(Gio.File.new_for_path(`${extensionPath}/icons/bp-info-symbolic.svg`)));
+    return new Gtk.MenuButton({child: icon, valign: Gtk.Align.CENTER,
+        css_classes: ['flat', 'circular'], tooltip_text: text, popover: new Gtk.Popover({child: label})});
+}
+
+// a keyboard shortcut: click, press the keys; Backspace clears it, Escape keeps it
+function shortcutRow(settings, key, title, subtitle = '') {
+    const row = new Adw.ActionRow({title, subtitle});
+    const label = new Gtk.ShortcutLabel({disabled_text: _('None'), valign: Gtk.Align.CENTER});
+    const button = new Gtk.Button({child: label, valign: Gtk.Align.CENTER, css_classes: ['flat']});
+    const sync = () => (label.accelerator = settings.get_strv(key)[0] ?? '');
+    sync();
+    settings.connect(`changed::${key}`, sync);
+    const controller = new Gtk.EventControllerKey();
+    let listening = false;
+    controller.connect('key-pressed', (c, keyval, keycode, state) => {
+        if (!listening)
+            return false;
+        const mods = state & Gtk.accelerator_get_default_mod_mask();
+        if (keyval === 0xff1b && !mods) {             // Escape
+            listening = false;
+            sync();
+        } else if (keyval === 0xff08 && !mods) {      // BackSpace
+            listening = false;
+            settings.set_strv(key, []);
+        } else if (Gtk.accelerator_valid(keyval, mods)) {
+            listening = false;
+            settings.set_strv(key, [Gtk.accelerator_name(keyval, mods)]);
+        } else {
+            return true;
+        }
+        return true;
+    });
+    button.add_controller(controller);
+    button.connect('clicked', () => {
+        listening = true;
+        label.accelerator = '';
+        label.disabled_text = _('Press the keys…');
+        button.grab_focus();
+    });
+    settings.connect(`changed::${key}`, () => (label.disabled_text = _('None')));
+    row.add_suffix(button);
+    row.activatable_widget = button;
+    return row;
+}
+
 // minutes after midnight shown as HH:MM
 function timeRow(settings, key, title, subtitle = '') {
     const row = spinRow(settings, key, title, 0, 1439, 15, subtitle);
@@ -61,7 +113,7 @@ function timeRow(settings, key, title, subtitle = '') {
     return row;
 }
 
-export default class BrightnessPlusPreferences extends ExtensionPreferences {
+export default class AutoBrightnessPlusPreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
         const s = this.getSettings();
         window.set_default_size(640, 720);
@@ -74,10 +126,47 @@ export default class BrightnessPlusPreferences extends ExtensionPreferences {
     _generalPage(s) {
         const page = new Adw.PreferencesPage({title: _('General'), icon_name: 'display-brightness-symbolic'});
 
+        // Claude Code: told by Claude itself when it is done or waits for you
+        const cc = new Adw.PreferencesGroup({title: _('Claude Code')});
+        const link = new Adw.ActionRow({title: _('Connect to Claude Code')});
+        link.add_suffix(infoButton(_('When Claude is done or asks you something, you get a notification and its turned off screen lights up. No account needed.'), this.path));
+        const linkButton = new Gtk.Button({valign: Gtk.Align.CENTER});
+        link.add_suffix(linkButton);
+        const syncLink = (error = '') => {
+            const on = claude.isConnected();
+            link.subtitle = error || (on ? _('Connected') : _('Not connected'));
+            linkButton.label = on ? _('Disconnect') : _('Connect');
+            linkButton.css_classes = on ? [] : ['suggested-action'];
+        };
+        linkButton.connect('clicked', () => {
+            try {
+                if (claude.isConnected())
+                    claude.disconnect();
+                else
+                    claude.connect();
+                syncLink();
+            } catch (e) {
+                syncLink(format(_('Could not change %s: %s'), claude.settingsPath(), e.message));
+            }
+        });
+        syncLink();
+        cc.add(link);
+        cc.add(switchRow(s, 'claude-done', _('When Claude is done')));
+        cc.add(switchRow(s, 'claude-ask', _('When Claude waits for you'), _('A permission or a question')));
+        cc.add(switchRow(s, 'claude-notification', _('Also a notification'), _('Click it to go to the terminal')));
+        cc.add(switchRow(s, 'notify-bell', _('Other programs too'),
+            _('Terminal bell or an app asking for attention, e.g. make ; printf "\\a"')));
+        page.add(cc);
+
+
         const look = new Adw.PreferencesGroup({
             title: _('Sliders'),
             description: _('Every monitor gets its own slider in Quick Settings, next to the volume slider.'),
         });
+        look.add(comboRow(s, 'menu-style', _('Monitor menu'), [
+            ['simple', _('Simple (recommended)')],
+            ['detailed', _('Detailed')],
+        ], _('Simple: one slider for the value you pick. Detailed: a slider for every value.')));
         look.add(comboRow(s, 'slider-label', _('Left of the slider'), [
             ['icon', _('Brightness icon')],
             ['number', _('Monitor number (1, 2, 3…)')],
@@ -99,14 +188,14 @@ export default class BrightnessPlusPreferences extends ExtensionPreferences {
         const page = new Adw.PreferencesPage({title: _('Evening'), icon_name: 'weather-clear-night-symbolic'});
 
         const when = new Adw.PreferencesGroup({
-            title: _('Evening dimming'),
-            description: _('Turn it on per monitor with the moon button next to its slider. Brightness goes down slowly in the evening and comes back in the morning.'),
+            title: _('Automatic dimming'),
+            description: _('Turn it on per monitor with the moon button next to its slider. The monitor slowly gets darker and warmer in the evening and comes back in the morning.'),
         });
         when.add(comboRow(s, 'schedule-mode', _('Start'), [
             ['sun', _('At sunset')],
             ['fixed', _('At a fixed time')],
         ]));
-        when.add(spinRow(s, 'transition-minutes', _('Transition'), 1, 240, 5, _('Minutes, for both evening and morning')));
+        when.add(spinRow(s, 'transition-minutes', _('Morning transition'), 1, 240, 5, _('Minutes')));
         const morningOffset = spinRow(s, 'morning-offset', _('Morning'), -240, 240, 5, _('Minutes after sunrise'));
         const morningTime = timeRow(s, 'morning-time', _('Morning'), _('Brightness comes back at'));
         when.add(morningOffset);
@@ -115,12 +204,13 @@ export default class BrightnessPlusPreferences extends ExtensionPreferences {
 
         const defaults = new Adw.PreferencesGroup({
             title: _('For new monitors'),
-            description: _('Each monitor can change these in its own menu.'),
+            description: _('For the main monitor. The others take 30 minutes longer and go down to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.'),
         });
         const offset = spinRow(s, 'default-offset', _('Minutes after sunset'), -240, 240, 5);
         const start = timeRow(s, 'default-start', _('Start time'));
         defaults.add(offset);
         defaults.add(start);
+        defaults.add(spinRow(s, 'default-duration', _('Duration'), 15, 240, 15, _('Minutes the evening dimming takes')));
         const nightRow = new Adw.SpinRow({
             title: _('Night brightness'), subtitle: _('Percent'),
             adjustment: new Gtk.Adjustment({lower: 0, upper: 100, step_increment: 5}),
@@ -175,22 +265,41 @@ export default class BrightnessPlusPreferences extends ExtensionPreferences {
     _screenPage(s) {
         const page = new Adw.PreferencesPage({title: _('Screen off'), icon_name: 'system-shutdown-symbolic'});
 
+        const buttons = new Adw.PreferencesGroup({
+            title: _('Buttons'),
+            description: _('In each monitor’s menu (the moon button).'),
+        });
+        buttons.add(comboRow(s, 'buttons-position', _('Place'), [
+            ['bottom', _('At the bottom, large')],
+            ['top', _('At the top, large')],
+            ['header', _('Next to the monitor name, small')],
+        ]));
+        buttons.add(switchRow(s, 'show-lowest-button', _('Lowest light'),
+            _('Brightness 0 and full extra dimming; press again to go back')));
+        buttons.add(switchRow(s, 'show-off-button', _('Turn off screen')));
+        buttons.add(switchRow(s, 'show-others-button', _('Turn off other screens'),
+            _('Press again to turn them back on')));
+        page.add(buttons);
+
         const off = new Adw.PreferencesGroup({
             title: _('Turn off screen'),
-            description: _('“Turn off screen” and “Turn off others” in each monitor’s menu.'),
+            description: _('“Turn off screen” and “Turn off other screens” in each monitor’s menu.'),
         });
-        off.add(comboRow(s, 'screen-off-mode', _('Turned off screen'), [
-            ['black', _('Fully black')],
-            ['minimum', _('Lowest light')],
-        ]));
-        const level = spinRow(s, 'screen-off-level', _('Light left'), 1, 40, 1, _('Percent, for “Lowest light”'));
-        off.add(level);
-        off.add(switchRow(s, 'wake-on-hover', _('Turn back on when the mouse comes'),
-            _('Moving the mouse onto a turned off screen brings its light back')));
+        off.add(switchRow(s, 'wake-on-hover', _('Light up while the mouse is on it'),
+            _('A turned off screen lights up while the mouse is on it and goes dark again when the mouse leaves. The same button turns it back on.')));
         page.add(off);
-        const sync = () => (level.visible = s.get_string('screen-off-mode') === 'minimum');
-        s.connect('changed::screen-off-mode', sync);
-        sync();
+
+        // a turned off screen: its menu and the apps on it
+        const menu = new Adw.PreferencesGroup({
+            title: _('A turned off screen'),
+            description: _('Clicks and typing always reach the apps on it. Its options are in the monitor’s menu (the moon button) and behind the small dot.'),
+        });
+        menu.add(switchRow(s, 'show-dot', _('Small dot in a corner'),
+            _('Click it for the screen’s menu; drag it to another corner')));
+        menu.add(shortcutRow(s, 'menu-shortcut', _('Keyboard shortcut'),
+            _('The menu of the screen under the mouse')));
+        menu.add(spinRow(s, 'keep-lit-seconds', _('“Keep lit” lasts'), 5, 3600, 5, _('Seconds')));
+        page.add(menu);
 
         const red = new Adw.PreferencesGroup({
             title: _('Red screen'),

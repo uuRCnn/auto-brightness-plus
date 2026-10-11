@@ -4,7 +4,7 @@
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 
-const domain = 'brightness-plus';
+const domain = 'auto-brightness-plus';
 let localeDir = null;
 
 export function gettext(s) {

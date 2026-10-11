@@ -1,10 +1,10 @@
-# Persian translation for Brightness+.
-# This file is distributed under the same license as the Brightness+ package.
+# Persian translation for Auto Brightness+.
+# This file is distributed under the same license as the Auto Brightness+ package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Brightness+\n"
-"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"Project-Id-Version: Auto Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-11 21:12+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Persian\n"
@@ -14,137 +14,244 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/prefs.js:75
+#: src/prefs.js:62 src/prefs.js:94
+msgid "None"
+msgstr "هیچ"
+
+#: src/prefs.js:91
+msgid "Press the keys…"
+msgstr "کلیدها را بزنید…"
+
+#: src/prefs.js:127
 msgid "General"
 msgstr "عمومی"
 
-#: src/prefs.js:78
+#: src/prefs.js:130
+msgid "Claude Code"
+msgstr "Claude Code"
+
+#: src/prefs.js:131
+msgid "Connect to Claude Code"
+msgstr "اتصال به Claude Code"
+
+#: src/prefs.js:132
+msgid ""
+"When Claude is done or asks you something, you get a notification and its "
+"turned off screen lights up. No account needed."
+msgstr ""
+"وقتی Claude کارش تمام شد یا چیزی پرسید، اعلان می‌آید و صفحهٔ خاموشش روشن "
+"می‌شود. حساب لازم نیست."
+
+#: src/prefs.js:137
+msgid "Connected"
+msgstr "متصل"
+
+#: src/prefs.js:137
+msgid "Not connected"
+msgstr "متصل نیست"
+
+#: src/prefs.js:138
+msgid "Disconnect"
+msgstr "قطع اتصال"
+
+#: src/prefs.js:138
+msgid "Connect"
+msgstr "اتصال"
+
+#: src/prefs.js:149
+#, javascript-format
+msgid "Could not change %s: %s"
+msgstr "تغییر %s ممکن نشد: %s"
+
+#: src/prefs.js:154
+msgid "When Claude is done"
+msgstr "وقتی Claude تمام شد"
+
+#: src/prefs.js:155
+msgid "When Claude waits for you"
+msgstr "وقتی Claude منتظر توست"
+
+#: src/prefs.js:155
+msgid "A permission or a question"
+msgstr "یک اجازه یا پرسش"
+
+#: src/prefs.js:156
+msgid "Also a notification"
+msgstr "اعلان هم بیاید"
+
+#: src/prefs.js:156
+msgid "Click it to go to the terminal"
+msgstr "با کلیک به ترمینال می‌روی"
+
+#: src/prefs.js:157
+msgid "Other programs too"
+msgstr "برنامه‌های دیگر هم"
+
+#: src/prefs.js:158
+msgid ""
+"Terminal bell or an app asking for attention, e.g. make ; printf \"\\a\""
+msgstr "زنگ ترمینال یا برنامه‌ای که توجه می‌خواهد، مثلاً make ; printf \"\\a\""
+
+#: src/prefs.js:163
 msgid "Sliders"
 msgstr "لغزنده‌ها"
 
-#: src/prefs.js:79
+#: src/prefs.js:164
 msgid ""
 "Every monitor gets its own slider in Quick Settings, next to the volume "
 "slider."
 msgstr "هر نمایشگر در تنظیمات سریع، کنار لغزندهٔ صدا، لغزندهٔ خودش را دارد."
 
-#: src/prefs.js:81
+#: src/prefs.js:166
+msgid "Monitor menu"
+msgstr "منوی نمایشگر"
+
+#: src/prefs.js:167
+msgid "Simple (recommended)"
+msgstr "ساده (پیشنهادی)"
+
+#: src/prefs.js:168
+msgid "Detailed"
+msgstr "مفصل"
+
+#: src/prefs.js:169
+msgid ""
+"Simple: one slider for the value you pick. Detailed: a slider for every "
+"value."
+msgstr ""
+"ساده: یک لغزنده برای مقداری که انتخاب می‌کنید. مفصل: یک لغزنده برای هر مقدار."
+
+#: src/prefs.js:170
 msgid "Left of the slider"
 msgstr "سمت چپ لغزنده"
 
-#: src/prefs.js:82
+#: src/prefs.js:171
 msgid "Brightness icon"
 msgstr "نماد روشنایی"
 
-#: src/prefs.js:83
+#: src/prefs.js:172
 msgid "Monitor number (1, 2, 3…)"
 msgstr "شمارهٔ نمایشگر (۱، ۲، ۳…)"
 
-#: src/prefs.js:84
+#: src/prefs.js:173
 msgid "Short name (LG, VS…)"
 msgstr "نام کوتاه (LG، VS…)"
 
-#: src/prefs.js:86
+#: src/prefs.js:175
 msgid "Show the monitor name on hover"
 msgstr "نمایش نام نمایشگر هنگام نگه‌داشتن نشانگر"
 
-#: src/prefs.js:87
+#: src/prefs.js:176
 msgid "Replace GNOME’s own brightness slider"
 msgstr "جایگزینی لغزندهٔ روشنایی گنوم"
 
-#: src/prefs.js:88
+#: src/prefs.js:177
 msgid "The laptop screen then gets a row like the other monitors"
 msgstr "صفحهٔ لپ‌تاپ هم مانند دیگر نمایشگرها یک ردیف می‌گیرد"
 
-#: src/prefs.js:91
+#: src/prefs.js:180
 msgid "Night Light"
 msgstr "نور شب"
 
-#: src/prefs.js:92
+#: src/prefs.js:181
 msgid "Add a menu to the Night Light button"
 msgstr "افزودن منو به دکمهٔ نور شب"
 
-#: src/prefs.js:93
+#: src/prefs.js:182
 msgid "Temperature, red screen and its strength"
 msgstr "دمای رنگ، صفحهٔ قرمز و شدت آن"
 
-#: src/prefs.js:99
+#: src/prefs.js:188
 msgid "Evening"
 msgstr "عصر"
 
-#: src/prefs.js:102 src/lib/ui.js:257
-msgid "Evening dimming"
-msgstr "کم‌نور کردن عصرگاهی"
+#: src/prefs.js:191 src/lib/ui.js:1287
+msgid "Automatic dimming"
+msgstr "تیره‌سازی خودکار"
 
-#: src/prefs.js:103
+#: src/prefs.js:192
 msgid ""
-"Turn it on per monitor with the moon button next to its slider. Brightness "
-"goes down slowly in the evening and comes back in the morning."
+"Turn it on per monitor with the moon button next to its slider. The monitor "
+"slowly gets darker and warmer in the evening and comes back in the morning."
 msgstr ""
-"برای هر نمایشگر با دکمهٔ ماه کنار لغزنده‌اش روشن کنید. روشنایی عصر آرام کم "
-"می‌شود و صبح برمی‌گردد."
+"برای هر نمایشگر با دکمهٔ ماه کنار نوار لغزنده‌اش روشن کنید. نمایشگر عصر کم‌کم "
+"تیره‌تر و گرم‌تر می‌شود و صبح برمی‌گردد."
 
-#: src/prefs.js:105 src/lib/ui.js:264
+#: src/prefs.js:194 src/lib/ui.js:1305
 msgid "Start"
 msgstr "شروع"
 
-#: src/prefs.js:106
+#: src/prefs.js:195
 msgid "At sunset"
 msgstr "هنگام غروب"
 
-#: src/prefs.js:107
+#: src/prefs.js:196
 msgid "At a fixed time"
 msgstr "در زمانی ثابت"
 
-#: src/prefs.js:109
-msgid "Transition"
-msgstr "گذار"
+#: src/prefs.js:198
+msgid "Morning transition"
+msgstr "گذار صبح"
 
-#: src/prefs.js:109
-msgid "Minutes, for both evening and morning"
-msgstr "دقیقه، برای عصر و صبح"
+#: src/prefs.js:198
+msgid "Minutes"
+msgstr "دقیقه"
 
-#: src/prefs.js:110 src/prefs.js:111
+#: src/prefs.js:199 src/prefs.js:200
 msgid "Morning"
 msgstr "صبح"
 
-#: src/prefs.js:110
+#: src/prefs.js:199
 msgid "Minutes after sunrise"
 msgstr "دقیقه پس از طلوع"
 
-#: src/prefs.js:111
+#: src/prefs.js:200
 msgid "Brightness comes back at"
 msgstr "روشنایی برمی‌گردد در"
 
-#: src/prefs.js:117
+#: src/prefs.js:206
 msgid "For new monitors"
 msgstr "برای نمایشگرهای جدید"
 
-#: src/prefs.js:118
-msgid "Each monitor can change these in its own menu."
-msgstr "هر نمایشگر می‌تواند این‌ها را در منوی خودش تغییر دهد."
+#: src/prefs.js:207
+msgid ""
+"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
+"with a little extra dimming late at night. Each monitor can change these in "
+"its own menu."
+msgstr ""
+"برای نمایشگر اصلی. بقیه ۳۰ دقیقه بیشتر طول می‌کشند و تا 0 % پایین می‌آیند و "
+"دیروقت شب کمی تاریکی اضافه هم می‌گیرند. هر نمایشگر می‌تواند این‌ها را در منوی "
+"خودش تغییر دهد."
 
-#: src/prefs.js:120
+#: src/prefs.js:209
 msgid "Minutes after sunset"
 msgstr "دقیقه پس از غروب"
 
-#: src/prefs.js:121
+#: src/prefs.js:210
 msgid "Start time"
 msgstr "زمان شروع"
 
-#: src/prefs.js:125 src/lib/ui.js:269
+#: src/prefs.js:213 src/lib/ui.js:1310
+msgid "Duration"
+msgstr "مدت"
+
+#: src/prefs.js:213
+msgid "Minutes the evening dimming takes"
+msgstr "چند دقیقه طول بکشد تا عصر تیره شود"
+
+#: src/prefs.js:215 src/lib/ui.js:37
 msgid "Night brightness"
 msgstr "روشنایی شب"
 
-#: src/prefs.js:125
+#: src/prefs.js:215
 msgid "Percent"
 msgstr "درصد"
 
-#: src/prefs.js:134 src/prefs.js:137
+#: src/prefs.js:224 src/prefs.js:227
 msgid "Location"
 msgstr "مکان"
 
-#: src/prefs.js:135
+#: src/prefs.js:225
 msgid ""
 "Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
 "keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
@@ -152,116 +259,177 @@ msgstr ""
 "فقط برای محاسبهٔ غروب و طلوع استفاده می‌شود. خودکار از مکانی که گنوم برای نور "
 "شب نگه می‌دارد استفاده می‌کند، وگرنه از منطقهٔ زمانی. چیزی ارسال نمی‌شود."
 
-#: src/prefs.js:138
+#: src/prefs.js:228
 msgid "Automatic"
 msgstr "خودکار"
 
-#: src/prefs.js:139
+#: src/prefs.js:229
 msgid "Manual"
 msgstr "دستی"
 
-#: src/prefs.js:141
+#: src/prefs.js:231
 msgid "Latitude"
 msgstr "عرض جغرافیایی"
 
-#: src/prefs.js:142
+#: src/prefs.js:232
 msgid "Longitude"
 msgstr "طول جغرافیایی"
 
-#: src/prefs.js:145
+#: src/prefs.js:235
 msgid "Today"
 msgstr "امروز"
 
-#: src/prefs.js:162
+#: src/prefs.js:252
 msgid "manual"
 msgstr "دستی"
 
-#: src/prefs.js:163
+#: src/prefs.js:253
 msgid "GNOME location"
 msgstr "مکان گنوم"
 
-#: src/prefs.js:164
+#: src/prefs.js:254
 #, javascript-format
 msgid "time zone %s"
 msgstr "منطقهٔ زمانی %s"
 
-#: src/prefs.js:165
+#: src/prefs.js:255
 msgid "UTC offset"
 msgstr "اختلاف UTC"
 
-#: src/prefs.js:168
+#: src/prefs.js:258
 #, javascript-format
 msgid "Sunset %s · sunrise %s · from %s"
 msgstr "غروب %s · طلوع %s · از %s"
 
-#: src/prefs.js:176
+#: src/prefs.js:266
 msgid "Screen off"
 msgstr "خاموشی"
 
-#: src/prefs.js:179 src/lib/ui.js:293
-msgid "Turn off screen"
-msgstr "خاموش کردن صفحه"
+#: src/prefs.js:269
+msgid "Buttons"
+msgstr "دکمه‌ها"
 
-#: src/prefs.js:180
-msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
-msgstr "«خاموش کردن صفحه» و «خاموش کردن بقیه» در منوی هر نمایشگر."
+#: src/prefs.js:270
+msgid "In each monitor’s menu (the moon button)."
+msgstr "در منوی هر نمایشگر (دکمهٔ ماه)."
 
-#: src/prefs.js:182
-msgid "Turned off screen"
-msgstr "صفحهٔ خاموش"
+#: src/prefs.js:272
+msgid "Place"
+msgstr "جا"
 
-#: src/prefs.js:183
-msgid "Fully black"
-msgstr "کاملاً سیاه"
+#: src/prefs.js:273
+msgid "At the bottom, large"
+msgstr "پایین، بزرگ"
 
-#: src/prefs.js:184
+#: src/prefs.js:274
+msgid "At the top, large"
+msgstr "بالا، بزرگ"
+
+#: src/prefs.js:275
+msgid "Next to the monitor name, small"
+msgstr "کنار نام نمایشگر، کوچک"
+
+#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
 msgid "Lowest light"
 msgstr "کمترین نور"
 
-#: src/prefs.js:186
-msgid "Light left"
-msgstr "نور باقی‌مانده"
+#: src/prefs.js:278
+msgid "Brightness 0 and full extra dimming; press again to go back"
+msgstr "روشنایی ۰ و تیرگی اضافی کامل؛ دوباره بزنید تا برگردد"
 
-#: src/prefs.js:186
-msgid "Percent, for “Lowest light”"
-msgstr "درصد، برای «کمترین نور»"
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
+#: src/lib/ui.js:1623
+msgid "Turn off screen"
+msgstr "خاموش کردن صفحه"
 
-#: src/prefs.js:188
-msgid "Turn back on when the mouse comes"
-msgstr "روشن شدن با آمدن موشی"
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+msgid "Turn off other screens"
+msgstr "خاموش کردن صفحه‌های دیگر"
 
-#: src/prefs.js:189
-msgid "Moving the mouse onto a turned off screen brings its light back"
-msgstr "بردن موشی روی صفحهٔ خاموش نورش را برمی‌گرداند"
+#: src/prefs.js:281
+msgid "Press again to turn them back on"
+msgstr "دوباره بزنید تا روشن شوند"
 
-#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+#: src/prefs.js:286
+msgid "“Turn off screen” and “Turn off other screens” in each monitor’s menu."
+msgstr "«خاموش کردن صفحه» و «خاموش کردن صفحه‌های دیگر» در منوی هر نمایشگر."
+
+#: src/prefs.js:288
+msgid "Light up while the mouse is on it"
+msgstr "تا وقتی موس رویش است روشن شود"
+
+#: src/prefs.js:289
+msgid ""
+"A turned off screen lights up while the mouse is on it and goes dark again "
+"when the mouse leaves. The same button turns it back on."
+msgstr ""
+"صفحهٔ خاموش تا وقتی موس رویش است روشن می‌شود و وقتی موس برود دوباره تیره "
+"می‌شود. همان دکمه دوباره روشنش می‌کند."
+
+#: src/prefs.js:294
+msgid "A turned off screen"
+msgstr "صفحهٔ خاموش"
+
+#: src/prefs.js:295
+msgid ""
+"Clicks and typing always reach the apps on it. Its options are in the "
+"monitor’s menu (the moon button) and behind the small dot."
+msgstr ""
+"کلیک و تایپ همیشه به برنامه‌های روی آن می‌رسد. گزینه‌هایش در منوی نمایشگر (دکمهٔ "
+"ماه) و پشت نقطهٔ کوچک است."
+
+#: src/prefs.js:297
+msgid "Small dot in a corner"
+msgstr "نقطهٔ کوچک در گوشه"
+
+#: src/prefs.js:298
+msgid "Click it for the screen’s menu; drag it to another corner"
+msgstr "کلیک: منوی صفحه؛ کشیدن: به گوشهٔ دیگر"
+
+#: src/prefs.js:299
+msgid "Keyboard shortcut"
+msgstr "میان‌بر صفحه‌کلید"
+
+#: src/prefs.js:300
+msgid "The menu of the screen under the mouse"
+msgstr "منوی صفحه‌ای که موس روی آن است"
+
+#: src/prefs.js:301
+msgid "“Keep lit” lasts"
+msgstr "مدت «روشن نگه دار»"
+
+#: src/prefs.js:301
+msgid "Seconds"
+msgstr "ثانیه"
+
+#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
 msgid "Red screen"
 msgstr "صفحهٔ قرمز"
 
-#: src/prefs.js:197
+#: src/prefs.js:306
 msgid ""
 "Switch it on in the Night Light menu. It removes all blue and green light, "
 "which helps you fall asleep."
 msgstr ""
 "از منوی نور شب روشن کنید. همهٔ نور آبی و سبز را حذف می‌کند و به خواب کمک می‌کند."
 
-#: src/prefs.js:199
+#: src/prefs.js:308
 msgid "Only while Night Light is active"
 msgstr "فقط وقتی نور شب فعال است"
 
-#: src/prefs.js:200
+#: src/prefs.js:309
 msgid "Starts and stops together with Night Light"
 msgstr "همراه با نور شب شروع و تمام می‌شود"
 
-#: src/prefs.js:201 src/lib/ui.js:439
+#: src/prefs.js:310 src/lib/ui.js:1852
 msgid "Strength"
 msgstr "شدت"
 
-#: src/prefs.js:215
+#: src/prefs.js:324
 msgid "Advanced"
 msgstr "پیشرفته"
 
-#: src/prefs.js:219
+#: src/prefs.js:328
 msgid ""
 "External monitors are controlled over DDC/CI. Your user needs access to /dev/"
 "i2c-* (usually the “i2c” group)."
@@ -269,117 +437,338 @@ msgstr ""
 "نمایشگرهای خارجی با DDC/CI کنترل می‌شوند. کاربر به /dev/i2c-* دسترسی لازم "
 "دارد (معمولاً گروه «i2c»)."
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil found"
 msgstr "ddcutil پیدا شد"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil not found"
 msgstr "ddcutil پیدا نشد"
 
-#: src/prefs.js:224
+#: src/prefs.js:333
 msgid "Install ddcutil from your distribution, then press Scan again"
 msgstr "ddcutil را از توزیع خود نصب کنید و سپس «جست‌وجوی دوباره» را بزنید"
 
-#: src/prefs.js:226
+#: src/prefs.js:335
 msgid "Scan again"
 msgstr "جست‌وجوی دوباره"
 
-#: src/prefs.js:231
+#: src/prefs.js:340
 msgid "ddcutil program"
 msgstr "برنامهٔ ddcutil"
 
-#: src/prefs.js:234
+#: src/prefs.js:343
 msgid "Extra arguments"
 msgstr "آرگومان‌های اضافه"
 
-#: src/prefs.js:237
+#: src/prefs.js:346
 msgid "Pause between writes"
 msgstr "مکث بین نوشتن‌ها"
 
-#: src/prefs.js:238
+#: src/prefs.js:347
 msgid "Milliseconds. Raise it if a monitor misses changes"
 msgstr "میلی‌ثانیه. اگر نمایشگری تغییرات را از دست می‌دهد افزایش دهید"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Debug messages"
 msgstr "پیام‌های اشکال‌زدایی"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Written to the system journal"
 msgstr "در ژورنال سیستم نوشته می‌شوند"
 
-#: src/lib/displays.js:37
+#: src/lib/cornerdot.js:61
+msgid "Screen menu"
+msgstr "منوی صفحه"
+
+#: src/lib/displays.js:59
 msgid "Monitor"
 msgstr "نمایشگر"
 
-#: src/lib/displays.js:287
+#: src/lib/displays.js:415
 msgid "Built-in Display"
 msgstr "نمایشگر داخلی"
 
-#: src/lib/displays.js:288
+#: src/lib/displays.js:416
 msgid "Built-in"
 msgstr "داخلی"
 
-#: src/lib/displays.js:290
+#: src/lib/displays.js:418
 #, javascript-format
 msgid "Monitor %d"
 msgstr "نمایشگر %d"
 
-#: src/lib/ui.js:119
-msgid "Earlier"
-msgstr "زودتر"
+#: src/lib/notify.js:115
+msgid "Claude is waiting for you"
+msgstr "Claude منتظر توست"
 
-#: src/lib/ui.js:122
-msgid "Later"
-msgstr "دیرتر"
+#: src/lib/notify.js:115
+msgid "Claude is done"
+msgstr "Claude تمام شد"
 
-#: src/lib/ui.js:165
-msgid "Evening dimming and more"
-msgstr "کم‌نور کردن عصرگاهی و بیشتر"
+#: src/lib/notify.js:129
+msgid "Go to the terminal"
+msgstr "رفتن به ترمینال"
 
-#: src/lib/ui.js:282
+#: src/lib/offmenu.js:15
+#, javascript-format
+msgid "%d s"
+msgstr "%d ث"
+
+#: src/lib/offmenu.js:17
+#, javascript-format
+msgid "%d min %d s"
+msgstr "%d د %d ث"
+
+#: src/lib/offmenu.js:17 src/lib/ui.js:62
+#, javascript-format
+msgid "%d min"
+msgstr "%d دقیقه"
+
+#: src/lib/offmenu.js:43
+#, javascript-format
+msgid "Keep lit · %s"
+msgstr "روشن نگه دار · %s"
+
+#: src/lib/offmenu.js:44
+msgid "Keep lit until I darken it"
+msgstr "روشن نگه دار تا خودم تاریک کنم"
+
+#: src/lib/offmenu.js:45
+msgid "Darken now"
+msgstr "الان تاریک کن"
+
+#: src/lib/offmenu.js:46
+msgid "Turn the screen back on"
+msgstr "دوباره روشن کردن صفحه"
+
+#: src/lib/ui.js:36
+msgid "Day brightness"
+msgstr "روشنایی روز"
+
+#: src/lib/ui.js:38
 msgid "Extra dimming"
 msgstr "کم‌نوری اضافه"
 
-#: src/lib/ui.js:294
-msgid "Turn off others"
-msgstr "خاموش کردن بقیه"
+#: src/lib/ui.js:39
+msgid ""
+"Darkens the picture further when the monitor is already at its lowest "
+"brightness."
+msgstr "وقتی نمایشگر روی کمترین روشنایی است، تصویر را باز هم تیره‌تر می‌کند."
 
-#: src/lib/ui.js:318
-msgid "Off"
-msgstr "خاموش"
+#: src/lib/ui.js:45
+msgid "Night light"
+msgstr "نور شب"
 
-#: src/lib/ui.js:335
-msgid "Turned off"
-msgstr "خاموش شد"
+#: src/lib/ui.js:46 src/lib/ui.js:1824
+msgid ""
+"Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
+"screen helps you fall asleep more easily."
+msgstr ""
+"نور آبی در عصر ملاتونین، هورمون خواب، را کم می‌کند. صفحهٔ گرم‌تر کمک می‌کند "
+"راحت‌تر بخوابید."
 
-#: src/lib/ui.js:335
+#: src/lib/ui.js:47
+msgid ""
+"How strong Night Light is on this monitor. ×1 = exactly GNOME’s Night Light, "
+"nothing added. ×0 turns it off here, ×2 makes it twice as warm."
+msgstr ""
+"شدت نور شب روی این نمایشگر. ×۱ = دقیقاً نور شب GNOME، چیزی اضافه نمی‌شود. ×۰ "
+"این‌جا خاموشش می‌کند، ×۲ دو برابر گرم‌تر."
+
+#: src/lib/ui.js:48
+msgid "Red light"
+msgstr "نور قرمز"
+
+#: src/lib/ui.js:49 src/lib/ui.js:1841
+msgid ""
+"Red light disturbs melatonin and your body clock the least of all colours. "
+"Ideal for the last hours before bed."
+msgstr ""
+"نور قرمز در میان همهٔ رنگ‌ها کمترین اثر را بر ملاتونین و ساعت بدن دارد. برای "
+"ساعت‌های آخر پیش از خواب ایده‌آل است."
+
+#: src/lib/ui.js:50
+msgid ""
+"How strong the red screen is on this monitor. ×1 = the red screen as set in "
+"the Night Light menu, nothing added. ×0 keeps this monitor normal, ×2 makes "
+"it twice as red."
+msgstr ""
+"شدت صفحهٔ قرمز روی این نمایشگر. ×۱ = صفحهٔ قرمز همان‌طور که در منوی نور شب "
+"تنظیم شده، چیزی اضافه نمی‌شود. ×۰ عادی نگه می‌دارد، ×۲ دو برابر قرمزتر."
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h %d min"
+msgstr "%d ساعت %d دقیقه"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h"
+msgstr "%d ساعت"
+
+#: src/lib/ui.js:284
+msgid "Earlier"
+msgstr "زودتر"
+
+#: src/lib/ui.js:287
+msgid "Later"
+msgstr "دیرتر"
+
+#: src/lib/ui.js:1080
+msgid "Automatic dimming and more"
+msgstr "تیره‌سازی خودکار و بیشتر"
+
+#: src/lib/ui.js:1249
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: src/lib/ui.js:1293
+msgid ""
+"Slowly dims this monitor in the evening, and brings it back in the morning."
+msgstr "عصر این نمایشگر را کم‌کم تیره می‌کند و صبح به حالت قبل برمی‌گرداند."
+
+#: src/lib/ui.js:1294
+msgid ""
+"Drag the points to shape the evening; the big point also sets how long it "
+"takes. + adds a button that runs by itself."
+msgstr ""
+"نقطه‌ها را بکشید تا شکل عصر را بسازید؛ نقطهٔ بزرگ مدت آن را هم تعیین می‌کند. + "
+"دکمه‌ای اضافه می‌کند که خودش اجرا می‌شود."
+
+#: src/lib/ui.js:1311
+msgid "Shorter"
+msgstr "کوتاه‌تر"
+
+#: src/lib/ui.js:1312
+msgid "Longer"
+msgstr "بلندتر"
+
+#: src/lib/ui.js:1322
+msgid "Back to normal in the morning"
+msgstr "صبح به حالت عادی برگردد"
+
+#: src/lib/ui.js:1326
+msgid ""
+"When the morning comes, lowest light and turned off screens go back to "
+"normal, whether they were switched on by hand or by the graph."
+msgstr ""
+"صبح، کمترین نور و صفحه‌های خاموش به حالت عادی برمی‌گردند، چه دستی روشن شده "
+"باشند چه از نمودار."
+
+#: src/lib/ui.js:1359
+msgid "Back to 100 %"
+msgstr "بازگشت به 100 %"
+
+#: src/lib/ui.js:1362 src/lib/ui.js:1364
+msgid "Back to the default evening curve"
+msgstr "بازگشت به منحنی پیش‌فرض عصر"
+
+#: src/lib/ui.js:1380
+msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
+msgstr "پیش‌فرض: ×1 و زمان خودکار GNOME (غروب)"
+
+#: src/lib/ui.js:1385
+msgid "Back to ×1"
+msgstr "بازگشت به ×1"
+
+#: src/lib/ui.js:1403
+msgid "Day"
+msgstr "روز"
+
+#: src/lib/ui.js:1403
+msgid "Night"
+msgstr "شب"
+
+#: src/lib/ui.js:1403
+msgid "Extra"
+msgstr "اضافه"
+
+#: src/lib/ui.js:1404
+msgid "Warmth"
+msgstr "گرما"
+
+#: src/lib/ui.js:1404
+msgid "Red"
+msgstr "قرمز"
+
+#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+msgid "Back to the default"
+msgstr "بازگشت به پیش‌فرض"
+
+#: src/lib/ui.js:1541
+msgid "While the screen is off"
+msgstr "وقتی صفحه خاموش است"
+
+#: src/lib/ui.js:1581
+msgid "Dark while off"
+msgstr "تاریکی هنگام خاموشی"
+
+#: src/lib/ui.js:1582
+msgid ""
+"While the screen is off, the monitor stays at its lowest light and this much "
+"black is added on top. 25 % = a little darker, 100 % = fully black."
+msgstr ""
+"تا وقتی صفحه خاموش است، نمایشگر در کمترین نورش می‌ماند و این مقدار سیاهی روی "
+"آن اضافه می‌شود. 25 % = کمی تیره‌تر، 100 % = کاملاً سیاه."
+
+#: src/lib/ui.js:1602
+#, javascript-format
+msgid "Keep lit for %s"
+msgstr "%s روشن بماند"
+
+#: src/lib/ui.js:1603
+#, javascript-format
+msgid ""
+"On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
+"Off: it goes dark as soon as the mouse leaves."
+msgstr ""
+"روشن: پس از رفتن ماوس، صفحه %s دیگر روشن می‌ماند و سپس تاریک می‌شود. خاموش: به "
+"محض رفتن ماوس تاریک می‌شود."
+
+#: src/lib/ui.js:1687
 #, javascript-format
 msgid "Brightness %s"
 msgstr "روشنایی %s"
 
-#: src/lib/ui.js:344
+#: src/lib/ui.js:1689
+msgid "Turned off"
+msgstr "خاموش شد"
+
+#: src/lib/ui.js:1709
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "غروب %s %s %d دقیقه"
 
-#: src/lib/ui.js:347
+#: src/lib/ui.js:1712
 msgid "Fixed time"
 msgstr "زمان ثابت"
 
-#: src/lib/ui.js:421
+#: src/lib/ui.js:1715
+#, javascript-format
+msgid "Until %s"
+msgstr "تا %s"
+
+#: src/lib/ui.js:1724
+msgid "Off"
+msgstr "خاموش"
+
+#: src/lib/ui.js:1822
 msgid "Temperature"
 msgstr "دمای رنگ"
 
-#: src/lib/ui.js:498
+#: src/lib/ui.js:1825
+msgid "Back to GNOME’s default"
+msgstr "بازگشت به پیش‌فرض GNOME"
+
+#: src/lib/ui.js:1919
 msgid "Sunset to sunrise"
 msgstr "از غروب تا طلوع"
 
-#: src/lib/ui.js:514
+#: src/lib/ui.js:1941
 msgid "Turns on together with Night Light"
 msgstr "همراه با نور شب روشن می‌شود"
 
-#: src/lib/ui.js:516
+#: src/lib/ui.js:1943
 msgid "Starts when Night Light starts"
 msgstr "با شروع نور شب شروع می‌شود"

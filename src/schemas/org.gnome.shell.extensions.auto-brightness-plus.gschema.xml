@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="brightness-plus">
-  <schema id="org.gnome.shell.extensions.brightness-plus" path="/org/gnome/shell/extensions/brightness-plus/">
+<schemalist gettext-domain="auto-brightness-plus">
+  <schema id="org.gnome.shell.extensions.auto-brightness-plus" path="/org/gnome/shell/extensions/auto-brightness-plus/">
 
     <!-- appearance -->
+    <key name="menu-style" type="s">
+      <choices>
+        <choice value="simple"/>
+        <choice value="detailed"/>
+      </choices>
+      <default>'simple'</default>
+      <summary>Monitor menu: simple (pills and one slider) or detailed (a slider for every value)</summary>
+    </key>
     <key name="slider-label" type="s">
       <choices>
         <choice value="icon"/>
@@ -46,15 +54,20 @@
       <default>1200</default>
       <summary>Fixed start time for new monitors (minutes after midnight)</summary>
     </key>
+    <key name="default-duration" type="i">
+      <range min="15" max="240"/>
+      <default>240</default>
+      <summary>Evening dimming duration for new monitors, in minutes</summary>
+    </key>
     <key name="default-night" type="d">
       <range min="0" max="1"/>
-      <default>0.35</default>
+      <default>0.10</default>
       <summary>Night brightness for new monitors</summary>
     </key>
     <key name="transition-minutes" type="i">
       <range min="1" max="240"/>
       <default>60</default>
-      <summary>How long the evening and morning transitions take</summary>
+      <summary>How long the morning transition takes</summary>
     </key>
     <key name="morning-offset" type="i">
       <range min="-240" max="240"/>
@@ -86,18 +99,26 @@
     </key>
 
     <!-- screen off -->
-    <key name="screen-off-mode" type="s">
+    <key name="buttons-position" type="s">
       <choices>
-        <choice value="black"/>
-        <choice value="minimum"/>
+        <choice value="bottom"/>
+        <choice value="top"/>
+        <choice value="header"/>
       </choices>
-      <default>'black'</default>
-      <summary>Turn the screen fully black or keep a little light</summary>
+      <default>'bottom'</default>
+      <summary>Where the lowest light / turn off buttons go in a monitor's menu</summary>
     </key>
-    <key name="screen-off-level" type="i">
-      <range min="1" max="40"/>
-      <default>5</default>
-      <summary>Light left on a turned off screen in minimum mode (percent)</summary>
+    <key name="show-lowest-button" type="b">
+      <default>true</default>
+      <summary>Show the "Lowest light" button</summary>
+    </key>
+    <key name="show-off-button" type="b">
+      <default>true</default>
+      <summary>Show the "Turn off screen" button</summary>
+    </key>
+    <key name="show-others-button" type="b">
+      <default>true</default>
+      <summary>Show the "Turn off others" button</summary>
     </key>
     <key name="wake-on-hover" type="b">
       <default>true</default>
@@ -105,6 +126,39 @@
     </key>
 
     <!-- night light -->
+    <key name="keep-lit-seconds" type="i">
+      <range min="5" max="3600"/>
+      <default>45</default>
+      <summary>Seconds "Keep lit" lasts</summary>
+    </key>
+    <key name="show-dot" type="b">
+      <default>false</default>
+      <summary>A small dot in a corner of a turned off screen opens its menu</summary>
+    </key>
+    <key name="dot-corners" type="s">
+      <default>'{}'</default>
+      <summary>Corner of the dot per monitor (JSON)</summary>
+    </key>
+    <key name="menu-shortcut" type="as">
+      <default>[]</default>
+      <summary>Keyboard shortcut: the small menu of the screen under the mouse</summary>
+    </key>
+    <key name="claude-done" type="b">
+      <default>true</default>
+      <summary>Claude Code is done: light up its turned off screen</summary>
+    </key>
+    <key name="claude-ask" type="b">
+      <default>true</default>
+      <summary>Claude Code waits for you: light up its turned off screen</summary>
+    </key>
+    <key name="claude-notification" type="b">
+      <default>true</default>
+      <summary>Also show a notification</summary>
+    </key>
+    <key name="notify-bell" type="b">
+      <default>true</default>
+      <summary>Other programs (terminal bell, asking for attention) light up their turned off screen</summary>
+    </key>
     <key name="night-light-menu" type="b">
       <default>true</default>
       <summary>Add a menu to the Night Light button</summary>

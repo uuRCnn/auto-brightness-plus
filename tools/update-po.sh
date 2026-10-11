@@ -5,14 +5,14 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 xgettext --from-code=UTF-8 -k_ -kngettext:1,2 -kpgettext:1c,2 -kN_ --language=JavaScript \
-    -o po/brightness-plus.pot --package-name="Brightness+" \
-    --msgid-bugs-address="https://github.com/uuRCnn/brightness-plus/issues" \
+    -o po/auto-brightness-plus.pot --package-name="Auto Brightness+" \
+    --msgid-bugs-address="https://github.com/uuRCnn/auto-brightness-plus/issues" \
     src/extension.js src/prefs.js src/lib/*.js
 for po in po/*.po; do
     [ -e "$po" ] || continue
     lang=$(basename "$po" .po)
-    msgmerge --quiet --update --backup=none "$po" po/brightness-plus.pot
+    msgmerge --quiet --update --backup=none "$po" po/auto-brightness-plus.pot
     mkdir -p "build/locale/$lang/LC_MESSAGES"
-    msgfmt --check -o "build/locale/$lang/LC_MESSAGES/brightness-plus.mo" "$po"
+    msgfmt --check -o "build/locale/$lang/LC_MESSAGES/auto-brightness-plus.mo" "$po"
 done
 echo "translations ok"

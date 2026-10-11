@@ -1,10 +1,10 @@
-# Polish translation for Brightness+.
-# This file is distributed under the same license as the Brightness+ package.
+# Polish translation for Auto Brightness+.
+# This file is distributed under the same license as the Auto Brightness+ package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Brightness+\n"
-"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"Project-Id-Version: Auto Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-11 21:12+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Polish\n"
@@ -15,137 +15,246 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: src/prefs.js:75
+#: src/prefs.js:62 src/prefs.js:94
+msgid "None"
+msgstr "Brak"
+
+#: src/prefs.js:91
+msgid "Press the keys…"
+msgstr "Naciśnij klawisze…"
+
+#: src/prefs.js:127
 msgid "General"
 msgstr "Ogólne"
 
-#: src/prefs.js:78
+#: src/prefs.js:130
+msgid "Claude Code"
+msgstr "Claude Code"
+
+#: src/prefs.js:131
+msgid "Connect to Claude Code"
+msgstr "Połącz z Claude Code"
+
+#: src/prefs.js:132
+msgid ""
+"When Claude is done or asks you something, you get a notification and its "
+"turned off screen lights up. No account needed."
+msgstr ""
+"Gdy Claude skończy albo o coś zapyta, przyjdzie powiadomienie, a jego "
+"wyłączony ekran się rozjaśni. Konto niepotrzebne."
+
+#: src/prefs.js:137
+msgid "Connected"
+msgstr "Połączono"
+
+#: src/prefs.js:137
+msgid "Not connected"
+msgstr "Nie połączono"
+
+#: src/prefs.js:138
+msgid "Disconnect"
+msgstr "Rozłącz"
+
+#: src/prefs.js:138
+msgid "Connect"
+msgstr "Połącz"
+
+#: src/prefs.js:149
+#, javascript-format
+msgid "Could not change %s: %s"
+msgstr "Nie udało się zmienić %s: %s"
+
+#: src/prefs.js:154
+msgid "When Claude is done"
+msgstr "Gdy Claude skończy"
+
+#: src/prefs.js:155
+msgid "When Claude waits for you"
+msgstr "Gdy Claude na ciebie czeka"
+
+#: src/prefs.js:155
+msgid "A permission or a question"
+msgstr "Zgoda albo pytanie"
+
+#: src/prefs.js:156
+msgid "Also a notification"
+msgstr "Także powiadomienie"
+
+#: src/prefs.js:156
+msgid "Click it to go to the terminal"
+msgstr "Kliknięcie przenosi do terminala"
+
+#: src/prefs.js:157
+msgid "Other programs too"
+msgstr "Także inne programy"
+
+#: src/prefs.js:158
+msgid ""
+"Terminal bell or an app asking for attention, e.g. make ; printf \"\\a\""
+msgstr ""
+"Dzwonek terminala albo aplikacja prosząca o uwagę, np. make ; printf \"\\a\""
+
+#: src/prefs.js:163
 msgid "Sliders"
 msgstr "Suwaki"
 
-#: src/prefs.js:79
+#: src/prefs.js:164
 msgid ""
 "Every monitor gets its own slider in Quick Settings, next to the volume "
 "slider."
 msgstr "Każdy monitor ma własny suwak w Szybkich ustawieniach, obok głośności."
 
-#: src/prefs.js:81
+#: src/prefs.js:166
+msgid "Monitor menu"
+msgstr "Menu monitora"
+
+#: src/prefs.js:167
+msgid "Simple (recommended)"
+msgstr "Proste (zalecane)"
+
+#: src/prefs.js:168
+msgid "Detailed"
+msgstr "Szczegółowe"
+
+#: src/prefs.js:169
+msgid ""
+"Simple: one slider for the value you pick. Detailed: a slider for every "
+"value."
+msgstr ""
+"Proste: jeden suwak dla wybranej wartości. Szczegółowe: suwak dla każdej "
+"wartości."
+
+#: src/prefs.js:170
 msgid "Left of the slider"
 msgstr "Po lewej od suwaka"
 
-#: src/prefs.js:82
+#: src/prefs.js:171
 msgid "Brightness icon"
 msgstr "Ikona jasności"
 
-#: src/prefs.js:83
+#: src/prefs.js:172
 msgid "Monitor number (1, 2, 3…)"
 msgstr "Numer monitora (1, 2, 3…)"
 
-#: src/prefs.js:84
+#: src/prefs.js:173
 msgid "Short name (LG, VS…)"
 msgstr "Krótka nazwa (LG, VS…)"
 
-#: src/prefs.js:86
+#: src/prefs.js:175
 msgid "Show the monitor name on hover"
 msgstr "Pokazuj nazwę monitora po najechaniu"
 
-#: src/prefs.js:87
+#: src/prefs.js:176
 msgid "Replace GNOME’s own brightness slider"
 msgstr "Zastąp suwak jasności GNOME"
 
-#: src/prefs.js:88
+#: src/prefs.js:177
 msgid "The laptop screen then gets a row like the other monitors"
 msgstr "Ekran laptopa dostanie wtedy własny wiersz jak inne monitory"
 
-#: src/prefs.js:91
+#: src/prefs.js:180
 msgid "Night Light"
 msgstr "Podświetlenie nocne"
 
-#: src/prefs.js:92
+#: src/prefs.js:181
 msgid "Add a menu to the Night Light button"
 msgstr "Dodaj menu do przycisku Podświetlenie nocne"
 
-#: src/prefs.js:93
+#: src/prefs.js:182
 msgid "Temperature, red screen and its strength"
 msgstr "Temperatura, czerwony ekran i jego siła"
 
-#: src/prefs.js:99
+#: src/prefs.js:188
 msgid "Evening"
 msgstr "Wieczór"
 
-#: src/prefs.js:102 src/lib/ui.js:257
-msgid "Evening dimming"
-msgstr "Wieczorne przyciemnianie"
+#: src/prefs.js:191 src/lib/ui.js:1287
+msgid "Automatic dimming"
+msgstr "Automatyczne przyciemnianie"
 
-#: src/prefs.js:103
+#: src/prefs.js:192
 msgid ""
-"Turn it on per monitor with the moon button next to its slider. Brightness "
-"goes down slowly in the evening and comes back in the morning."
+"Turn it on per monitor with the moon button next to its slider. The monitor "
+"slowly gets darker and warmer in the evening and comes back in the morning."
 msgstr ""
-"Włącz dla każdego monitora przyciskiem księżyca obok suwaka. Jasność powoli "
-"spada wieczorem i wraca rano."
+"Włącz dla każdego monitora przyciskiem z księżycem obok jego suwaka. Monitor "
+"wieczorem powoli ciemnieje i robi się cieplejszy, a rano wraca do normy."
 
-#: src/prefs.js:105 src/lib/ui.js:264
+#: src/prefs.js:194 src/lib/ui.js:1305
 msgid "Start"
 msgstr "Początek"
 
-#: src/prefs.js:106
+#: src/prefs.js:195
 msgid "At sunset"
 msgstr "O zachodzie słońca"
 
-#: src/prefs.js:107
+#: src/prefs.js:196
 msgid "At a fixed time"
 msgstr "O stałej godzinie"
 
-#: src/prefs.js:109
-msgid "Transition"
-msgstr "Przejście"
+#: src/prefs.js:198
+msgid "Morning transition"
+msgstr "Przejście poranne"
 
-#: src/prefs.js:109
-msgid "Minutes, for both evening and morning"
-msgstr "Minuty, wieczorem i rano"
+#: src/prefs.js:198
+msgid "Minutes"
+msgstr "Minuty"
 
-#: src/prefs.js:110 src/prefs.js:111
+#: src/prefs.js:199 src/prefs.js:200
 msgid "Morning"
 msgstr "Rano"
 
-#: src/prefs.js:110
+#: src/prefs.js:199
 msgid "Minutes after sunrise"
 msgstr "Minut po wschodzie słońca"
 
-#: src/prefs.js:111
+#: src/prefs.js:200
 msgid "Brightness comes back at"
 msgstr "Jasność wraca o"
 
-#: src/prefs.js:117
+#: src/prefs.js:206
 msgid "For new monitors"
 msgstr "Dla nowych monitorów"
 
-#: src/prefs.js:118
-msgid "Each monitor can change these in its own menu."
-msgstr "Każdy monitor może to zmienić w swoim menu."
+#: src/prefs.js:207
+msgid ""
+"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
+"with a little extra dimming late at night. Each monitor can change these in "
+"its own menu."
+msgstr ""
+"Dla głównego monitora. Pozostałe trwają 30 minut dłużej i schodzą do 0 %, a "
+"późno w nocy z odrobiną dodatkowego przyciemnienia. Każdy monitor może to "
+"zmienić we własnym menu."
 
-#: src/prefs.js:120
+#: src/prefs.js:209
 msgid "Minutes after sunset"
 msgstr "Minut po zachodzie słońca"
 
-#: src/prefs.js:121
+#: src/prefs.js:210
 msgid "Start time"
 msgstr "Godzina rozpoczęcia"
 
-#: src/prefs.js:125 src/lib/ui.js:269
+#: src/prefs.js:213 src/lib/ui.js:1310
+msgid "Duration"
+msgstr "Czas trwania"
+
+#: src/prefs.js:213
+msgid "Minutes the evening dimming takes"
+msgstr "Ile minut trwa wieczorne przyciemnianie"
+
+#: src/prefs.js:215 src/lib/ui.js:37
 msgid "Night brightness"
 msgstr "Jasność nocna"
 
-#: src/prefs.js:125
+#: src/prefs.js:215
 msgid "Percent"
 msgstr "Procent"
 
-#: src/prefs.js:134 src/prefs.js:137
+#: src/prefs.js:224 src/prefs.js:227
 msgid "Location"
 msgstr "Położenie"
 
-#: src/prefs.js:135
+#: src/prefs.js:225
 msgid ""
 "Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
 "keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
@@ -154,93 +263,155 @@ msgstr ""
 "położenia, które GNOME przechowuje dla podświetlenia nocnego, a w przeciwnym "
 "razie strefy czasowej. Nic nie jest wysyłane."
 
-#: src/prefs.js:138
+#: src/prefs.js:228
 msgid "Automatic"
 msgstr "Automatycznie"
 
-#: src/prefs.js:139
+#: src/prefs.js:229
 msgid "Manual"
 msgstr "Ręcznie"
 
-#: src/prefs.js:141
+#: src/prefs.js:231
 msgid "Latitude"
 msgstr "Szerokość geograficzna"
 
-#: src/prefs.js:142
+#: src/prefs.js:232
 msgid "Longitude"
 msgstr "Długość geograficzna"
 
-#: src/prefs.js:145
+#: src/prefs.js:235
 msgid "Today"
 msgstr "Dziś"
 
-#: src/prefs.js:162
+#: src/prefs.js:252
 msgid "manual"
 msgstr "ręcznie"
 
-#: src/prefs.js:163
+#: src/prefs.js:253
 msgid "GNOME location"
 msgstr "położenie GNOME"
 
-#: src/prefs.js:164
+#: src/prefs.js:254
 #, javascript-format
 msgid "time zone %s"
 msgstr "strefa czasowa %s"
 
-#: src/prefs.js:165
+#: src/prefs.js:255
 msgid "UTC offset"
 msgstr "przesunięcie UTC"
 
-#: src/prefs.js:168
+#: src/prefs.js:258
 #, javascript-format
 msgid "Sunset %s · sunrise %s · from %s"
 msgstr "Zachód %s · wschód %s · źródło: %s"
 
-#: src/prefs.js:176
+#: src/prefs.js:266
 msgid "Screen off"
 msgstr "Wyłączanie"
 
-#: src/prefs.js:179 src/lib/ui.js:293
-msgid "Turn off screen"
-msgstr "Wyłącz ekran"
+#: src/prefs.js:269
+msgid "Buttons"
+msgstr "Przyciski"
 
-#: src/prefs.js:180
-msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
-msgstr "„Wyłącz ekran” i „Wyłącz pozostałe” w menu każdego monitora."
+#: src/prefs.js:270
+msgid "In each monitor’s menu (the moon button)."
+msgstr "W menu każdego monitora (przycisk z księżycem)."
 
-#: src/prefs.js:182
-msgid "Turned off screen"
-msgstr "Wyłączony ekran"
+#: src/prefs.js:272
+msgid "Place"
+msgstr "Miejsce"
 
-#: src/prefs.js:183
-msgid "Fully black"
-msgstr "Całkiem czarny"
+#: src/prefs.js:273
+msgid "At the bottom, large"
+msgstr "Na dole, duże"
 
-#: src/prefs.js:184
+#: src/prefs.js:274
+msgid "At the top, large"
+msgstr "Na górze, duże"
+
+#: src/prefs.js:275
+msgid "Next to the monitor name, small"
+msgstr "Obok nazwy monitora, małe"
+
+#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
 msgid "Lowest light"
 msgstr "Najmniej światła"
 
-#: src/prefs.js:186
-msgid "Light left"
-msgstr "Pozostałe światło"
+#: src/prefs.js:278
+msgid "Brightness 0 and full extra dimming; press again to go back"
+msgstr ""
+"Jasność 0 i pełne dodatkowe przyciemnienie; naciśnij ponownie, by wrócić"
 
-#: src/prefs.js:186
-msgid "Percent, for “Lowest light”"
-msgstr "Procent, dla „Najmniej światła”"
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
+#: src/lib/ui.js:1623
+msgid "Turn off screen"
+msgstr "Wyłącz ekran"
 
-#: src/prefs.js:188
-msgid "Turn back on when the mouse comes"
-msgstr "Włącz ponownie, gdy przyjdzie mysz"
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+msgid "Turn off other screens"
+msgstr "Wyłącz inne ekrany"
 
-#: src/prefs.js:189
-msgid "Moving the mouse onto a turned off screen brings its light back"
-msgstr "Przesunięcie myszy na wyłączony ekran przywraca jego światło"
+#: src/prefs.js:281
+msgid "Press again to turn them back on"
+msgstr "Naciśnij ponownie, by je włączyć"
 
-#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+#: src/prefs.js:286
+msgid "“Turn off screen” and “Turn off other screens” in each monitor’s menu."
+msgstr "„Wyłącz ekran” i „Wyłącz inne ekrany” w menu każdego monitora."
+
+#: src/prefs.js:288
+msgid "Light up while the mouse is on it"
+msgstr "Świeć, gdy jest na nim mysz"
+
+#: src/prefs.js:289
+msgid ""
+"A turned off screen lights up while the mouse is on it and goes dark again "
+"when the mouse leaves. The same button turns it back on."
+msgstr ""
+"Wyłączony ekran świeci, gdy jest na nim mysz, i znowu ciemnieje, gdy ją "
+"zabierzesz. Ten sam przycisk włącza go z powrotem."
+
+#: src/prefs.js:294
+msgid "A turned off screen"
+msgstr "Wyłączony ekran"
+
+#: src/prefs.js:295
+msgid ""
+"Clicks and typing always reach the apps on it. Its options are in the "
+"monitor’s menu (the moon button) and behind the small dot."
+msgstr ""
+"Kliknięcia i pisanie zawsze trafiają do jego aplikacji. Opcje są w menu "
+"monitora (przycisk z księżycem) i pod małą kropką."
+
+#: src/prefs.js:297
+msgid "Small dot in a corner"
+msgstr "Mała kropka w rogu"
+
+#: src/prefs.js:298
+msgid "Click it for the screen’s menu; drag it to another corner"
+msgstr "Klik: menu ekranu; przeciągnij: do innego rogu"
+
+#: src/prefs.js:299
+msgid "Keyboard shortcut"
+msgstr "Skrót klawiszowy"
+
+#: src/prefs.js:300
+msgid "The menu of the screen under the mouse"
+msgstr "Menu ekranu pod myszą"
+
+#: src/prefs.js:301
+msgid "“Keep lit” lasts"
+msgstr "Czas „Zostaw jasny”"
+
+#: src/prefs.js:301
+msgid "Seconds"
+msgstr "Sekundy"
+
+#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
 msgid "Red screen"
 msgstr "Czerwony ekran"
 
-#: src/prefs.js:197
+#: src/prefs.js:306
 msgid ""
 "Switch it on in the Night Light menu. It removes all blue and green light, "
 "which helps you fall asleep."
@@ -248,23 +419,23 @@ msgstr ""
 "Włącz w menu Podświetlenie nocne. Usuwa całe niebieskie i zielone światło, "
 "pomaga zasnąć."
 
-#: src/prefs.js:199
+#: src/prefs.js:308
 msgid "Only while Night Light is active"
 msgstr "Tylko gdy podświetlenie nocne jest aktywne"
 
-#: src/prefs.js:200
+#: src/prefs.js:309
 msgid "Starts and stops together with Night Light"
 msgstr "Zaczyna się i kończy razem z podświetleniem nocnym"
 
-#: src/prefs.js:201 src/lib/ui.js:439
+#: src/prefs.js:310 src/lib/ui.js:1852
 msgid "Strength"
 msgstr "Siła"
 
-#: src/prefs.js:215
+#: src/prefs.js:324
 msgid "Advanced"
 msgstr "Zaawansowane"
 
-#: src/prefs.js:219
+#: src/prefs.js:328
 msgid ""
 "External monitors are controlled over DDC/CI. Your user needs access to /dev/"
 "i2c-* (usually the “i2c” group)."
@@ -272,118 +443,343 @@ msgstr ""
 "Monitory zewnętrzne są sterowane przez DDC/CI. Użytkownik potrzebuje dostępu "
 "do /dev/i2c-* (zwykle grupa „i2c”)."
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil found"
 msgstr "Znaleziono ddcutil"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil not found"
 msgstr "Nie znaleziono ddcutil"
 
-#: src/prefs.js:224
+#: src/prefs.js:333
 msgid "Install ddcutil from your distribution, then press Scan again"
 msgstr ""
 "Zainstaluj ddcutil ze swojej dystrybucji, a potem kliknij Skanuj ponownie"
 
-#: src/prefs.js:226
+#: src/prefs.js:335
 msgid "Scan again"
 msgstr "Skanuj ponownie"
 
-#: src/prefs.js:231
+#: src/prefs.js:340
 msgid "ddcutil program"
 msgstr "Program ddcutil"
 
-#: src/prefs.js:234
+#: src/prefs.js:343
 msgid "Extra arguments"
 msgstr "Dodatkowe argumenty"
 
-#: src/prefs.js:237
+#: src/prefs.js:346
 msgid "Pause between writes"
 msgstr "Przerwa między zapisami"
 
-#: src/prefs.js:238
+#: src/prefs.js:347
 msgid "Milliseconds. Raise it if a monitor misses changes"
 msgstr "Milisekundy. Zwiększ, jeśli monitor gubi zmiany"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Debug messages"
 msgstr "Komunikaty debugowania"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Written to the system journal"
 msgstr "Zapisywane w dzienniku systemowym"
 
-#: src/lib/displays.js:37
+#: src/lib/cornerdot.js:61
+msgid "Screen menu"
+msgstr "Menu ekranu"
+
+#: src/lib/displays.js:59
 msgid "Monitor"
 msgstr "Monitor"
 
-#: src/lib/displays.js:287
+#: src/lib/displays.js:415
 msgid "Built-in Display"
 msgstr "Wbudowany ekran"
 
-#: src/lib/displays.js:288
+#: src/lib/displays.js:416
 msgid "Built-in"
 msgstr "Wbud"
 
-#: src/lib/displays.js:290
+#: src/lib/displays.js:418
 #, javascript-format
 msgid "Monitor %d"
 msgstr "Monitor %d"
 
-#: src/lib/ui.js:119
-msgid "Earlier"
-msgstr "Wcześniej"
+#: src/lib/notify.js:115
+msgid "Claude is waiting for you"
+msgstr "Claude na ciebie czeka"
 
-#: src/lib/ui.js:122
-msgid "Later"
-msgstr "Później"
+#: src/lib/notify.js:115
+msgid "Claude is done"
+msgstr "Claude skończył"
 
-#: src/lib/ui.js:165
-msgid "Evening dimming and more"
-msgstr "Wieczorne przyciemnianie i więcej"
+#: src/lib/notify.js:129
+msgid "Go to the terminal"
+msgstr "Przejdź do terminala"
 
-#: src/lib/ui.js:282
+#: src/lib/offmenu.js:15
+#, javascript-format
+msgid "%d s"
+msgstr "%d s"
+
+#: src/lib/offmenu.js:17
+#, javascript-format
+msgid "%d min %d s"
+msgstr "%d min %d s"
+
+#: src/lib/offmenu.js:17 src/lib/ui.js:62
+#, javascript-format
+msgid "%d min"
+msgstr "%d min"
+
+#: src/lib/offmenu.js:43
+#, javascript-format
+msgid "Keep lit · %s"
+msgstr "Zostaw jasny · %s"
+
+#: src/lib/offmenu.js:44
+msgid "Keep lit until I darken it"
+msgstr "Zostaw jasny, aż go przyciemnię"
+
+#: src/lib/offmenu.js:45
+msgid "Darken now"
+msgstr "Przyciemnij teraz"
+
+#: src/lib/offmenu.js:46
+msgid "Turn the screen back on"
+msgstr "Włącz ekran z powrotem"
+
+#: src/lib/ui.js:36
+msgid "Day brightness"
+msgstr "Jasność w dzień"
+
+#: src/lib/ui.js:38
 msgid "Extra dimming"
 msgstr "Dodatkowe przyciemnienie"
 
-#: src/lib/ui.js:294
-msgid "Turn off others"
-msgstr "Wyłącz pozostałe"
+#: src/lib/ui.js:39
+msgid ""
+"Darkens the picture further when the monitor is already at its lowest "
+"brightness."
+msgstr ""
+"Przyciemnia obraz jeszcze bardziej, gdy monitor ma już najniższą jasność."
 
-#: src/lib/ui.js:318
-msgid "Off"
-msgstr "Wył."
+#: src/lib/ui.js:45
+msgid "Night light"
+msgstr "Światło nocne"
 
-#: src/lib/ui.js:335
-msgid "Turned off"
-msgstr "Wyłączony"
+#: src/lib/ui.js:46 src/lib/ui.js:1824
+msgid ""
+"Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
+"screen helps you fall asleep more easily."
+msgstr ""
+"Niebieskie światło wieczorem hamuje melatoninę, hormon snu. Cieplejszy ekran "
+"pomaga łatwiej zasnąć."
 
-#: src/lib/ui.js:335
+#: src/lib/ui.js:47
+msgid ""
+"How strong Night Light is on this monitor. ×1 = exactly GNOME’s Night Light, "
+"nothing added. ×0 turns it off here, ×2 makes it twice as warm."
+msgstr ""
+"Jak mocne jest światło nocne na tym monitorze. ×1 = dokładnie światło nocne "
+"GNOME, nic nie dodaje. ×0 wyłącza je tutaj, ×2 robi dwa razy cieplej."
+
+#: src/lib/ui.js:48
+msgid "Red light"
+msgstr "Światło czerwone"
+
+#: src/lib/ui.js:49 src/lib/ui.js:1841
+msgid ""
+"Red light disturbs melatonin and your body clock the least of all colours. "
+"Ideal for the last hours before bed."
+msgstr ""
+"Czerwone światło najmniej ze wszystkich kolorów zaburza melatoninę i zegar "
+"biologiczny. Idealne na ostatnie godziny przed snem."
+
+#: src/lib/ui.js:50
+msgid ""
+"How strong the red screen is on this monitor. ×1 = the red screen as set in "
+"the Night Light menu, nothing added. ×0 keeps this monitor normal, ×2 makes "
+"it twice as red."
+msgstr ""
+"Jak mocny jest czerwony ekran na tym monitorze. ×1 = czerwony ekran jak w "
+"menu światła nocnego, nic nie dodaje. ×0 zostawia go normalnym, ×2 robi dwa "
+"razy bardziej czerwonym."
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h %d min"
+msgstr "%d godz. %d min"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h"
+msgstr "%d godz."
+
+#: src/lib/ui.js:284
+msgid "Earlier"
+msgstr "Wcześniej"
+
+#: src/lib/ui.js:287
+msgid "Later"
+msgstr "Później"
+
+#: src/lib/ui.js:1080
+msgid "Automatic dimming and more"
+msgstr "Automatyczne przyciemnianie i więcej"
+
+#: src/lib/ui.js:1249
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: src/lib/ui.js:1293
+msgid ""
+"Slowly dims this monitor in the evening, and brings it back in the morning."
+msgstr ""
+"Wieczorem powoli przyciemnia ten monitor, a rano przywraca go do normy."
+
+#: src/lib/ui.js:1294
+msgid ""
+"Drag the points to shape the evening; the big point also sets how long it "
+"takes. + adds a button that runs by itself."
+msgstr ""
+"Przeciągaj punkty, aby ukształtować wieczór; duży punkt ustala też, jak "
+"długo trwa. + dodaje przycisk, który działa sam."
+
+#: src/lib/ui.js:1311
+msgid "Shorter"
+msgstr "Krócej"
+
+#: src/lib/ui.js:1312
+msgid "Longer"
+msgstr "Dłużej"
+
+#: src/lib/ui.js:1322
+msgid "Back to normal in the morning"
+msgstr "Rano wróć do normy"
+
+#: src/lib/ui.js:1326
+msgid ""
+"When the morning comes, lowest light and turned off screens go back to "
+"normal, whether they were switched on by hand or by the graph."
+msgstr ""
+"Rano najniższe światło i wyłączone ekrany wracają do normy, niezależnie od "
+"tego, czy włączono je ręcznie, czy z wykresu."
+
+#: src/lib/ui.js:1359
+msgid "Back to 100 %"
+msgstr "Wróć do 100 %"
+
+#: src/lib/ui.js:1362 src/lib/ui.js:1364
+msgid "Back to the default evening curve"
+msgstr "Wróć do domyślnej krzywej wieczoru"
+
+#: src/lib/ui.js:1380
+msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
+msgstr "Domyślnie: ×1 i automatyczna pora GNOME (zachód słońca)"
+
+#: src/lib/ui.js:1385
+msgid "Back to ×1"
+msgstr "Wróć do ×1"
+
+#: src/lib/ui.js:1403
+msgid "Day"
+msgstr "Dzień"
+
+#: src/lib/ui.js:1403
+msgid "Night"
+msgstr "Noc"
+
+#: src/lib/ui.js:1403
+msgid "Extra"
+msgstr "Extra"
+
+#: src/lib/ui.js:1404
+msgid "Warmth"
+msgstr "Ciepło"
+
+#: src/lib/ui.js:1404
+msgid "Red"
+msgstr "Czerwień"
+
+#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+msgid "Back to the default"
+msgstr "Wróć do domyślnej"
+
+#: src/lib/ui.js:1541
+msgid "While the screen is off"
+msgstr "Gdy ekran jest wyłączony"
+
+#: src/lib/ui.js:1581
+msgid "Dark while off"
+msgstr "Ciemność po wyłączeniu"
+
+#: src/lib/ui.js:1582
+msgid ""
+"While the screen is off, the monitor stays at its lowest light and this much "
+"black is added on top. 25 % = a little darker, 100 % = fully black."
+msgstr ""
+"Gdy ekran jest wyłączony, monitor zostaje na najniższym świetle, a na "
+"wierzch dodawana jest taka ilość czerni. 25 % = trochę ciemniej, 100 % = "
+"całkiem czarno."
+
+#: src/lib/ui.js:1602
+#, javascript-format
+msgid "Keep lit for %s"
+msgstr "Zostaw jasny %s"
+
+#: src/lib/ui.js:1603
+#, javascript-format
+msgid ""
+"On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
+"Off: it goes dark as soon as the mouse leaves."
+msgstr ""
+"Wł.: gdy mysz odejdzie, ekran świeci jeszcze %s, potem gaśnie. Wył.: gaśnie, "
+"gdy tylko mysz odejdzie."
+
+#: src/lib/ui.js:1687
 #, javascript-format
 msgid "Brightness %s"
 msgstr "Jasność %s"
 
-#: src/lib/ui.js:344
+#: src/lib/ui.js:1689
+msgid "Turned off"
+msgstr "Wyłączony"
+
+#: src/lib/ui.js:1709
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "Zachód %s %s %d min"
 
-#: src/lib/ui.js:347
+#: src/lib/ui.js:1712
 msgid "Fixed time"
 msgstr "Stała godzina"
 
-#: src/lib/ui.js:421
+#: src/lib/ui.js:1715
+#, javascript-format
+msgid "Until %s"
+msgstr "Do %s"
+
+#: src/lib/ui.js:1724
+msgid "Off"
+msgstr "Wył."
+
+#: src/lib/ui.js:1822
 msgid "Temperature"
 msgstr "Temperatura"
 
-#: src/lib/ui.js:498
+#: src/lib/ui.js:1825
+msgid "Back to GNOME’s default"
+msgstr "Wróć do domyślnej GNOME"
+
+#: src/lib/ui.js:1919
 msgid "Sunset to sunrise"
 msgstr "Od zachodu do wschodu słońca"
 
-#: src/lib/ui.js:514
+#: src/lib/ui.js:1941
 msgid "Turns on together with Night Light"
 msgstr "Włącza się razem z podświetleniem nocnym"
 
-#: src/lib/ui.js:516
+#: src/lib/ui.js:1943
 msgid "Starts when Night Light starts"
 msgstr "Zacznie się z podświetleniem nocnym"

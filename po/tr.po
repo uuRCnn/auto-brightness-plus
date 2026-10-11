@@ -1,10 +1,10 @@
-# Turkish translation for Brightness+.
-# This file is distributed under the same license as the Brightness+ package.
+# Turkish translation for Auto Brightness+.
+# This file is distributed under the same license as the Auto Brightness+ package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Brightness+\n"
-"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"Project-Id-Version: Auto Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-11 21:12+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Turkish\n"
@@ -14,138 +14,246 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/prefs.js:75
+#: src/prefs.js:62 src/prefs.js:94
+msgid "None"
+msgstr "Yok"
+
+#: src/prefs.js:91
+msgid "Press the keys…"
+msgstr "Tuşlara bas…"
+
+#: src/prefs.js:127
 msgid "General"
 msgstr "Genel"
 
-#: src/prefs.js:78
+#: src/prefs.js:130
+msgid "Claude Code"
+msgstr "Claude Code"
+
+#: src/prefs.js:131
+msgid "Connect to Claude Code"
+msgstr "Claude Code’a bağla"
+
+#: src/prefs.js:132
+msgid ""
+"When Claude is done or asks you something, you get a notification and its "
+"turned off screen lights up. No account needed."
+msgstr ""
+"Claude işini bitirince ya da sana bir şey sorunca bildirim gelir ve kapalı "
+"ekranı yanar. Hesap gerekmez."
+
+#: src/prefs.js:137
+msgid "Connected"
+msgstr "Bağlı"
+
+#: src/prefs.js:137
+msgid "Not connected"
+msgstr "Bağlı değil"
+
+#: src/prefs.js:138
+msgid "Disconnect"
+msgstr "Bağlantıyı kaldır"
+
+#: src/prefs.js:138
+msgid "Connect"
+msgstr "Bağla"
+
+#: src/prefs.js:149
+#, javascript-format
+msgid "Could not change %s: %s"
+msgstr "%s değiştirilemedi: %s"
+
+#: src/prefs.js:154
+msgid "When Claude is done"
+msgstr "Claude bitince"
+
+#: src/prefs.js:155
+msgid "When Claude waits for you"
+msgstr "Claude seni bekleyince"
+
+#: src/prefs.js:155
+msgid "A permission or a question"
+msgstr "Onay ya da soru"
+
+#: src/prefs.js:156
+msgid "Also a notification"
+msgstr "Bildirim de gelsin"
+
+#: src/prefs.js:156
+msgid "Click it to go to the terminal"
+msgstr "Tıklayınca terminale gider"
+
+#: src/prefs.js:157
+msgid "Other programs too"
+msgstr "Diğer programlar da"
+
+#: src/prefs.js:158
+msgid ""
+"Terminal bell or an app asking for attention, e.g. make ; printf \"\\a\""
+msgstr ""
+"Terminal zili ya da dikkat isteyen bir uygulama, örn. make ; printf \"\\a\""
+
+#: src/prefs.js:163
 msgid "Sliders"
 msgstr "Slider’lar"
 
-#: src/prefs.js:79
+#: src/prefs.js:164
 msgid ""
 "Every monitor gets its own slider in Quick Settings, next to the volume "
 "slider."
 msgstr ""
 "Her monitörün Hızlı Ayarlar’da, ses slider’ının yanında kendi slider’ı olur."
 
-#: src/prefs.js:81
+#: src/prefs.js:166
+msgid "Monitor menu"
+msgstr "Monitör menüsü"
+
+#: src/prefs.js:167
+msgid "Simple (recommended)"
+msgstr "Sade (önerilen)"
+
+#: src/prefs.js:168
+msgid "Detailed"
+msgstr "Ayrıntılı"
+
+#: src/prefs.js:169
+msgid ""
+"Simple: one slider for the value you pick. Detailed: a slider for every "
+"value."
+msgstr ""
+"Sade: seçtiğin değer için tek slider. Ayrıntılı: her değer için bir slider."
+
+#: src/prefs.js:170
 msgid "Left of the slider"
 msgstr "Slider’ın solunda"
 
-#: src/prefs.js:82
+#: src/prefs.js:171
 msgid "Brightness icon"
 msgstr "Parlaklık simgesi"
 
-#: src/prefs.js:83
+#: src/prefs.js:172
 msgid "Monitor number (1, 2, 3…)"
 msgstr "Monitör numarası (1, 2, 3…)"
 
-#: src/prefs.js:84
+#: src/prefs.js:173
 msgid "Short name (LG, VS…)"
 msgstr "Kısa ad (LG, VS…)"
 
-#: src/prefs.js:86
+#: src/prefs.js:175
 msgid "Show the monitor name on hover"
 msgstr "Üstüne gelince monitörün adını göster"
 
-#: src/prefs.js:87
+#: src/prefs.js:176
 msgid "Replace GNOME’s own brightness slider"
 msgstr "GNOME’un kendi parlaklık slider’ının yerine geç"
 
-#: src/prefs.js:88
+#: src/prefs.js:177
 msgid "The laptop screen then gets a row like the other monitors"
 msgstr "Dizüstü ekranı da diğer monitörler gibi kendi satırını alır"
 
-#: src/prefs.js:91
+#: src/prefs.js:180
 msgid "Night Light"
 msgstr "Gece Işığı"
 
-#: src/prefs.js:92
+#: src/prefs.js:181
 msgid "Add a menu to the Night Light button"
 msgstr "Gece Işığı düğmesine menü ekle"
 
-#: src/prefs.js:93
+#: src/prefs.js:182
 msgid "Temperature, red screen and its strength"
 msgstr "Sıcaklık, kırmızı ekran ve gücü"
 
-#: src/prefs.js:99
+#: src/prefs.js:188
 msgid "Evening"
 msgstr "Akşam"
 
-#: src/prefs.js:102 src/lib/ui.js:257
-msgid "Evening dimming"
-msgstr "Akşam kararması"
+#: src/prefs.js:191 src/lib/ui.js:1287
+msgid "Automatic dimming"
+msgstr "Otomatik karartma"
 
-#: src/prefs.js:103
+#: src/prefs.js:192
 msgid ""
-"Turn it on per monitor with the moon button next to its slider. Brightness "
-"goes down slowly in the evening and comes back in the morning."
+"Turn it on per monitor with the moon button next to its slider. The monitor "
+"slowly gets darker and warmer in the evening and comes back in the morning."
 msgstr ""
-"Her monitör için slider’ının yanındaki ay düğmesinden açılır. Parlaklık "
-"akşam yavaş yavaş iner, sabah geri gelir."
+"Her monitör için slider’ının yanındaki ay düğmesinden açılır. Monitör akşam "
+"yavaş yavaş kararır ve ısınır, sabah eski haline döner."
 
-#: src/prefs.js:105 src/lib/ui.js:264
+#: src/prefs.js:194 src/lib/ui.js:1305
 msgid "Start"
 msgstr "Başlangıç"
 
-#: src/prefs.js:106
+#: src/prefs.js:195
 msgid "At sunset"
 msgstr "Gün batımında"
 
-#: src/prefs.js:107
+#: src/prefs.js:196
 msgid "At a fixed time"
 msgstr "Sabit bir saatte"
 
-#: src/prefs.js:109
-msgid "Transition"
-msgstr "Geçiş süresi"
+#: src/prefs.js:198
+msgid "Morning transition"
+msgstr "Sabah geçişi"
 
-#: src/prefs.js:109
-msgid "Minutes, for both evening and morning"
-msgstr "Dakika; akşam ve sabah için"
+#: src/prefs.js:198
+msgid "Minutes"
+msgstr "Dakika"
 
-#: src/prefs.js:110 src/prefs.js:111
+#: src/prefs.js:199 src/prefs.js:200
 msgid "Morning"
 msgstr "Sabah"
 
-#: src/prefs.js:110
+#: src/prefs.js:199
 msgid "Minutes after sunrise"
 msgstr "Gün doğumundan sonra dakika"
 
-#: src/prefs.js:111
+#: src/prefs.js:200
 msgid "Brightness comes back at"
 msgstr "Parlaklığın geri geleceği saat"
 
-#: src/prefs.js:117
+#: src/prefs.js:206
 msgid "For new monitors"
 msgstr "Yeni monitörler için"
 
-#: src/prefs.js:118
-msgid "Each monitor can change these in its own menu."
-msgstr "Her monitör bunları kendi menüsünden değiştirebilir."
+#: src/prefs.js:207
+msgid ""
+"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
+"with a little extra dimming late at night. Each monitor can change these in "
+"its own menu."
+msgstr ""
+"Ana monitör için. Diğerleri 30 dakika daha uzun sürer ve %0’a iner, gece geç "
+"saatte biraz ekstra karartma da gelir. Her monitör bunları kendi menüsünden "
+"değiştirebilir."
 
-#: src/prefs.js:120
+#: src/prefs.js:209
 msgid "Minutes after sunset"
 msgstr "Gün batımından sonra dakika"
 
-#: src/prefs.js:121
+#: src/prefs.js:210
 msgid "Start time"
 msgstr "Başlangıç saati"
 
-#: src/prefs.js:125 src/lib/ui.js:269
+#: src/prefs.js:213 src/lib/ui.js:1310
+msgid "Duration"
+msgstr "Süre"
+
+#: src/prefs.js:213
+msgid "Minutes the evening dimming takes"
+msgstr "Akşam kararmasının kaç dakika süreceği"
+
+#: src/prefs.js:215 src/lib/ui.js:37
 msgid "Night brightness"
 msgstr "Gece parlaklığı"
 
-#: src/prefs.js:125
+#: src/prefs.js:215
 msgid "Percent"
 msgstr "Yüzde"
 
-#: src/prefs.js:134 src/prefs.js:137
+#: src/prefs.js:224 src/prefs.js:227
 msgid "Location"
 msgstr "Konum"
 
-#: src/prefs.js:135
+#: src/prefs.js:225
 msgid ""
 "Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
 "keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
@@ -154,116 +262,177 @@ msgstr ""
 "Gece Işığı için tuttuğu konum, yoksa saat dilimin. Hiçbir yere bir şey "
 "gönderilmez."
 
-#: src/prefs.js:138
+#: src/prefs.js:228
 msgid "Automatic"
 msgstr "Otomatik"
 
-#: src/prefs.js:139
+#: src/prefs.js:229
 msgid "Manual"
 msgstr "Elle"
 
-#: src/prefs.js:141
+#: src/prefs.js:231
 msgid "Latitude"
 msgstr "Enlem"
 
-#: src/prefs.js:142
+#: src/prefs.js:232
 msgid "Longitude"
 msgstr "Boylam"
 
-#: src/prefs.js:145
+#: src/prefs.js:235
 msgid "Today"
 msgstr "Bugün"
 
-#: src/prefs.js:162
+#: src/prefs.js:252
 msgid "manual"
 msgstr "elle girilen konum"
 
-#: src/prefs.js:163
+#: src/prefs.js:253
 msgid "GNOME location"
 msgstr "GNOME konumu"
 
-#: src/prefs.js:164
+#: src/prefs.js:254
 #, javascript-format
 msgid "time zone %s"
 msgstr "saat dilimi %s"
 
-#: src/prefs.js:165
+#: src/prefs.js:255
 msgid "UTC offset"
 msgstr "UTC farkı"
 
-#: src/prefs.js:168
+#: src/prefs.js:258
 #, javascript-format
 msgid "Sunset %s · sunrise %s · from %s"
 msgstr "Gün batımı %s · gün doğumu %s · kaynak: %s"
 
-#: src/prefs.js:176
+#: src/prefs.js:266
 msgid "Screen off"
 msgstr "Kapatma"
 
-#: src/prefs.js:179 src/lib/ui.js:293
-msgid "Turn off screen"
-msgstr "Ekranı kapat"
+#: src/prefs.js:269
+msgid "Buttons"
+msgstr "Düğmeler"
 
-#: src/prefs.js:180
-msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
-msgstr "Her monitörün menüsündeki “Ekranı kapat” ve “Diğerlerini kapat”."
+#: src/prefs.js:270
+msgid "In each monitor’s menu (the moon button)."
+msgstr "Her monitörün menüsünde (ay düğmesi)."
 
-#: src/prefs.js:182
-msgid "Turned off screen"
-msgstr "Kapatılan ekran"
+#: src/prefs.js:272
+msgid "Place"
+msgstr "Yer"
 
-#: src/prefs.js:183
-msgid "Fully black"
-msgstr "Tamamen siyah"
+#: src/prefs.js:273
+msgid "At the bottom, large"
+msgstr "Altta, büyük"
 
-#: src/prefs.js:184
+#: src/prefs.js:274
+msgid "At the top, large"
+msgstr "Üstte, büyük"
+
+#: src/prefs.js:275
+msgid "Next to the monitor name, small"
+msgstr "Monitör adının yanında, küçük"
+
+#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
 msgid "Lowest light"
 msgstr "En düşük ışık"
 
-#: src/prefs.js:186
-msgid "Light left"
-msgstr "Kalan ışık"
+#: src/prefs.js:278
+msgid "Brightness 0 and full extra dimming; press again to go back"
+msgstr "Parlaklık 0 ve tam ekstra karartma; tekrar basınca eski haline döner"
 
-#: src/prefs.js:186
-msgid "Percent, for “Lowest light”"
-msgstr "Yüzde; “En düşük ışık” için"
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
+#: src/lib/ui.js:1623
+msgid "Turn off screen"
+msgstr "Ekranı kapat"
 
-#: src/prefs.js:188
-msgid "Turn back on when the mouse comes"
-msgstr "Fare gelince geri aç"
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+msgid "Turn off other screens"
+msgstr "Diğer ekranları kapat"
 
-#: src/prefs.js:189
-msgid "Moving the mouse onto a turned off screen brings its light back"
-msgstr "Fare kapalı ekrana gidince ışığı eski haline döner"
+#: src/prefs.js:281
+msgid "Press again to turn them back on"
+msgstr "Tekrar basınca geri açılırlar"
 
-#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+#: src/prefs.js:286
+msgid "“Turn off screen” and “Turn off other screens” in each monitor’s menu."
+msgstr "Her monitörün menüsündeki “Ekranı kapat” ve “Diğer ekranları kapat”."
+
+#: src/prefs.js:288
+msgid "Light up while the mouse is on it"
+msgstr "Fare üstündeyken yansın"
+
+#: src/prefs.js:289
+msgid ""
+"A turned off screen lights up while the mouse is on it and goes dark again "
+"when the mouse leaves. The same button turns it back on."
+msgstr ""
+"Kapatılan ekran fare üstündeyken yanar, fare gidince yeniden kararır. Aynı "
+"düğme onu tekrar açar."
+
+#: src/prefs.js:294
+msgid "A turned off screen"
+msgstr "Kapatılan ekran"
+
+#: src/prefs.js:295
+msgid ""
+"Clicks and typing always reach the apps on it. Its options are in the "
+"monitor’s menu (the moon button) and behind the small dot."
+msgstr ""
+"Tıklama ve yazı her zaman o ekrandaki uygulamalara gider. Seçenekleri "
+"monitörün menüsünde (ay düğmesi) ve küçük noktada."
+
+#: src/prefs.js:297
+msgid "Small dot in a corner"
+msgstr "Köşede küçük nokta"
+
+#: src/prefs.js:298
+msgid "Click it for the screen’s menu; drag it to another corner"
+msgstr "Tıkla: ekranın menüsü; sürükle: başka köşeye taşı"
+
+#: src/prefs.js:299
+msgid "Keyboard shortcut"
+msgstr "Klavye kısayolu"
+
+#: src/prefs.js:300
+msgid "The menu of the screen under the mouse"
+msgstr "Farenin olduğu ekranın menüsü"
+
+#: src/prefs.js:301
+msgid "“Keep lit” lasts"
+msgstr "“Açık tut” süresi"
+
+#: src/prefs.js:301
+msgid "Seconds"
+msgstr "Saniye"
+
+#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
 msgid "Red screen"
 msgstr "Kırmızı ekran"
 
-#: src/prefs.js:197
+#: src/prefs.js:306
 msgid ""
 "Switch it on in the Night Light menu. It removes all blue and green light, "
 "which helps you fall asleep."
 msgstr ""
 "Gece Işığı menüsünden açılır. Tüm mavi ve yeşil ışığı keser, uykunu kaçırmaz."
 
-#: src/prefs.js:199
+#: src/prefs.js:308
 msgid "Only while Night Light is active"
 msgstr "Sadece Gece Işığı etkinken"
 
-#: src/prefs.js:200
+#: src/prefs.js:309
 msgid "Starts and stops together with Night Light"
 msgstr "Gece Işığı ile birlikte başlar ve biter"
 
-#: src/prefs.js:201 src/lib/ui.js:439
+#: src/prefs.js:310 src/lib/ui.js:1852
 msgid "Strength"
 msgstr "Güç"
 
-#: src/prefs.js:215
+#: src/prefs.js:324
 msgid "Advanced"
 msgstr "Gelişmiş"
 
-#: src/prefs.js:219
+#: src/prefs.js:328
 msgid ""
 "External monitors are controlled over DDC/CI. Your user needs access to /dev/"
 "i2c-* (usually the “i2c” group)."
@@ -271,117 +440,341 @@ msgstr ""
 "Harici monitörler DDC/CI ile kontrol edilir. Kullanıcının /dev/i2c-* erişimi "
 "olmalı (genelde “i2c” grubu)."
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil found"
 msgstr "ddcutil bulundu"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil not found"
 msgstr "ddcutil bulunamadı"
 
-#: src/prefs.js:224
+#: src/prefs.js:333
 msgid "Install ddcutil from your distribution, then press Scan again"
 msgstr "Dağıtımından ddcutil’i kur, sonra Tekrar tara’ya bas"
 
-#: src/prefs.js:226
+#: src/prefs.js:335
 msgid "Scan again"
 msgstr "Tekrar tara"
 
-#: src/prefs.js:231
+#: src/prefs.js:340
 msgid "ddcutil program"
 msgstr "ddcutil programı"
 
-#: src/prefs.js:234
+#: src/prefs.js:343
 msgid "Extra arguments"
 msgstr "Ek argümanlar"
 
-#: src/prefs.js:237
+#: src/prefs.js:346
 msgid "Pause between writes"
 msgstr "Yazmalar arası bekleme"
 
-#: src/prefs.js:238
+#: src/prefs.js:347
 msgid "Milliseconds. Raise it if a monitor misses changes"
 msgstr "Milisaniye. Bir monitör değişiklikleri kaçırıyorsa artır"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Debug messages"
 msgstr "Hata ayıklama mesajları"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Written to the system journal"
 msgstr "Sistem günlüğüne yazılır"
 
-#: src/lib/displays.js:37
+#: src/lib/cornerdot.js:61
+msgid "Screen menu"
+msgstr "Ekran menüsü"
+
+#: src/lib/displays.js:59
 msgid "Monitor"
 msgstr "Monitör"
 
-#: src/lib/displays.js:287
+#: src/lib/displays.js:415
 msgid "Built-in Display"
 msgstr "Dahili Ekran"
 
-#: src/lib/displays.js:288
+#: src/lib/displays.js:416
 msgid "Built-in"
 msgstr "Dahili"
 
-#: src/lib/displays.js:290
+#: src/lib/displays.js:418
 #, javascript-format
 msgid "Monitor %d"
 msgstr "Monitör %d"
 
-#: src/lib/ui.js:119
-msgid "Earlier"
-msgstr "Daha erken"
+#: src/lib/notify.js:115
+msgid "Claude is waiting for you"
+msgstr "Claude seni bekliyor"
 
-#: src/lib/ui.js:122
-msgid "Later"
-msgstr "Daha geç"
+#: src/lib/notify.js:115
+msgid "Claude is done"
+msgstr "Claude bitti"
 
-#: src/lib/ui.js:165
-msgid "Evening dimming and more"
-msgstr "Akşam kararması ve fazlası"
+#: src/lib/notify.js:129
+msgid "Go to the terminal"
+msgstr "Terminale git"
 
-#: src/lib/ui.js:282
+#: src/lib/offmenu.js:15
+#, javascript-format
+msgid "%d s"
+msgstr "%d sn"
+
+#: src/lib/offmenu.js:17
+#, javascript-format
+msgid "%d min %d s"
+msgstr "%d dk %d sn"
+
+#: src/lib/offmenu.js:17 src/lib/ui.js:62
+#, javascript-format
+msgid "%d min"
+msgstr "%d dk"
+
+#: src/lib/offmenu.js:43
+#, javascript-format
+msgid "Keep lit · %s"
+msgstr "Açık tut · %s"
+
+#: src/lib/offmenu.js:44
+msgid "Keep lit until I darken it"
+msgstr "Ben karartana kadar açık tut"
+
+#: src/lib/offmenu.js:45
+msgid "Darken now"
+msgstr "Şimdi karart"
+
+#: src/lib/offmenu.js:46
+msgid "Turn the screen back on"
+msgstr "Ekranı geri aç"
+
+#: src/lib/ui.js:36
+msgid "Day brightness"
+msgstr "Gündüz parlaklığı"
+
+#: src/lib/ui.js:38
 msgid "Extra dimming"
 msgstr "Ekstra karartma"
 
-#: src/lib/ui.js:294
-msgid "Turn off others"
-msgstr "Diğerlerini kapat"
+#: src/lib/ui.js:39
+msgid ""
+"Darkens the picture further when the monitor is already at its lowest "
+"brightness."
+msgstr ""
+"Monitör en düşük parlaklıktayken bile fazla geliyorsa görüntüyü daha da "
+"karartır."
 
-#: src/lib/ui.js:318
-msgid "Off"
-msgstr "Kapalı"
+#: src/lib/ui.js:45
+msgid "Night light"
+msgstr "Gece ışığı"
 
-#: src/lib/ui.js:335
-msgid "Turned off"
-msgstr "Kapatıldı"
+#: src/lib/ui.js:46 src/lib/ui.js:1824
+msgid ""
+"Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
+"screen helps you fall asleep more easily."
+msgstr ""
+"Akşam mavi ışık, uyku hormonu melatonini baskılar. Daha sıcak bir ekran daha "
+"kolay uykuya dalmanı sağlar."
 
-#: src/lib/ui.js:335
+#: src/lib/ui.js:47
+msgid ""
+"How strong Night Light is on this monitor. ×1 = exactly GNOME’s Night Light, "
+"nothing added. ×0 turns it off here, ×2 makes it twice as warm."
+msgstr ""
+"Gece Işığı’nın bu monitördeki gücü. ×1 = GNOME’un kendi Gece Işığı, ek bir "
+"şey eklenmez. ×0 burada kapatır, ×2 iki kat sıcak yapar."
+
+#: src/lib/ui.js:48
+msgid "Red light"
+msgstr "Kırmızı ışık"
+
+#: src/lib/ui.js:49 src/lib/ui.js:1841
+msgid ""
+"Red light disturbs melatonin and your body clock the least of all colours. "
+"Ideal for the last hours before bed."
+msgstr ""
+"Kırmızı ışık, melatonini ve iç saatini en az etkileyen renktir. Yatmadan "
+"önceki son saatler için idealdir."
+
+#: src/lib/ui.js:50
+msgid ""
+"How strong the red screen is on this monitor. ×1 = the red screen as set in "
+"the Night Light menu, nothing added. ×0 keeps this monitor normal, ×2 makes "
+"it twice as red."
+msgstr ""
+"Kırmızı ekranın bu monitördeki gücü. ×1 = Gece Işığı menüsünde seçtiğin "
+"kırmızı ekran, ek bir şey eklenmez. ×0 bu monitörü normal bırakır, ×2 iki "
+"kat kırmızı yapar."
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h %d min"
+msgstr "%d sa %d dk"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h"
+msgstr "%d sa"
+
+#: src/lib/ui.js:284
+msgid "Earlier"
+msgstr "Daha erken"
+
+#: src/lib/ui.js:287
+msgid "Later"
+msgstr "Daha geç"
+
+#: src/lib/ui.js:1080
+msgid "Automatic dimming and more"
+msgstr "Otomatik karartma ve fazlası"
+
+#: src/lib/ui.js:1249
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: src/lib/ui.js:1293
+msgid ""
+"Slowly dims this monitor in the evening, and brings it back in the morning."
+msgstr "Akşam bu monitörü yavaş yavaş karartır, sabah eski haline getirir."
+
+#: src/lib/ui.js:1294
+msgid ""
+"Drag the points to shape the evening; the big point also sets how long it "
+"takes. + adds a button that runs by itself."
+msgstr ""
+"Akşamın şeklini noktaları sürükleyerek ayarla; büyük nokta ne kadar "
+"süreceğini de belirler. + kendi kendine çalışan bir düğme ekler."
+
+#: src/lib/ui.js:1311
+msgid "Shorter"
+msgstr "Daha kısa"
+
+#: src/lib/ui.js:1312
+msgid "Longer"
+msgstr "Daha uzun"
+
+#: src/lib/ui.js:1322
+msgid "Back to normal in the morning"
+msgstr "Sabah geri aç"
+
+#: src/lib/ui.js:1326
+msgid ""
+"When the morning comes, lowest light and turned off screens go back to "
+"normal, whether they were switched on by hand or by the graph."
+msgstr ""
+"Sabah olunca en düşük ışık ve kapatılan ekranlar normale döner; elle de "
+"açılmış olsalar, grafikten de."
+
+#: src/lib/ui.js:1359
+msgid "Back to 100 %"
+msgstr "%100’e dön"
+
+#: src/lib/ui.js:1362 src/lib/ui.js:1364
+msgid "Back to the default evening curve"
+msgstr "Varsayılan akşam eğrisine dön"
+
+#: src/lib/ui.js:1380
+msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
+msgstr "Varsayılana dön: ×1 ve GNOME’un otomatik saati (gün batımı)"
+
+#: src/lib/ui.js:1385
+msgid "Back to ×1"
+msgstr "×1’e dön"
+
+#: src/lib/ui.js:1403
+msgid "Day"
+msgstr "Gündüz"
+
+#: src/lib/ui.js:1403
+msgid "Night"
+msgstr "Gece"
+
+#: src/lib/ui.js:1403
+msgid "Extra"
+msgstr "Ekstra"
+
+#: src/lib/ui.js:1404
+msgid "Warmth"
+msgstr "Sıcaklık"
+
+#: src/lib/ui.js:1404
+msgid "Red"
+msgstr "Kırmızı"
+
+#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+msgid "Back to the default"
+msgstr "Varsayılana dön"
+
+#: src/lib/ui.js:1541
+msgid "While the screen is off"
+msgstr "Ekran kapalıyken"
+
+#: src/lib/ui.js:1581
+msgid "Dark while off"
+msgstr "Kapalıyken karanlık"
+
+#: src/lib/ui.js:1582
+msgid ""
+"While the screen is off, the monitor stays at its lowest light and this much "
+"black is added on top. 25 % = a little darker, 100 % = fully black."
+msgstr ""
+"Ekran kapalıyken monitör en düşük ışığında kalır ve üstüne bu kadar siyah "
+"eklenir. %25 = biraz daha koyu, %100 = tamamen siyah."
+
+#: src/lib/ui.js:1602
+#, javascript-format
+msgid "Keep lit for %s"
+msgstr "%s açık tut"
+
+#: src/lib/ui.js:1603
+#, javascript-format
+msgid ""
+"On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
+"Off: it goes dark as soon as the mouse leaves."
+msgstr ""
+"Açık: fare gidince ekran %s daha açık kalır, sonra kararır. Kapalı: fare "
+"gider gitmez kararır."
+
+#: src/lib/ui.js:1687
 #, javascript-format
 msgid "Brightness %s"
 msgstr "Parlaklık %s"
 
-#: src/lib/ui.js:344
+#: src/lib/ui.js:1689
+msgid "Turned off"
+msgstr "Kapatıldı"
+
+#: src/lib/ui.js:1709
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "Gün batımı %s %s %d dk"
 
-#: src/lib/ui.js:347
+#: src/lib/ui.js:1712
 msgid "Fixed time"
 msgstr "Sabit saat"
 
-#: src/lib/ui.js:421
+#: src/lib/ui.js:1715
+#, javascript-format
+msgid "Until %s"
+msgstr "%s’e kadar"
+
+#: src/lib/ui.js:1724
+msgid "Off"
+msgstr "Kapalı"
+
+#: src/lib/ui.js:1822
 msgid "Temperature"
 msgstr "Sıcaklık"
 
-#: src/lib/ui.js:498
+#: src/lib/ui.js:1825
+msgid "Back to GNOME’s default"
+msgstr "GNOME’un varsayılanına dön"
+
+#: src/lib/ui.js:1919
 msgid "Sunset to sunrise"
 msgstr "Gün batımından gün doğumuna"
 
-#: src/lib/ui.js:514
+#: src/lib/ui.js:1941
 msgid "Turns on together with Night Light"
 msgstr "Gece Işığı ile birlikte açılır"
 
-#: src/lib/ui.js:516
+#: src/lib/ui.js:1943
 msgid "Starts when Night Light starts"
 msgstr "Gece Işığı başlayınca başlar"

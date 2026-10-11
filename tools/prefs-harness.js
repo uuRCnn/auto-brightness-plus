@@ -13,7 +13,7 @@ const {default: Prefs} = await import(`file://${dir}/prefs.js`);
 const metadata = JSON.parse(new TextDecoder().decode(GLib.file_get_contents(`${dir}/metadata.json`)[1]));
 metadata.path = dir;
 
-const app = new Adw.Application({application_id: 'dev.dukha.BrightnessPlus.PrefsHarness', flags: Gio.ApplicationFlags.NON_UNIQUE});
+const app = new Adw.Application({application_id: 'dev.dukha.AutoBrightnessPlus.PrefsHarness', flags: Gio.ApplicationFlags.NON_UNIQUE});
 app.connect('activate', () => {
     const window = new Adw.PreferencesWindow({application: app});
     const pages = [];

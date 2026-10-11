@@ -16,7 +16,7 @@ mkdir -p "$OUT" "$TMP/config" "$TMP/data/gnome-shell/extensions" "$TMP/cache" "$
 chmod 700 "$TMP/runtime"
 
 glib-compile-schemas "$ROOT/src/schemas"
-EXT="$TMP/data/gnome-shell/extensions/brightness-plus@dukha"
+EXT="$TMP/data/gnome-shell/extensions/auto-brightness-plus@dukha"
 cp -r "$ROOT/src" "$EXT"
 [ -d "$ROOT/build/locale" ] && cp -r "$ROOT/build/locale" "$EXT/locale"
 
@@ -28,6 +28,7 @@ sed -i "s|resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js|./prefs-
 [ -d "$ROOT/build/locale" ] && cp -r "$ROOT/build/locale" "$PD/locale"
 export BP_PREFS_DIR="$PD"
 export BP_PREFS_HARNESS="$ROOT/tools/prefs-harness.js"
+export BP_TEST_WINDOW="$ROOT/tools/test-window.js"
 
 export XDG_CONFIG_HOME="$TMP/config"
 export XDG_DATA_HOME="$TMP/data"
@@ -42,10 +43,10 @@ export LANGUAGE="${BP_LANGUAGE:-}"
 unset DISPLAY WAYLAND_DISPLAY DBUS_SESSION_BUS_ADDRESS
 
 timeout 240 dbus-run-session -- gnome-shell --headless --wayland --no-x11 \
-    --wayland-display=bp-test-0 --virtual-monitor 1600x1000 --virtual-monitor 1280x800 \
-    --automation-script="$ROOT/tools/shell-test.js" > "$OUT/shell.log" 2>&1 || true
+    --wayland-display=bp-test-0 $(for m in ${BP_MONITORS:-1600x1000 1280x800}; do printf -- "--virtual-monitor %s " "$m"; done) \
+    --automation-script="${BP_TEST_SCRIPT:-$ROOT/tools/shell-test.js}" > "$OUT/shell.log" 2>&1 || true
 
 echo "---- test log"
 cat "$OUT/log.txt" 2>/dev/null || echo "(no log)"
 echo "---- shell warnings/errors mentioning the extension"
-grep -iE "brightness-plus|Brightness\+|JS ERROR|TypeError|ReferenceError|Gjs-CRITICAL|St-CRITICAL|Clutter-CRITICAL" "$OUT/shell.log" | grep -v "BP-TEST" | head -40 || true
+grep -iE "auto-brightness-plus|Brightness\+|JS ERROR|TypeError|ReferenceError|Gjs-CRITICAL|St-CRITICAL|Clutter-CRITICAL" "$OUT/shell.log" | grep -v "BP-TEST" | head -40 || true

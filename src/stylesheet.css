@@ -1,4 +1,4 @@
-/* Brightness+ — native Quick Settings look, only small additions. */
+/* Auto Brightness+ — native Quick Settings look, only small additions. */
 
 /* ---------- slider rows ---------- */
 .bp-moon StIcon { color: inherit; }
@@ -39,6 +39,7 @@
 .bp-row .bp-red-value { color: #ff5c50; }
 .bp-sub { font-size: 0.82em; color: rgba(140, 140, 150, 1); }
 .bp-dim, .bp-dim .bp-sub, .bp-dim .bp-value { color: rgba(140, 140, 150, 0.8); }
+.bp-red.bp-dim .slider { -barlevel-active-background-color: rgba(255, 69, 58, 0.55); }
 
 .bp-stepper { spacing: 6px; }
 .bp-step {
@@ -71,16 +72,135 @@
 .bp-hint { padding-top: 0; }
 .bp-hint StLabel { font-size: 0.82em; color: rgba(140, 140, 150, 1); }
 
-.bp-row.bp-buttons { spacing: 8px; padding-top: 10px; padding-bottom: 4px; }
-.bp-pill {
-  border-radius: 999px;
-  padding: 8px 10px;
-  font-weight: bold;
-  background-color: rgba(140, 140, 150, 0.18);
+/* ---------- (i) ---------- */
+.bp-info { padding: 0 2px; margin: 0 4px; border-radius: 999px; }
+.bp-info-icon { icon-size: 14px; color: rgba(140, 140, 150, 0.9); }
+.bp-info:hover .bp-info-icon { color: inherit; }
+.bp-tooltip-info {
+  font-weight: normal;
+  font-size: 0.82em;
+  padding: 8px 11px;
+  border-radius: 11px;
 }
-.bp-pill:hover { background-color: rgba(140, 140, 150, 0.3); }
-.bp-pill:active { background-color: rgba(140, 140, 150, 0.4); }
-.bp-pill-icon { icon-size: 16px; margin-right: 8px; }
+
+/* ---------- graph ---------- */
+.bp-graph-row { padding: 2px 10px 0 10px; }
+.bp-graph { height: 200px; font-size: 1em; }
+
+/* ---------- layer sliders: label, slider and value on one line ---------- */
+.bp-layer { padding-top: 3px; padding-bottom: 3px; spacing: 6px; }
+.bp-layer-head { spacing: 0; min-width: 8.8em; }
+.bp-layer-dot { width: 7px; height: 7px; border-radius: 4px; margin-right: 7px; }
+.bp-layer-label { font-size: 0.92em; }
+.bp-layer-value { font-weight: bold; font-size: 0.88em; min-width: 3em; text-align: right; }
+.bp-c-bright .bp-layer-dot { background-color: #ffd60a; }
+.bp-c-bright .slider { -barlevel-active-background-color: #ffd60a; }
+.bp-c-bright .bp-layer-value { color: #ffd60a; }
+.bp-c-extra .bp-layer-dot { background-color: #64d2ff; }
+.bp-c-extra .slider { -barlevel-active-background-color: #64d2ff; }
+.bp-c-extra .bp-layer-value { color: #64d2ff; }
+.bp-c-warm .bp-layer-dot { background-color: #ff9429; }
+.bp-c-warm .slider { -barlevel-active-background-color: #ff9429; }
+.bp-c-warm .bp-layer-value { color: #ff9429; }
+.bp-c-red .bp-layer-dot { background-color: #ff453a; }
+.bp-c-red .slider { -barlevel-active-background-color: #ff453a; }
+.bp-c-red .bp-layer-value { color: #ff5c50; }
+
+.bp-reset { border-radius: 999px; padding: 4px; margin-left: 2px; }
+.bp-reset:hover { background-color: rgba(140, 140, 150, 0.22); }
+.bp-reset-icon { icon-size: 14px; color: rgba(140, 140, 150, 1); }
+.bp-reset:hover .bp-reset-icon { color: inherit; }
+.bp-layer.bp-layer-disabled { color: rgba(140, 140, 150, 0.7); }
+.bp-layer.bp-layer-disabled .slider { -barlevel-active-background-color: rgba(140, 140, 150, 0.45); color: rgba(140, 140, 150, 0.6); }
+.bp-layer.bp-layer-disabled .bp-layer-value { color: rgba(140, 140, 150, 0.7); }
+.bp-layer.bp-layer-disabled .bp-layer-dot { background-color: rgba(140, 140, 150, 0.5); }
+.bp-layer.bp-layer-off .bp-layer-value { color: rgba(140, 140, 150, 1); }
+
+/* ---------- lowest light / turn off ---------- */
+.bp-row.bp-tiles { spacing: 6px; padding-top: 6px; padding-bottom: 4px; }
+.bp-tile {
+  border-radius: 14px;
+  padding: 9px 4px 8px 4px;
+  background-color: rgba(140, 140, 150, 0.12);
+  transition-duration: 120ms;
+}
+.bp-tile:hover { background-color: rgba(140, 140, 150, 0.22); }
+.bp-tile:active { background-color: rgba(140, 140, 150, 0.3); }
+.bp-tile-icon { icon-size: 20px; margin-bottom: 4px; }
+.bp-tile-label { font-size: 0.8em; font-weight: bold; text-align: center; }
+.bp-tile-lowest .bp-tile-icon { color: #bf9bff; }
+.bp-tile-off .bp-tile-icon { color: #ff6b5e; }
+.bp-tile-others .bp-tile-icon { color: #ff6b5e; }
+.bp-tile-lowest:checked { background-color: rgba(191, 155, 255, 0.26); color: #bf9bff; }
+.bp-tile-lowest:checked:hover { background-color: rgba(191, 155, 255, 0.34); }
+.bp-tile-off:checked { background-color: rgba(255, 107, 94, 0.24); color: #ff6b5e; }
+.bp-tile-off:checked:hover { background-color: rgba(255, 107, 94, 0.32); }
+.bp-tile-others:checked { background-color: rgba(255, 107, 94, 0.24); color: #ff6b5e; }
+.bp-tile-others:checked:hover { background-color: rgba(255, 107, 94, 0.32); }
+
+/* header placement: small round icon buttons next to the monitor name */
+.bp-header-actions { spacing: 6px; }
+.bp-round {
+  border-radius: 999px;
+  padding: 9px;
+  background-color: rgba(140, 140, 150, 0.16);
+}
+.bp-round:hover { background-color: rgba(140, 140, 150, 0.28); }
+.bp-round-icon { icon-size: 16px; }
+.bp-round.bp-settings { background-color: transparent; }
+.bp-round.bp-settings:hover { background-color: rgba(140, 140, 150, 0.22); }
+.bp-round.bp-tile-lowest .bp-round-icon { color: #bf9bff; }
+.bp-round.bp-tile-off .bp-round-icon { color: #ff6b5e; }
+.bp-round.bp-tile-others .bp-round-icon { color: #ff6b5e; }
+.bp-round.bp-tile-lowest:checked { background-color: rgba(191, 155, 255, 0.3); }
+.bp-round.bp-tile-others:checked { background-color: rgba(255, 107, 94, 0.26); }
+
+/* ---------- a turned off screen ---------- */
+.bp-off-box {
+  margin: 8px 4px 2px 4px;
+  padding: 2px 0 6px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 107, 94, 0.45);
+  background-color: rgba(0, 0, 0, 0.22);
+}
+.bp-off-head { spacing: 8px; padding-top: 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(255, 107, 94, 0.25); margin: 0 10px 4px 10px; }
+.bp-off-title { font-weight: bold; color: #ff6b5e; }
+.bp-off-icon { icon-size: 16px; color: #ff6b5e; margin-right: 8px; }
+.bp-off-head .bp-off-icon { margin-right: 0; }
+.bp-c-off .slider { -barlevel-active-background-color: #ff6b5e; }
+.bp-row .bp-off-value { color: #ff6b5e; }
+.bp-off-slider { padding-left: 36px; }
+
+.bp-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background-color: rgba(255, 179, 64, 0.22);
+}
+.bp-dot:hover { background-color: rgba(255, 179, 64, 0.45); }
+.bp-dot-core { width: 7px; height: 7px; border-radius: 4px; background-color: #ffb340; }
+
+.bp-section-title StLabel { font-weight: bold; }
+.bp-row.bp-chips { spacing: 6px; padding-top: 4px; padding-bottom: 6px; }
+.bp-chip {
+  border-radius: 999px;
+  padding: 7px 8px;
+  font-size: 0.86em;
+  font-weight: bold;
+  background-color: rgba(140, 140, 150, 0.16);
+}
+.bp-chip:hover { background-color: rgba(140, 140, 150, 0.28); }
+.bp-chip-keep { color: #ffb340; background-color: rgba(255, 179, 64, 0.18); }
+.bp-chip-keep:hover { background-color: rgba(255, 179, 64, 0.28); }
+.bp-apps-head { padding-top: 8px; }
+.bp-app-col { min-width: 5.2em; text-align: center; }
+.bp-app-row { padding-top: 3px; padding-bottom: 3px; }
+.bp-app-switch { padding: 0 6px; }
+
+.bp-done-frame {
+  border: 3px solid #ffb340;
+  border-radius: 12px;
+}
 
 /* ---------- night light toggle: red screen ---------- */
 .bp-night-light.bp-red-on:checked .quick-toggle,
@@ -95,3 +215,20 @@
 .bp-night-light.bp-red-on:checked .quick-toggle-separator {
   background-color: rgba(255, 255, 255, 0.35);
 }
+
+/* ---------- simple menu: pills + one slider ---------- */
+.bp-pills-row { padding: 6px 10px 0 10px; }
+.bp-pills { spacing: 4px; }
+.bp-pill { border-radius: 12px; padding: 4px 2px; background-color: rgba(140, 140, 150, 0.12); }
+.bp-pill:hover { background-color: rgba(140, 140, 150, 0.22); }
+.bp-pill:checked { background-color: rgba(255, 255, 255, 0.18); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); }
+.bp-pill .bp-layer-dot { width: 6px; height: 6px; margin-right: 4px; }
+.bp-pill-label { font-size: 0.78em; font-weight: 600; }
+.bp-pill-value { font-size: 0.86em; font-weight: 800; }
+.bp-c-bright .bp-pill-value { color: #ffd60a; }
+.bp-c-extra .bp-pill-value { color: #64d2ff; }
+.bp-c-warm .bp-pill-value { color: #ff9429; }
+.bp-c-red .bp-pill-value { color: #ff5c50; }
+.bp-pill.bp-pill-disabled .bp-pill-value, .bp-pill.bp-pill-disabled .bp-pill-label { color: rgba(140, 140, 150, 0.7); }
+.bp-pill.bp-pill-disabled .bp-layer-dot { background-color: rgba(140, 140, 150, 0.5); }
+.bp-pick-slider { padding-top: 6px; padding-bottom: 4px; }

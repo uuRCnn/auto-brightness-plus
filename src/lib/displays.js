@@ -11,15 +11,37 @@ import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js'
 import {DdcBackend} from './ddc.js';
 import {findBacklights, legacyBacklight} from './backlight.js';
 import {DimOverlays} from './overlay.js';
+import {GammaController} from './gamma.js';
+import {CornerDots} from './cornerdot.js';
+import {OffMenu} from './offmenu.js';
 import {getLocation, watchLocation} from './location.js';
-import {phaseAt, scheduledValue} from './schedule.js';
+import {curveMoving, layerValues, phaseAt, scheduledValue} from './schedule.js';
 import {fmt} from './sun.js';
 
 const EXTRA_MAX = 0.9;        // extra dimming slider at 100% = 90% darker
 const SOFT_MAX = 0.85;        // software-only monitor at 0% = 85% darker
 const SAVE_DELAY_MS = 1500;
+const CONFIG_VERSION = 3;     // 2: the sunset-shaped evening defaults, 3: + the others off after 3 h
+const OTHERS_OFF_AFTER = 180;  // minutes
+const SIDE_LONGER = 30;       // the other monitors' evening: this many minutes longer (down to 0)
+const SIDE_EXTRA = [null, null, null, 0.03, 0.10, 0.15];  // … and extra dimming late at night, up to 15 %
+const DDC_TRIES = 3;
+const LOWEST_PRIMARY = 0.7;   // lowest light on the main monitor keeps a little more light
+const WATCH_MS = 150;          // where the mouse is, only while a screen is turned off
+const MOVE_TO_LIGHT = 60;      // turned off under the mouse: move this far to light it
+export const OFF_DARK_MIN = 0.25;   // "Dark while off" goes from 25 % to 100 % (fully black)
+const PREVIEW_MS = 1500;      // a moved "turned off" slider shows its value this long
+const SAME_VALUE = 0.015;     // read back within 1.5 % of what we wrote: not touched by hand
 const RESCAN_DELAY_S = 4;
 const MAX_SLEEP_S = 600;      // re-check at least every 10 min (suspend safe)
+const CURVE_STEP_S = 20;      // while the curves move: look again every 20 s (writes only on change)
+export const ACTIONS = ['lowest', 'off', 'others'];
+
+// ddcutil says HDMI-A-1, mutter says HDMI-1
+function connectorAliases(c) {
+    const short = c.replace(/^(HDMI|DVI)-[A-Z]-/, '$1-');
+    return short === c ? [c] : [c, short];
+}
 
 // PNP vendor ids -> brand names (the common ones)
 const BRANDS = {
@@ -55,9 +77,19 @@ export class Display extends EventEmitter {
         Object.assign(this, props);
         this.value = this.cfg.day;
         this.off = false;
+        // a turned off screen is 'dark', 'peek' (the mouse is on it) or
+        // 'kept' (lit for a while, the mouse elsewhere)
+        this.view = null;
+        this.minimum = false;
         this.override = null;
         this.phase = null;
+        this._fired = new Set();      // automatic buttons already run tonight
+        this._wasNight = false;
         this.ready = this.kind === 'soft';
+    }
+
+    get peek() {
+        return this.view === 'peek';
     }
 
     /** Slider moved by the user. */
@@ -87,7 +119,11 @@ export class DisplayManager extends EventEmitter {
         this._destroyed = false;
 
         this._ddc = new DdcBackend(settings, msg => this.log(msg));
-        this._overlays = new DimOverlays(index => this.wake(index));
+        this._overlays = new DimOverlays();
+        this._watchTimer = 0;
+        this._offMenu = new OffMenu(this, settings, this._overlays);
+        this._dots = new CornerDots(this, settings, this._overlays);
+        this.gamma = new GammaController(msg => this.log(msg));
         this._readGlobals();
 
         this._settingsIds = [
@@ -95,12 +131,11 @@ export class DisplayManager extends EventEmitter {
             'location-mode', 'latitude', 'longitude',
         ].map(k => settings.connect(`changed::${k}`, () => this._globalsChanged()));
         this._settingsIds.push(settings.connect('changed::rescan', () => this.rebuild(true)));
-        this._settingsIds.push(settings.connect('changed::screen-off-mode', () => this._refreshOff()));
-        this._settingsIds.push(settings.connect('changed::screen-off-level', () => this._refreshOff()));
         this._unwatchLocation = watchLocation(() => this._globalsChanged());
 
         this._monitorsId = Main.layoutManager.connect('monitors-changed', () => {
             this._overlays.rebuild();
+            this.gamma.relayout();
             this._scheduleRescan();
         });
 
@@ -118,7 +153,7 @@ export class DisplayManager extends EventEmitter {
 
     log(msg) {
         if (this._settings.get_boolean('debug'))
-            console.log(`[Brightness+] ${msg}`);
+            console.log(`[Auto Brightness+] ${msg}`);
     }
 
     // ------------------------------------------------------------ config
@@ -131,17 +166,94 @@ export class DisplayManager extends EventEmitter {
         }
     }
 
-    _cfgFor(id) {
+    /*
+     * The evening a monitor starts with: from sunset, quickly at first. The
+     * main monitor goes down to the night value; the others go further, to
+     * 0, and later in the night a little extra dimming comes on them.
+     */
+    _eveningDefaults(primary) {
         const s = this._settings;
-        const c = this._config[id] ?? {};
+        const none = () => Array(6).fill(null);
+        return {
+            offset: s.get_int('default-offset'),
+            duration: s.get_int('default-duration') + (primary ? 0 : SIDE_LONGER),
+            night: primary ? s.get_double('default-night') : 0,
+            extra: 0,
+            points: {night: none(), extra: primary ? none() : [...SIDE_EXTRA]},
+            // the main monitor turns the others off 3 hours after the evening starts
+            events: {lowest: null, off: null, others: primary ? OTHERS_OFF_AFTER : null},
+        };
+    }
+
+    /** Is d's evening (layer key, or all of it) still as it starts? */
+    isDefault(d, key) {
+        const def = this._eveningDefaults(d.index === Main.layoutManager.primaryIndex);
+        const same = (a, b) => a.every((v, i) => v === b[i]);
+        if (key === 'night')
+            return d.cfg.night === Math.min(def.night, d.cfg.day ?? 1) && same(d.cfg.points.night, def.points.night);
+        if (key === 'extra')
+            return d.cfg.extra === def.extra && same(d.cfg.points.extra, def.points.extra);
+        return d.cfg.nightLight === 1;
+    }
+
+    /** One layer of d's evening back to how it starts. */
+    resetLayer(d, key) {
+        const def = this._eveningDefaults(d.index === Main.layoutManager.primaryIndex);
+        if (def.points[key])
+            d.cfg.points = {...d.cfg.points, [key]: def.points[key]};
+        if (key === 'night')
+            d.cfg.night = Math.min(def.night, d.cfg.day ?? 1);
+        else if (key === 'extra')
+            d.cfg.extra = def.extra;
+        else
+            d.cfg.nightLight = 1;
+        this.configChanged(d, key);
+    }
+
+    _cfgFor(id, primary) {
+        const s = this._settings;
+        let c = this._config[id] ?? {};
+        // made before these defaults (or new): the evening starts from them
+        if (c.v === 2) {
+            // already has the sunset evening (maybe changed since): only the new automatic button
+            const events = {...c.events};
+            if (primary && (events.others ?? null) === null)
+                events.others = OTHERS_OFF_AFTER;
+            c = {...c, events, v: CONFIG_VERSION};
+        } else if (c.v !== CONFIG_VERSION) {
+            c = {...c, ...this._eveningDefaults(primary), v: CONFIG_VERSION};
+        }
         const num = (v, d) => (typeof v === 'number' && Number.isFinite(v) ? v : d);
         const cfg = {
             day: num(c.day, null),
             schedule: c.schedule === true,
             offset: num(c.offset, s.get_int('default-offset')),
             start: num(c.start, s.get_int('default-start')),
+            duration: num(c.duration, s.get_int('default-duration')),
             night: num(c.night, s.get_double('default-night')),
             extra: num(c.extra, 0),
+            nightLight: num(c.nightLight, 1),
+            redLight: num(c.redLight, 1),
+            last: num(c.last, null),
+            // the 6 small graph points per layer, null = automatic
+            points: {
+                night: [...Array(6).keys()].map(i => num(c.points?.night?.[i], null)),
+                extra: [...Array(6).keys()].map(i => num(c.points?.extra?.[i], null)),
+            },
+            // buttons that run by themselves: minutes after the evening start, null = not used
+            events: Object.fromEntries(ACTIONS.map(a => [a, num(c.events?.[a], null)])),
+            morningReset: c.morningReset !== false,
+            // a turned off screen: how black on top of the monitor's lowest light (1 = fully black),
+            // and whether it stays lit for a while after the mouse leaves
+            v: CONFIG_VERSION,
+            // by hand fully black (you see it is off); by the evening's buttons only a little darker
+            offDark: Math.max(OFF_DARK_MIN, Math.min(1, num(c.offDark, 1))),
+            offDarkAuto: Math.max(OFF_DARK_MIN, Math.min(1, num(c.offDarkAuto, OFF_DARK_MIN))),
+            offAuto: c.offAuto === true,
+            keepLit: c.keepLit === true,
+            // turned off / lowest light when the computer was shut down: comes back that way
+            off: c.off === true,
+            minimum: c.minimum === true,
         };
         this._config[id] = cfg;
         return cfg;
@@ -245,7 +357,14 @@ export class DisplayManager extends EventEmitter {
     _assemble(ddcList, backlights) {
         const mm = global.backend.get_monitor_manager();
         const monitors = Main.layoutManager.monitors;
-        const indexOf = c => (c ? mm.get_monitor_for_connector(c) : -1);
+        const indexOf = c => {
+            for (const name of c ? connectorAliases(c) : []) {
+                const i = mm.get_monitor_for_connector(name);
+                if (i >= 0)
+                    return i;
+            }
+            return -1;
+        };
         const taken = new Map();
 
         for (const bl of backlights) {
@@ -270,10 +389,19 @@ export class DisplayManager extends EventEmitter {
                 taken.set(m.index, {kind: 'ddc', d: unmatched.shift()});
         }
 
-        // tear down the old list
+        // tear down the old list; turned off screens stay turned off
         this._backlightHandles.splice(0).forEach(h => h());
-        for (const d of this.displays)
+        const wasOff = new Set();
+        for (const d of this.displays) {
+            if (d.off)
+                wasOff.add(d.id);
+            this._clearView(d);
+            d.off = false;
+            d.view = null;
+            this._dots.sync(d);
             this._overlays.set(d.index, 0);
+            this.gamma.setMonitor(d.index, 1, 1);
+        }
 
         const order = [...monitors].sort((a, b) => a.x - b.x || a.y - b.y);
         const displays = [];
@@ -293,7 +421,7 @@ export class DisplayManager extends EventEmitter {
             }
             props.index = m.index;
             props.number = pos + 1;
-            props.cfg = this._cfgFor(props.id);
+            props.cfg = this._cfgFor(props.id, m.index === Main.layoutManager.primaryIndex);
             displays.push(new Display(this, props));
         });
 
@@ -309,8 +437,11 @@ export class DisplayManager extends EventEmitter {
         this.log(`displays: ${displays.map(d => `${d.number}:${d.kind}:${d.name}`).join(', ')}`);
         this.emit('displays-changed');
 
-        for (const d of displays)
+        for (const d of displays) {
             this._initValue(d);
+            if (wasOff.has(d.id))
+                this.turnOff(d, false, d.cfg.offAuto);
+        }
     }
 
     _connectorOf(index) {
@@ -341,11 +472,22 @@ export class DisplayManager extends EventEmitter {
 
     async _initValue(d) {
         if (d.kind === 'ddc') {
+            // some monitors do not answer the first time after boot
             let info = null;
-            try {
-                info = await this._ddc.getBrightness(d.bus);
-            } catch (e) {
-                this.log(`getvcp ${d.bus}: ${e.message}`);
+            for (let i = 0; i < DDC_TRIES && !info; i++) {
+                if (i) {
+                    await new Promise(resolve => GLib.timeout_add(GLib.PRIORITY_LOW, 1500 * i, () => {
+                        resolve();
+                        return GLib.SOURCE_REMOVE;
+                    }));
+                }
+                if (this._destroyed || !this.displays.includes(d))
+                    return;
+                try {
+                    info = await this._ddc.getBrightness(d.bus);
+                } catch (e) {
+                    this.log(`getvcp ${d.bus} (try ${i + 1}): ${e.message}`);
+                }
             }
             if (this._destroyed || !this.displays.includes(d))
                 return;
@@ -376,10 +518,24 @@ export class DisplayManager extends EventEmitter {
         d.value = v;
         d.ready = true;
         const phase = d.cfg.schedule ? phaseAt(new Date(), d.cfg, this.globals) : null;
-        // the monitor's own buttons may have changed it: trust it in daytime
-        if (d.cfg.day === null || !phase || phase.phase === 'day')
+        // Still what we wrote last (e.g. the night value, the computer was
+        // off overnight)? Then the schedule decides. Otherwise the monitor's
+        // own buttons changed it: in daytime that is the new day brightness.
+        // Turned off / lowest light at shutdown: the 0 read now is ours, not a new day value.
+        const restoring = d.cfg.off || d.cfg.minimum;
+        const byHand = !restoring && (d.cfg.last === null || Math.abs(v - d.cfg.last) > SAME_VALUE);
+        if (d.cfg.day === null)
+            d.cfg.day = restoring ? 1 : v;
+        else if (!restoring && (!phase || (phase.phase === 'day' && byHand)))
             d.cfg.day = v;
-        this._applyOverlay(d);
+        if (restoring)
+            d.value = phase ? scheduledValue(phase, d.cfg) : d.cfg.day;
+        d.phase = phase;
+        this._applyLayers(d);
+        if (d.cfg.off && !d.off)
+            this.turnOff(d, false, d.cfg.offAuto);
+        else if (d.cfg.minimum && !d.minimum)
+            this.setMinimum(d, true);
         d.emit('changed');
         this.tick();
     }
@@ -388,13 +544,26 @@ export class DisplayManager extends EventEmitter {
     _write(d, v) {
         v = Math.min(1, Math.max(0, v));
         d.value = v;
-        if (!d.off)
+        if (!d.off && !d.minimum)
             this._writeHardware(d, v);
         this._applyOverlay(d);
         d.emit('changed');
     }
 
-    _writeHardware(d, v) {
+    // what the hardware should show right now
+    _restoreHardware(d) {
+        if (d.kind !== 'soft')
+            this._writeHardware(d, d.minimum ? 0 : d.value);
+    }
+
+    _writeHardware(d, v, queue = true) {
+        if (d.kind !== 'soft' && d.cfg.last !== v) {
+            d.cfg.last = v;
+            this._save();
+        }
+        d._backlight = v;
+        if (d.kind === 'ddc' && !queue)
+            return;     // _backlightTo queues it itself, to wait for it
         if (d.kind === 'ddc') {
             this._ddc.setBrightness(d.bus, Math.round(v * d.max));
         } else if (d.kind === 'backlight') {
@@ -404,34 +573,119 @@ export class DisplayManager extends EventEmitter {
         }
     }
 
-    _applyOverlay(d, animate = false) {
-        let alpha;
-        if (d.off) {
-            alpha = this._settings.get_string('screen-off-mode') === 'black'
-                ? 1 : 1 - this._settings.get_int('screen-off-level') / 100;
-        } else {
-            const soft = d.kind === 'soft' ? (1 - d.value) * SOFT_MAX : 0;
-            alpha = 1 - (1 - soft) * (1 - d.cfg.extra * EXTRA_MAX);
+    _lit(d) {
+        return d.view === 'peek' || d.view === 'kept';
+    }
+
+    _applyOverlay(d, animate = false, fast = false, slow = false) {
+        this._dots.sync(d);
+        // a turned off screen in the middle of a change: the change ends with the right value
+        if (d._moving)
+            return;
+        this._overlays.set(d.index, this._overlayAlpha(d), {animate, fast, slow});
+    }
+
+    // the black layer for d's current state
+    _overlayAlpha(d, view = d.off && d._preview ? 'dark' : d.view) {
+        const value = d.minimum ? 0 : d.value;
+        const soft = d.kind === 'soft' ? (1 - value) * SOFT_MAX : 0;
+        const lowest = d.index === Main.layoutManager.primaryIndex ? LOWEST_PRIMARY : 1;
+        const extra = d.minimum ? lowest : layerValues(d.phase, d.cfg, new Date()).extra;
+        let alpha = 1 - (1 - soft) * (1 - extra * EXTRA_MAX);
+        // dark: the backlight is at 0 (see _move); the layer only adds black on top
+        if (d.off && view === 'dark')
+            alpha = d.kind === 'soft' ? Math.max(alpha, this.offDarkOf(d)) : this.offDarkOf(d);
+        return alpha;
+    }
+
+    _wait(ms) {
+        return new Promise(resolve => GLib.timeout_add(GLib.PRIORITY_DEFAULT, ms, () => {
+            resolve();
+            return GLib.SOURCE_REMOVE;
+        }));
+    }
+
+    // a fade of the black layer that can be waited for
+    _fade(d, alpha, ms) {
+        if (!ms) {
+            this._overlays.set(d.index, alpha);
+            return Promise.resolve();
         }
-        this._overlays.set(d.index, alpha, {
-            wake: d.off && this._settings.get_boolean('wake-on-hover'),
-            animate,
-        });
+        this._overlays.set(d.index, alpha, {animate: true, duration: ms});
+        return this._wait(ms + 40);     // + the last frame of the fade
+    }
+
+    /*
+     * From one state of a turned off screen to another, smoothly. A DDC
+     * write makes the monitor change in one go, never in steps (steps
+     * look like "tick tick tick"). The black layer never gets darker than
+     * "Dark while off" says (0 % = never any black):
+     *   darker:   the layer fades to its final value, then the backlight
+     *             goes down under it;
+     *   brighter: the backlight goes up under the layer as it is, then the
+     *             layer fades away.
+     * A newer change cancels an older one at its next step.
+     */
+    async _move(d, view, {fast = false} = {}) {
+        const finalAlpha = this._overlayAlpha(d, d.off ? view : null);
+        if (d.kind === 'soft') {
+            this._overlays.set(d.index, finalAlpha, {animate: true, fast, slow: view === 'dark'});
+            return;
+        }
+        const token = d._moveToken = (d._moveToken ?? 0) + 1;
+        const alive = () => d._moveToken === token && !this._destroyed;
+        const target = d.off ? this._offBacklight() : d.minimum ? 0 : d.value;
+        const from = d._backlight ?? d.value;
+        d._moving = true;
+        try {
+            if (target < from - 0.005) {
+                await this._fade(d, finalAlpha, 700);
+                if (!alive())
+                    return;
+                await this._backlightTo(d, target);
+            } else {
+                if (target > from + 0.005)
+                    await this._backlightTo(d, target);
+                if (!alive())
+                    return;
+                await this._fade(d, finalAlpha, fast ? 250 : 400);
+            }
+        } finally {
+            if (alive())
+                d._moving = false;
+        }
+    }
+
+    // the backlight to v, resolved once the monitor has it
+    _backlightTo(d, v) {
+        this._writeHardware(d, v, false);
+        if (d.kind !== 'ddc')
+            return Promise.resolve(true);
+        return this._ddc.setBrightnessAndWait(d.bus, Math.round(v * d.max));
+    }
+
+    // overlay + colour layers
+    _applyLayers(d, animate = false) {
+        this.gamma.setMonitor(d.index, d.cfg.nightLight, d.cfg.redLight);
+        this._applyOverlay(d, animate);
     }
 
     userSet(d, v, write = true) {
         if (d.off)
             this.wake(d.index);
+        if (d.minimum) {
+            d.minimum = false;
+            this.emit('off-changed');
+        }
         if (d.cfg.schedule) {
             const phase = phaseAt(new Date(), d.cfg, this.globals);
             if (phase.phase === 'day') {
                 d.cfg.day = v;
-            } else if (phase.phase === 'night') {
-                d.cfg.night = v;
             } else {
-                // during a transition: keep the user's value until the next one
-                const after = phaseAt(new Date(phase.next + 1000), d.cfg, this.globals);
-                d.override = {value: v, until: after.next};
+                // evening or night: the user's value until the morning, then the curve again
+                const until = phase.phase === 'evening'
+                    ? phaseAt(new Date(phase.next + 1000), d.cfg, this.globals).next : phase.next;
+                d.override = {value: v, until};
             }
         } else {
             d.cfg.day = v;
@@ -448,37 +702,105 @@ export class DisplayManager extends EventEmitter {
 
     configChanged(d, key) {
         this._save();
-        if (key === 'extra') {
+        if (key === 'offDark' || key === 'offDarkAuto' || key === 'keepLit') {
             this._applyOverlay(d);
             d.emit('changed');
             return;
         }
+        if (key === 'extra' || key === 'nightLight' || key === 'redLight') {
+            this._applyLayers(d);
+            d.emit('changed');
+            return;
+        }
+        d.phase = d.cfg.schedule ? phaseAt(new Date(), d.cfg, this.globals) : null;
         if (key === 'schedule' && !d.cfg.schedule) {
             // switched off: back to the day brightness
             d.override = null;
             if (d.cfg.day !== null)
                 this._write(d, d.cfg.day);
         }
+        this._applyLayers(d, key === 'schedule');
         d.emit('changed');
         this.tick();
     }
 
-    // ------------------------------------------------------------ screen off
-    turnOff(d, animate = true) {
-        if (d.off)
+    // ------------------------------------------------------------ lowest light
+    /** Brightness 0 and full extra dimming; again = back. */
+    setMinimum(d, on) {
+        if (d.minimum === on)
             return;
-        d.off = true;
-        if (d.kind !== 'soft')
-            this._writeHardware(d, 0);
-        this._applyOverlay(d, animate);
+        if (d.off)
+            this.wake(d.index);
+        d.minimum = on;
+        d.cfg.minimum = on;
+        this._save();
+        this._restoreHardware(d);
+        this._applyOverlay(d, true);
         d.emit('changed');
         this.emit('off-changed');
     }
 
-    turnOffOthers(d) {
+    // ------------------------------------------------------------ screen off
+    /** "Dark while off" of d right now: turned off by hand, or by the evening's buttons. */
+    offDarkKey(d) {
+        return d.cfg.offAuto ? 'offDarkAuto' : 'offDark';
+    }
+
+    offDarkOf(d) {
+        return d.cfg[this.offDarkKey(d)];
+    }
+
+    // auto: turned off by the evening's buttons (its own "Dark while off", 25 % at first)
+    turnOff(d, animate = true, auto = false) {
+        if (d.off)
+            return;
+        d.cfg.offAuto = auto;
+        if (d.minimum) {
+            // turned off ends "lowest light": the two never at once
+            d.minimum = false;
+            d.cfg.minimum = false;
+        }
+        d.off = true;
+        d.cfg.off = true;
+        this._save();
+        this._clearView(d);
+        d.view = 'dark';
+        // turned off under the mouse: it has to really move (or leave) first
+        const [x, y] = global.get_pointer();
+        d._mustMove = this._pointerOn(d) ? {x, y, after: GLib.get_monotonic_time() + 800000} : null;
+        this._dots.sync(d);
+        if (animate) {
+            this._move(d, 'dark');
+        } else {
+            // at once (startup, restoring): no fades
+            this._writeHardware(d, 0);
+            this._overlays.set(d.index, this._overlayAlpha(d));
+        }
+        this._startWatch();
+        d.emit('changed');
+        this.emit('off-changed');
+    }
+
+    turnOffOthers(d, auto = false) {
         for (const other of this.displays) {
             if (other !== d)
-                this.turnOff(other);
+                this.turnOff(other, true, auto);
+        }
+    }
+
+    othersOff(d) {
+        return this.displays.some(x => x !== d && x.off);
+    }
+
+    /** "Turn off others" again turns them back on. */
+    toggleOthers(d) {
+        if (this.othersOff(d)) {
+            for (const other of this.displays) {
+                if (other !== d)
+                    this.wake(other.index);
+            }
+        } else {
+            this.turnOffOthers(d);
         }
     }
 
@@ -487,23 +809,183 @@ export class DisplayManager extends EventEmitter {
         if (!d?.off)
             return;
         d.off = false;
-        if (d.kind !== 'soft')
-            this._writeHardware(d, d.value);
-        this._applyOverlay(d, true);
+        d.cfg.off = false;
+        this._save();
+        this._clearView(d);
+        d.view = null;
+        this._dots.sync(d);
+        this._move(d, null);
         d.emit('changed');
         this.emit('off-changed');
+    }
+
+    // ------------------------------------------------------------ a turned off screen
+    _clearView(d) {
+        if (d._viewTimer)
+            GLib.source_remove(d._viewTimer);
+        d._viewTimer = 0;
+        if (d._previewTimer)
+            GLib.source_remove(d._previewTimer);
+        d._previewTimer = 0;
+        d._preview = null;
+    }
+
+    _setView(d, view, {fast = false} = {}) {
+        if (!d.off)
+            return;
+        this._clearView(d);
+        d.view = view;
+        // the backlight stays at 0; lit = no black layer, dark = "Dark while off". See _move.
+        this._dots.sync(d);
+        this._move(d, view, {fast});
+        d.emit('changed');
+    }
+
+    // A turned off screen keeps its backlight at the lowest, lit or not:
+    // the mouse coming and going only fades the black layer (no DDC writes,
+    // so nothing jumps). Only "turn back on" writes the brightness again.
+    _offBacklight() {
+        return 0;
+    }
+
+    // the mouse left a lit turned off screen: dark at once, or lit a while longer first
+    _left(d) {
+        if (d.cfg.keepLit)
+            this.keepLit(d, this._settings.get_int('keep-lit-seconds'));
+        else
+            this._setView(d, 'dark');
+    }
+
+    _pointerOn(d) {
+        const [x, y] = global.get_pointer();
+        const m = Main.layoutManager.monitors[d.index];
+        return !!m && x >= m.x && y >= m.y && x < m.x + m.width && y < m.y + m.height;
+    }
+
+    /** The mouse came onto a turned off screen: light it until it leaves. */
+    peek(index) {
+        const d = this.displays.find(x => x.index === index);
+        if (!d?.off || d.view === 'peek' || d.view === 'kept')
+            return;
+        // the picture comes at once, the backlight follows (DDC is slower)
+        this._setView(d, 'peek', {fast: true});
+    }
+
+    _startWatch() {
+        if (!this._watchTimer)
+            this._watchTimer = GLib.timeout_add(GLib.PRIORITY_DEFAULT, WATCH_MS, () => this._watch());
+    }
+
+    // Only runs while a screen is turned off, and stops by itself: the
+    // mouse onto it lights it, the mouse leaving dims and darkens it.
+    _watch() {
+        const off = this.displays.filter(d => d.off);
+        if (!off.length) {
+            this._watchTimer = 0;
+            return GLib.SOURCE_REMOVE;
+        }
+        const [x, y] = global.get_pointer();
+        const hover = this._settings.get_boolean('wake-on-hover');
+        for (const d of off) {
+            const inside = this._pointerOn(d);
+            if (d._mustMove) {
+                const m = d._mustMove;
+                if (inside && (GLib.get_monotonic_time() < m.after || Math.hypot(x - m.x, y - m.y) < MOVE_TO_LIGHT))
+                    continue;
+                d._mustMove = null;
+            }
+            if (inside && hover && !this._lit(d))
+                this.peek(d.index);
+            else if (!inside && d.view === 'peek')
+                this._left(d);
+        }
+        return GLib.SOURCE_CONTINUE;
+    }
+
+    /**
+     * Lit for `seconds` (Infinity = until darkened), even with the mouse
+     * elsewhere; afterwards dark (or lit while the mouse is on it).
+     */
+    keepLit(d, seconds) {
+        if (!d.off)
+            return;
+        if (d.view === 'kept' || d.view === 'peek') {
+            // already lit: no change to the picture, only the timer
+            this._clearView(d);
+            d.view = 'kept';
+            this._dots.sync(d);
+            d.emit('changed');
+        } else {
+            this._setView(d, 'kept', {fast: true});
+        }
+        if (Number.isFinite(seconds)) {
+            d._viewTimer = GLib.timeout_add_seconds(GLib.PRIORITY_LOW, seconds, () => {
+                d._viewTimer = 0;
+                if (this._pointerOn(d)) {
+                    d.view = 'peek';      // the mouse is on it: stays lit, dark when it leaves
+                    this._dots.sync(d);
+                    d.emit('changed');
+                } else {
+                    this._setView(d, 'dark');
+                }
+                return GLib.SOURCE_REMOVE;
+            });
+        }
+    }
+
+    /**
+     * The "Dark while off" slider moved: a dark screen shows it at once; a
+     * lit one (not the screen with the open menu) shows it for a moment.
+     */
+    previewOff(d) {
+        if (!d.off)
+            return;
+        if (!this._lit(d)) {
+            if (!d._moving)
+                this._overlays.set(d.index, this._overlayAlpha(d));
+            return;
+        }
+        const qs = Main.panel.statusArea.quickSettings;
+        if (Main.layoutManager.findMonitorForActor(qs.menu.actor)?.index === d.index)
+            return;
+        if (d._previewTimer)
+            GLib.source_remove(d._previewTimer);
+        d._preview = 'dark';
+        this._applyOverlay(d);
+        d._previewTimer = GLib.timeout_add(GLib.PRIORITY_DEFAULT, PREVIEW_MS, () => {
+            d._previewTimer = 0;
+            d._preview = null;
+            this._applyOverlay(d, true);
+            return GLib.SOURCE_REMOVE;
+        });
+    }
+
+    /** "Keep lit" switched off: back to what the mouse says. */
+    endKeepLit(d) {
+        if (d.view !== 'kept')
+            return;
+        this._setView(d, this._pointerOn(d) ? 'peek' : 'dark');
+    }
+
+    darkNow(d) {
+        this._setView(d, 'dark');
+    }
+
+    /** The small menu of the screen under the mouse (corner dot, shortcut). */
+    openMenu(d, x, y) {
+        this._offMenu.open(d, x, y);
+    }
+
+    displayAt(x, y) {
+        return this.displays.find(d => {
+            const m = Main.layoutManager.monitors[d.index];
+            return m && x >= m.x && y >= m.y && x < m.x + m.width && y < m.y + m.height;
+        }) ?? null;
     }
 
     wakeAll() {
         for (const d of this.displays)
             this.wake(d.index);
-    }
-
-    _refreshOff() {
-        for (const d of this.displays) {
-            if (d.off)
-                this._applyOverlay(d);
-        }
     }
 
     // ------------------------------------------------------------ schedule
@@ -525,23 +1007,19 @@ export class DisplayManager extends EventEmitter {
                 continue;
             const phase = phaseAt(now, d.cfg, this.globals);
             d.phase = phase;
+            this._applyLayers(d);
             if (d.override && now.getTime() >= d.override.until)
                 d.override = null;
             if (!d.override) {
-                const target = scheduledValue(phase, d.cfg);
+                const target = scheduledValue(phase, d.cfg, now);
                 // write only when the visible percentage changes
                 if (Math.round(target * 100) !== Math.round(d.value * 100))
                     this._write(d, target);
             }
-            const untilNext = Math.max(1, (phase.next - now.getTime()) / 1000);
-            if (phase.phase === 'evening' || phase.phase === 'morning') {
-                // ~1 % per step, at least 10 s apart
-                const span = Math.abs(d.cfg.day - Math.min(d.cfg.day, d.cfg.night)) * 100;
-                const step = (this.globals.transition * 60) / Math.max(1, span);
-                sleep = Math.min(sleep, Math.max(10, Math.min(120, step)), untilNext);
-            } else {
-                sleep = Math.min(sleep, untilNext);
-            }
+            sleep = Math.min(sleep, this._runActions(d, now, phase));
+            sleep = Math.min(sleep, Math.max(1, (phase.next - now.getTime()) / 1000));
+            if (curveMoving(now, phase))
+                sleep = Math.min(sleep, CURVE_STEP_S);
         }
         if (!this.displays.some(d => d.cfg.schedule))
             return;
@@ -550,6 +1028,58 @@ export class DisplayManager extends EventEmitter {
             this.tick();
             return GLib.SOURCE_REMOVE;
         });
+    }
+
+    /**
+     * Automatic buttons: run each one once a night at its time; in the
+     * morning undo them (and the ones pressed by hand) if wanted.
+     * @returns {number} seconds until the next one
+     */
+    _runActions(d, now, phase) {
+        const night = phase.phase === 'evening' || phase.phase === 'night';
+        if (!night) {
+            if (d._wasNight && d.cfg.morningReset)
+                this._morningReset(d);
+            d._wasNight = false;
+            d._fired.clear();
+            return MAX_SLEEP_S;
+        }
+        d._wasNight = true;
+        let next = MAX_SLEEP_S;
+        const since = (now.getTime() - phase.start) / 60000;
+        for (const action of ACTIONS) {
+            const at = d.cfg.events[action];
+            if (at === null)
+                continue;
+            const key = `${phase.start}:${action}`;
+            if (since >= at) {
+                if (!d._fired.has(key)) {
+                    d._fired.add(key);
+                    this.log(`automatic ${action} on ${d.name}`);
+                    if (action === 'lowest')
+                        this.setMinimum(d, true);
+                    else if (action === 'off')
+                        this.turnOff(d, true, true);
+                    else
+                        this.turnOffOthers(d, true);
+                }
+            } else {
+                next = Math.min(next, (at - since) * 60 + 1);
+            }
+        }
+        return next;
+    }
+
+    _morningReset(d) {
+        this.log(`morning: buttons of ${d.name} back`);
+        this.setMinimum(d, false);
+        this.wake(d.index);
+        if (d.cfg.events.others !== null || this.othersOff(d)) {
+            for (const other of this.displays) {
+                if (other !== d)
+                    this.wake(other.index);
+            }
+        }
     }
 
     _afterResume() {
@@ -564,7 +1094,7 @@ export class DisplayManager extends EventEmitter {
                 return GLib.SOURCE_REMOVE;
             for (const d of this.displays) {
                 if (d.kind === 'ddc' && !d.off)
-                    this._writeHardware(d, d.value);
+                    this._restoreHardware(d);
             }
             this.tick();
             return GLib.SOURCE_REMOVE;
@@ -575,27 +1105,34 @@ export class DisplayManager extends EventEmitter {
         this._destroyed = true;
         if (this._timer)
             GLib.source_remove(this._timer);
+        if (this._watchTimer)
+            GLib.source_remove(this._watchTimer);
         if (this._rescanTimer)
             GLib.source_remove(this._rescanTimer);
-        if (this._saveTimer) {
+        if (this._saveTimer)
             GLib.source_remove(this._saveTimer);
-            this._flush();
-        }
         Gio.DBus.system.signal_unsubscribe(this._sleepId);
         Main.layoutManager.disconnect(this._monitorsId);
         this._settingsIds.forEach(id => this._settings.disconnect(id));
         this._unwatchLocation();
         this._backlightHandles.splice(0).forEach(h => h());
-        // give turned off screens their light back
+        // give turned off / lowest light screens their light back
         for (const d of this.displays) {
-            if (!d.off)
+            if (!d.off && !d.minimum)
                 continue;
             if (d.kind === 'ddc')
                 this._ddc.writeNow(d.bus, Math.round(d.value * d.max));
             else if (d.kind === 'backlight')
                 this._writeHardware(d, d.value);
+            if (d.kind !== 'soft')
+                d.cfg.last = d.value;
         }
+        this._flush();
+        this._offMenu.destroy();
+        this._dots.destroy();
+        this.displays.forEach(d => this._clearView(d));
         this._overlays.destroy();
+        this.gamma.destroy();
         this._ddc.destroy();
         this.displays = [];
     }

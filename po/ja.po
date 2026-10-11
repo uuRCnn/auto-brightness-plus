@@ -1,10 +1,10 @@
-# Japanese translation for Brightness+.
-# This file is distributed under the same license as the Brightness+ package.
+# Japanese translation for Auto Brightness+.
+# This file is distributed under the same license as the Auto Brightness+ package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Brightness+\n"
-"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"Project-Id-Version: Auto Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-11 21:12+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Japanese\n"
@@ -14,138 +14,243 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/prefs.js:75
+#: src/prefs.js:62 src/prefs.js:94
+msgid "None"
+msgstr "なし"
+
+#: src/prefs.js:91
+msgid "Press the keys…"
+msgstr "キーを押してください…"
+
+#: src/prefs.js:127
 msgid "General"
 msgstr "一般"
 
-#: src/prefs.js:78
+#: src/prefs.js:130
+msgid "Claude Code"
+msgstr "Claude Code"
+
+#: src/prefs.js:131
+msgid "Connect to Claude Code"
+msgstr "Claude Code に接続"
+
+#: src/prefs.js:132
+msgid ""
+"When Claude is done or asks you something, you get a notification and its "
+"turned off screen lights up. No account needed."
+msgstr ""
+"Claude が終わったり何か聞いてきたりすると、通知が届き、オフにした画面が点灯し"
+"ます。アカウントは不要です。"
+
+#: src/prefs.js:137
+msgid "Connected"
+msgstr "接続済み"
+
+#: src/prefs.js:137
+msgid "Not connected"
+msgstr "未接続"
+
+#: src/prefs.js:138
+msgid "Disconnect"
+msgstr "切断"
+
+#: src/prefs.js:138
+msgid "Connect"
+msgstr "接続"
+
+#: src/prefs.js:149
+#, javascript-format
+msgid "Could not change %s: %s"
+msgstr "%s を変更できませんでした: %s"
+
+#: src/prefs.js:154
+msgid "When Claude is done"
+msgstr "Claude が終わったとき"
+
+#: src/prefs.js:155
+msgid "When Claude waits for you"
+msgstr "Claude が待っているとき"
+
+#: src/prefs.js:155
+msgid "A permission or a question"
+msgstr "許可または質問"
+
+#: src/prefs.js:156
+msgid "Also a notification"
+msgstr "通知も出す"
+
+#: src/prefs.js:156
+msgid "Click it to go to the terminal"
+msgstr "クリックでターミナルへ"
+
+#: src/prefs.js:157
+msgid "Other programs too"
+msgstr "ほかのプログラムも"
+
+#: src/prefs.js:158
+msgid ""
+"Terminal bell or an app asking for attention, e.g. make ; printf \"\\a\""
+msgstr "ターミナルのベルや注意を求めるアプリ（例: make ; printf \"\\a\"）"
+
+#: src/prefs.js:163
 msgid "Sliders"
 msgstr "スライダー"
 
-#: src/prefs.js:79
+#: src/prefs.js:164
 msgid ""
 "Every monitor gets its own slider in Quick Settings, next to the volume "
 "slider."
 msgstr ""
 "各モニターにクイック設定の音量スライダーの隣に専用スライダーが付きます。"
 
-#: src/prefs.js:81
+#: src/prefs.js:166
+msgid "Monitor menu"
+msgstr "モニターメニュー"
+
+#: src/prefs.js:167
+msgid "Simple (recommended)"
+msgstr "シンプル（おすすめ）"
+
+#: src/prefs.js:168
+msgid "Detailed"
+msgstr "詳細"
+
+#: src/prefs.js:169
+msgid ""
+"Simple: one slider for the value you pick. Detailed: a slider for every "
+"value."
+msgstr "シンプル：選んだ値のスライダーが 1 つ。詳細：値ごとにスライダー。"
+
+#: src/prefs.js:170
 msgid "Left of the slider"
 msgstr "スライダーの左側"
 
-#: src/prefs.js:82
+#: src/prefs.js:171
 msgid "Brightness icon"
 msgstr "明るさアイコン"
 
-#: src/prefs.js:83
+#: src/prefs.js:172
 msgid "Monitor number (1, 2, 3…)"
 msgstr "モニター番号 (1, 2, 3…)"
 
-#: src/prefs.js:84
+#: src/prefs.js:173
 msgid "Short name (LG, VS…)"
 msgstr "短い名前 (LG, VS…)"
 
-#: src/prefs.js:86
+#: src/prefs.js:175
 msgid "Show the monitor name on hover"
 msgstr "ホバー時にモニター名を表示"
 
-#: src/prefs.js:87
+#: src/prefs.js:176
 msgid "Replace GNOME’s own brightness slider"
 msgstr "GNOME 標準の明るさスライダーを置き換える"
 
-#: src/prefs.js:88
+#: src/prefs.js:177
 msgid "The laptop screen then gets a row like the other monitors"
 msgstr "ノートPCの画面も他のモニターと同じように行が付きます"
 
-#: src/prefs.js:91
+#: src/prefs.js:180
 msgid "Night Light"
 msgstr "夜間モード"
 
-#: src/prefs.js:92
+#: src/prefs.js:181
 msgid "Add a menu to the Night Light button"
 msgstr "夜間モードボタンにメニューを追加"
 
-#: src/prefs.js:93
+#: src/prefs.js:182
 msgid "Temperature, red screen and its strength"
 msgstr "色温度、赤い画面とその強さ"
 
-#: src/prefs.js:99
+#: src/prefs.js:188
 msgid "Evening"
 msgstr "夕方"
 
-#: src/prefs.js:102 src/lib/ui.js:257
-msgid "Evening dimming"
-msgstr "夕方の減光"
+#: src/prefs.js:191 src/lib/ui.js:1287
+msgid "Automatic dimming"
+msgstr "自動減光"
 
-#: src/prefs.js:103
+#: src/prefs.js:192
 msgid ""
-"Turn it on per monitor with the moon button next to its slider. Brightness "
-"goes down slowly in the evening and comes back in the morning."
+"Turn it on per monitor with the moon button next to its slider. The monitor "
+"slowly gets darker and warmer in the evening and comes back in the morning."
 msgstr ""
-"スライダー横の月ボタンでモニターごとにオン。夕方にゆっくり暗くなり、朝に戻り"
-"ます。"
+"各モニターのスライダー横の月ボタンでオンにします。夕方にモニターがゆっくり暗"
+"く暖かくなり、朝に元に戻ります。"
 
-#: src/prefs.js:105 src/lib/ui.js:264
+#: src/prefs.js:194 src/lib/ui.js:1305
 msgid "Start"
 msgstr "開始"
 
-#: src/prefs.js:106
+#: src/prefs.js:195
 msgid "At sunset"
 msgstr "日没時"
 
-#: src/prefs.js:107
+#: src/prefs.js:196
 msgid "At a fixed time"
 msgstr "固定時刻"
 
-#: src/prefs.js:109
-msgid "Transition"
-msgstr "移行時間"
+#: src/prefs.js:198
+msgid "Morning transition"
+msgstr "朝の切り替え"
 
-#: src/prefs.js:109
-msgid "Minutes, for both evening and morning"
-msgstr "分 (夕方と朝の両方)"
+#: src/prefs.js:198
+msgid "Minutes"
+msgstr "分"
 
-#: src/prefs.js:110 src/prefs.js:111
+#: src/prefs.js:199 src/prefs.js:200
 msgid "Morning"
 msgstr "朝"
 
-#: src/prefs.js:110
+#: src/prefs.js:199
 msgid "Minutes after sunrise"
 msgstr "日の出後の分数"
 
-#: src/prefs.js:111
+#: src/prefs.js:200
 msgid "Brightness comes back at"
 msgstr "明るさが戻る時刻"
 
-#: src/prefs.js:117
+#: src/prefs.js:206
 msgid "For new monitors"
 msgstr "新しいモニターの既定値"
 
-#: src/prefs.js:118
-msgid "Each monitor can change these in its own menu."
-msgstr "各モニターのメニューで変更できます。"
+#: src/prefs.js:207
+msgid ""
+"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
+"with a little extra dimming late at night. Each monitor can change these in "
+"its own menu."
+msgstr ""
+"メインモニター用です。ほかのモニターは 30 分長く、0 % まで下がり、深夜には少"
+"し追加の減光も入ります。各モニターのメニューで変更できます。"
 
-#: src/prefs.js:120
+#: src/prefs.js:209
 msgid "Minutes after sunset"
 msgstr "日没後の分数"
 
-#: src/prefs.js:121
+#: src/prefs.js:210
 msgid "Start time"
 msgstr "開始時刻"
 
-#: src/prefs.js:125 src/lib/ui.js:269
+#: src/prefs.js:213 src/lib/ui.js:1310
+msgid "Duration"
+msgstr "時間"
+
+#: src/prefs.js:213
+msgid "Minutes the evening dimming takes"
+msgstr "夕方の減光にかかる分数"
+
+#: src/prefs.js:215 src/lib/ui.js:37
 msgid "Night brightness"
 msgstr "夜間の明るさ"
 
-#: src/prefs.js:125
+#: src/prefs.js:215
 msgid "Percent"
 msgstr "パーセント"
 
-#: src/prefs.js:134 src/prefs.js:137
+#: src/prefs.js:224 src/prefs.js:227
 msgid "Location"
 msgstr "位置"
 
-#: src/prefs.js:135
+#: src/prefs.js:225
 msgid ""
 "Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
 "keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
@@ -153,115 +258,176 @@ msgstr ""
 "日没と日の出の計算にのみ使用します。自動: GNOME が夜間モード用に保持している"
 "位置、なければタイムゾーン。何も送信されません。"
 
-#: src/prefs.js:138
+#: src/prefs.js:228
 msgid "Automatic"
 msgstr "自動"
 
-#: src/prefs.js:139
+#: src/prefs.js:229
 msgid "Manual"
 msgstr "手動"
 
-#: src/prefs.js:141
+#: src/prefs.js:231
 msgid "Latitude"
 msgstr "緯度"
 
-#: src/prefs.js:142
+#: src/prefs.js:232
 msgid "Longitude"
 msgstr "経度"
 
-#: src/prefs.js:145
+#: src/prefs.js:235
 msgid "Today"
 msgstr "今日"
 
-#: src/prefs.js:162
+#: src/prefs.js:252
 msgid "manual"
 msgstr "手動"
 
-#: src/prefs.js:163
+#: src/prefs.js:253
 msgid "GNOME location"
 msgstr "GNOME の位置"
 
-#: src/prefs.js:164
+#: src/prefs.js:254
 #, javascript-format
 msgid "time zone %s"
 msgstr "タイムゾーン %s"
 
-#: src/prefs.js:165
+#: src/prefs.js:255
 msgid "UTC offset"
 msgstr "UTC オフセット"
 
-#: src/prefs.js:168
+#: src/prefs.js:258
 #, javascript-format
 msgid "Sunset %s · sunrise %s · from %s"
 msgstr "日没 %s · 日の出 %s · %s より"
 
-#: src/prefs.js:176
+#: src/prefs.js:266
 msgid "Screen off"
 msgstr "画面オフ"
 
-#: src/prefs.js:179 src/lib/ui.js:293
-msgid "Turn off screen"
-msgstr "画面をオフ"
+#: src/prefs.js:269
+msgid "Buttons"
+msgstr "ボタン"
 
-#: src/prefs.js:180
-msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
-msgstr "各モニターのメニューにある「画面をオフ」と「他をオフ」。"
+#: src/prefs.js:270
+msgid "In each monitor’s menu (the moon button)."
+msgstr "各モニターのメニュー内（月ボタン）。"
 
-#: src/prefs.js:182
-msgid "Turned off screen"
-msgstr "オフにした画面"
+#: src/prefs.js:272
+msgid "Place"
+msgstr "場所"
 
-#: src/prefs.js:183
-msgid "Fully black"
-msgstr "完全に黒"
+#: src/prefs.js:273
+msgid "At the bottom, large"
+msgstr "下に大きく"
 
-#: src/prefs.js:184
+#: src/prefs.js:274
+msgid "At the top, large"
+msgstr "上に大きく"
+
+#: src/prefs.js:275
+msgid "Next to the monitor name, small"
+msgstr "モニター名の横に小さく"
+
+#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
 msgid "Lowest light"
 msgstr "最小の明るさ"
 
-#: src/prefs.js:186
-msgid "Light left"
-msgstr "残す明るさ"
+#: src/prefs.js:278
+msgid "Brightness 0 and full extra dimming; press again to go back"
+msgstr "明るさ 0 と最大の追加減光。もう一度押すと元に戻ります"
 
-#: src/prefs.js:186
-msgid "Percent, for “Lowest light”"
-msgstr "パーセント (「最小の明るさ」用)"
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
+#: src/lib/ui.js:1623
+msgid "Turn off screen"
+msgstr "画面をオフ"
 
-#: src/prefs.js:188
-msgid "Turn back on when the mouse comes"
-msgstr "マウスが来たら再点灯"
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+msgid "Turn off other screens"
+msgstr "ほかの画面をオフ"
 
-#: src/prefs.js:189
-msgid "Moving the mouse onto a turned off screen brings its light back"
-msgstr "オフの画面にマウスを移動すると明るさが戻ります"
+#: src/prefs.js:281
+msgid "Press again to turn them back on"
+msgstr "もう一度押すと再びオンになります"
 
-#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+#: src/prefs.js:286
+msgid "“Turn off screen” and “Turn off other screens” in each monitor’s menu."
+msgstr "各モニターのメニューにある「画面をオフ」と「ほかの画面をオフ」。"
+
+#: src/prefs.js:288
+msgid "Light up while the mouse is on it"
+msgstr "マウスが上にある間は点灯"
+
+#: src/prefs.js:289
+msgid ""
+"A turned off screen lights up while the mouse is on it and goes dark again "
+"when the mouse leaves. The same button turns it back on."
+msgstr ""
+"オフにした画面はマウスが上にある間だけ点灯し、離れると再び暗くなります。同じ"
+"ボタンで元に戻せます。"
+
+#: src/prefs.js:294
+msgid "A turned off screen"
+msgstr "オフにした画面"
+
+#: src/prefs.js:295
+msgid ""
+"Clicks and typing always reach the apps on it. Its options are in the "
+"monitor’s menu (the moon button) and behind the small dot."
+msgstr ""
+"クリックや入力は常にその画面のアプリに届きます。オプションはモニターのメ"
+"ニュー（月ボタン）と小さな点にあります。"
+
+#: src/prefs.js:297
+msgid "Small dot in a corner"
+msgstr "角の小さな点"
+
+#: src/prefs.js:298
+msgid "Click it for the screen’s menu; drag it to another corner"
+msgstr "クリック: 画面のメニュー、ドラッグ: 別の角へ"
+
+#: src/prefs.js:299
+msgid "Keyboard shortcut"
+msgstr "キーボードショートカット"
+
+#: src/prefs.js:300
+msgid "The menu of the screen under the mouse"
+msgstr "マウスがある画面のメニュー"
+
+#: src/prefs.js:301
+msgid "“Keep lit” lasts"
+msgstr "「点灯したまま」の時間"
+
+#: src/prefs.js:301
+msgid "Seconds"
+msgstr "秒"
+
+#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
 msgid "Red screen"
 msgstr "赤い画面"
 
-#: src/prefs.js:197
+#: src/prefs.js:306
 msgid ""
 "Switch it on in the Night Light menu. It removes all blue and green light, "
 "which helps you fall asleep."
 msgstr "夜間モードのメニューでオン。青と緑の光をすべて除き、眠りやすくします。"
 
-#: src/prefs.js:199
+#: src/prefs.js:308
 msgid "Only while Night Light is active"
 msgstr "夜間モード有効時のみ"
 
-#: src/prefs.js:200
+#: src/prefs.js:309
 msgid "Starts and stops together with Night Light"
 msgstr "夜間モードと一緒に開始・終了"
 
-#: src/prefs.js:201 src/lib/ui.js:439
+#: src/prefs.js:310 src/lib/ui.js:1852
 msgid "Strength"
 msgstr "強さ"
 
-#: src/prefs.js:215
+#: src/prefs.js:324
 msgid "Advanced"
 msgstr "詳細"
 
-#: src/prefs.js:219
+#: src/prefs.js:328
 msgid ""
 "External monitors are controlled over DDC/CI. Your user needs access to /dev/"
 "i2c-* (usually the “i2c” group)."
@@ -269,119 +435,340 @@ msgstr ""
 "外部モニターは DDC/CI で制御します。/dev/i2c-* へのアクセス権 (通常は「i2c」"
 "グループ) が必要です。"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil found"
 msgstr "ddcutil が見つかりました"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil not found"
 msgstr "ddcutil が見つかりません"
 
-#: src/prefs.js:224
+#: src/prefs.js:333
 msgid "Install ddcutil from your distribution, then press Scan again"
 msgstr ""
 "ディストリビューションから ddcutil をインストールし、「再スキャン」を押してく"
 "ださい"
 
-#: src/prefs.js:226
+#: src/prefs.js:335
 msgid "Scan again"
 msgstr "再スキャン"
 
-#: src/prefs.js:231
+#: src/prefs.js:340
 msgid "ddcutil program"
 msgstr "ddcutil プログラム"
 
-#: src/prefs.js:234
+#: src/prefs.js:343
 msgid "Extra arguments"
 msgstr "追加の引数"
 
-#: src/prefs.js:237
+#: src/prefs.js:346
 msgid "Pause between writes"
 msgstr "書き込み間隔"
 
-#: src/prefs.js:238
+#: src/prefs.js:347
 msgid "Milliseconds. Raise it if a monitor misses changes"
 msgstr "ミリ秒。モニターが変更を取りこぼす場合は増やしてください"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Debug messages"
 msgstr "デバッグメッセージ"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Written to the system journal"
 msgstr "システムジャーナルに書き込まれます"
 
-#: src/lib/displays.js:37
+#: src/lib/cornerdot.js:61
+msgid "Screen menu"
+msgstr "画面メニュー"
+
+#: src/lib/displays.js:59
 msgid "Monitor"
 msgstr "モニター"
 
-#: src/lib/displays.js:287
+#: src/lib/displays.js:415
 msgid "Built-in Display"
 msgstr "内蔵ディスプレイ"
 
-#: src/lib/displays.js:288
+#: src/lib/displays.js:416
 msgid "Built-in"
 msgstr "内蔵"
 
-#: src/lib/displays.js:290
+#: src/lib/displays.js:418
 #, javascript-format
 msgid "Monitor %d"
 msgstr "モニター %d"
 
-#: src/lib/ui.js:119
-msgid "Earlier"
-msgstr "早く"
+#: src/lib/notify.js:115
+msgid "Claude is waiting for you"
+msgstr "Claude が待っています"
 
-#: src/lib/ui.js:122
-msgid "Later"
-msgstr "遅く"
+#: src/lib/notify.js:115
+msgid "Claude is done"
+msgstr "Claude が終わりました"
 
-#: src/lib/ui.js:165
-msgid "Evening dimming and more"
-msgstr "夕方の減光など"
+#: src/lib/notify.js:129
+msgid "Go to the terminal"
+msgstr "ターミナルへ"
 
-#: src/lib/ui.js:282
+#: src/lib/offmenu.js:15
+#, javascript-format
+msgid "%d s"
+msgstr "%d 秒"
+
+#: src/lib/offmenu.js:17
+#, javascript-format
+msgid "%d min %d s"
+msgstr "%d 分 %d 秒"
+
+#: src/lib/offmenu.js:17 src/lib/ui.js:62
+#, javascript-format
+msgid "%d min"
+msgstr "%d 分"
+
+#: src/lib/offmenu.js:43
+#, javascript-format
+msgid "Keep lit · %s"
+msgstr "点灯したまま · %s"
+
+#: src/lib/offmenu.js:44
+msgid "Keep lit until I darken it"
+msgstr "暗くするまで点灯したまま"
+
+#: src/lib/offmenu.js:45
+msgid "Darken now"
+msgstr "今すぐ暗く"
+
+#: src/lib/offmenu.js:46
+msgid "Turn the screen back on"
+msgstr "画面を元に戻す"
+
+#: src/lib/ui.js:36
+msgid "Day brightness"
+msgstr "昼の明るさ"
+
+#: src/lib/ui.js:38
 msgid "Extra dimming"
 msgstr "追加の減光"
 
-#: src/lib/ui.js:294
-msgid "Turn off others"
-msgstr "他をオフ"
+#: src/lib/ui.js:39
+msgid ""
+"Darkens the picture further when the monitor is already at its lowest "
+"brightness."
+msgstr "モニターがすでに最低の明るさのとき、画面をさらに暗くします。"
 
-#: src/lib/ui.js:318
-msgid "Off"
-msgstr "オフ"
+#: src/lib/ui.js:45
+msgid "Night light"
+msgstr "夜間モード"
 
-#: src/lib/ui.js:335
-msgid "Turned off"
-msgstr "オフ"
+#: src/lib/ui.js:46 src/lib/ui.js:1824
+msgid ""
+"Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
+"screen helps you fall asleep more easily."
+msgstr ""
+"夜の青い光は睡眠ホルモンのメラトニンを抑えます。暖かい画面は寝つきを良くしま"
+"す。"
 
-#: src/lib/ui.js:335
+#: src/lib/ui.js:47
+msgid ""
+"How strong Night Light is on this monitor. ×1 = exactly GNOME’s Night Light, "
+"nothing added. ×0 turns it off here, ×2 makes it twice as warm."
+msgstr ""
+"このモニターでの夜間モードの強さ。×1 = GNOME の夜間モードそのまま、何も足しま"
+"せん。×0 でここだけオフ、×2 で 2 倍暖かく。"
+
+#: src/lib/ui.js:48
+msgid "Red light"
+msgstr "赤い光"
+
+#: src/lib/ui.js:49 src/lib/ui.js:1841
+msgid ""
+"Red light disturbs melatonin and your body clock the least of all colours. "
+"Ideal for the last hours before bed."
+msgstr ""
+"赤い光は、すべての色の中でメラトニンと体内時計への影響が最も少ない色です。寝"
+"る前の数時間に最適です。"
+
+#: src/lib/ui.js:50
+msgid ""
+"How strong the red screen is on this monitor. ×1 = the red screen as set in "
+"the Night Light menu, nothing added. ×0 keeps this monitor normal, ×2 makes "
+"it twice as red."
+msgstr ""
+"このモニターでの赤い画面の強さ。×1 = 夜間モードのメニューで設定した赤い画面の"
+"まま、何も足しません。×0 で通常のまま、×2 で 2 倍赤く。"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h %d min"
+msgstr "%d 時間 %d 分"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h"
+msgstr "%d 時間"
+
+#: src/lib/ui.js:284
+msgid "Earlier"
+msgstr "早く"
+
+#: src/lib/ui.js:287
+msgid "Later"
+msgstr "遅く"
+
+#: src/lib/ui.js:1080
+msgid "Automatic dimming and more"
+msgstr "自動減光など"
+
+#: src/lib/ui.js:1249
+msgid "Settings"
+msgstr "設定"
+
+#: src/lib/ui.js:1293
+msgid ""
+"Slowly dims this monitor in the evening, and brings it back in the morning."
+msgstr "夕方にこのモニターをゆっくり暗くし、朝に元に戻します。"
+
+#: src/lib/ui.js:1294
+msgid ""
+"Drag the points to shape the evening; the big point also sets how long it "
+"takes. + adds a button that runs by itself."
+msgstr ""
+"点をドラッグして夕方の形を決めます。大きな点で長さも決まります。+ で自動で動"
+"くボタンを追加。"
+
+#: src/lib/ui.js:1311
+msgid "Shorter"
+msgstr "短く"
+
+#: src/lib/ui.js:1312
+msgid "Longer"
+msgstr "長く"
+
+#: src/lib/ui.js:1322
+msgid "Back to normal in the morning"
+msgstr "朝に元に戻す"
+
+#: src/lib/ui.js:1326
+msgid ""
+"When the morning comes, lowest light and turned off screens go back to "
+"normal, whether they were switched on by hand or by the graph."
+msgstr ""
+"朝になると、最小の明るさとオフにした画面が元に戻ります。手動でも、グラフから"
+"入れたものでも同じです。"
+
+#: src/lib/ui.js:1359
+msgid "Back to 100 %"
+msgstr "100 % に戻す"
+
+#: src/lib/ui.js:1362 src/lib/ui.js:1364
+msgid "Back to the default evening curve"
+msgstr "既定の夕方カーブに戻す"
+
+#: src/lib/ui.js:1380
+msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
+msgstr "既定に戻す：×1 と GNOME の自動時刻（日没）"
+
+#: src/lib/ui.js:1385
+msgid "Back to ×1"
+msgstr "×1 に戻す"
+
+#: src/lib/ui.js:1403
+msgid "Day"
+msgstr "昼"
+
+#: src/lib/ui.js:1403
+msgid "Night"
+msgstr "夜"
+
+#: src/lib/ui.js:1403
+msgid "Extra"
+msgstr "追加"
+
+#: src/lib/ui.js:1404
+msgid "Warmth"
+msgstr "暖かさ"
+
+#: src/lib/ui.js:1404
+msgid "Red"
+msgstr "赤"
+
+#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+msgid "Back to the default"
+msgstr "既定に戻す"
+
+#: src/lib/ui.js:1541
+msgid "While the screen is off"
+msgstr "画面がオフの間"
+
+#: src/lib/ui.js:1581
+msgid "Dark while off"
+msgstr "オフのときの暗さ"
+
+#: src/lib/ui.js:1582
+msgid ""
+"While the screen is off, the monitor stays at its lowest light and this much "
+"black is added on top. 25 % = a little darker, 100 % = fully black."
+msgstr ""
+"画面がオフの間、モニターは最低の明るさのままで、その上にこの量の黒を重ねま"
+"す。25 % = 少し暗く、100 % = 真っ黒。"
+
+#: src/lib/ui.js:1602
+#, javascript-format
+msgid "Keep lit for %s"
+msgstr "%s 点灯したまま"
+
+#: src/lib/ui.js:1603
+#, javascript-format
+msgid ""
+"On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
+"Off: it goes dark as soon as the mouse leaves."
+msgstr ""
+"オン：マウスが離れた後も %s 点灯し、その後暗くなります。オフ：マウスが離れる"
+"とすぐ暗くなります。"
+
+#: src/lib/ui.js:1687
 #, javascript-format
 msgid "Brightness %s"
 msgstr "明るさ %s"
 
-#: src/lib/ui.js:344
+#: src/lib/ui.js:1689
+msgid "Turned off"
+msgstr "オフ"
+
+#: src/lib/ui.js:1709
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "日没 %s %s %d 分"
 
-#: src/lib/ui.js:347
+#: src/lib/ui.js:1712
 msgid "Fixed time"
 msgstr "固定時刻"
 
-#: src/lib/ui.js:421
+#: src/lib/ui.js:1715
+#, javascript-format
+msgid "Until %s"
+msgstr "%s まで"
+
+#: src/lib/ui.js:1724
+msgid "Off"
+msgstr "オフ"
+
+#: src/lib/ui.js:1822
 msgid "Temperature"
 msgstr "色温度"
 
-#: src/lib/ui.js:498
+#: src/lib/ui.js:1825
+msgid "Back to GNOME’s default"
+msgstr "GNOME の既定に戻す"
+
+#: src/lib/ui.js:1919
 msgid "Sunset to sunrise"
 msgstr "日没から日の出まで"
 
-#: src/lib/ui.js:514
+#: src/lib/ui.js:1941
 msgid "Turns on together with Night Light"
 msgstr "夜間モードと一緒にオン"
 
-#: src/lib/ui.js:516
+#: src/lib/ui.js:1943
 msgid "Starts when Night Light starts"
 msgstr "夜間モード開始時に開始"

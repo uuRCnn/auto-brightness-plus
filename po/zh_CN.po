@@ -1,10 +1,10 @@
-# Chinese (simplified) translation for Brightness+.
-# This file is distributed under the same license as the Brightness+ package.
+# Chinese (simplified) translation for Auto Brightness+.
+# This file is distributed under the same license as the Auto Brightness+ package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Brightness+\n"
-"Report-Msgid-Bugs-To: https://github.com/uuRCnn/brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-10 21:06+0300\n"
+"Project-Id-Version: Auto Brightness+\n"
+"Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
+"POT-Creation-Date: 2026-10-11 21:12+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Chinese (simplified)\n"
@@ -14,135 +14,240 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/prefs.js:75
+#: src/prefs.js:62 src/prefs.js:94
+msgid "None"
+msgstr "无"
+
+#: src/prefs.js:91
+msgid "Press the keys…"
+msgstr "请按键…"
+
+#: src/prefs.js:127
 msgid "General"
 msgstr "常规"
 
-#: src/prefs.js:78
+#: src/prefs.js:130
+msgid "Claude Code"
+msgstr "Claude Code"
+
+#: src/prefs.js:131
+msgid "Connect to Claude Code"
+msgstr "连接到 Claude Code"
+
+#: src/prefs.js:132
+msgid ""
+"When Claude is done or asks you something, you get a notification and its "
+"turned off screen lights up. No account needed."
+msgstr ""
+"Claude 完成或向你提问时，你会收到通知，它所在的关闭屏幕会亮起。无需账号。"
+
+#: src/prefs.js:137
+msgid "Connected"
+msgstr "已连接"
+
+#: src/prefs.js:137
+msgid "Not connected"
+msgstr "未连接"
+
+#: src/prefs.js:138
+msgid "Disconnect"
+msgstr "断开"
+
+#: src/prefs.js:138
+msgid "Connect"
+msgstr "连接"
+
+#: src/prefs.js:149
+#, javascript-format
+msgid "Could not change %s: %s"
+msgstr "无法修改 %s：%s"
+
+#: src/prefs.js:154
+msgid "When Claude is done"
+msgstr "Claude 完成时"
+
+#: src/prefs.js:155
+msgid "When Claude waits for you"
+msgstr "Claude 等你时"
+
+#: src/prefs.js:155
+msgid "A permission or a question"
+msgstr "权限请求或问题"
+
+#: src/prefs.js:156
+msgid "Also a notification"
+msgstr "同时显示通知"
+
+#: src/prefs.js:156
+msgid "Click it to go to the terminal"
+msgstr "点击转到终端"
+
+#: src/prefs.js:157
+msgid "Other programs too"
+msgstr "其他程序也一样"
+
+#: src/prefs.js:158
+msgid ""
+"Terminal bell or an app asking for attention, e.g. make ; printf \"\\a\""
+msgstr "终端响铃或请求注意的应用，例如 make ; printf \"\\a\""
+
+#: src/prefs.js:163
 msgid "Sliders"
 msgstr "滑块"
 
-#: src/prefs.js:79
+#: src/prefs.js:164
 msgid ""
 "Every monitor gets its own slider in Quick Settings, next to the volume "
 "slider."
 msgstr "每台显示器都会在快速设置中、音量滑块旁获得自己的滑块。"
 
-#: src/prefs.js:81
+#: src/prefs.js:166
+msgid "Monitor menu"
+msgstr "显示器菜单"
+
+#: src/prefs.js:167
+msgid "Simple (recommended)"
+msgstr "简洁（推荐）"
+
+#: src/prefs.js:168
+msgid "Detailed"
+msgstr "详细"
+
+#: src/prefs.js:169
+msgid ""
+"Simple: one slider for the value you pick. Detailed: a slider for every "
+"value."
+msgstr "简洁：为所选的值提供一个滑块。详细：每个值都有滑块。"
+
+#: src/prefs.js:170
 msgid "Left of the slider"
 msgstr "滑块左侧"
 
-#: src/prefs.js:82
+#: src/prefs.js:171
 msgid "Brightness icon"
 msgstr "亮度图标"
 
-#: src/prefs.js:83
+#: src/prefs.js:172
 msgid "Monitor number (1, 2, 3…)"
 msgstr "显示器编号（1、2、3…）"
 
-#: src/prefs.js:84
+#: src/prefs.js:173
 msgid "Short name (LG, VS…)"
 msgstr "简称（LG、VS…）"
 
-#: src/prefs.js:86
+#: src/prefs.js:175
 msgid "Show the monitor name on hover"
 msgstr "悬停时显示显示器名称"
 
-#: src/prefs.js:87
+#: src/prefs.js:176
 msgid "Replace GNOME’s own brightness slider"
 msgstr "替换 GNOME 自带的亮度滑块"
 
-#: src/prefs.js:88
+#: src/prefs.js:177
 msgid "The laptop screen then gets a row like the other monitors"
 msgstr "笔记本屏幕也会像其他显示器一样拥有一行"
 
-#: src/prefs.js:91
+#: src/prefs.js:180
 msgid "Night Light"
 msgstr "夜灯"
 
-#: src/prefs.js:92
+#: src/prefs.js:181
 msgid "Add a menu to the Night Light button"
 msgstr "为夜灯按钮添加菜单"
 
-#: src/prefs.js:93
+#: src/prefs.js:182
 msgid "Temperature, red screen and its strength"
 msgstr "色温、红屏及其强度"
 
-#: src/prefs.js:99
+#: src/prefs.js:188
 msgid "Evening"
 msgstr "傍晚"
 
-#: src/prefs.js:102 src/lib/ui.js:257
-msgid "Evening dimming"
-msgstr "傍晚调暗"
+#: src/prefs.js:191 src/lib/ui.js:1287
+msgid "Automatic dimming"
+msgstr "自动调暗"
 
-#: src/prefs.js:103
+#: src/prefs.js:192
 msgid ""
-"Turn it on per monitor with the moon button next to its slider. Brightness "
-"goes down slowly in the evening and comes back in the morning."
-msgstr "用滑块旁的月亮按钮为每台显示器单独开启。傍晚亮度缓慢降低，早晨恢复。"
+"Turn it on per monitor with the moon button next to its slider. The monitor "
+"slowly gets darker and warmer in the evening and comes back in the morning."
+msgstr ""
+"在每个显示器滑块旁的月亮按钮中开启。显示器会在傍晚慢慢变暗变暖，早上恢复。"
 
-#: src/prefs.js:105 src/lib/ui.js:264
+#: src/prefs.js:194 src/lib/ui.js:1305
 msgid "Start"
 msgstr "开始"
 
-#: src/prefs.js:106
+#: src/prefs.js:195
 msgid "At sunset"
 msgstr "日落时"
 
-#: src/prefs.js:107
+#: src/prefs.js:196
 msgid "At a fixed time"
 msgstr "固定时间"
 
-#: src/prefs.js:109
-msgid "Transition"
-msgstr "过渡"
+#: src/prefs.js:198
+msgid "Morning transition"
+msgstr "早晨过渡"
 
-#: src/prefs.js:109
-msgid "Minutes, for both evening and morning"
-msgstr "分钟，傍晚和早晨都适用"
+#: src/prefs.js:198
+msgid "Minutes"
+msgstr "分钟"
 
-#: src/prefs.js:110 src/prefs.js:111
+#: src/prefs.js:199 src/prefs.js:200
 msgid "Morning"
 msgstr "早晨"
 
-#: src/prefs.js:110
+#: src/prefs.js:199
 msgid "Minutes after sunrise"
 msgstr "日出后分钟数"
 
-#: src/prefs.js:111
+#: src/prefs.js:200
 msgid "Brightness comes back at"
 msgstr "亮度恢复时间"
 
-#: src/prefs.js:117
+#: src/prefs.js:206
 msgid "For new monitors"
 msgstr "新显示器的默认值"
 
-#: src/prefs.js:118
-msgid "Each monitor can change these in its own menu."
-msgstr "每台显示器都可以在自己的菜单中修改。"
+#: src/prefs.js:207
+msgid ""
+"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
+"with a little extra dimming late at night. Each monitor can change these in "
+"its own menu."
+msgstr ""
+"用于主显示器。其他显示器多 30 分钟，降到 0 %，深夜还会稍加额外调暗。每个显示"
+"器都可以在自己的菜单中更改。"
 
-#: src/prefs.js:120
+#: src/prefs.js:209
 msgid "Minutes after sunset"
 msgstr "日落后分钟数"
 
-#: src/prefs.js:121
+#: src/prefs.js:210
 msgid "Start time"
 msgstr "开始时间"
 
-#: src/prefs.js:125 src/lib/ui.js:269
+#: src/prefs.js:213 src/lib/ui.js:1310
+msgid "Duration"
+msgstr "时长"
+
+#: src/prefs.js:213
+msgid "Minutes the evening dimming takes"
+msgstr "傍晚调暗持续的分钟数"
+
+#: src/prefs.js:215 src/lib/ui.js:37
 msgid "Night brightness"
 msgstr "夜间亮度"
 
-#: src/prefs.js:125
+#: src/prefs.js:215
 msgid "Percent"
 msgstr "百分比"
 
-#: src/prefs.js:134 src/prefs.js:137
+#: src/prefs.js:224 src/prefs.js:227
 msgid "Location"
 msgstr "位置"
 
-#: src/prefs.js:135
+#: src/prefs.js:225
 msgid ""
 "Only used to calculate sunset and sunrise. Automatic uses the location GNOME "
 "keeps for Night Light, otherwise your time zone. Nothing is sent anywhere."
@@ -150,232 +255,504 @@ msgstr ""
 "仅用于计算日落和日出。自动：使用 GNOME 为夜灯保存的位置，否则使用时区。不会发"
 "送任何数据。"
 
-#: src/prefs.js:138
+#: src/prefs.js:228
 msgid "Automatic"
 msgstr "自动"
 
-#: src/prefs.js:139
+#: src/prefs.js:229
 msgid "Manual"
 msgstr "手动"
 
-#: src/prefs.js:141
+#: src/prefs.js:231
 msgid "Latitude"
 msgstr "纬度"
 
-#: src/prefs.js:142
+#: src/prefs.js:232
 msgid "Longitude"
 msgstr "经度"
 
-#: src/prefs.js:145
+#: src/prefs.js:235
 msgid "Today"
 msgstr "今天"
 
-#: src/prefs.js:162
+#: src/prefs.js:252
 msgid "manual"
 msgstr "手动"
 
-#: src/prefs.js:163
+#: src/prefs.js:253
 msgid "GNOME location"
 msgstr "GNOME 位置"
 
-#: src/prefs.js:164
+#: src/prefs.js:254
 #, javascript-format
 msgid "time zone %s"
 msgstr "时区 %s"
 
-#: src/prefs.js:165
+#: src/prefs.js:255
 msgid "UTC offset"
 msgstr "UTC 偏移"
 
-#: src/prefs.js:168
+#: src/prefs.js:258
 #, javascript-format
 msgid "Sunset %s · sunrise %s · from %s"
 msgstr "日落 %s · 日出 %s · 来自 %s"
 
-#: src/prefs.js:176
+#: src/prefs.js:266
 msgid "Screen off"
 msgstr "关闭屏幕"
 
-#: src/prefs.js:179 src/lib/ui.js:293
-msgid "Turn off screen"
-msgstr "关闭屏幕"
+#: src/prefs.js:269
+msgid "Buttons"
+msgstr "按钮"
 
-#: src/prefs.js:180
-msgid "“Turn off screen” and “Turn off others” in each monitor’s menu."
-msgstr "每台显示器菜单中的“关闭屏幕”和“关闭其他屏幕”。"
+#: src/prefs.js:270
+msgid "In each monitor’s menu (the moon button)."
+msgstr "在每个显示器的菜单中（月亮按钮）。"
 
-#: src/prefs.js:182
-msgid "Turned off screen"
-msgstr "已关闭的屏幕"
+#: src/prefs.js:272
+msgid "Place"
+msgstr "位置"
 
-#: src/prefs.js:183
-msgid "Fully black"
-msgstr "全黑"
+#: src/prefs.js:273
+msgid "At the bottom, large"
+msgstr "底部，大"
 
-#: src/prefs.js:184
+#: src/prefs.js:274
+msgid "At the top, large"
+msgstr "顶部，大"
+
+#: src/prefs.js:275
+msgid "Next to the monitor name, small"
+msgstr "显示器名称旁，小"
+
+#: src/prefs.js:277 src/lib/ui.js:339 src/lib/ui.js:1620 src/lib/ui.js:1691
 msgid "Lowest light"
 msgstr "最低亮度"
 
-#: src/prefs.js:186
-msgid "Light left"
-msgstr "保留亮度"
+#: src/prefs.js:278
+msgid "Brightness 0 and full extra dimming; press again to go back"
+msgstr "亮度 0 并完全额外调暗；再按一次恢复"
 
-#: src/prefs.js:186
-msgid "Percent, for “Lowest light”"
-msgstr "百分比，用于“最低亮度”"
+#: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:340
+#: src/lib/ui.js:1623
+msgid "Turn off screen"
+msgstr "关闭屏幕"
 
-#: src/prefs.js:188
-msgid "Turn back on when the mouse comes"
-msgstr "鼠标移入时重新点亮"
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:341 src/lib/ui.js:1634
+msgid "Turn off other screens"
+msgstr "关闭其他屏幕"
 
-#: src/prefs.js:189
-msgid "Moving the mouse onto a turned off screen brings its light back"
-msgstr "将鼠标移到已关闭的屏幕上会恢复其亮度"
+#: src/prefs.js:281
+msgid "Press again to turn them back on"
+msgstr "再按一次重新打开"
 
-#: src/prefs.js:196 src/lib/ui.js:429 src/lib/ui.js:490
+#: src/prefs.js:286
+msgid "“Turn off screen” and “Turn off other screens” in each monitor’s menu."
+msgstr "每个显示器菜单中的“关闭屏幕”和“关闭其他屏幕”。"
+
+#: src/prefs.js:288
+msgid "Light up while the mouse is on it"
+msgstr "鼠标在上面时亮起"
+
+#: src/prefs.js:289
+msgid ""
+"A turned off screen lights up while the mouse is on it and goes dark again "
+"when the mouse leaves. The same button turns it back on."
+msgstr ""
+"关闭的屏幕在鼠标停在上面时亮起，鼠标离开后再次变暗。同一个按钮可以重新打开"
+"它。"
+
+#: src/prefs.js:294
+msgid "A turned off screen"
+msgstr "关闭的屏幕"
+
+#: src/prefs.js:295
+msgid ""
+"Clicks and typing always reach the apps on it. Its options are in the "
+"monitor’s menu (the moon button) and behind the small dot."
+msgstr ""
+"点击和输入始终会到达其上的应用。它的选项在显示器菜单（月亮按钮）和小圆点里。"
+
+#: src/prefs.js:297
+msgid "Small dot in a corner"
+msgstr "角落的小圆点"
+
+#: src/prefs.js:298
+msgid "Click it for the screen’s menu; drag it to another corner"
+msgstr "点击：屏幕菜单；拖动：移到另一个角"
+
+#: src/prefs.js:299
+msgid "Keyboard shortcut"
+msgstr "键盘快捷键"
+
+#: src/prefs.js:300
+msgid "The menu of the screen under the mouse"
+msgstr "鼠标所在屏幕的菜单"
+
+#: src/prefs.js:301
+msgid "“Keep lit” lasts"
+msgstr "“保持亮起”时长"
+
+#: src/prefs.js:301
+msgid "Seconds"
+msgstr "秒"
+
+#: src/prefs.js:305 src/lib/ui.js:1836 src/lib/ui.js:1911
 msgid "Red screen"
 msgstr "红屏"
 
-#: src/prefs.js:197
+#: src/prefs.js:306
 msgid ""
 "Switch it on in the Night Light menu. It removes all blue and green light, "
 "which helps you fall asleep."
 msgstr "在夜灯菜单中开启。去除所有蓝光和绿光，帮助入睡。"
 
-#: src/prefs.js:199
+#: src/prefs.js:308
 msgid "Only while Night Light is active"
 msgstr "仅在夜灯生效时"
 
-#: src/prefs.js:200
+#: src/prefs.js:309
 msgid "Starts and stops together with Night Light"
 msgstr "与夜灯一起开始和结束"
 
-#: src/prefs.js:201 src/lib/ui.js:439
+#: src/prefs.js:310 src/lib/ui.js:1852
 msgid "Strength"
 msgstr "强度"
 
-#: src/prefs.js:215
+#: src/prefs.js:324
 msgid "Advanced"
 msgstr "高级"
 
-#: src/prefs.js:219
+#: src/prefs.js:328
 msgid ""
 "External monitors are controlled over DDC/CI. Your user needs access to /dev/"
 "i2c-* (usually the “i2c” group)."
 msgstr ""
 "外接显示器通过 DDC/CI 控制。用户需要能访问 /dev/i2c-*（通常是“i2c”组）。"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil found"
 msgstr "已找到 ddcutil"
 
-#: src/prefs.js:223
+#: src/prefs.js:332
 msgid "ddcutil not found"
 msgstr "未找到 ddcutil"
 
-#: src/prefs.js:224
+#: src/prefs.js:333
 msgid "Install ddcutil from your distribution, then press Scan again"
 msgstr "请从发行版安装 ddcutil，然后点击“重新扫描”"
 
-#: src/prefs.js:226
+#: src/prefs.js:335
 msgid "Scan again"
 msgstr "重新扫描"
 
-#: src/prefs.js:231
+#: src/prefs.js:340
 msgid "ddcutil program"
 msgstr "ddcutil 程序"
 
-#: src/prefs.js:234
+#: src/prefs.js:343
 msgid "Extra arguments"
 msgstr "额外参数"
 
-#: src/prefs.js:237
+#: src/prefs.js:346
 msgid "Pause between writes"
 msgstr "写入间隔"
 
-#: src/prefs.js:238
+#: src/prefs.js:347
 msgid "Milliseconds. Raise it if a monitor misses changes"
 msgstr "毫秒。如果显示器漏掉变化请调高"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Debug messages"
 msgstr "调试消息"
 
-#: src/prefs.js:242
+#: src/prefs.js:351
 msgid "Written to the system journal"
 msgstr "写入系统日志"
 
-#: src/lib/displays.js:37
+#: src/lib/cornerdot.js:61
+msgid "Screen menu"
+msgstr "屏幕菜单"
+
+#: src/lib/displays.js:59
 msgid "Monitor"
 msgstr "显示器"
 
-#: src/lib/displays.js:287
+#: src/lib/displays.js:415
 msgid "Built-in Display"
 msgstr "内置显示屏"
 
-#: src/lib/displays.js:288
+#: src/lib/displays.js:416
 msgid "Built-in"
 msgstr "内置"
 
-#: src/lib/displays.js:290
+#: src/lib/displays.js:418
 #, javascript-format
 msgid "Monitor %d"
 msgstr "显示器 %d"
 
-#: src/lib/ui.js:119
-msgid "Earlier"
-msgstr "提前"
+#: src/lib/notify.js:115
+msgid "Claude is waiting for you"
+msgstr "Claude 在等你"
 
-#: src/lib/ui.js:122
-msgid "Later"
-msgstr "推后"
+#: src/lib/notify.js:115
+msgid "Claude is done"
+msgstr "Claude 已完成"
 
-#: src/lib/ui.js:165
-msgid "Evening dimming and more"
-msgstr "傍晚调暗及更多"
+#: src/lib/notify.js:129
+msgid "Go to the terminal"
+msgstr "转到终端"
 
-#: src/lib/ui.js:282
+#: src/lib/offmenu.js:15
+#, javascript-format
+msgid "%d s"
+msgstr "%d 秒"
+
+#: src/lib/offmenu.js:17
+#, javascript-format
+msgid "%d min %d s"
+msgstr "%d 分 %d 秒"
+
+#: src/lib/offmenu.js:17 src/lib/ui.js:62
+#, javascript-format
+msgid "%d min"
+msgstr "%d 分钟"
+
+#: src/lib/offmenu.js:43
+#, javascript-format
+msgid "Keep lit · %s"
+msgstr "保持亮起 · %s"
+
+#: src/lib/offmenu.js:44
+msgid "Keep lit until I darken it"
+msgstr "保持亮起直到我调暗"
+
+#: src/lib/offmenu.js:45
+msgid "Darken now"
+msgstr "立即变暗"
+
+#: src/lib/offmenu.js:46
+msgid "Turn the screen back on"
+msgstr "重新打开屏幕"
+
+#: src/lib/ui.js:36
+msgid "Day brightness"
+msgstr "白天亮度"
+
+#: src/lib/ui.js:38
 msgid "Extra dimming"
 msgstr "额外调暗"
 
-#: src/lib/ui.js:294
-msgid "Turn off others"
-msgstr "关闭其他屏幕"
+#: src/lib/ui.js:39
+msgid ""
+"Darkens the picture further when the monitor is already at its lowest "
+"brightness."
+msgstr "当显示器已是最低亮度时，进一步调暗画面。"
 
-#: src/lib/ui.js:318
-msgid "Off"
-msgstr "关"
+#: src/lib/ui.js:45
+msgid "Night light"
+msgstr "夜灯"
 
-#: src/lib/ui.js:335
-msgid "Turned off"
-msgstr "已关闭"
+#: src/lib/ui.js:46 src/lib/ui.js:1824
+msgid ""
+"Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
+"screen helps you fall asleep more easily."
+msgstr "晚上的蓝光会抑制睡眠激素褪黑素。更暖的屏幕能帮助你更容易入睡。"
 
-#: src/lib/ui.js:335
+#: src/lib/ui.js:47
+msgid ""
+"How strong Night Light is on this monitor. ×1 = exactly GNOME’s Night Light, "
+"nothing added. ×0 turns it off here, ×2 makes it twice as warm."
+msgstr ""
+"夜灯在这台显示器上的强度。×1 = 与 GNOME 夜灯完全相同，不额外增加。×0 在此关"
+"闭，×2 加倍变暖。"
+
+#: src/lib/ui.js:48
+msgid "Red light"
+msgstr "红光"
+
+#: src/lib/ui.js:49 src/lib/ui.js:1841
+msgid ""
+"Red light disturbs melatonin and your body clock the least of all colours. "
+"Ideal for the last hours before bed."
+msgstr ""
+"在所有颜色中，红光对褪黑素和生物钟的影响最小。最适合睡前的最后几个小时。"
+
+#: src/lib/ui.js:50
+msgid ""
+"How strong the red screen is on this monitor. ×1 = the red screen as set in "
+"the Night Light menu, nothing added. ×0 keeps this monitor normal, ×2 makes "
+"it twice as red."
+msgstr ""
+"红色屏幕在这台显示器上的强度。×1 = 夜灯菜单中设定的红色屏幕，不额外增加。×0 "
+"保持正常，×2 加倍变红。"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h %d min"
+msgstr "%d 小时 %d 分钟"
+
+#: src/lib/ui.js:63
+#, javascript-format
+msgid "%d h"
+msgstr "%d 小时"
+
+#: src/lib/ui.js:284
+msgid "Earlier"
+msgstr "提前"
+
+#: src/lib/ui.js:287
+msgid "Later"
+msgstr "推后"
+
+#: src/lib/ui.js:1080
+msgid "Automatic dimming and more"
+msgstr "自动调暗及更多"
+
+#: src/lib/ui.js:1249
+msgid "Settings"
+msgstr "设置"
+
+#: src/lib/ui.js:1293
+msgid ""
+"Slowly dims this monitor in the evening, and brings it back in the morning."
+msgstr "傍晚慢慢调暗这台显示器，早上恢复原样。"
+
+#: src/lib/ui.js:1294
+msgid ""
+"Drag the points to shape the evening; the big point also sets how long it "
+"takes. + adds a button that runs by itself."
+msgstr "拖动这些点来塑造夜晚；大点同时决定持续多久。+ 可添加自动运行的按钮。"
+
+#: src/lib/ui.js:1311
+msgid "Shorter"
+msgstr "更短"
+
+#: src/lib/ui.js:1312
+msgid "Longer"
+msgstr "更长"
+
+#: src/lib/ui.js:1322
+msgid "Back to normal in the morning"
+msgstr "早上恢复正常"
+
+#: src/lib/ui.js:1326
+msgid ""
+"When the morning comes, lowest light and turned off screens go back to "
+"normal, whether they were switched on by hand or by the graph."
+msgstr "早上，最低亮度和关闭的屏幕会恢复正常，无论是手动还是由图表开启的。"
+
+#: src/lib/ui.js:1359
+msgid "Back to 100 %"
+msgstr "恢复为 100 %"
+
+#: src/lib/ui.js:1362 src/lib/ui.js:1364
+msgid "Back to the default evening curve"
+msgstr "恢复默认的夜晚曲线"
+
+#: src/lib/ui.js:1380
+msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
+msgstr "恢复默认：×1 和 GNOME 的自动时间（日落）"
+
+#: src/lib/ui.js:1385
+msgid "Back to ×1"
+msgstr "恢复为 ×1"
+
+#: src/lib/ui.js:1403
+msgid "Day"
+msgstr "白天"
+
+#: src/lib/ui.js:1403
+msgid "Night"
+msgstr "夜晚"
+
+#: src/lib/ui.js:1403
+msgid "Extra"
+msgstr "额外"
+
+#: src/lib/ui.js:1404
+msgid "Warmth"
+msgstr "暖色"
+
+#: src/lib/ui.js:1404
+msgid "Red"
+msgstr "红色"
+
+#: src/lib/ui.js:1436 src/lib/ui.js:1585 src/lib/ui.js:1854
+msgid "Back to the default"
+msgstr "恢复默认"
+
+#: src/lib/ui.js:1541
+msgid "While the screen is off"
+msgstr "屏幕关闭时"
+
+#: src/lib/ui.js:1581
+msgid "Dark while off"
+msgstr "关闭时的黑暗程度"
+
+#: src/lib/ui.js:1582
+msgid ""
+"While the screen is off, the monitor stays at its lowest light and this much "
+"black is added on top. 25 % = a little darker, 100 % = fully black."
+msgstr ""
+"屏幕关闭时，显示器保持最低亮度，并在上面叠加这么多黑色。25 % = 稍暗一些，100 "
+"% = 全黑。"
+
+#: src/lib/ui.js:1602
+#, javascript-format
+msgid "Keep lit for %s"
+msgstr "保持亮起 %s"
+
+#: src/lib/ui.js:1603
+#, javascript-format
+msgid ""
+"On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
+"Off: it goes dark as soon as the mouse leaves."
+msgstr "开：鼠标离开后，屏幕再亮 %s，然后变暗。关：鼠标一离开就变暗。"
+
+#: src/lib/ui.js:1687
 #, javascript-format
 msgid "Brightness %s"
 msgstr "亮度 %s"
 
-#: src/lib/ui.js:344
+#: src/lib/ui.js:1689
+msgid "Turned off"
+msgstr "已关闭"
+
+#: src/lib/ui.js:1709
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "日落 %s %s %d 分钟"
 
-#: src/lib/ui.js:347
+#: src/lib/ui.js:1712
 msgid "Fixed time"
 msgstr "固定时间"
 
-#: src/lib/ui.js:421
+#: src/lib/ui.js:1715
+#, javascript-format
+msgid "Until %s"
+msgstr "到 %s"
+
+#: src/lib/ui.js:1724
+msgid "Off"
+msgstr "关"
+
+#: src/lib/ui.js:1822
 msgid "Temperature"
 msgstr "色温"
 
-#: src/lib/ui.js:498
+#: src/lib/ui.js:1825
+msgid "Back to GNOME’s default"
+msgstr "恢复 GNOME 默认值"
+
+#: src/lib/ui.js:1919
 msgid "Sunset to sunrise"
 msgstr "日落到日出"
 
-#: src/lib/ui.js:514
+#: src/lib/ui.js:1941
 msgid "Turns on together with Night Light"
 msgstr "随夜灯一起开启"
 
-#: src/lib/ui.js:516
+#: src/lib/ui.js:1943
 msgid "Starts when Night Light starts"
 msgstr "夜灯开始时开始"
