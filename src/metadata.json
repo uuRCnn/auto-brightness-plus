@@ -13,5 +13,5 @@
   "url": "https://github.com/uuRCnn/auto-brightness-plus",
   "settings-schema": "org.gnome.shell.extensions.auto-brightness-plus",
   "gettext-domain": "auto-brightness-plus",
-  "version-name": "2.0"
+  "version-name": "2.1"
 }
