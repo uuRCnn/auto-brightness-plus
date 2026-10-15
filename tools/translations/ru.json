@@ -247,5 +247,6 @@
   "Simple (recommended)": "Простое (рекомендуется)",
   "Detailed": "Подробное",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "Простое: один ползунок для выбранного значения. Подробное: ползунок для каждого значения.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Перетаскивайте точки, чтобы задать форму вечера; большая точка также задаёт длительность. + добавляет кнопку, которая срабатывает сама."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Перетаскивайте точки, чтобы задать форму вечера; большая точка также задаёт длительность. + добавляет кнопку, которая срабатывает сама.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "Для основного монитора. Остальные опускаются ниже, до 0 %, а поздно ночью — с небольшим дополнительным затемнением. Каждый монитор может изменить это в своём меню."
 }

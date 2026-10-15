@@ -6,6 +6,7 @@
 // to the apps under them, even on a turned off screen.
 
 import Clutter from 'gi://Clutter';
+import GLib from 'gi://GLib';
 import St from 'gi://St';
 
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
@@ -77,7 +78,19 @@ export class DimOverlays {
     constructor() {
         this._layers = [];
         this._above = new Set();      // actors that must stay above the layers
-        this._raiseId = Main.layoutManager.uiGroup.connect('child-added', () => this._raise());
+        // menus and dialogs add themselves on top: stay above them, once per main
+        // loop turn and only while a layer is shown (a dock adding its labels
+        // must not cause any restacking)
+        this._raiseIdle = 0;
+        this._raiseId = Main.layoutManager.uiGroup.connect('child-added', () => {
+            if (this._raiseIdle || !this._layers.some(l => l.actor.visible))
+                return;
+            this._raiseIdle = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
+                this._raiseIdle = 0;
+                this._raise();
+                return GLib.SOURCE_REMOVE;
+            });
+        });
         this.rebuild();
     }
 
@@ -89,10 +102,19 @@ export class DimOverlays {
     // menus and dialogs add themselves on top; stay above them
     _raise() {
         const group = Main.layoutManager.uiGroup;
-        for (const layer of this._layers) {
-            if (layer.actor.visible && group.get_last_child() !== layer.actor)
-                group.set_child_above_sibling(layer.actor, null);
-        }
+        // already on top (only our own actors above the shown layers): nothing to do
+        const ours = new Set([...this._layers.map(l => l.actor), ...this._above]);
+        const children = group.get_children();
+        let i = children.length - 1;
+        while (i >= 0 && ours.has(children[i]))
+            i--;
+        const shown = this._layers.filter(l => l.actor.visible);
+        const top = Math.max(-1, ...shown.map(l => children.indexOf(l.actor)));
+        const above = [...this._above].filter(a => a.get_parent() === group);
+        if (shown.every(l => children.indexOf(l.actor) > i) && above.every(a => children.indexOf(a) > top))
+            return;
+        for (const layer of shown)
+            group.set_child_above_sibling(layer.actor, null);
         for (const actor of this._above) {
             if (actor.get_parent() === group)
                 group.set_child_above_sibling(actor, null);
@@ -122,6 +144,8 @@ export class DimOverlays {
 
     destroy() {
         Main.layoutManager.uiGroup.disconnect(this._raiseId);
+        if (this._raiseIdle)
+            GLib.source_remove(this._raiseIdle);
         this._layers.forEach(l => l.destroy());
         this._layers = [];
     }

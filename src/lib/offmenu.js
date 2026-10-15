@@ -45,7 +45,7 @@ export class OffMenu {
             menu.addAction(_('Darken now'), () => mgr.darkNow(d));
             menu.addAction(_('Turn the screen back on'), () => mgr.wake(d.index), 'system-shutdown-symbolic');
         } else {
-            menu.addAction(_('Turn off screen'), () => mgr.turnOff(d), 'system-shutdown-symbolic');
+            menu.addAction(_('Turn off screen'), () => mgr.turnOff(d, true, false, true), 'system-shutdown-symbolic');
             menu.addAction(_('Turn off other screens'), () => mgr.turnOffOthers(d), 'video-joined-displays-symbolic');
         }
 

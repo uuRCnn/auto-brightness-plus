@@ -247,5 +247,6 @@
   "Simple (recommended)": "簡潔（推薦）",
   "Detailed": "詳細",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "簡潔：為所選的值提供一個滑桿。詳細：每個值都有滑桿。",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "拖曳這些點來塑造夜晚；大點同時決定持續多久。+ 可加入自動執行的按鈕。"
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "拖曳這些點來塑造夜晚；大點同時決定持續多久。+ 可加入自動執行的按鈕。",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "用於主螢幕。其他螢幕降得更低，到 0 %，深夜還會稍加額外調暗。每個螢幕都可以在自己的選單中更改。"
 }

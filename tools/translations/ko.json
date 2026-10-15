@@ -247,5 +247,6 @@
   "Simple (recommended)": "간단히 (추천)",
   "Detailed": "자세히",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "간단히: 고른 값에 슬라이더 하나. 자세히: 값마다 슬라이더.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "점을 끌어 저녁 모양을 만드세요. 큰 점은 지속 시간도 정합니다. +는 저절로 실행되는 버튼을 추가합니다."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "점을 끌어 저녁 모양을 만드세요. 큰 점은 지속 시간도 정합니다. +는 저절로 실행되는 버튼을 추가합니다.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "주 모니터용입니다. 다른 모니터는 더 낮게 0 %까지 내려가고, 늦은 밤에는 약간의 추가 어둡게가 더해집니다. 각 모니터의 메뉴에서 바꿀 수 있습니다."
 }

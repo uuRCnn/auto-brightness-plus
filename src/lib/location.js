@@ -93,6 +93,27 @@ export function getLocation(settings) {
     return {lat: 45, lon: offsetHours * 15, source: 'offset', zone};
 }
 
+/**
+ * GNOME's Night Light without any location (no location service) starts at
+ * a fixed fallback time, not at sunset. Give it ours, once: it then follows
+ * the sunset like the evening dimming does (from the next login on).
+ * Only written while GNOME has no valid location of its own.
+ * @param {{lat: number, lon: number, source: string}} loc
+ */
+export function shareWithNightLight(loc) {
+    if (loc.source === 'offset' || gnomeCoordinates())
+        return false;
+    try {
+        if (!Gio.SettingsSchemaSource.get_default().lookup(COLOR_SCHEMA, true))
+            return false;
+        const settings = new Gio.Settings({schema_id: COLOR_SCHEMA});
+        settings.set_value('night-light-last-coordinates', new GLib.Variant('(dd)', [loc.lat, loc.lon]));
+        return true;
+    } catch {
+        return false;
+    }
+}
+
 /** Calls `callback` when the automatic location may have changed. */
 export function watchLocation(callback) {
     const handles = [];

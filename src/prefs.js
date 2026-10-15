@@ -204,13 +204,13 @@ export default class AutoBrightnessPlusPreferences extends ExtensionPreferences 
 
         const defaults = new Adw.PreferencesGroup({
             title: _('For new monitors'),
-            description: _('For the main monitor. The others take 30 minutes longer and go down to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.'),
+            description: _('For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.'),
         });
         const offset = spinRow(s, 'default-offset', _('Minutes after sunset'), -240, 240, 5);
         const start = timeRow(s, 'default-start', _('Start time'));
         defaults.add(offset);
         defaults.add(start);
-        defaults.add(spinRow(s, 'default-duration', _('Duration'), 15, 240, 15, _('Minutes the evening dimming takes')));
+        defaults.add(spinRow(s, 'default-duration', _('Duration'), 15, 360, 15, _('Minutes the evening dimming takes')));
         const nightRow = new Adw.SpinRow({
             title: _('Night brightness'), subtitle: _('Percent'),
             adjustment: new Gtk.Adjustment({lower: 0, upper: 100, step_increment: 5}),

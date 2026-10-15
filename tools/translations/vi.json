@@ -247,5 +247,6 @@
   "Simple (recommended)": "Đơn giản (khuyên dùng)",
   "Detailed": "Chi tiết",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "Đơn giản: một thanh trượt cho giá trị bạn chọn. Chi tiết: mỗi giá trị một thanh trượt.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Kéo các điểm để tạo hình buổi tối; điểm lớn cũng quyết định kéo dài bao lâu. + thêm nút tự chạy."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Kéo các điểm để tạo hình buổi tối; điểm lớn cũng quyết định kéo dài bao lâu. + thêm nút tự chạy.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "Cho màn hình chính. Các màn hình khác giảm sâu hơn, xuống 0 %, kèm chút làm tối thêm vào đêm khuya. Mỗi màn hình có thể đổi trong menu riêng."
 }

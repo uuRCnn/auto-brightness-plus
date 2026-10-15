@@ -102,6 +102,19 @@ export class GammaController {
         }
     }
 
+    /**
+     * When GNOME's Night Light really starts and ends on automatic: its own
+     * sunset and sunrise (hours), or null when it has none (then it uses the
+     * fixed times of its schedule).
+     */
+    nightLightTimes() {
+        const get = name => this._colorProxy?.get_cached_property(name)?.unpack();
+        const sunset = get('Sunset'), sunrise = get('Sunrise');
+        if (typeof sunset !== 'number' || typeof sunrise !== 'number' || sunset < 0 || sunrise < 0)
+            return null;
+        return {sunset, sunrise};
+    }
+
     /** Multipliers of one monitor (1 = like GNOME, 0 = none, 2 = twice as strong). */
     setMonitor(index, night, red) {
         const old = this._mons[index];

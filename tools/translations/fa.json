@@ -247,5 +247,6 @@
   "Simple (recommended)": "ساده (پیشنهادی)",
   "Detailed": "مفصل",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "ساده: یک لغزنده برای مقداری که انتخاب می‌کنید. مفصل: یک لغزنده برای هر مقدار.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "نقطه‌ها را بکشید تا شکل عصر را بسازید؛ نقطهٔ بزرگ مدت آن را هم تعیین می‌کند. + دکمه‌ای اضافه می‌کند که خودش اجرا می‌شود."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "نقطه‌ها را بکشید تا شکل عصر را بسازید؛ نقطهٔ بزرگ مدت آن را هم تعیین می‌کند. + دکمه‌ای اضافه می‌کند که خودش اجرا می‌شود.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "برای نمایشگر اصلی. بقیه پایین‌تر می‌روند، تا 0 %، و دیروقت شب کمی تاریکی اضافه هم می‌گیرند. هر نمایشگر می‌تواند این‌ها را در منوی خودش تغییر دهد."
 }

@@ -90,8 +90,9 @@ export const GRAPH_SPAN = 540;       // 9 hours: from sunset to well after midni
 
 // Brightness, when its small points are not moved: like the light outside,
 // most of the drop in the first part, then slower (the part of the way
-// still left at 1/4, 1/2 and 3/4 of the duration).
-const SUNSET_SHAPE = [0.33, 0.15, 0.06];
+// still left at 1/4, 1/2 and 3/4 of the duration). A monitor may have its
+// own (cfg.shape).
+export const SUNSET_SHAPE = [0.58, 0.25, 0.10];
 
 export function knotTimes(duration) {
     const after = GRAPH_SPAN - duration;
@@ -116,7 +117,7 @@ export function curveKnots(cfg, key) {
     const values = [
         day,
         ...[1, 2, 3].map(i => own[i - 1] ?? (key === 'night'
-            ? main + (day - main) * SUNSET_SHAPE[i - 1]
+            ? main + (day - main) * (cfg.shape?.[i - 1] ?? SUNSET_SHAPE[i - 1])
             : day + (main - day) * smooth(i / 4))),
         main,
         ...[0, 1, 2].map(j => own[3 + j] ?? main),

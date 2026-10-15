@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Brightness+\n"
 "Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-11 21:32+0300\n"
+"POT-Creation-Date: 2026-10-15 22:22+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Chinese (traditional)\n"
@@ -163,7 +163,7 @@ msgstr "色溫、紅色螢幕及其強度"
 msgid "Evening"
 msgstr "傍晚"
 
-#: src/prefs.js:191 src/lib/ui.js:1293
+#: src/prefs.js:191 src/lib/ui.js:1302
 msgid "Automatic dimming"
 msgstr "自動調暗"
 
@@ -173,7 +173,7 @@ msgid ""
 "slowly gets darker and warmer in the evening and comes back in the morning."
 msgstr "在每個螢幕滑桿旁的月亮按鈕中開啟。螢幕會在傍晚慢慢變暗變暖，早上恢復。"
 
-#: src/prefs.js:194 src/lib/ui.js:1311
+#: src/prefs.js:194 src/lib/ui.js:1320
 msgid "Start"
 msgstr "開始"
 
@@ -211,12 +211,11 @@ msgstr "新螢幕的預設值"
 
 #: src/prefs.js:207
 msgid ""
-"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
-"with a little extra dimming late at night. Each monitor can change these in "
-"its own menu."
+"For the main monitor. The others go further down, to 0 %, with a little "
+"extra dimming late at night. Each monitor can change these in its own menu."
 msgstr ""
-"用於主螢幕。其他螢幕多 30 分鐘，降到 0 %，深夜還會稍加額外調暗。每個螢幕都可"
-"以在自己的選單中更改。"
+"用於主螢幕。其他螢幕降得更低，到 0 %，深夜還會稍加額外調暗。每個螢幕都可以在"
+"自己的選單中更改。"
 
 #: src/prefs.js:209
 msgid "Minutes after sunset"
@@ -226,7 +225,7 @@ msgstr "日落後分鐘數"
 msgid "Start time"
 msgstr "開始時間"
 
-#: src/prefs.js:213 src/lib/ui.js:1316
+#: src/prefs.js:213 src/lib/ui.js:1325
 msgid "Duration"
 msgstr "時長"
 
@@ -324,7 +323,7 @@ msgstr "頂部，大"
 msgid "Next to the monitor name, small"
 msgstr "螢幕名稱旁，小"
 
-#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1626 src/lib/ui.js:1697
+#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1635 src/lib/ui.js:1706
 msgid "Lowest light"
 msgstr "最低亮度"
 
@@ -333,11 +332,11 @@ msgid "Brightness 0 and full extra dimming; press again to go back"
 msgstr "亮度 0 並完全額外調暗；再按一次恢復"
 
 #: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:341
-#: src/lib/ui.js:1629
+#: src/lib/ui.js:1638
 msgid "Turn off screen"
 msgstr "關閉螢幕"
 
-#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1640
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1649
 msgid "Turn off other screens"
 msgstr "關閉其他螢幕"
 
@@ -397,7 +396,7 @@ msgstr "「保持亮起」時長"
 msgid "Seconds"
 msgstr "秒"
 
-#: src/prefs.js:305 src/lib/ui.js:1842 src/lib/ui.js:1917
+#: src/prefs.js:305 src/lib/ui.js:1851 src/lib/ui.js:1926
 msgid "Red screen"
 msgstr "紅色螢幕"
 
@@ -415,7 +414,7 @@ msgstr "僅在夜光作用時"
 msgid "Starts and stops together with Night Light"
 msgstr "與夜光一起開始和結束"
 
-#: src/prefs.js:310 src/lib/ui.js:1858
+#: src/prefs.js:310 src/lib/ui.js:1867
 msgid "Strength"
 msgstr "強度"
 
@@ -474,19 +473,19 @@ msgstr "寫入系統日誌"
 msgid "Screen menu"
 msgstr "螢幕選單"
 
-#: src/lib/displays.js:59
+#: src/lib/displays.js:67
 msgid "Monitor"
 msgstr "螢幕"
 
-#: src/lib/displays.js:415
+#: src/lib/displays.js:438
 msgid "Built-in Display"
 msgstr "內建螢幕"
 
-#: src/lib/displays.js:416
+#: src/lib/displays.js:439
 msgid "Built-in"
 msgstr "內建"
 
-#: src/lib/displays.js:418
+#: src/lib/displays.js:441
 #, javascript-format
 msgid "Monitor %d"
 msgstr "螢幕 %d"
@@ -553,7 +552,7 @@ msgstr "當螢幕已是最低亮度時，進一步調暗畫面。"
 msgid "Night light"
 msgstr "夜燈"
 
-#: src/lib/ui.js:46 src/lib/ui.js:1830
+#: src/lib/ui.js:46 src/lib/ui.js:1839
 msgid ""
 "Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
 "screen helps you fall asleep more easily."
@@ -571,7 +570,7 @@ msgstr ""
 msgid "Red light"
 msgstr "紅光"
 
-#: src/lib/ui.js:49 src/lib/ui.js:1847
+#: src/lib/ui.js:49 src/lib/ui.js:1856
 msgid ""
 "Red light disturbs melatonin and your body clock the least of all colours. "
 "Ideal for the last hours before bed."
@@ -605,92 +604,92 @@ msgstr "提早"
 msgid "Later"
 msgstr "延後"
 
-#: src/lib/ui.js:1086
+#: src/lib/ui.js:1095
 msgid "Automatic dimming and more"
 msgstr "自動調暗及更多"
 
-#: src/lib/ui.js:1255
+#: src/lib/ui.js:1264
 msgid "Settings"
 msgstr "設定"
 
-#: src/lib/ui.js:1299
+#: src/lib/ui.js:1308
 msgid ""
 "Slowly dims this monitor in the evening, and brings it back in the morning."
 msgstr "傍晚慢慢調暗這台螢幕，早上恢復原樣。"
 
-#: src/lib/ui.js:1300
+#: src/lib/ui.js:1309
 msgid ""
 "Drag the points to shape the evening; the big point also sets how long it "
 "takes. + adds a button that runs by itself."
 msgstr "拖曳這些點來塑造夜晚；大點同時決定持續多久。+ 可加入自動執行的按鈕。"
 
-#: src/lib/ui.js:1317
+#: src/lib/ui.js:1326
 msgid "Shorter"
 msgstr "更短"
 
-#: src/lib/ui.js:1318
+#: src/lib/ui.js:1327
 msgid "Longer"
 msgstr "更長"
 
-#: src/lib/ui.js:1328
+#: src/lib/ui.js:1337
 msgid "Back to normal in the morning"
 msgstr "早上恢復正常"
 
-#: src/lib/ui.js:1332
+#: src/lib/ui.js:1341
 msgid ""
 "When the morning comes, lowest light and turned off screens go back to "
 "normal, whether they were switched on by hand or by the graph."
 msgstr "早上，最低亮度和關閉的螢幕會恢復正常，無論是手動還是由圖表開啟的。"
 
-#: src/lib/ui.js:1365
+#: src/lib/ui.js:1374
 msgid "Back to 100 %"
 msgstr "恢復為 100 %"
 
-#: src/lib/ui.js:1368 src/lib/ui.js:1370
+#: src/lib/ui.js:1377 src/lib/ui.js:1379
 msgid "Back to the default evening curve"
 msgstr "恢復預設的夜晚曲線"
 
-#: src/lib/ui.js:1386
+#: src/lib/ui.js:1395
 msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
 msgstr "恢復預設：×1 和 GNOME 的自動時間（日落）"
 
-#: src/lib/ui.js:1391
+#: src/lib/ui.js:1400
 msgid "Back to ×1"
 msgstr "恢復為 ×1"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Day"
 msgstr "白天"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Night"
 msgstr "夜晚"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Extra"
 msgstr "額外"
 
-#: src/lib/ui.js:1410
+#: src/lib/ui.js:1419
 msgid "Warmth"
 msgstr "暖色"
 
-#: src/lib/ui.js:1410
+#: src/lib/ui.js:1419
 msgid "Red"
 msgstr "紅色"
 
-#: src/lib/ui.js:1442 src/lib/ui.js:1591 src/lib/ui.js:1860
+#: src/lib/ui.js:1451 src/lib/ui.js:1600 src/lib/ui.js:1869
 msgid "Back to the default"
 msgstr "恢復預設"
 
-#: src/lib/ui.js:1547
+#: src/lib/ui.js:1556
 msgid "While the screen is off"
 msgstr "螢幕關閉時"
 
-#: src/lib/ui.js:1587
+#: src/lib/ui.js:1596
 msgid "Dark while off"
 msgstr "關閉時的黑暗程度"
 
-#: src/lib/ui.js:1588
+#: src/lib/ui.js:1597
 msgid ""
 "While the screen is off, the monitor stays at its lowest light and this much "
 "black is added on top. 25 % = a little darker, 100 % = fully black."
@@ -698,61 +697,61 @@ msgstr ""
 "螢幕關閉時，螢幕保持最低亮度，並在上面疊加這麼多黑色。25 % = 稍暗一些，100 % "
 "= 全黑。"
 
-#: src/lib/ui.js:1608
+#: src/lib/ui.js:1617
 #, javascript-format
 msgid "Keep lit for %s"
 msgstr "保持亮起 %s"
 
-#: src/lib/ui.js:1609
+#: src/lib/ui.js:1618
 #, javascript-format
 msgid ""
 "On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
 "Off: it goes dark as soon as the mouse leaves."
 msgstr "開：滑鼠離開後，螢幕再亮 %s，然後變暗。關：滑鼠一離開就變暗。"
 
-#: src/lib/ui.js:1693
+#: src/lib/ui.js:1702
 #, javascript-format
 msgid "Brightness %s"
 msgstr "亮度 %s"
 
-#: src/lib/ui.js:1695
+#: src/lib/ui.js:1704
 msgid "Turned off"
 msgstr "已關閉"
 
-#: src/lib/ui.js:1715
+#: src/lib/ui.js:1724
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "日落 %s %s %d 分鐘"
 
-#: src/lib/ui.js:1718
+#: src/lib/ui.js:1727
 msgid "Fixed time"
 msgstr "固定時間"
 
-#: src/lib/ui.js:1721
+#: src/lib/ui.js:1730
 #, javascript-format
 msgid "Until %s"
 msgstr "到 %s"
 
-#: src/lib/ui.js:1730
+#: src/lib/ui.js:1739
 msgid "Off"
 msgstr "關"
 
-#: src/lib/ui.js:1828
+#: src/lib/ui.js:1837
 msgid "Temperature"
 msgstr "色溫"
 
-#: src/lib/ui.js:1831
+#: src/lib/ui.js:1840
 msgid "Back to GNOME’s default"
 msgstr "恢復 GNOME 預設值"
 
-#: src/lib/ui.js:1925
+#: src/lib/ui.js:1934
 msgid "Sunset to sunrise"
 msgstr "日落到日出"
 
-#: src/lib/ui.js:1947
+#: src/lib/ui.js:1956
 msgid "Turns on together with Night Light"
 msgstr "隨夜光一起開啟"
 
-#: src/lib/ui.js:1949
+#: src/lib/ui.js:1958
 msgid "Starts when Night Light starts"
 msgstr "夜光開始時開始"

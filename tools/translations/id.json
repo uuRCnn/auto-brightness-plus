@@ -247,5 +247,6 @@
   "Simple (recommended)": "Sederhana (disarankan)",
   "Detailed": "Rinci",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "Sederhana: satu penggeser untuk nilai yang kamu pilih. Rinci: penggeser untuk tiap nilai.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Seret titik-titiknya untuk membentuk malam; titik besar juga menentukan lamanya. + menambah tombol yang berjalan sendiri."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Seret titik-titiknya untuk membentuk malam; titik besar juga menentukan lamanya. + menambah tombol yang berjalan sendiri.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "Untuk monitor utama. Yang lain turun lebih jauh, ke 0 %, dengan sedikit peredupan tambahan larut malam. Tiap monitor bisa mengubahnya di menunya sendiri."
 }

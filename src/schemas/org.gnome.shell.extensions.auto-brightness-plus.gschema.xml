@@ -46,7 +46,7 @@
     </key>
     <key name="default-offset" type="i">
       <range min="-240" max="240"/>
-      <default>0</default>
+      <default>-60</default>
       <summary>Minutes after sunset for new monitors</summary>
     </key>
     <key name="default-start" type="i">
@@ -55,8 +55,8 @@
       <summary>Fixed start time for new monitors (minutes after midnight)</summary>
     </key>
     <key name="default-duration" type="i">
-      <range min="15" max="240"/>
-      <default>240</default>
+      <range min="15" max="360"/>
+      <default>300</default>
       <summary>Evening dimming duration for new monitors, in minutes</summary>
     </key>
     <key name="default-night" type="d">

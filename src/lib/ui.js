@@ -522,30 +522,21 @@ class EveningGraph extends St.DrawingArea {
         const c = this._color, s = this._settings, cfg = this._display.cfg;
         if (!c.get_boolean('night-light-enabled'))
             return [];
-        let from, to;
-        if (c.get_boolean('night-light-schedule-automatic')) {
-            const g = this._manager.globals;
-            const day = new Date(start);
-            const set = sunTimes(day, g.lat, g.lon).sunset;
-            const rise = sunTimes(new Date(start + 86400000), g.lat, g.lon).sunrise;
-            if (!set || !rise)
-                return [];
-            from = (set.getTime() - start) / 60000;
-            to = (rise.getTime() - start) / 60000;
-        } else {
-            const at = h => {
-                const d = new Date(start);
-                d.setHours(Math.floor(h), Math.round((h % 1) * 60), 0, 0);
-                let min = (d.getTime() - start) / 60000;
-                if (min < -720)
-                    min += 1440;
-                return min;
-            };
-            from = at(c.get_double('night-light-schedule-from'));
-            to = at(c.get_double('night-light-schedule-to'));
-            if (to <= from)
-                to += 1440;
-        }
+        // exactly when GNOME switches it on: its own sunset/sunrise on automatic, its
+        // fixed times otherwise (also on automatic when it has no location)
+        const at = h => {
+            const d = new Date(start);
+            d.setHours(Math.floor(h), Math.round((h % 1) * 60), 0, 0);
+            let min = (d.getTime() - start) / 60000;
+            if (min < -720)
+                min += 1440;
+            return min;
+        };
+        const gsd = c.get_boolean('night-light-schedule-automatic') ? this._manager.gamma.nightLightTimes() : null;
+        const from = at(gsd ? gsd.sunset : c.get_double('night-light-schedule-from'));
+        let to = at(gsd ? gsd.sunrise : c.get_double('night-light-schedule-to'));
+        if (to <= from)
+            to += 1440;
         // GNOME warms up linearly during the hour before the start (and cools down
         // during the hour before the end): gsd-night-light's one hour "smear"
         const ramp = Math.min(60, Math.max(0, (to - from) / 2));
@@ -769,7 +760,15 @@ class EveningGraph extends St.DrawingArea {
         if (this._drag?.what === 'point' && this._drag.moved) {
             const p = this._points(g).find(x => x.key === this._drag.key && x.i === this._drag.i);
             if (p) {
-                const text = this._drag.axis === 'x' ? formatDuration(cfg.duration) : pct(p.v);
+                let text = pct(p.v);
+                if (this._drag.axis === 'x' && this._drag.i === 0) {
+                    // the start: its time, and how far from sunset
+                    const o = cfg.offset;
+                    text = this._settings.get_string('schedule-mode') === 'sun'
+                        ? `${clock(0)} · ${o < 0 ? '−' : '+'}${formatDuration(Math.abs(o))}` : clock(0);
+                } else if (this._drag.axis === 'x') {
+                    text = formatDuration(cfg.duration);
+                }
                 label(text, p.x + (p.x > g.left + g.pw * 0.75 ? -10 : 10), Math.max(0, p.y - 18),
                     p.x > g.left + g.pw * 0.75 ? 'end' : 'start', 1, GRAPH_LAYERS[p.key].rgb);
             }
@@ -1007,7 +1006,9 @@ class EveningGraph extends St.DrawingArea {
             this.queue_repaint();
             return Clutter.EVENT_STOP;
         }
-        this._drag = {what: 'point', key: p.key, i: p.i, x, y, axis: null, moved: false};
+        const cfg = this._display.cfg;
+        this._drag = {what: 'point', key: p.key, i: p.i, x, y, axis: null, moved: false,
+            offset: cfg.offset, start: cfg.start};
         this._grab = global.stage.grab(this);
         this.queue_repaint();
         return Clutter.EVENT_STOP;
@@ -1024,10 +1025,18 @@ class EveningGraph extends St.DrawingArea {
         if (dr.what === 'event') {
             this._setEvent(dr.action, this._minutesAt(x));
         } else {
-            // the main point also moves sideways (= duration); the others only up/down
+            // the main point also moves sideways (= duration), the start point too
+            // (= when the evening starts, also before sunset); the others only up/down
             if (!dr.axis)
-                dr.axis = dr.i === 4 && Math.abs(x - dr.x) > Math.abs(y - dr.y) ? 'x' : 'y';
-            if (dr.axis === 'x') {
+                dr.axis = (dr.i === 4 || dr.i === 0) && Math.abs(x - dr.x) > Math.abs(y - dr.y) ? 'x' : 'y';
+            if (dr.axis === 'x' && dr.i === 0) {
+                const g = this._geometry();
+                const delta = Math.round((x - dr.x) / g.pw * GRAPH_SPAN / 5) * 5;
+                if (this._settings.get_string('schedule-mode') === 'sun')
+                    this._display.setConfig('offset', Math.max(-240, Math.min(240, dr.offset + delta)));
+                else
+                    this._display.setConfig('start', ((dr.start + delta) % 1440 + 1440) % 1440);
+            } else if (dr.axis === 'x') {
                 const min = this._minutesAt(x);
                 this._display.setConfig('duration', Math.max(DURATION_MIN, Math.min(DURATION_MAX, min)));
             } else {
@@ -1635,7 +1644,7 @@ class BrightnessItem extends QuickSlider {
                         return;
                     }
                     closeMenu();
-                    this._manager.turnOff(d);
+                    this._manager.turnOff(d, true, false, true);     // by hand: kept over a restart
                 }},
             {key: 'show-others-button', title: _('Turn off other screens'), style: 'bp-tile-others',
                 icon: {gicon: ownIcon('bp-others-off')}, checked: () => this._manager.othersOff(d),

@@ -255,7 +255,7 @@ async function test() {
         log(`defaults main: offset ${main.cfg.offset} duration ${main.cfg.duration} night ${main.cfg.night} curve ${show(main, 'night')} (of the day value)`);
         log(`defaults side: duration ${side.cfg.duration} night ${side.cfg.night} curve ${show(side, 'night')}; extra ${show(side, 'extra')}`);
         log(`main isDefault night=${manager.isDefault(main, 'night')} (must be true)`);
-        log(`default buttons: main ${JSON.stringify(main.cfg.events)} (others must be 180), side ${JSON.stringify(side.cfg.events)} (all null)`);
+        log(`default buttons: main ${JSON.stringify(main.cfg.events)} (others must be 150), side ${JSON.stringify(side.cfg.events)} (all null)`);
         // no automatic buttons during the rest of the test (it may run late in the evening)
         for (const x of manager.displays)
             x.setConfig('events', {lowest: null, off: null, others: null});
@@ -432,6 +432,14 @@ async function test() {
     }
     // peek: mouse onto the dark screen lights it, leaving darkens it again
     const d2 = manager.displays[1];
+    {
+        // passing by its edge (e.g. on the way to the dock) does not light it
+        await moveTo(1600 + 6, 500);
+        await sleep(700);
+        await moveTo(800, 600);
+        await sleep(300);
+        log(`mouse along the edge: peek=${d2.peek} (must be false)`);
+    }
     // the evening curve moved on while it was off (what tick() does): the peek shows that value
     manager._write(d2, 0.42);
     // every backlight change of a turned off screen must happen under full black
@@ -776,11 +784,13 @@ async function test() {
         d.setConfig('nightLight', 1.3);
         d.setConfig('redLight', 0.7);
         d.setConfig('points', {night: [0.7, null, 0.5, 0.25, null, 0.2], extra: [null, null, null, null, null, null]});
-        d.setConfig('events', {lowest: 300, off: null, others: null});
+        d.setConfig('events', {lowest: 530, off: null, others: null});   // late: must not run during the test
         d.setConfig('morningReset', false);
         settings.set_double('red-strength', 0.55);
-        // a screen left turned off, like "turn off other screens" before a reboot
-        manager.turnOff(manager.displays[1], false);
+        // a screen turned off by hand with its own button before a reboot: comes back off;
+        // lowest light does not come back
+        manager.turnOff(manager.displays[1], false, false, true);
+        manager.setMinimum(d, true);
         globalThis.BP_SAVED = JSON.stringify(d.cfg, (k, v) => (k === 'last' ? undefined : v));
     }
 
@@ -799,6 +809,13 @@ async function test() {
         log(`remembered after restart: ${now === globalThis.BP_SAVED ? 'yes' : `NO\n  before ${globalThis.BP_SAVED}\n  after  ${now}`} red-strength=${settings.get_double('red-strength')}`);
         const d2r = ext2.stateObj._manager.displays[1];
         log(`turned off screen after restart: off=${d2r.off} (must be true) day=${d2r.cfg.day} (must not be 0)`);
+        log(`lowest light after restart: ${d.minimum} (must be false)`);
+        // the morning after: the monitor still shows the 0 we wrote, its day value is 0.83
+        const mgr2 = ext2.stateObj._manager;
+        d.setConfig('schedule', false);
+        d.cfg.last = 0;
+        mgr2._hardwareValue(d, 0);
+        log(`boot read 0 that we wrote: value=${d.value} day=${d.cfg.day} (must be 0.83 0.83)`);
         ext2.stateObj._manager.wake(d2r.index);
     }
     // ---- preferences window, every page

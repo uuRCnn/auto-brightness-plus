@@ -247,5 +247,6 @@
   "Simple (recommended)": "แบบง่าย (แนะนำ)",
   "Detailed": "แบบละเอียด",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "แบบง่าย: แถบเลื่อนเดียวสำหรับค่าที่เลือก แบบละเอียด: แถบเลื่อนสำหรับทุกค่า",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "ลากจุดเพื่อกำหนดรูปร่างของช่วงเย็น จุดใหญ่กำหนดระยะเวลาด้วย + เพิ่มปุ่มที่ทำงานเอง"
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "ลากจุดเพื่อกำหนดรูปร่างของช่วงเย็น จุดใหญ่กำหนดระยะเวลาด้วย + เพิ่มปุ่มที่ทำงานเอง",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "สำหรับจอหลัก จออื่นจะลดลงมากกว่าถึง 0 % พร้อมหรี่เพิ่มเล็กน้อยตอนดึก แต่ละจอเปลี่ยนได้ในเมนูของตัวเอง"
 }

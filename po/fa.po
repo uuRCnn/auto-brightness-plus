@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Brightness+\n"
 "Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-11 21:32+0300\n"
+"POT-Creation-Date: 2026-10-15 22:22+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Persian\n"
@@ -165,7 +165,7 @@ msgstr "دمای رنگ، صفحهٔ قرمز و شدت آن"
 msgid "Evening"
 msgstr "عصر"
 
-#: src/prefs.js:191 src/lib/ui.js:1293
+#: src/prefs.js:191 src/lib/ui.js:1302
 msgid "Automatic dimming"
 msgstr "تیره‌سازی خودکار"
 
@@ -177,7 +177,7 @@ msgstr ""
 "برای هر نمایشگر با دکمهٔ ماه کنار نوار لغزنده‌اش روشن کنید. نمایشگر عصر کم‌کم "
 "تیره‌تر و گرم‌تر می‌شود و صبح برمی‌گردد."
 
-#: src/prefs.js:194 src/lib/ui.js:1311
+#: src/prefs.js:194 src/lib/ui.js:1320
 msgid "Start"
 msgstr "شروع"
 
@@ -215,13 +215,11 @@ msgstr "برای نمایشگرهای جدید"
 
 #: src/prefs.js:207
 msgid ""
-"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
-"with a little extra dimming late at night. Each monitor can change these in "
-"its own menu."
+"For the main monitor. The others go further down, to 0 %, with a little "
+"extra dimming late at night. Each monitor can change these in its own menu."
 msgstr ""
-"برای نمایشگر اصلی. بقیه ۳۰ دقیقه بیشتر طول می‌کشند و تا 0 % پایین می‌آیند و "
-"دیروقت شب کمی تاریکی اضافه هم می‌گیرند. هر نمایشگر می‌تواند این‌ها را در منوی "
-"خودش تغییر دهد."
+"برای نمایشگر اصلی. بقیه پایین‌تر می‌روند، تا 0 %، و دیروقت شب کمی تاریکی اضافه "
+"هم می‌گیرند. هر نمایشگر می‌تواند این‌ها را در منوی خودش تغییر دهد."
 
 #: src/prefs.js:209
 msgid "Minutes after sunset"
@@ -231,7 +229,7 @@ msgstr "دقیقه پس از غروب"
 msgid "Start time"
 msgstr "زمان شروع"
 
-#: src/prefs.js:213 src/lib/ui.js:1316
+#: src/prefs.js:213 src/lib/ui.js:1325
 msgid "Duration"
 msgstr "مدت"
 
@@ -329,7 +327,7 @@ msgstr "بالا، بزرگ"
 msgid "Next to the monitor name, small"
 msgstr "کنار نام نمایشگر، کوچک"
 
-#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1626 src/lib/ui.js:1697
+#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1635 src/lib/ui.js:1706
 msgid "Lowest light"
 msgstr "کمترین نور"
 
@@ -338,11 +336,11 @@ msgid "Brightness 0 and full extra dimming; press again to go back"
 msgstr "روشنایی ۰ و تیرگی اضافی کامل؛ دوباره بزنید تا برگردد"
 
 #: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:341
-#: src/lib/ui.js:1629
+#: src/lib/ui.js:1638
 msgid "Turn off screen"
 msgstr "خاموش کردن صفحه"
 
-#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1640
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1649
 msgid "Turn off other screens"
 msgstr "خاموش کردن صفحه‌های دیگر"
 
@@ -402,7 +400,7 @@ msgstr "مدت «روشن نگه دار»"
 msgid "Seconds"
 msgstr "ثانیه"
 
-#: src/prefs.js:305 src/lib/ui.js:1842 src/lib/ui.js:1917
+#: src/prefs.js:305 src/lib/ui.js:1851 src/lib/ui.js:1926
 msgid "Red screen"
 msgstr "صفحهٔ قرمز"
 
@@ -421,7 +419,7 @@ msgstr "فقط وقتی نور شب فعال است"
 msgid "Starts and stops together with Night Light"
 msgstr "همراه با نور شب شروع و تمام می‌شود"
 
-#: src/prefs.js:310 src/lib/ui.js:1858
+#: src/prefs.js:310 src/lib/ui.js:1867
 msgid "Strength"
 msgstr "شدت"
 
@@ -481,19 +479,19 @@ msgstr "در ژورنال سیستم نوشته می‌شوند"
 msgid "Screen menu"
 msgstr "منوی صفحه"
 
-#: src/lib/displays.js:59
+#: src/lib/displays.js:67
 msgid "Monitor"
 msgstr "نمایشگر"
 
-#: src/lib/displays.js:415
+#: src/lib/displays.js:438
 msgid "Built-in Display"
 msgstr "نمایشگر داخلی"
 
-#: src/lib/displays.js:416
+#: src/lib/displays.js:439
 msgid "Built-in"
 msgstr "داخلی"
 
-#: src/lib/displays.js:418
+#: src/lib/displays.js:441
 #, javascript-format
 msgid "Monitor %d"
 msgstr "نمایشگر %d"
@@ -560,7 +558,7 @@ msgstr "وقتی نمایشگر روی کمترین روشنایی است، تص
 msgid "Night light"
 msgstr "نور شب"
 
-#: src/lib/ui.js:46 src/lib/ui.js:1830
+#: src/lib/ui.js:46 src/lib/ui.js:1839
 msgid ""
 "Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
 "screen helps you fall asleep more easily."
@@ -580,7 +578,7 @@ msgstr ""
 msgid "Red light"
 msgstr "نور قرمز"
 
-#: src/lib/ui.js:49 src/lib/ui.js:1847
+#: src/lib/ui.js:49 src/lib/ui.js:1856
 msgid ""
 "Red light disturbs melatonin and your body clock the least of all colours. "
 "Ideal for the last hours before bed."
@@ -615,20 +613,20 @@ msgstr "زودتر"
 msgid "Later"
 msgstr "دیرتر"
 
-#: src/lib/ui.js:1086
+#: src/lib/ui.js:1095
 msgid "Automatic dimming and more"
 msgstr "تیره‌سازی خودکار و بیشتر"
 
-#: src/lib/ui.js:1255
+#: src/lib/ui.js:1264
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: src/lib/ui.js:1299
+#: src/lib/ui.js:1308
 msgid ""
 "Slowly dims this monitor in the evening, and brings it back in the morning."
 msgstr "عصر این نمایشگر را کم‌کم تیره می‌کند و صبح به حالت قبل برمی‌گرداند."
 
-#: src/lib/ui.js:1300
+#: src/lib/ui.js:1309
 msgid ""
 "Drag the points to shape the evening; the big point also sets how long it "
 "takes. + adds a button that runs by itself."
@@ -636,19 +634,19 @@ msgstr ""
 "نقطه‌ها را بکشید تا شکل عصر را بسازید؛ نقطهٔ بزرگ مدت آن را هم تعیین می‌کند. + "
 "دکمه‌ای اضافه می‌کند که خودش اجرا می‌شود."
 
-#: src/lib/ui.js:1317
+#: src/lib/ui.js:1326
 msgid "Shorter"
 msgstr "کوتاه‌تر"
 
-#: src/lib/ui.js:1318
+#: src/lib/ui.js:1327
 msgid "Longer"
 msgstr "بلندتر"
 
-#: src/lib/ui.js:1328
+#: src/lib/ui.js:1337
 msgid "Back to normal in the morning"
 msgstr "صبح به حالت عادی برگردد"
 
-#: src/lib/ui.js:1332
+#: src/lib/ui.js:1341
 msgid ""
 "When the morning comes, lowest light and turned off screens go back to "
 "normal, whether they were switched on by hand or by the graph."
@@ -656,55 +654,55 @@ msgstr ""
 "صبح، کمترین نور و صفحه‌های خاموش به حالت عادی برمی‌گردند، چه دستی روشن شده "
 "باشند چه از نمودار."
 
-#: src/lib/ui.js:1365
+#: src/lib/ui.js:1374
 msgid "Back to 100 %"
 msgstr "بازگشت به 100 %"
 
-#: src/lib/ui.js:1368 src/lib/ui.js:1370
+#: src/lib/ui.js:1377 src/lib/ui.js:1379
 msgid "Back to the default evening curve"
 msgstr "بازگشت به منحنی پیش‌فرض عصر"
 
-#: src/lib/ui.js:1386
+#: src/lib/ui.js:1395
 msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
 msgstr "پیش‌فرض: ×1 و زمان خودکار GNOME (غروب)"
 
-#: src/lib/ui.js:1391
+#: src/lib/ui.js:1400
 msgid "Back to ×1"
 msgstr "بازگشت به ×1"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Day"
 msgstr "روز"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Night"
 msgstr "شب"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Extra"
 msgstr "اضافه"
 
-#: src/lib/ui.js:1410
+#: src/lib/ui.js:1419
 msgid "Warmth"
 msgstr "گرما"
 
-#: src/lib/ui.js:1410
+#: src/lib/ui.js:1419
 msgid "Red"
 msgstr "قرمز"
 
-#: src/lib/ui.js:1442 src/lib/ui.js:1591 src/lib/ui.js:1860
+#: src/lib/ui.js:1451 src/lib/ui.js:1600 src/lib/ui.js:1869
 msgid "Back to the default"
 msgstr "بازگشت به پیش‌فرض"
 
-#: src/lib/ui.js:1547
+#: src/lib/ui.js:1556
 msgid "While the screen is off"
 msgstr "وقتی صفحه خاموش است"
 
-#: src/lib/ui.js:1587
+#: src/lib/ui.js:1596
 msgid "Dark while off"
 msgstr "تاریکی هنگام خاموشی"
 
-#: src/lib/ui.js:1588
+#: src/lib/ui.js:1597
 msgid ""
 "While the screen is off, the monitor stays at its lowest light and this much "
 "black is added on top. 25 % = a little darker, 100 % = fully black."
@@ -712,12 +710,12 @@ msgstr ""
 "تا وقتی صفحه خاموش است، نمایشگر در کمترین نورش می‌ماند و این مقدار سیاهی روی "
 "آن اضافه می‌شود. 25 % = کمی تیره‌تر، 100 % = کاملاً سیاه."
 
-#: src/lib/ui.js:1608
+#: src/lib/ui.js:1617
 #, javascript-format
 msgid "Keep lit for %s"
 msgstr "%s روشن بماند"
 
-#: src/lib/ui.js:1609
+#: src/lib/ui.js:1618
 #, javascript-format
 msgid ""
 "On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
@@ -726,49 +724,49 @@ msgstr ""
 "روشن: پس از رفتن ماوس، صفحه %s دیگر روشن می‌ماند و سپس تاریک می‌شود. خاموش: به "
 "محض رفتن ماوس تاریک می‌شود."
 
-#: src/lib/ui.js:1693
+#: src/lib/ui.js:1702
 #, javascript-format
 msgid "Brightness %s"
 msgstr "روشنایی %s"
 
-#: src/lib/ui.js:1695
+#: src/lib/ui.js:1704
 msgid "Turned off"
 msgstr "خاموش شد"
 
-#: src/lib/ui.js:1715
+#: src/lib/ui.js:1724
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "غروب %s %s %d دقیقه"
 
-#: src/lib/ui.js:1718
+#: src/lib/ui.js:1727
 msgid "Fixed time"
 msgstr "زمان ثابت"
 
-#: src/lib/ui.js:1721
+#: src/lib/ui.js:1730
 #, javascript-format
 msgid "Until %s"
 msgstr "تا %s"
 
-#: src/lib/ui.js:1730
+#: src/lib/ui.js:1739
 msgid "Off"
 msgstr "خاموش"
 
-#: src/lib/ui.js:1828
+#: src/lib/ui.js:1837
 msgid "Temperature"
 msgstr "دمای رنگ"
 
-#: src/lib/ui.js:1831
+#: src/lib/ui.js:1840
 msgid "Back to GNOME’s default"
 msgstr "بازگشت به پیش‌فرض GNOME"
 
-#: src/lib/ui.js:1925
+#: src/lib/ui.js:1934
 msgid "Sunset to sunrise"
 msgstr "از غروب تا طلوع"
 
-#: src/lib/ui.js:1947
+#: src/lib/ui.js:1956
 msgid "Turns on together with Night Light"
 msgstr "همراه با نور شب روشن می‌شود"
 
-#: src/lib/ui.js:1949
+#: src/lib/ui.js:1958
 msgid "Starts when Night Light starts"
 msgstr "با شروع نور شب شروع می‌شود"

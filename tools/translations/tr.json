@@ -247,5 +247,6 @@
   "Simple (recommended)": "Sade (önerilen)",
   "Detailed": "Ayrıntılı",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "Sade: seçtiğin değer için tek slider. Ayrıntılı: her değer için bir slider.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Akşamın şeklini noktaları sürükleyerek ayarla; büyük nokta ne kadar süreceğini de belirler. + kendi kendine çalışan bir düğme ekler."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Akşamın şeklini noktaları sürükleyerek ayarla; büyük nokta ne kadar süreceğini de belirler. + kendi kendine çalışan bir düğme ekler.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "Ana monitör için. Diğerleri daha aşağı, %0’a iner ve gece geç saatte biraz ekstra karartma gelir. Her monitör bunları kendi menüsünden değiştirebilir."
 }

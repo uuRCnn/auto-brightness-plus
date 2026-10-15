@@ -247,5 +247,6 @@
   "Simple (recommended)": "Semplice (consigliato)",
   "Detailed": "Dettagliato",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "Semplice: un cursore per il valore scelto. Dettagliato: un cursore per ogni valore.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Trascina i punti per dare forma alla sera; il punto grande decide anche quanto dura. + aggiunge un pulsante che agisce da solo."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Trascina i punti per dare forma alla sera; il punto grande decide anche quanto dura. + aggiunge un pulsante che agisce da solo.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "Per il monitor principale. Gli altri scendono di più, fino allo 0 %, con un po’ di oscuramento extra a notte fonda. Ogni monitor può cambiarlo nel proprio menu."
 }

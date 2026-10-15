@@ -247,5 +247,6 @@
   "Simple (recommended)": "シンプル（おすすめ）",
   "Detailed": "詳細",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "シンプル：選んだ値のスライダーが 1 つ。詳細：値ごとにスライダー。",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "点をドラッグして夕方の形を決めます。大きな点で長さも決まります。+ で自動で動くボタンを追加。"
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "点をドラッグして夕方の形を決めます。大きな点で長さも決まります。+ で自動で動くボタンを追加。",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "メインモニター用です。ほかのモニターはさらに 0 % まで下がり、深夜には少し追加の減光も入ります。各モニターのメニューで変更できます。"
 }

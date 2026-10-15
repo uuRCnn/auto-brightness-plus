@@ -247,5 +247,6 @@
   "Simple (recommended)": "بسيطة (موصى بها)",
   "Detailed": "مفصّلة",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "بسيطة: شريط واحد للقيمة التي تختارها. مفصّلة: شريط لكل قيمة.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "اسحب النقاط لتشكيل المساء؛ النقطة الكبيرة تحدد أيضًا مدته. + يضيف زرًا يعمل وحده."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "اسحب النقاط لتشكيل المساء؛ النقطة الكبيرة تحدد أيضًا مدته. + يضيف زرًا يعمل وحده.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "للشاشة الرئيسية. تنزل الشاشات الأخرى أكثر، حتى 0 %، مع قليل من التعتيم الإضافي في آخر الليل. يمكن لكل شاشة تغيير ذلك من قائمتها."
 }

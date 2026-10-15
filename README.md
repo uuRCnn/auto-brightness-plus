@@ -17,16 +17,18 @@ Works on GNOME Shell 46, 47, 48, 49, 50 and 51.
   Left of the slider: brightness icon, monitor number (1, 2, 3…) or short name (LG, VS…).
 - **Automatic dimming** (the moon button), per monitor. From sunset — or a set time — brightness goes down the way the
   light outside does: quickly in the first hour, then slower. It comes back in the morning.
-  - Out of the box the main monitor goes down to 10 % in four hours. The other monitors go to 0 % a little later, and get
-    some extra dimming late at night.
+  - Out of the box it starts an hour before sunset. By sunset the main monitor is 30 % darker and the others 50 %.
+    The main monitor reaches 10 % four hours after sunset; the others go on down to 0 %, with some extra dimming late
+    at night.
   - The graph shows the real sky at your location: day, sunset, twilight, night, ☾ at midnight. The setting sun marks
     the sunset, and the orange bar shows when GNOME's Night Light is on.
-  - Drag the points to shape the evening. The big point also sets how long it takes.
+  - Drag the points to shape the evening. The big point also sets how long it takes; the first point, dragged
+    sideways, sets when it starts (also before sunset).
 - **A simple menu**: one pill per value (Day, Night, Extra, Warmth, Red) and one slider for the pill you pick.
   Prefer a slider for everything? Switch to the *Detailed* menu in the preferences.
 - **Buttons that run by themselves**: press + in the graph's corner to put *Lowest light*, *Turn off screen* or
   *Turn off other screens* at a time of the evening. They show along the top of the graph; drag one to change its time.
-  Out of the box the main monitor turns the others off three hours after sunset. *Back to normal in the morning*
+  Out of the box the main monitor turns the others off 1.5 hours after sunset. *Back to normal in the morning*
   undoes them.
 - **Reset arrows** next to every slider bring back the default, and only show up when something was changed.
 - **Sunset from your location, without permissions**: the location GNOME already keeps for Night Light,
@@ -34,6 +36,10 @@ Works on GNOME Shell 46, 47, 48, 49, 50 and 51.
 - **Per monitor Night light ×0–×2 and Red light ×0–×2**: how strong GNOME's Night Light and the red screen are on that
   monitor. They go through the monitor's own colour table, like Night Light itself. **Extra dimming** darkens further
   when the monitor is already at its lowest.
+- After a restart only a screen you turned off with its own button stays off (until the next morning);
+  *Lowest light* and *Turn off other screens* always start switched off.
+- **GNOME's Night Light follows the sunset**: when GNOME has no location of its own, the extension gives it the one it
+  uses, so Night Light starts at sunset instead of a fixed fallback time.
 - **Lowest light** with one click. On the main monitor it keeps a little more light, so a misclick is easy to undo.
 - **Turn off screen / Turn off other screens**:
   - Clicks and typing always reach the apps on a turned off screen.
@@ -58,7 +64,8 @@ The well known DDC extensions call ddcutil for every slider movement, which make
 - one write at a time per monitor; newer values replace the waiting one (dragging a slider from end to end = a handful of writes)
 - a value that is already set is never written again; evening dimming writes only when the visible percentage changes
 - no polling: timers sleep until the next change (the mouse position is checked only while a screen is turned off), the monitor list is cached on disk and refreshed in the background
-- a turned off screen is never written to while the mouse comes and goes: only a black layer fades
+- a turned off screen is never written to while the mouse comes and goes: only a black layer fades; it lights up only
+  when the mouse really stays on it, not when it passes a corner (e.g. on the way to the dock)
 - software dimming is a plain black layer, red screen and the per monitor Night Light go through the monitors’ colour tables (no drawing, no GPU cost); both exist only while used
 
 ## Requirements

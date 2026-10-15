@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Brightness+\n"
 "Report-Msgid-Bugs-To: https://github.com/uuRCnn/auto-brightness-plus/issues\n"
-"POT-Creation-Date: 2026-10-11 21:32+0300\n"
+"POT-Creation-Date: 2026-10-15 22:22+0300\n"
 "PO-Revision-Date: 2026-10-10 21:00+0300\n"
 "Last-Translator: Dukha\n"
 "Language-Team: Korean\n"
@@ -165,7 +165,7 @@ msgstr "색온도, 빨간 화면과 그 강도"
 msgid "Evening"
 msgstr "저녁"
 
-#: src/prefs.js:191 src/lib/ui.js:1293
+#: src/prefs.js:191 src/lib/ui.js:1302
 msgid "Automatic dimming"
 msgstr "자동 어둡게"
 
@@ -177,7 +177,7 @@ msgstr ""
 "각 모니터 슬라이더 옆의 달 버튼으로 켭니다. 저녁에 모니터가 천천히 어둡고 따"
 "뜻해지며 아침에 돌아옵니다."
 
-#: src/prefs.js:194 src/lib/ui.js:1311
+#: src/prefs.js:194 src/lib/ui.js:1320
 msgid "Start"
 msgstr "시작"
 
@@ -215,12 +215,11 @@ msgstr "새 모니터 기본값"
 
 #: src/prefs.js:207
 msgid ""
-"For the main monitor. The others take 30 minutes longer and go down to 0 %, "
-"with a little extra dimming late at night. Each monitor can change these in "
-"its own menu."
+"For the main monitor. The others go further down, to 0 %, with a little "
+"extra dimming late at night. Each monitor can change these in its own menu."
 msgstr ""
-"주 모니터용입니다. 다른 모니터는 30분 더 길게 0 %까지 내려가고, 늦은 밤에는 "
-"약간의 추가 어둡게가 더해집니다. 각 모니터의 메뉴에서 바꿀 수 있습니다."
+"주 모니터용입니다. 다른 모니터는 더 낮게 0 %까지 내려가고, 늦은 밤에는 약간"
+"의 추가 어둡게가 더해집니다. 각 모니터의 메뉴에서 바꿀 수 있습니다."
 
 #: src/prefs.js:209
 msgid "Minutes after sunset"
@@ -230,7 +229,7 @@ msgstr "해 진 후 분"
 msgid "Start time"
 msgstr "시작 시간"
 
-#: src/prefs.js:213 src/lib/ui.js:1316
+#: src/prefs.js:213 src/lib/ui.js:1325
 msgid "Duration"
 msgstr "지속 시간"
 
@@ -328,7 +327,7 @@ msgstr "위, 크게"
 msgid "Next to the monitor name, small"
 msgstr "모니터 이름 옆, 작게"
 
-#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1626 src/lib/ui.js:1697
+#: src/prefs.js:277 src/lib/ui.js:340 src/lib/ui.js:1635 src/lib/ui.js:1706
 msgid "Lowest light"
 msgstr "최소 밝기"
 
@@ -337,11 +336,11 @@ msgid "Brightness 0 and full extra dimming; press again to go back"
 msgstr "밝기 0과 최대 추가 어둡게; 다시 누르면 돌아옵니다"
 
 #: src/prefs.js:279 src/prefs.js:285 src/lib/offmenu.js:48 src/lib/ui.js:341
-#: src/lib/ui.js:1629
+#: src/lib/ui.js:1638
 msgid "Turn off screen"
 msgstr "화면 끄기"
 
-#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1640
+#: src/prefs.js:280 src/lib/offmenu.js:49 src/lib/ui.js:342 src/lib/ui.js:1649
 msgid "Turn off other screens"
 msgstr "다른 화면 끄기"
 
@@ -401,7 +400,7 @@ msgstr "“켜 두기” 시간"
 msgid "Seconds"
 msgstr "초"
 
-#: src/prefs.js:305 src/lib/ui.js:1842 src/lib/ui.js:1917
+#: src/prefs.js:305 src/lib/ui.js:1851 src/lib/ui.js:1926
 msgid "Red screen"
 msgstr "빨간 화면"
 
@@ -420,7 +419,7 @@ msgstr "야간 모드가 켜져 있을 때만"
 msgid "Starts and stops together with Night Light"
 msgstr "야간 모드와 함께 시작하고 끝남"
 
-#: src/prefs.js:310 src/lib/ui.js:1858
+#: src/prefs.js:310 src/lib/ui.js:1867
 msgid "Strength"
 msgstr "강도"
 
@@ -480,19 +479,19 @@ msgstr "시스템 저널에 기록됩니다"
 msgid "Screen menu"
 msgstr "화면 메뉴"
 
-#: src/lib/displays.js:59
+#: src/lib/displays.js:67
 msgid "Monitor"
 msgstr "모니터"
 
-#: src/lib/displays.js:415
+#: src/lib/displays.js:438
 msgid "Built-in Display"
 msgstr "내장 디스플레이"
 
-#: src/lib/displays.js:416
+#: src/lib/displays.js:439
 msgid "Built-in"
 msgstr "내장"
 
-#: src/lib/displays.js:418
+#: src/lib/displays.js:441
 #, javascript-format
 msgid "Monitor %d"
 msgstr "모니터 %d"
@@ -559,7 +558,7 @@ msgstr "모니터가 이미 가장 낮은 밝기일 때 화면을 더 어둡게 
 msgid "Night light"
 msgstr "야간 조명"
 
-#: src/lib/ui.js:46 src/lib/ui.js:1830
+#: src/lib/ui.js:46 src/lib/ui.js:1839
 msgid ""
 "Blue light in the evening holds back melatonin, the sleep hormone. A warmer "
 "screen helps you fall asleep more easily."
@@ -579,7 +578,7 @@ msgstr ""
 msgid "Red light"
 msgstr "빨간 빛"
 
-#: src/lib/ui.js:49 src/lib/ui.js:1847
+#: src/lib/ui.js:49 src/lib/ui.js:1856
 msgid ""
 "Red light disturbs melatonin and your body clock the least of all colours. "
 "Ideal for the last hours before bed."
@@ -614,20 +613,20 @@ msgstr "더 일찍"
 msgid "Later"
 msgstr "더 늦게"
 
-#: src/lib/ui.js:1086
+#: src/lib/ui.js:1095
 msgid "Automatic dimming and more"
 msgstr "자동 어둡게 및 기타"
 
-#: src/lib/ui.js:1255
+#: src/lib/ui.js:1264
 msgid "Settings"
 msgstr "설정"
 
-#: src/lib/ui.js:1299
+#: src/lib/ui.js:1308
 msgid ""
 "Slowly dims this monitor in the evening, and brings it back in the morning."
 msgstr "저녁에 이 모니터를 천천히 어둡게 하고, 아침에 되돌립니다."
 
-#: src/lib/ui.js:1300
+#: src/lib/ui.js:1309
 msgid ""
 "Drag the points to shape the evening; the big point also sets how long it "
 "takes. + adds a button that runs by itself."
@@ -635,19 +634,19 @@ msgstr ""
 "점을 끌어 저녁 모양을 만드세요. 큰 점은 지속 시간도 정합니다. +는 저절로 실행"
 "되는 버튼을 추가합니다."
 
-#: src/lib/ui.js:1317
+#: src/lib/ui.js:1326
 msgid "Shorter"
 msgstr "짧게"
 
-#: src/lib/ui.js:1318
+#: src/lib/ui.js:1327
 msgid "Longer"
 msgstr "길게"
 
-#: src/lib/ui.js:1328
+#: src/lib/ui.js:1337
 msgid "Back to normal in the morning"
 msgstr "아침에 원래대로"
 
-#: src/lib/ui.js:1332
+#: src/lib/ui.js:1341
 msgid ""
 "When the morning comes, lowest light and turned off screens go back to "
 "normal, whether they were switched on by hand or by the graph."
@@ -655,55 +654,55 @@ msgstr ""
 "아침이 되면 최저 밝기와 꺼진 화면이 원래대로 돌아옵니다. 직접 켰든 그래프로 "
 "켰든 같습니다."
 
-#: src/lib/ui.js:1365
+#: src/lib/ui.js:1374
 msgid "Back to 100 %"
 msgstr "100 %로 되돌리기"
 
-#: src/lib/ui.js:1368 src/lib/ui.js:1370
+#: src/lib/ui.js:1377 src/lib/ui.js:1379
 msgid "Back to the default evening curve"
 msgstr "기본 저녁 곡선으로"
 
-#: src/lib/ui.js:1386
+#: src/lib/ui.js:1395
 msgid "Back to the default: ×1 and GNOME’s automatic time (sunset)"
 msgstr "기본값으로: ×1 및 GNOME 자동 시간(일몰)"
 
-#: src/lib/ui.js:1391
+#: src/lib/ui.js:1400
 msgid "Back to ×1"
 msgstr "×1로 되돌리기"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Day"
 msgstr "낮"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Night"
 msgstr "밤"
 
-#: src/lib/ui.js:1409
+#: src/lib/ui.js:1418
 msgid "Extra"
 msgstr "추가"
 
-#: src/lib/ui.js:1410
+#: src/lib/ui.js:1419
 msgid "Warmth"
 msgstr "따뜻함"
 
-#: src/lib/ui.js:1410
+#: src/lib/ui.js:1419
 msgid "Red"
 msgstr "빨강"
 
-#: src/lib/ui.js:1442 src/lib/ui.js:1591 src/lib/ui.js:1860
+#: src/lib/ui.js:1451 src/lib/ui.js:1600 src/lib/ui.js:1869
 msgid "Back to the default"
 msgstr "기본값으로"
 
-#: src/lib/ui.js:1547
+#: src/lib/ui.js:1556
 msgid "While the screen is off"
 msgstr "화면이 꺼져 있는 동안"
 
-#: src/lib/ui.js:1587
+#: src/lib/ui.js:1596
 msgid "Dark while off"
 msgstr "꺼져 있을 때 어둡기"
 
-#: src/lib/ui.js:1588
+#: src/lib/ui.js:1597
 msgid ""
 "While the screen is off, the monitor stays at its lowest light and this much "
 "black is added on top. 25 % = a little darker, 100 % = fully black."
@@ -711,12 +710,12 @@ msgstr ""
 "화면이 꺼져 있는 동안 모니터는 가장 낮은 밝기를 유지하고 그 위에 이만큼 검정"
 "을 더합니다. 25 % = 조금 더 어둡게, 100 % = 완전 검정."
 
-#: src/lib/ui.js:1608
+#: src/lib/ui.js:1617
 #, javascript-format
 msgid "Keep lit for %s"
 msgstr "%s 켜 두기"
 
-#: src/lib/ui.js:1609
+#: src/lib/ui.js:1618
 #, javascript-format
 msgid ""
 "On: after the mouse leaves, the screen stays lit for %s, then goes dark. "
@@ -725,49 +724,49 @@ msgstr ""
 "켬: 마우스가 떠난 뒤 %s 동안 켜져 있다가 어두워집니다. 끔: 마우스가 떠나면 바"
 "로 어두워집니다."
 
-#: src/lib/ui.js:1693
+#: src/lib/ui.js:1702
 #, javascript-format
 msgid "Brightness %s"
 msgstr "밝기 %s"
 
-#: src/lib/ui.js:1695
+#: src/lib/ui.js:1704
 msgid "Turned off"
 msgstr "꺼짐"
 
-#: src/lib/ui.js:1715
+#: src/lib/ui.js:1724
 #, javascript-format
 msgid "Sunset %s %s %d min"
 msgstr "일몰 %s %s %d분"
 
-#: src/lib/ui.js:1718
+#: src/lib/ui.js:1727
 msgid "Fixed time"
 msgstr "정해진 시간"
 
-#: src/lib/ui.js:1721
+#: src/lib/ui.js:1730
 #, javascript-format
 msgid "Until %s"
 msgstr "%s까지"
 
-#: src/lib/ui.js:1730
+#: src/lib/ui.js:1739
 msgid "Off"
 msgstr "끔"
 
-#: src/lib/ui.js:1828
+#: src/lib/ui.js:1837
 msgid "Temperature"
 msgstr "색온도"
 
-#: src/lib/ui.js:1831
+#: src/lib/ui.js:1840
 msgid "Back to GNOME’s default"
 msgstr "GNOME 기본값으로"
 
-#: src/lib/ui.js:1925
+#: src/lib/ui.js:1934
 msgid "Sunset to sunrise"
 msgstr "일몰부터 일출까지"
 
-#: src/lib/ui.js:1947
+#: src/lib/ui.js:1956
 msgid "Turns on together with Night Light"
 msgstr "야간 모드와 함께 켜짐"
 
-#: src/lib/ui.js:1949
+#: src/lib/ui.js:1958
 msgid "Starts when Night Light starts"
 msgstr "야간 모드가 시작되면 시작"

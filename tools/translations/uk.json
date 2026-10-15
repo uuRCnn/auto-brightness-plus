@@ -247,5 +247,6 @@
   "Simple (recommended)": "Просте (рекомендовано)",
   "Detailed": "Докладне",
   "Simple: one slider for the value you pick. Detailed: a slider for every value.": "Просте: один повзунок для вибраного значення. Докладне: повзунок для кожного значення.",
-  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Перетягуйте точки, щоб задати форму вечора; велика точка також задає тривалість. + додає кнопку, яка спрацьовує сама."
+  "Drag the points to shape the evening; the big point also sets how long it takes. + adds a button that runs by itself.": "Перетягуйте точки, щоб задати форму вечора; велика точка також задає тривалість. + додає кнопку, яка спрацьовує сама.",
+  "For the main monitor. The others go further down, to 0 %, with a little extra dimming late at night. Each monitor can change these in its own menu.": "Для основного монітора. Інші опускаються нижче, до 0 %, а пізно вночі — з невеликим додатковим затемненням. Кожен монітор може змінити це у своєму меню."
 }
