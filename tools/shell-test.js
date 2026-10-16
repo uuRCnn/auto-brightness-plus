@@ -787,10 +787,11 @@ async function test() {
         d.setConfig('events', {lowest: 530, off: null, others: null});   // late: must not run during the test
         d.setConfig('morningReset', false);
         settings.set_double('red-strength', 0.55);
-        // a screen turned off by hand with its own button before a reboot: comes back off;
-        // lowest light does not come back
+        // before a reboot: a screen turned off by hand, lowest light, and "turn off other
+        // screens" whose time is long over: none of them comes back
         manager.turnOff(manager.displays[1], false, false, true);
         manager.setMinimum(d, true);
+        d.setConfig('events', {lowest: 530, off: null, others: 1});
         globalThis.BP_SAVED = JSON.stringify(d.cfg, (k, v) => (k === 'last' ? undefined : v));
     }
 
@@ -808,7 +809,7 @@ async function test() {
         const now = JSON.stringify(d.cfg, (k, v) => (k === 'last' ? undefined : v));
         log(`remembered after restart: ${now === globalThis.BP_SAVED ? 'yes' : `NO\n  before ${globalThis.BP_SAVED}\n  after  ${now}`} red-strength=${settings.get_double('red-strength')}`);
         const d2r = ext2.stateObj._manager.displays[1];
-        log(`turned off screen after restart: off=${d2r.off} (must be true) day=${d2r.cfg.day} (must not be 0)`);
+        log(`turned off screen after restart: off=${d2r.off} (must be false: no button survives a restart, a past "others" does not run) day=${d2r.cfg.day} (must not be 0)`);
         log(`lowest light after restart: ${d.minimum} (must be false)`);
         // the morning after: the monitor still shows the 0 we wrote, its day value is 0.83
         const mgr2 = ext2.stateObj._manager;

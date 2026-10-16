@@ -15,7 +15,7 @@ import {GammaController} from './gamma.js';
 import {CornerDots} from './cornerdot.js';
 import {OffMenu} from './offmenu.js';
 import {getLocation, shareWithNightLight, watchLocation} from './location.js';
-import {curveMoving, dayTimes, layerValues, phaseAt, scheduledValue} from './schedule.js';
+import {curveMoving, layerValues, phaseAt, scheduledValue} from './schedule.js';
 import {fmt} from './sun.js';
 
 const EXTRA_MAX = 0.9;        // extra dimming slider at 100% = 90% darker
@@ -127,7 +127,7 @@ export class DisplayManager extends EventEmitter {
         this._destroyed = false;
 
         this._ddc = new DdcBackend(settings, msg => this.log(msg));
-        this._overlays = new DimOverlays();
+        this._overlays = new DimOverlays(msg => this.log(msg));
         this._watchTimer = 0;
         this._offMenu = new OffMenu(this, settings, this._overlays);
         this._dots = new CornerDots(this, settings, this._overlays);
@@ -536,22 +536,13 @@ export class DisplayManager extends EventEmitter {
         }
     }
 
-    // a morning since `t` (ms)? Then the screens turned off by hand come back on
-    _morningSince(d, t) {
-        const now = new Date();
-        const today = dayTimes(now, d.cfg, this.globals).morningStart;
-        const last = now.getTime() >= today ? today : dayTimes(new Date(now.getTime() - 86400000), d.cfg, this.globals).morningStart;
-        return t < last;
-    }
-
     // first value read from the monitor
     _hardwareValue(d, v) {
         d.ready = true;
         const phase = d.cfg.schedule ? phaseAt(new Date(), d.cfg, this.globals) : null;
-        // turned off by hand at shutdown: stays off, unless the morning came in between
-        const keepOff = d.cfg.off && !(d.cfg.morningReset && this._morningSince(d, d.cfg.offAt));
-        if (!keepOff)
-            d.cfg.off = false;
+        // nothing of the three buttons survives a restart: every screen starts lit
+        d.cfg.off = false;
+        d.cfg.offAuto = false;
         // What we wrote ourselves (the night value, the 0 of a turned off screen …)
         // is not a new day value: then the schedule decides, and the monitor gets
         // it written again. Otherwise the monitor's own buttons changed it: in
@@ -565,9 +556,7 @@ export class DisplayManager extends EventEmitter {
         d.phase = phase;
         this._save();
         this._applyLayers(d);
-        if (keepOff && !d.off)
-            this.turnOff(d, false, false, true);
-        else if (ours && Math.abs(v - d.value) > 0.005)
+        if (ours && Math.abs(v - d.value) > 0.005)
             this._writeHardware(d, d.value);
         d.emit('changed');
         this.tick();
@@ -870,6 +859,7 @@ export class DisplayManager extends EventEmitter {
     _setView(d, view, {fast = false} = {}) {
         if (!d.off)
             return;
+        this.log(`view ${d.index}: ${d.view} -> ${view}`);
         this._clearView(d);
         d.view = view;
         // the backlight stays at 0; lit = no black layer, dark = "Dark while off". See _move.
@@ -903,6 +893,7 @@ export class DisplayManager extends EventEmitter {
     /** The mouse came onto a turned off screen: light it until it leaves. */
     peek(index) {
         const d = this.displays.find(x => x.index === index);
+        this.log(`peek ${index} (view ${d?.view})`);
         if (!d?.off || d.view === 'peek' || d.view === 'kept')
             return;
         // the picture comes at once, the backlight follows (DDC is slower)
@@ -1092,11 +1083,23 @@ export class DisplayManager extends EventEmitter {
                 this._morningReset(d);
             d._wasNight = false;
             d._fired.clear();
+            d._primed = true;
             return MAX_SLEEP_S;
         }
         d._wasNight = true;
         let next = MAX_SLEEP_S;
         const since = (now.getTime() - phase.start) / 60000;
+        // Just started (login, a new monitor list) or woke up: a button whose
+        // time is already over does not run now. Only the ones whose time
+        // comes while the computer is on do.
+        if (!d._primed) {
+            d._primed = true;
+            for (const action of ACTIONS) {
+                const at = d.cfg.events[action];
+                if (at !== null && since >= at)
+                    d._fired.add(`${phase.start}:${action}`);
+            }
+        }
         for (const action of ACTIONS) {
             const at = d.cfg.events[action];
             if (at === null)
@@ -1138,6 +1141,9 @@ export class DisplayManager extends EventEmitter {
                 this._ddc.forget(d.bus);
         }
         this._readGlobals();
+        // what was due while asleep does not run now (see _runActions)
+        for (const d of this.displays)
+            d._primed = false;
         // give the monitors a moment to wake up before talking DDC
         GLib.timeout_add_seconds(GLib.PRIORITY_LOW, 3, () => {
             if (this._destroyed)

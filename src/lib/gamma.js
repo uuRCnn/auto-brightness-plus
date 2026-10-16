@@ -205,6 +205,7 @@ export class GammaController {
                     const temp = w.own ? w.temp : this._temp;
                     const red = w.own ? w.red : 0;
                     const [gr, gg, gb] = kelvinGain(temp);
+                    this._log(`gamma crtc${crtc}: ${Math.round(temp)} K red ${red.toFixed(2)}`);
                     await call('SetCrtcGamma', new GLib.Variant('(uuaqaqaq)', [this._serial, crtc,
                         ramp(size, gr), ramp(size, gg * (1 - red)), ramp(size, gb * (1 - red))]), null);
                     if (w.own)

@@ -75,7 +75,8 @@ class MonitorLayer {
 }
 
 export class DimOverlays {
-    constructor() {
+    constructor(log = () => {}) {
+        this._log = log;
         this._layers = [];
         this._above = new Set();      // actors that must stay above the layers
         // menus and dialogs add themselves on top: stay above them, once per main
@@ -113,6 +114,7 @@ export class DimOverlays {
         const above = [...this._above].filter(a => a.get_parent() === group);
         if (shown.every(l => children.indexOf(l.actor) > i) && above.every(a => children.indexOf(a) > top))
             return;
+        this._log(`restack: ${shown.map(l => l._index).join(',')} above ${children[i]?.name || children[i]?.constructor?.name || '?'}`);
         for (const layer of shown)
             group.set_child_above_sibling(layer.actor, null);
         for (const actor of this._above) {
@@ -137,6 +139,8 @@ export class DimOverlays {
         const layer = this._layers[index];
         if (!layer)
             return;
+        if (Math.abs(layer._alpha - Math.min(1, Math.max(0, alpha))) > 0.001)
+            this._log(`layer ${index}: ${layer._alpha.toFixed(2)} -> ${alpha.toFixed(2)}`);
         layer.set(alpha, opts);
         if (alpha > 0)
             this._raise();

@@ -19,6 +19,16 @@ glib-compile-schemas "$ROOT/src/schemas"
 EXT="$TMP/data/gnome-shell/extensions/auto-brightness-plus@dukha"
 cp -r "$ROOT/src" "$EXT"
 [ -d "$ROOT/build/locale" ] && cp -r "$ROOT/build/locale" "$EXT/locale"
+# BP_USER_DCONF=1: start with a copy of the user's settings (all extensions' too); the copy lives
+# only in the temporary directory
+if [ -n "${BP_USER_DCONF:-}" ] && [ -f "$HOME/.config/dconf/user" ]; then
+    mkdir -p "$TMP/config/dconf"
+    cp "$HOME/.config/dconf/user" "$TMP/config/dconf/user"
+fi
+# other extensions to run next to it (e.g. a dock), copied from the given directories
+for x in ${BP_EXTRA_EXTENSIONS:-}; do
+    cp -r "$x" "$TMP/data/gnome-shell/extensions/$(basename "$x")"
+done
 
 # preferences harness copy (prefs.js with its shell import replaced by a shim)
 PD="$TMP/prefs"
@@ -29,6 +39,11 @@ sed -i "s|resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js|./prefs-
 export BP_PREFS_DIR="$PD"
 export BP_PREFS_HARNESS="$ROOT/tools/prefs-harness.js"
 export BP_TEST_WINDOW="$ROOT/tools/test-window.js"
+
+# a plain "ddcutil" is always the fake one: no test ever talks to the real monitors
+mkdir -p "$TMP/bin"
+ln -s "$ROOT/tools/fake-ddcutil.sh" "$TMP/bin/ddcutil"
+export PATH="$TMP/bin:$PATH"
 
 export XDG_CONFIG_HOME="$TMP/config"
 export XDG_DATA_HOME="$TMP/data"

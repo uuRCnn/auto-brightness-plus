@@ -36,8 +36,8 @@ Works on GNOME Shell 46, 47, 48, 49, 50 and 51.
 - **Per monitor Night light ×0–×2 and Red light ×0–×2**: how strong GNOME's Night Light and the red screen are on that
   monitor. They go through the monitor's own colour table, like Night Light itself. **Extra dimming** darkens further
   when the monitor is already at its lowest.
-- After a restart only a screen you turned off with its own button stays off (until the next morning);
-  *Lowest light* and *Turn off other screens* always start switched off.
+- After a restart every screen starts lit: none of the three buttons is remembered, and a button whose time
+  went by while the computer was off (or asleep) does not run late.
 - **GNOME's Night Light follows the sunset**: when GNOME has no location of its own, the extension gives it the one it
   uses, so Night Light starts at sunset instead of a fixed fallback time.
 - **Lowest light** with one click. On the main monitor it keeps a little more light, so a misclick is easy to undo.
